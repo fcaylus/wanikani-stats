@@ -1,0 +1,21 @@
+{
+  "radical": {
+    "display_name": "Radicals",
+    "sources": [
+      "wanikani"
+    ]
+  },
+  "kanji": {
+    "display_name": "Kanjis",
+    "sources": [
+      "wanikani",
+      "jlpt"
+    ]
+  },
+  "vocabulary": {
+    "display_name": "Vocabularies",
+    "sources": [
+      "wanikani"
+    ]
+  }
+}
