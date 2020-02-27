@@ -2,9 +2,11 @@ import React from 'react';
 import Head from "next/head";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
+import {LinearProgress} from "@material-ui/core";
 
 interface PageContentProps {
     pageTitle?: string;
+    showProgress?: boolean
 
     // Random properties
     [prop: string]: any;
@@ -23,8 +25,8 @@ export default function PageContent(props: PageContentProps) {
                     {props.pageTitle && " - " + props.pageTitle}
                 </title>
             </Head>
+            {props.showProgress && <LinearProgress color="secondary"/>}
             <Container component="main" role="main" disableGutters>
-                {/* Vertical spacing */}
                 <Box m={3} className={props.className}>
                     {props.children}
                 </Box>

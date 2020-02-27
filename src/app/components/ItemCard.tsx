@@ -3,6 +3,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import {Button} from "@material-ui/core";
 import colorFromSRS from "../colorFromSRS";
 import {Item} from "../../data/interfaces/item";
+import clsx from "clsx";
 
 const useStyles = makeStyles(() => ({
     item: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles(() => ({
  * Display any item (kanji, radical, vocabulary) as an inline card shape.
  * This component uses memoization since it rarely change after the first rendering and only depends on its props.
  */
-export default React.memo((props: Item) => {
+export default React.memo((props: Item & { className?: string }) => {
     const classes = useStyles();
 
     const displayedText = props.characters ? props.characters : props.name;
@@ -36,7 +37,7 @@ export default React.memo((props: Item) => {
             component="a"
             href={props.url}
             target="_blank"
-            className={classes.item}
+            className={clsx(classes.item, props.className)}
             style={{
                 color: (props.srs && props.srs > 0) ? "#fff" : "#000",
                 backgroundColor: colorFromSRS(props.srs),

@@ -1,6 +1,6 @@
 import React from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
-import {List, ListItem, Typography} from "@material-ui/core";
+import {Typography} from "@material-ui/core";
 import ItemCard from "./ItemCard";
 import {ProgressHashMap} from "../../server/interfaces/progress";
 import {ItemCategory} from "../../data/interfaces/item";
@@ -17,8 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     item: {
         width: "unset",
         marginRight: 4,
-        paddingTop: 2,
-        paddingBottom: 2
+        marginBottom: 4
     }
 }));
 
@@ -33,16 +32,15 @@ export default React.memo((props: ItemCategory & { progress?: ProgressHashMap })
             {props.headerText && (
                 <Typography variant="h6">{props.headerText}</Typography>
             )}
-            <List className={classes.list} dense disablePadding>
+            <div className={classes.list}>
                 {props.items.map((item, index) => {
                     return (
-                        <ListItem className={classes.item} dense disableGutters key={index}>
-                            <ItemCard {...item}
-                                      srs={props.progress && props.progress[item.name] ? props.progress[item.name] : 0}/>
-                        </ListItem>
+                        <ItemCard {...item}
+                                  srs={props.progress && props.progress[item.name] ? props.progress[item.name] : 0}
+                                  className={classes.item} key={index}/>
                     );
                 })}
-            </List>
+            </div>
         </React.Fragment>
 
     );

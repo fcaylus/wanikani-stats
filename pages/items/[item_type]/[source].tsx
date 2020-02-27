@@ -21,7 +21,7 @@ import {
     Theme
 } from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
-import {useDispatch, useSelector, useStore} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {fetchApi} from "../../../src/app/redux/api/actions";
 import {RootState} from "../../../src/app/redux/store";
 import {ApiResultState} from "../../../src/app/redux/api/types";
@@ -31,12 +31,6 @@ import {ItemCategory} from "../../../src/data/interfaces/item";
 import {itemTypeExists, sourceExistsForItemType} from "../../../src/data/data";
 import {getApiKey, hasApiKey} from "../../../src/app/apiKey";
 import {IncomingMessage} from "http";
-import {ProgressHashMap} from "../../../src/server/interfaces/progress";
-
-interface DisplayedData {
-    label: string;
-    index: number;
-}
 
 const sourcesForType = (type: string) => {
     return Object(itemTypesJson)[type].sources;
@@ -53,6 +47,10 @@ const fetchItems = (itemType: string, source: string, req?: IncomingMessage) => 
     const url = "/api/items/" + label;
     return fetchApi(label, url, "GET", getApiKey(req));
 };
+
+interface ItemPageProps {
+    initialDataLength: number
+}
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -87,51 +85,63 @@ const useStyles = makeStyles((theme: Theme) => ({
  * Render a page with the list of items and their progress.
  * All the data are retrieved from /api/items/* endpoints
  */
-function ItemPage() {
+function ItemPage(props: ItemPageProps) {
     const router = useRouter();
     const classes = useStyles();
 
-    let {item_type, source} = router.query;
-    item_type = item_type.toString();
-    source = source.toString();
+    const {item_type, source} = router.query;
 
     /*
      * API items results state and selector
      */
     const dispatch = useDispatch();
-    const store = useStore();
-    const apiLabel = labelFromItemTypeAndSource(item_type, source);
+    const apiLabel = labelFromItemTypeAndSource(item_type.toString(), source.toString());
     const apiResults: ApiResultState = useSelector((state: RootState) => {
         return state.api.results[apiLabel];
     });
-    // displayedData and displayedDataLength increase progressively progressively to improve the "Time to Content" of the page
-    const [displayedData, setDisplayedData] = useState<DisplayedData[]>([]);
-    const [displayedDataLength, setDisplayedDataLength] = useState(0);
+    // displayedDataLength increase progressively to improve the "Time to Content" of the page
+    const [displayedDataLength, setDisplayedDataLength] = useState(props.initialDataLength);
+    const [isLoading, setLoading] = useState(true);
 
     /*
      * API user progress results state and selector
      */
-    const progressApiLabel = "progress/" + item_type;
+    const progressApiLabel = "progress/" + item_type.toString();
     const progressResults: ApiResultState = useSelector((state: RootState) => {
         return state.api.results[progressApiLabel];
     });
-    const [userProgress, setUserProgress] = useState<ProgressHashMap>();
+
+    // Use to schedule the change of url AFTER the last renders that removes every items from the list
+    const [needNewUrl, setNeedNewUrl] = useState<any>(undefined);
+
+    useEffect(() => {
+        if (needNewUrl) {
+            needNewUrl();
+        }
+    }, [needNewUrl]);
+
+    useEffect(() => {
+        if (!apiResults || apiResults.error) {
+            dispatch(fetchItems(item_type.toString(), source.toString()));
+        }
+    }, [item_type, source]);
 
     // On item type change, fetch the new user progress
     useEffect(() => {
-        setUserProgress(undefined);
-        // Retrieve the user progress through the API
-        dispatch(fetchApi(progressApiLabel, "/api/progress", "GET", getApiKey(), {
-            type: item_type.toString()
-        }));
+        // Retrieve the user progress through the API, only if necessary
+        if (!progressResults || progressResults.error) {
+            dispatch(fetchApi(progressApiLabel, "/api/progress", "GET", getApiKey(), {
+                type: item_type.toString()
+            }));
+        }
     }, [item_type]);
 
     useEffect(() => {
         // Check if progress is successfully retrieved
-        if (progressResults && progressResults.data && progressResults.data != userProgress && !progressResults.error) {
-            setUserProgress(progressResults.data);
+        if (progressResults && progressResults.data && !progressResults.error && isLoading) {
+            setLoading(false);
         }
-    }, [progressResults, userProgress]);
+    }, [progressResults]);
 
     /**
      * Display item list one category at a time. This avoid one big refresh of the page, and allow a better
@@ -139,40 +149,18 @@ function ItemPage() {
      * When a category is added, displayedDataLength state is modified, which trigger an effect calling this method again.
      */
     const displayItemListProgressively = () => {
-        // setTimeout(..., 0) put the function as the end of the calling stack which allows user interactions.
         // Inspired by: https://itnext.io/handling-large-lists-and-tables-in-react-238397854625
-        setTimeout(() => {
-            if (apiResults && !apiResults.fetching && !apiResults.error) {
-                const apiLength = apiResults.data.length;
+        if (apiResults && !apiResults.fetching && !apiResults.error) {
+            const apiLength = apiResults.data.length;
 
-                if (displayedDataLength < apiLength) {
-                    // Load data by chunk of 1 category
-                    const newLength = Math.min(apiLength, displayedDataLength + 1);
-
-                    if (displayedData.length >= newLength) {
-                        // If data is already displayed, just change it with the new one
-                        let newData = displayedData.slice(0, Math.min(apiLength, displayedData.length));
-                        newData[newLength - 1] = {
-                            label: apiLabel,
-                            index: newLength - 1
-                        };
-                        setDisplayedData(newData);
-                    } else {
-                        // Add new data
-                        setDisplayedData([...displayedData, {
-                            label: apiLabel,
-                            index: newLength - 1
-                        }]);
-                    }
-                    setDisplayedDataLength(newLength);
-                }
+            if (displayedDataLength < apiLength) {
+                // Load data by chunk of 1 category
+                const newLength = Math.min(apiLength, displayedDataLength + 1);
+                setDisplayedDataLength(newLength);
             }
-        }, 0);
+        }
     };
-    useEffect(() => {
-        // Remove the displayed data on query params change
-        setDisplayedDataLength(0);
-    }, [item_type, source]);
+
     useEffect(() => {
         if (apiResults && !apiResults.fetching && !apiResults.error) {
             displayItemListProgressively();
@@ -181,35 +169,38 @@ function ItemPage() {
 
     // Shallow change the url of the page. This changes the query parameter and trigger a new page rendering
     const changeUrl = (newType: string, newSource: string) => {
-        router.push("/items/[item_type]/[source]", "/items/" + newType + "/" + newSource, {
-            shallow: true
-        }).then(() => {
-            dispatch(fetchItems(newType, newSource));
-        })
+        setDisplayedDataLength(0);
+        // Schedule the url change to the next url, just after the displayed data are removed.
+        // This avoids an useless re-render of the old items when the item_type change
+        setNeedNewUrl(() => {
+            router.push("/items/[item_type]/[source]", "/items/" + newType + "/" + newSource, {
+                shallow: true
+            })
+        });
     };
 
     // Change the "type" part of the url on tab change
     const handleTabChange = (_event: React.ChangeEvent<{}>, newItemType: string) => {
-        if (newItemType != item_type) {
+        if (newItemType != item_type.toString()) {
             changeUrl(newItemType, source.toString());
         }
     };
     // Change the "source" part of the url
     const handleSourceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newSource = (event.target as HTMLInputElement).value;
-        if (newSource != source) {
+        if (newSource != source.toString()) {
             changeUrl(item_type.toString(), newSource);
         }
     };
 
     // Redirect the user for bad queries
-    if (!sourceExistsForItemType(source, item_type)) {
-        if (!itemTypeExists(item_type)) {
+    if (!sourceExistsForItemType(source.toString(), item_type.toString())) {
+        if (!itemTypeExists(item_type.toString())) {
             return <Error statusCode={NOT_FOUND}/>;
         }
 
         // Default to wanikani
-        changeUrl(item_type, "wanikani");
+        changeUrl(item_type.toString(), "wanikani");
     }
 
     if (apiResults && apiResults.error) {
@@ -217,22 +208,23 @@ function ItemPage() {
     }
 
     const categoryComponent = (categoryProps: ItemCategory, index: number) => {
-        if (categoryProps.items.length == 0) {
+        if (categoryProps.items.length == 0 || index >= displayedDataLength) {
             return null;
         }
 
         return (
             <ListItem dense disableGutters key={index} className={classes.categoryItem}>
-                <ItemList {...categoryProps} progress={userProgress}/>
+                <ItemList {...categoryProps}
+                          progress={progressResults && !progressResults.error ? progressResults.data : undefined}/>
             </ListItem>
         );
     };
 
     return (
-        <PageContent pageTitle="Items" className={classes.root}>
+        <PageContent pageTitle="Items" className={classes.root} showProgress={isLoading}>
             <Paper className={classes.tabsRoot} elevation={5}>
                 <Tabs
-                    value={item_type}
+                    value={item_type.toString()}
                     onChange={handleTabChange}
                     indicatorColor="primary"
                     textColor="primary"
@@ -247,9 +239,9 @@ function ItemPage() {
 
             <FormControl component="fieldset">
                 <FormLabel component="legend">Displayed source</FormLabel>
-                <RadioGroup aria-label="sources" name="sources" value={source} onChange={handleSourceChange}
+                <RadioGroup aria-label="sources" name="sources" value={source.toString()} onChange={handleSourceChange}
                             className={classes.sourcesRadioGroup}>
-                    {sourcesForType(item_type).map((availableSource: string) => {
+                    {sourcesForType(item_type.toString()).map((availableSource: string) => {
                         return <FormControlLabel key={availableSource} value={availableSource} control={<Radio/>}
                                                  label={Object(sourceTypesJson)[availableSource].display_name}/>
                     })}
@@ -260,44 +252,50 @@ function ItemPage() {
                 <CircularProgress className={classes.fetching} disableShrink/>
             )}
 
-            <List className={classes.list} disablePadding dense key={apiLabel}>
-                {displayedData.map((data: DisplayedData, index: number) => {
-                    return categoryComponent(store.getState().api.results[data.label].data[data.index], index)
-                })}
-            </List>
+            {apiResults && apiResults.data && !apiResults.error && !apiResults.fetching && (
+                <List className={classes.list} disablePadding dense key={apiLabel}>
+                    {apiResults.data.map((data: ItemCategory, index: number) => {
+                        return categoryComponent(data, index)
+                    })}
+                </List>
+            )}
         </PageContent>
     );
 }
 
 // Server-side rendering
-ItemPage.getInitialProps = async (ctx: ReduxNextPageContext) => {
+ItemPage.getInitialProps = async (ctx: ReduxNextPageContext): Promise<ItemPageProps> => {
     const {item_type, source} = ctx.query;
 
     if (!sourceExistsForItemType(source.toString(), item_type.toString())) {
         if (!itemTypeExists(item_type.toString())) {
             // The component will return a 404
-            return {};
+            return {initialDataLength: 0};
         }
 
         // Default to wanikani
         redirect("/items/" + item_type.toString() + "/wanikani", ctx.res);
-        return {};
+        return {initialDataLength: 0};
     }
 
     // Check if logged
     if (!hasApiKey(ctx.req)) {
         redirect("/login", ctx.res);
-        return;
+        return {initialDataLength: 0};
     }
 
     // Wait for the API call to finished.
     if (!process.browser) {
         await ctx.store.dispatch(fetchItems(item_type.toString(), source.toString(), ctx.req));
+        const res = ctx.store.getState().api.results[labelFromItemTypeAndSource(item_type.toString(), source.toString())];
+        return {
+            initialDataLength: res && !res.error && !res.fetching ? res.data.length : 0
+        }
     } else {
         ctx.store.dispatch(fetchItems(item_type.toString(), source.toString()));
     }
 
-    return {}
+    return {initialDataLength: 0}
 };
 
 export default ItemPage;
