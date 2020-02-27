@@ -9,7 +9,8 @@ const useStyles = makeStyles(() => ({
         //fontWeight: "bold",
         padding: 4,
         minWidth: "unset",
-        height: 32
+        height: 32,
+        transition: "none"
     },
     image: {
         width: 16,
@@ -40,9 +41,9 @@ export default React.memo((props: Item) => {
                 color: (props.srs && props.srs > 0) ? "#fff" : "#000",
                 backgroundColor: colorFromSRS(props.srs),
             }}
-            disableRipple={true}
-            disableFocusRipple={true}
-            disableTouchRipple={true}
+            disableRipple
+            disableFocusRipple
+            disableTouchRipple
             title={displayedText}>
             {imageComponent ? imageComponent : displayedText}
         </Button>
