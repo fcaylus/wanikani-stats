@@ -10,12 +10,11 @@ export default function PageFooter() {
     return (
         <Box m={3} component="footer">
             <Typography variant="body2" color="textSecondary" align="center">
-                {'Copyright © '}
+                {'Made by '}
                 <Link color="inherit" href={process.env.authorLink} target="_blank">
                     {process.env.author}
                 </Link>{' '}
-                {'2020'}
-                {'.'}
+                {'in \u{1f5fc} Tokyo \u{1f5fc} !'}
             </Typography>
             <Typography variant="body2" color="textSecondary" align="center">
                 {'Icon made by '}
