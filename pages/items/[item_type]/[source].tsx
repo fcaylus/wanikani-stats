@@ -182,19 +182,25 @@ function ItemPage(props: ItemPageProps) {
     useEffect(() => {
         if (apiResults && !apiResults.fetching && !apiResults.error) {
             displayItemListProgressively();
+            console.log("update");
         }
     }, [apiResults, displayedDataLength]);
 
     // Shallow change the url of the page. This changes the query parameter and trigger a new page rendering
-    const changeUrl = (newType: string, newSource: string) => {
-        setDisplayedDataLength(0);
-        // Schedule the url change to the next url, just after the displayed data are removed.
-        // This avoids an useless re-render of the old items when the item_type change
-        setNeedNewUrl(() => {
+    const changeUrl = (newType: string, newSource: string, immediate?: boolean) => {
+        const changeUrlFunc = () => {
             router.push("/items/[item_type]/[source]", "/items/" + newType + "/" + newSource, {
                 shallow: true
-            })
-        });
+            });
+        };
+        if (immediate) {
+            changeUrlFunc();
+        } else {
+            // Schedule the url change to the next url, just after the displayed data are removed.
+            // This avoids an useless re-render of the old items when the item_type change
+            setDisplayedDataLength(0);
+            setNeedNewUrl(changeUrlFunc);
+        }
     };
 
     // Change the "type" part of the url on tab change
@@ -218,7 +224,7 @@ function ItemPage(props: ItemPageProps) {
         }
 
         // Default to wanikani
-        changeUrl(item_type.toString(), "wanikani");
+        changeUrl(item_type.toString(), "wanikani", true);
     }
 
     if (apiResults && apiResults.error) {
