@@ -31,6 +31,7 @@ import {ItemCategory} from "../../../src/data/interfaces/item";
 import {itemTypeExists, sourceExistsForItemType} from "../../../src/data/data";
 import {getApiKey, hasApiKey} from "../../../src/app/apiKey";
 import {IncomingMessage} from "http";
+import {ProgressHashMap} from "../../../src/server/interfaces/progress";
 
 const sourcesForType = (type: string) => {
     return Object(itemTypesJson)[type].sources;
@@ -47,10 +48,6 @@ const fetchItems = (itemType: string, source: string, req?: IncomingMessage) => 
     const url = "/api/items/" + label;
     return fetchApi(label, url, "GET", getApiKey(req));
 };
-
-interface ItemPageProps {
-    initialDataLength: number
-}
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -80,6 +77,24 @@ const useStyles = makeStyles((theme: Theme) => ({
         padding: 0
     }
 }));
+
+interface CategoryListItemProps {
+    categoryProps: ItemCategory,
+    progress?: ProgressHashMap
+}
+
+const CategoryListItem = React.memo((props: CategoryListItemProps) => {
+    const classes = useStyles();
+    return (
+        <ListItem dense disableGutters className={classes.categoryItem}>
+            <ItemList {...props.categoryProps} progress={props.progress}/>
+        </ListItem>
+    );
+});
+
+interface ItemPageProps {
+    initialDataLength: number
+}
 
 /**
  * Render a page with the list of items and their progress.
@@ -211,15 +226,13 @@ function ItemPage(props: ItemPageProps) {
     }
 
     const categoryComponent = (categoryProps: ItemCategory, index: number) => {
-        if (categoryProps.items.length == 0 || index >= displayedDataLength) {
+        if (index >= displayedDataLength || categoryProps.items.length == 0) {
             return null;
         }
 
         return (
-            <ListItem dense disableGutters key={index} className={classes.categoryItem}>
-                <ItemList {...categoryProps}
-                          progress={progressResults && !progressResults.error ? progressResults.data : undefined}/>
-            </ListItem>
+            <CategoryListItem key={index} categoryProps={categoryProps}
+                              progress={progressResults && !progressResults.error ? progressResults.data : undefined}/>
         );
     };
 
@@ -245,7 +258,8 @@ function ItemPage(props: ItemPageProps) {
                 <RadioGroup aria-label="sources" name="sources" value={source.toString()} onChange={handleSourceChange}
                             className={classes.sourcesRadioGroup}>
                     {sourcesForType(item_type.toString()).map((availableSource: string) => {
-                        return <FormControlLabel key={availableSource} value={availableSource} control={<Radio/>}
+                        return <FormControlLabel key={availableSource} value={availableSource}
+                                                 control={<Radio disableRipple disableTouchRipple/>}
                                                  label={Object(sourceTypesJson)[availableSource].display_name}/>
                     })}
                 </RadioGroup>

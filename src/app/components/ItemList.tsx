@@ -34,9 +34,10 @@ export default React.memo((props: ItemCategory & { progress?: ProgressHashMap })
             )}
             <div className={classes.list}>
                 {props.items.map((item, index) => {
+                    const progress = props.progress ? props.progress[item.name] : undefined;
                     return (
                         <ItemCard {...item}
-                                  srs={props.progress && props.progress[item.name] ? props.progress[item.name] : 0}
+                                  srs={props.progress && progress ? progress : 0}
                                   className={classes.item} key={index}/>
                     );
                 })}
