@@ -4,7 +4,7 @@ import parseApiRequest from "../../src/server/parseApiRequest";
 import {OK} from "http-status-codes";
 import {ProgressEndpointResult, ProgressHashMap} from "../../src/server/interfaces/progress";
 import absoluteUrl from "next-absolute-url";
-import subjectNameForId from "../../src/data/wanikani/subjectNameForId";
+import subjectNameForId from "../../src/data/sources/wanikani/subjectNameForId";
 
 /**
  * Fetch user progress, depending on the query parameter:

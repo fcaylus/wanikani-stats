@@ -9,7 +9,9 @@
     "display_name": "Kanjis",
     "sources": [
       "wanikani",
-      "jlpt"
+      "jlpt",
+      "kanken",
+      "joyo"
     ]
   },
   "vocabulary": {

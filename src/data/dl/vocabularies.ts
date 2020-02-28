@@ -14,7 +14,7 @@ export default async (apiKey: string): Promise<Item[] | null> => {
                 list.push({
                     name: voc.data.slug,
                     characters: voc.data.characters,
-                    category: voc.data.level,
+                    category: voc.data.level.toString(),
                     position: voc.data.lesson_position,
                     subPosition: voc.id,
                     url: voc.data.document_url,

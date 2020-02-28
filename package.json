@@ -32,9 +32,15 @@
     "rimraf": "^3.0.2",
     "typescript": "~3.7.2"
   },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.16",
+    "cheerio": "^1.0.0-rc.3",
+    "ts-node": "^8.6.2"
+  },
   "scripts": {
     "watch": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "dumpData": "ts-node -O '{\"module\": \"commonjs\"}' src/data/dump/dump.ts"
   }
 }

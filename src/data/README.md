@@ -1,3 +1,6 @@
-This directory contains data models for the different elements and some utility functions to access and retrieve theme.
+### ```data/```
 
-It also contains the actual dumped data for each sources, except from WaniKani (which are retrieved at run time).
+- ```dl/```: Utilities to download WaniKani data at runtime
+- ```dump/```: Utilities to download other data at compile time (using ```package.json``` command)
+- ```interfaces/```: Interfaces for items and lists
+- ```sources/```: Actual dumped data for every sources (except for WaniKani)

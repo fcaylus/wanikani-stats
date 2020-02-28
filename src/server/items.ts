@@ -1,9 +1,10 @@
 import sourceTypesJson from "../data/source_types.json";
 import compareNumbers from "../compareNumbers";
-import {readWaniKaniFile} from "../data/wanikani/wanikani";
-import {readJLPTFile} from "../data/jlpt/jlpt";
-import {Item, ItemCategory} from "../data/interfaces/item";
+import {readWaniKaniFile} from "../data/sources/wanikani/wanikani";
+import {Item, ItemCategory, ItemsHashMap} from "../data/interfaces/item";
 import {sourceExistsForItemType} from "../data/data";
+import compareStrings from "../compareStrings";
+import {readFile} from "../data/sources/sources";
 
 // Cache file reads in memory because it can take a lot of time to read them from file system
 let itemsCache: { [name: string]: any } = {};
@@ -12,7 +13,6 @@ const sources = Object(sourceTypesJson);
 const OTHER_CATEGORY = "99999";
 
 const sortItems = (itemsList: Item[]) => {
-    // TODO: sorting should depends on the source type
     // Sort by:
     // 1. category
     // 2. position
@@ -28,22 +28,34 @@ const sortItems = (itemsList: Item[]) => {
             }
             return compareNumbers(a.position, b.position);
         }
-        return compareNumbers(a.category, b.category);
+        return compareStrings(a.category, b.category);
     });
 };
 
-const splitIntoCategories = (fileData: any[], source: string, itemType: string): ItemCategory[] => {
+const splitIntoCategories = (fileData: Item[], source: string, itemType: string): ItemCategory[] => {
     // Create each category needed by the specified source
-    // Use string as category identifier to prevent automatic ordering of Object.values() and add an "_" in front of
-    // every category
+    // add an "_" in front of every category to prevent automatic ordering of Object.values()
     let categories: { [category: string]: ItemCategory } = {};
 
     for (let category of sources[source].categories) {
-        categories["_" + category.toString()] = {
+        // Parse the category name/displayed name based on the typeof
+        let categoryName;
+        let displayedName;
+        if (typeof category === "object") {
+            categoryName = category.name;
+            // Custom name for the category
+            displayedName = category.displayed_name;
+        } else {
+            categoryName = category;
+            // Default name format for the source
+            displayedName = sources[source].categories_name_format.toString().replace("%s", category)
+        }
+
+        categories["_" + categoryName] = {
             items: [],
             itemsType: itemType,
             showUserProgress: true,
-            headerText: sources[source].categories_name_format.toString().replace("%d", category.toString())
+            headerText: displayedName
         };
     }
 
@@ -52,12 +64,12 @@ const splitIntoCategories = (fileData: any[], source: string, itemType: string):
         items: [],
         itemsType: itemType,
         showUserProgress: true,
-        headerText: "Other items"
+        headerText: "Not listed"
     };
 
     // Fill each category with items
     for (let item of fileData) {
-        const categoryIndex = (item.category ? item.category : OTHER_CATEGORY).toString();
+        const categoryIndex = (item.category ? item.category : OTHER_CATEGORY);
         let category = categories["_" + categoryIndex];
         if (category) {
             // Default SRS
@@ -81,20 +93,43 @@ const splitIntoCategories = (fileData: any[], source: string, itemType: string):
     return data;
 };
 
-const mergeWithWKData = (fileData: any, wkFileData: Item[]) => {
+const jishoUrlForItem = (name: string, type: string) => {
+    if (type == "kanji") {
+        return "https://jisho.org/search/" + name + "%20%23kanji";
+    } else if (type == "vocabulary") {
+        return "https://jisho.org/word/" + name;
+    }
+    return "https://jisho.org/search/" + name;
+};
+
+const mergeWithWKData = (fileData: ItemsHashMap, wkFileData: Item[], itemType: string) => {
     let data = wkFileData;
 
     for (const index in data) {
         let item = data[index];
-        if (fileData[item.name]) {
-            // Update category
-            item.category = fileData[item.name]
-        } else {
+
+        // Check for missing item
+        if (!fileData[item.name]) {
             // Remove category
             item.category = undefined;
+        } else {
+            // Update item
+            item = {...item, ...fileData[item.name]};
+            delete fileData[item.name];
         }
+
         data[index] = item;
     }
+
+    // Add all items present in the data but not in WK (and set some defaults for them
+    for (const item of Object.values(fileData)) {
+        data.push({
+            ...item,
+            characters: item.name,
+            url: jishoUrlForItem(item.name, itemType)
+        });
+    }
+
     return data;
 };
 
@@ -115,25 +150,20 @@ export const getItems = (source: string, type: string): ItemCategory[] | null =>
     }
 
     // Read the corresponding file depending on the source type and merge it with the WaniKani data
-    let fileData;
-    let wkFileData = readWaniKaniFile(type);
+    let fileData: ItemsHashMap | null = null;
+    let wkFileData: Item[] = readWaniKaniFile(type);
+    let mergedData: Item[];
     if (source === "wanikani") {
-        fileData = wkFileData;
+        mergedData = wkFileData;
     } else {
-        if (source === "jlpt") {
-            fileData = readJLPTFile(type);
-        }
-
-        if (!fileData) {
-            return null;
-        }
+        fileData = readFile(type, source);
 
         // Merge with WK data
-        fileData = mergeWithWKData(fileData, wkFileData);
+        mergedData = mergeWithWKData(fileData, wkFileData, type);
     }
 
     // And split the file into categories based on source_types.json
-    const data = splitIntoCategories(fileData, source, type);
+    const data = splitIntoCategories(mergedData, source, type);
 
     itemsCache[label] = data;
     return data;

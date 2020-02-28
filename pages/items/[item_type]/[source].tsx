@@ -150,15 +150,18 @@ function ItemPage(props: ItemPageProps) {
      */
     const displayItemListProgressively = () => {
         // Inspired by: https://itnext.io/handling-large-lists-and-tables-in-react-238397854625
-        if (apiResults && !apiResults.fetching && !apiResults.error) {
-            const apiLength = apiResults.data.length;
+        // setTimeout put the function at the end of the calling stack
+        setTimeout(() => {
+            if (apiResults && !apiResults.fetching && !apiResults.error) {
+                const apiLength = apiResults.data.length;
 
-            if (displayedDataLength < apiLength) {
-                // Load data by chunk of 1 category
-                const newLength = Math.min(apiLength, displayedDataLength + 1);
-                setDisplayedDataLength(newLength);
+                if (displayedDataLength < apiLength) {
+                    // Load data by chunk of 1 category
+                    const newLength = Math.min(apiLength, displayedDataLength + 1);
+                    setDisplayedDataLength(newLength);
+                }
             }
-        }
+        }, 0);
     };
 
     useEffect(() => {
@@ -252,13 +255,13 @@ function ItemPage(props: ItemPageProps) {
                 <CircularProgress className={classes.fetching} disableShrink/>
             )}
 
-            {apiResults && apiResults.data && !apiResults.error && !apiResults.fetching && (
-                <List className={classes.list} disablePadding dense key={apiLabel}>
-                    {apiResults.data.map((data: ItemCategory, index: number) => {
+            <List className={classes.list} disablePadding dense key={apiLabel}>
+                {apiResults && apiResults.data && !apiResults.error && !apiResults.fetching && (
+                    apiResults.data.map((data: ItemCategory, index: number) => {
                         return categoryComponent(data, index)
-                    })}
-                </List>
-            )}
+                    })
+                )}
+            </List>
         </PageContent>
     );
 }

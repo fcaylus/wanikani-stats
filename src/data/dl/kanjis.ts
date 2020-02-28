@@ -14,7 +14,7 @@ export default async (apiKey: string): Promise<Item[] | null> => {
                 list.push({
                     name: kanji.data.slug,
                     characters: kanji.data.characters,
-                    category: kanji.data.level,
+                    category: kanji.data.level.toString(),
                     position: kanji.data.lesson_position,
                     subPosition: kanji.id,
                     url: kanji.data.document_url,

@@ -1,7 +1,7 @@
-## dl
+### ```dl```
 
 Files in this directory allow to download subjects data (radicals, kanjis, vocabularies) from WaniKani API.
-The download the data at runtime to avoid copyright issues, ie. we can't simply dump WaniKani database in a public repository ...
+The app downloads the data at runtime to avoid copyright issues, ie. we can't simply dump WaniKani database in a public repository ...
 
 The files are downloaded once and then saved to a temporary directory.
 

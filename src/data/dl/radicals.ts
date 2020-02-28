@@ -27,7 +27,7 @@ export default async (apiKey: string): Promise<Item[] | null> => {
                     name: radical.data.slug,
                     image: findRadicalImageUrl(radical),
                     characters: radical.data.characters ? radical.data.characters : undefined,
-                    category: radical.data.level,
+                    category: radical.data.level.toString(),
                     position: radical.data.lesson_position,
                     subPosition: radical.id,
                     url: radical.data.document_url,
