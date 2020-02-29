@@ -18,7 +18,8 @@
   "vocabulary": {
     "display_name": "Vocabularies",
     "sources": [
-      "wanikani"
+      "wanikani",
+      "jlpt"
     ]
   }
 }

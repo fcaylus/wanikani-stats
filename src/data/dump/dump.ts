@@ -1,3 +1,4 @@
+import dumpVocabularies from "./dumpVocabularies";
 import dumpKanjis from "./dumpKanjis";
 
 /**
@@ -6,4 +7,8 @@ import dumpKanjis from "./dumpKanjis";
 
 console.log("Kanjis:");
 dumpKanjis();
+
+console.log("Vocabularies:");
+dumpVocabularies();
+
 
