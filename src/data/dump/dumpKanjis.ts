@@ -6,7 +6,8 @@ import cheerio from "cheerio";
 interface DumpSource {
     source: string,
     url: string,
-    categoryFromHeader: (header: string) => string;
+    // If it returns undefined, the string wasn't found
+    categoryFromHeader: (header: string) => string | undefined;
 }
 
 const dumpSources: DumpSource[] = [
@@ -14,20 +15,23 @@ const dumpSources: DumpSource[] = [
         source: "jlpt",
         url: "http://wkw.natural20design.com/order.php?order=jlpt-ordered-by-heisig",
         categoryFromHeader: (header: string) => {
-            return header.replace("JLPT N", "").replace(":", "").trim();
+            return header.startsWith("#") ? undefined : header.replace("JLPT N", "").replace(":", "").trim();
         }
     },
     {
         source: "kanken",
         url: "http://wkw.natural20design.com/order.php?order=kanken-ordered-by-heisig",
         categoryFromHeader: (header: string) => {
-            return header.replace("Kanken Level ", "").replace(":", "").trim()
+            return header.startsWith("#") ? undefined : header.replace("Kanken Level ", "").replace(":", "").trim()
         }
     },
     {
         source: "joyo",
         url: "http://wkw.natural20design.com/order.php?order=jouyou-ordered-by-heisig",
         categoryFromHeader: (header: string) => {
+            if (header.startsWith("#")) {
+                return undefined;
+            }
             if (header.includes("Secondary")) {
                 return "7";
             }
@@ -36,6 +40,13 @@ const dumpSources: DumpSource[] = [
                 .replace("nd", "")
                 .replace("rd", "")
                 .replace("th", "").trim();
+        }
+    },
+    {
+        source: "frequency",
+        url: "http://wkw.natural20design.com/order.php?order=frequency",
+        categoryFromHeader: (header: string) => {
+            return header.startsWith("#") && header.includes("-") ? header.split("-")[1].trim() : undefined;
         }
     }
 ];
@@ -59,14 +70,20 @@ export default async () => {
             if (!line || line.length == 0) {
                 continue;
             }
-            if (line.startsWith("Source") || line.startsWith("#")) {
+            if (line.startsWith("Source")) {
                 continue;
             }
 
-            if (line.includes(":")) {
-                currentCategory = dumpSource.categoryFromHeader(line);
+            if (line.includes(":") || line.startsWith("#")) {
+                const category = dumpSource.categoryFromHeader(line);
+                if (!category) {
+                    continue;
+                }
+                currentCategory = category;
                 currentPosition = 0;
             } else {
+                // Remove all spaces from the line
+                line = line.replace(/\s+/g, '');
                 const characters = line.split("");
                 for (const character of characters) {
                     currentPosition += 1;

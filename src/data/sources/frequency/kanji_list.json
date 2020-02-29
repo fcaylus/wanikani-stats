@@ -1,0 +1,12507 @@
+{
+  "日": {
+    "name": "日",
+    "category": "250",
+    "position": 1
+  },
+  "一": {
+    "name": "一",
+    "category": "250",
+    "position": 2
+  },
+  "国": {
+    "name": "国",
+    "category": "250",
+    "position": 3
+  },
+  "会": {
+    "name": "会",
+    "category": "250",
+    "position": 4
+  },
+  "人": {
+    "name": "人",
+    "category": "250",
+    "position": 5
+  },
+  "年": {
+    "name": "年",
+    "category": "250",
+    "position": 6
+  },
+  "大": {
+    "name": "大",
+    "category": "250",
+    "position": 7
+  },
+  "十": {
+    "name": "十",
+    "category": "250",
+    "position": 8
+  },
+  "二": {
+    "name": "二",
+    "category": "250",
+    "position": 9
+  },
+  "本": {
+    "name": "本",
+    "category": "250",
+    "position": 10
+  },
+  "中": {
+    "name": "中",
+    "category": "250",
+    "position": 11
+  },
+  "長": {
+    "name": "長",
+    "category": "250",
+    "position": 12
+  },
+  "出": {
+    "name": "出",
+    "category": "250",
+    "position": 13
+  },
+  "三": {
+    "name": "三",
+    "category": "250",
+    "position": 14
+  },
+  "同": {
+    "name": "同",
+    "category": "250",
+    "position": 15
+  },
+  "時": {
+    "name": "時",
+    "category": "250",
+    "position": 16
+  },
+  "政": {
+    "name": "政",
+    "category": "250",
+    "position": 17
+  },
+  "事": {
+    "name": "事",
+    "category": "250",
+    "position": 18
+  },
+  "自": {
+    "name": "自",
+    "category": "250",
+    "position": 19
+  },
+  "行": {
+    "name": "行",
+    "category": "250",
+    "position": 20
+  },
+  "社": {
+    "name": "社",
+    "category": "250",
+    "position": 21
+  },
+  "見": {
+    "name": "見",
+    "category": "250",
+    "position": 22
+  },
+  "月": {
+    "name": "月",
+    "category": "250",
+    "position": 23
+  },
+  "分": {
+    "name": "分",
+    "category": "250",
+    "position": 24
+  },
+  "議": {
+    "name": "議",
+    "category": "250",
+    "position": 25
+  },
+  "後": {
+    "name": "後",
+    "category": "250",
+    "position": 26
+  },
+  "前": {
+    "name": "前",
+    "category": "250",
+    "position": 27
+  },
+  "民": {
+    "name": "民",
+    "category": "250",
+    "position": 28
+  },
+  "生": {
+    "name": "生",
+    "category": "250",
+    "position": 29
+  },
+  "連": {
+    "name": "連",
+    "category": "250",
+    "position": 30
+  },
+  "五": {
+    "name": "五",
+    "category": "250",
+    "position": 31
+  },
+  "発": {
+    "name": "発",
+    "category": "250",
+    "position": 32
+  },
+  "間": {
+    "name": "間",
+    "category": "250",
+    "position": 33
+  },
+  "対": {
+    "name": "対",
+    "category": "250",
+    "position": 34
+  },
+  "上": {
+    "name": "上",
+    "category": "250",
+    "position": 35
+  },
+  "部": {
+    "name": "部",
+    "category": "250",
+    "position": 36
+  },
+  "東": {
+    "name": "東",
+    "category": "250",
+    "position": 37
+  },
+  "者": {
+    "name": "者",
+    "category": "250",
+    "position": 38
+  },
+  "党": {
+    "name": "党",
+    "category": "250",
+    "position": 39
+  },
+  "地": {
+    "name": "地",
+    "category": "250",
+    "position": 40
+  },
+  "合": {
+    "name": "合",
+    "category": "250",
+    "position": 41
+  },
+  "市": {
+    "name": "市",
+    "category": "250",
+    "position": 42
+  },
+  "業": {
+    "name": "業",
+    "category": "250",
+    "position": 43
+  },
+  "内": {
+    "name": "内",
+    "category": "250",
+    "position": 44
+  },
+  "相": {
+    "name": "相",
+    "category": "250",
+    "position": 45
+  },
+  "方": {
+    "name": "方",
+    "category": "250",
+    "position": 46
+  },
+  "四": {
+    "name": "四",
+    "category": "250",
+    "position": 47
+  },
+  "定": {
+    "name": "定",
+    "category": "250",
+    "position": 48
+  },
+  "今": {
+    "name": "今",
+    "category": "250",
+    "position": 49
+  },
+  "回": {
+    "name": "回",
+    "category": "250",
+    "position": 50
+  },
+  "新": {
+    "name": "新",
+    "category": "250",
+    "position": 51
+  },
+  "場": {
+    "name": "場",
+    "category": "250",
+    "position": 52
+  },
+  "金": {
+    "name": "金",
+    "category": "250",
+    "position": 53
+  },
+  "員": {
+    "name": "員",
+    "category": "250",
+    "position": 54
+  },
+  "九": {
+    "name": "九",
+    "category": "250",
+    "position": 55
+  },
+  "入": {
+    "name": "入",
+    "category": "250",
+    "position": 56
+  },
+  "選": {
+    "name": "選",
+    "category": "250",
+    "position": 57
+  },
+  "立": {
+    "name": "立",
+    "category": "250",
+    "position": 58
+  },
+  "開": {
+    "name": "開",
+    "category": "250",
+    "position": 59
+  },
+  "手": {
+    "name": "手",
+    "category": "250",
+    "position": 60
+  },
+  "米": {
+    "name": "米",
+    "category": "250",
+    "position": 61
+  },
+  "力": {
+    "name": "力",
+    "category": "250",
+    "position": 62
+  },
+  "学": {
+    "name": "学",
+    "category": "250",
+    "position": 63
+  },
+  "問": {
+    "name": "問",
+    "category": "250",
+    "position": 64
+  },
+  "高": {
+    "name": "高",
+    "category": "250",
+    "position": 65
+  },
+  "代": {
+    "name": "代",
+    "category": "250",
+    "position": 66
+  },
+  "明": {
+    "name": "明",
+    "category": "250",
+    "position": 67
+  },
+  "実": {
+    "name": "実",
+    "category": "250",
+    "position": 68
+  },
+  "円": {
+    "name": "円",
+    "category": "250",
+    "position": 69
+  },
+  "関": {
+    "name": "関",
+    "category": "250",
+    "position": 70
+  },
+  "決": {
+    "name": "決",
+    "category": "250",
+    "position": 71
+  },
+  "子": {
+    "name": "子",
+    "category": "250",
+    "position": 72
+  },
+  "動": {
+    "name": "動",
+    "category": "250",
+    "position": 73
+  },
+  "京": {
+    "name": "京",
+    "category": "250",
+    "position": 74
+  },
+  "全": {
+    "name": "全",
+    "category": "250",
+    "position": 75
+  },
+  "目": {
+    "name": "目",
+    "category": "250",
+    "position": 76
+  },
+  "表": {
+    "name": "表",
+    "category": "250",
+    "position": 77
+  },
+  "戦": {
+    "name": "戦",
+    "category": "250",
+    "position": 78
+  },
+  "経": {
+    "name": "経",
+    "category": "250",
+    "position": 79
+  },
+  "通": {
+    "name": "通",
+    "category": "250",
+    "position": 80
+  },
+  "外": {
+    "name": "外",
+    "category": "250",
+    "position": 81
+  },
+  "最": {
+    "name": "最",
+    "category": "250",
+    "position": 82
+  },
+  "言": {
+    "name": "言",
+    "category": "250",
+    "position": 83
+  },
+  "氏": {
+    "name": "氏",
+    "category": "250",
+    "position": 84
+  },
+  "現": {
+    "name": "現",
+    "category": "250",
+    "position": 85
+  },
+  "理": {
+    "name": "理",
+    "category": "250",
+    "position": 86
+  },
+  "調": {
+    "name": "調",
+    "category": "250",
+    "position": 87
+  },
+  "体": {
+    "name": "体",
+    "category": "250",
+    "position": 88
+  },
+  "化": {
+    "name": "化",
+    "category": "250",
+    "position": 89
+  },
+  "田": {
+    "name": "田",
+    "category": "250",
+    "position": 90
+  },
+  "当": {
+    "name": "当",
+    "category": "250",
+    "position": 91
+  },
+  "八": {
+    "name": "八",
+    "category": "250",
+    "position": 92
+  },
+  "六": {
+    "name": "六",
+    "category": "250",
+    "position": 93
+  },
+  "約": {
+    "name": "約",
+    "category": "250",
+    "position": 94
+  },
+  "主": {
+    "name": "主",
+    "category": "250",
+    "position": 95
+  },
+  "題": {
+    "name": "題",
+    "category": "250",
+    "position": 96
+  },
+  "下": {
+    "name": "下",
+    "category": "250",
+    "position": 97
+  },
+  "首": {
+    "name": "首",
+    "category": "250",
+    "position": 98
+  },
+  "意": {
+    "name": "意",
+    "category": "250",
+    "position": 99
+  },
+  "法": {
+    "name": "法",
+    "category": "250",
+    "position": 100
+  },
+  "不": {
+    "name": "不",
+    "category": "250",
+    "position": 101
+  },
+  "来": {
+    "name": "来",
+    "category": "250",
+    "position": 102
+  },
+  "作": {
+    "name": "作",
+    "category": "250",
+    "position": 103
+  },
+  "性": {
+    "name": "性",
+    "category": "250",
+    "position": 104
+  },
+  "的": {
+    "name": "的",
+    "category": "250",
+    "position": 105
+  },
+  "要": {
+    "name": "要",
+    "category": "250",
+    "position": 106
+  },
+  "用": {
+    "name": "用",
+    "category": "250",
+    "position": 107
+  },
+  "制": {
+    "name": "制",
+    "category": "250",
+    "position": 108
+  },
+  "治": {
+    "name": "治",
+    "category": "250",
+    "position": 109
+  },
+  "度": {
+    "name": "度",
+    "category": "250",
+    "position": 110
+  },
+  "務": {
+    "name": "務",
+    "category": "250",
+    "position": 111
+  },
+  "強": {
+    "name": "強",
+    "category": "250",
+    "position": 112
+  },
+  "気": {
+    "name": "気",
+    "category": "250",
+    "position": 113
+  },
+  "小": {
+    "name": "小",
+    "category": "250",
+    "position": 114
+  },
+  "七": {
+    "name": "七",
+    "category": "250",
+    "position": 115
+  },
+  "成": {
+    "name": "成",
+    "category": "250",
+    "position": 116
+  },
+  "期": {
+    "name": "期",
+    "category": "250",
+    "position": 117
+  },
+  "公": {
+    "name": "公",
+    "category": "250",
+    "position": 118
+  },
+  "持": {
+    "name": "持",
+    "category": "250",
+    "position": 119
+  },
+  "野": {
+    "name": "野",
+    "category": "250",
+    "position": 120
+  },
+  "協": {
+    "name": "協",
+    "category": "250",
+    "position": 121
+  },
+  "取": {
+    "name": "取",
+    "category": "250",
+    "position": 122
+  },
+  "都": {
+    "name": "都",
+    "category": "250",
+    "position": 123
+  },
+  "和": {
+    "name": "和",
+    "category": "250",
+    "position": 124
+  },
+  "統": {
+    "name": "統",
+    "category": "250",
+    "position": 125
+  },
+  "以": {
+    "name": "以",
+    "category": "250",
+    "position": 126
+  },
+  "機": {
+    "name": "機",
+    "category": "250",
+    "position": 127
+  },
+  "平": {
+    "name": "平",
+    "category": "250",
+    "position": 128
+  },
+  "総": {
+    "name": "総",
+    "category": "250",
+    "position": 129
+  },
+  "加": {
+    "name": "加",
+    "category": "250",
+    "position": 130
+  },
+  "山": {
+    "name": "山",
+    "category": "250",
+    "position": 131
+  },
+  "思": {
+    "name": "思",
+    "category": "250",
+    "position": 132
+  },
+  "家": {
+    "name": "家",
+    "category": "250",
+    "position": 133
+  },
+  "話": {
+    "name": "話",
+    "category": "250",
+    "position": 134
+  },
+  "世": {
+    "name": "世",
+    "category": "250",
+    "position": 135
+  },
+  "受": {
+    "name": "受",
+    "category": "250",
+    "position": 136
+  },
+  "区": {
+    "name": "区",
+    "category": "250",
+    "position": 137
+  },
+  "領": {
+    "name": "領",
+    "category": "250",
+    "position": 138
+  },
+  "多": {
+    "name": "多",
+    "category": "250",
+    "position": 139
+  },
+  "県": {
+    "name": "県",
+    "category": "250",
+    "position": 140
+  },
+  "続": {
+    "name": "続",
+    "category": "250",
+    "position": 141
+  },
+  "進": {
+    "name": "進",
+    "category": "250",
+    "position": 142
+  },
+  "正": {
+    "name": "正",
+    "category": "250",
+    "position": 143
+  },
+  "安": {
+    "name": "安",
+    "category": "250",
+    "position": 144
+  },
+  "設": {
+    "name": "設",
+    "category": "250",
+    "position": 145
+  },
+  "保": {
+    "name": "保",
+    "category": "250",
+    "position": 146
+  },
+  "改": {
+    "name": "改",
+    "category": "250",
+    "position": 147
+  },
+  "数": {
+    "name": "数",
+    "category": "250",
+    "position": 148
+  },
+  "記": {
+    "name": "記",
+    "category": "250",
+    "position": 149
+  },
+  "院": {
+    "name": "院",
+    "category": "250",
+    "position": 150
+  },
+  "女": {
+    "name": "女",
+    "category": "250",
+    "position": 151
+  },
+  "初": {
+    "name": "初",
+    "category": "250",
+    "position": 152
+  },
+  "北": {
+    "name": "北",
+    "category": "250",
+    "position": 153
+  },
+  "午": {
+    "name": "午",
+    "category": "250",
+    "position": 154
+  },
+  "指": {
+    "name": "指",
+    "category": "250",
+    "position": 155
+  },
+  "権": {
+    "name": "権",
+    "category": "250",
+    "position": 156
+  },
+  "心": {
+    "name": "心",
+    "category": "250",
+    "position": 157
+  },
+  "界": {
+    "name": "界",
+    "category": "250",
+    "position": 158
+  },
+  "支": {
+    "name": "支",
+    "category": "250",
+    "position": 159
+  },
+  "第": {
+    "name": "第",
+    "category": "250",
+    "position": 160
+  },
+  "産": {
+    "name": "産",
+    "category": "250",
+    "position": 161
+  },
+  "結": {
+    "name": "結",
+    "category": "250",
+    "position": 162
+  },
+  "百": {
+    "name": "百",
+    "category": "250",
+    "position": 163
+  },
+  "派": {
+    "name": "派",
+    "category": "250",
+    "position": 164
+  },
+  "点": {
+    "name": "点",
+    "category": "250",
+    "position": 165
+  },
+  "教": {
+    "name": "教",
+    "category": "250",
+    "position": 166
+  },
+  "報": {
+    "name": "報",
+    "category": "250",
+    "position": 167
+  },
+  "済": {
+    "name": "済",
+    "category": "250",
+    "position": 168
+  },
+  "書": {
+    "name": "書",
+    "category": "250",
+    "position": 169
+  },
+  "府": {
+    "name": "府",
+    "category": "250",
+    "position": 170
+  },
+  "活": {
+    "name": "活",
+    "category": "250",
+    "position": 171
+  },
+  "原": {
+    "name": "原",
+    "category": "250",
+    "position": 172
+  },
+  "先": {
+    "name": "先",
+    "category": "250",
+    "position": 173
+  },
+  "共": {
+    "name": "共",
+    "category": "250",
+    "position": 174
+  },
+  "得": {
+    "name": "得",
+    "category": "250",
+    "position": 175
+  },
+  "解": {
+    "name": "解",
+    "category": "250",
+    "position": 176
+  },
+  "名": {
+    "name": "名",
+    "category": "250",
+    "position": 177
+  },
+  "交": {
+    "name": "交",
+    "category": "250",
+    "position": 178
+  },
+  "資": {
+    "name": "資",
+    "category": "250",
+    "position": 179
+  },
+  "予": {
+    "name": "予",
+    "category": "250",
+    "position": 180
+  },
+  "川": {
+    "name": "川",
+    "category": "250",
+    "position": 181
+  },
+  "向": {
+    "name": "向",
+    "category": "250",
+    "position": 182
+  },
+  "際": {
+    "name": "際",
+    "category": "250",
+    "position": 183
+  },
+  "査": {
+    "name": "査",
+    "category": "250",
+    "position": 184
+  },
+  "勝": {
+    "name": "勝",
+    "category": "250",
+    "position": 185
+  },
+  "面": {
+    "name": "面",
+    "category": "250",
+    "position": 186
+  },
+  "委": {
+    "name": "委",
+    "category": "250",
+    "position": 187
+  },
+  "告": {
+    "name": "告",
+    "category": "250",
+    "position": 188
+  },
+  "軍": {
+    "name": "軍",
+    "category": "250",
+    "position": 189
+  },
+  "文": {
+    "name": "文",
+    "category": "250",
+    "position": 190
+  },
+  "反": {
+    "name": "反",
+    "category": "250",
+    "position": 191
+  },
+  "元": {
+    "name": "元",
+    "category": "250",
+    "position": 192
+  },
+  "重": {
+    "name": "重",
+    "category": "250",
+    "position": 193
+  },
+  "近": {
+    "name": "近",
+    "category": "250",
+    "position": 194
+  },
+  "千": {
+    "name": "千",
+    "category": "250",
+    "position": 195
+  },
+  "考": {
+    "name": "考",
+    "category": "250",
+    "position": 196
+  },
+  "判": {
+    "name": "判",
+    "category": "250",
+    "position": 197
+  },
+  "認": {
+    "name": "認",
+    "category": "250",
+    "position": 198
+  },
+  "画": {
+    "name": "画",
+    "category": "250",
+    "position": 199
+  },
+  "海": {
+    "name": "海",
+    "category": "250",
+    "position": 200
+  },
+  "参": {
+    "name": "参",
+    "category": "250",
+    "position": 201
+  },
+  "売": {
+    "name": "売",
+    "category": "250",
+    "position": 202
+  },
+  "利": {
+    "name": "利",
+    "category": "250",
+    "position": 203
+  },
+  "組": {
+    "name": "組",
+    "category": "250",
+    "position": 204
+  },
+  "知": {
+    "name": "知",
+    "category": "250",
+    "position": 205
+  },
+  "案": {
+    "name": "案",
+    "category": "250",
+    "position": 206
+  },
+  "道": {
+    "name": "道",
+    "category": "250",
+    "position": 207
+  },
+  "信": {
+    "name": "信",
+    "category": "250",
+    "position": 208
+  },
+  "策": {
+    "name": "策",
+    "category": "250",
+    "position": 209
+  },
+  "集": {
+    "name": "集",
+    "category": "250",
+    "position": 210
+  },
+  "在": {
+    "name": "在",
+    "category": "250",
+    "position": 211
+  },
+  "件": {
+    "name": "件",
+    "category": "250",
+    "position": 212
+  },
+  "団": {
+    "name": "団",
+    "category": "250",
+    "position": 213
+  },
+  "別": {
+    "name": "別",
+    "category": "250",
+    "position": 214
+  },
+  "物": {
+    "name": "物",
+    "category": "250",
+    "position": 215
+  },
+  "側": {
+    "name": "側",
+    "category": "250",
+    "position": 216
+  },
+  "任": {
+    "name": "任",
+    "category": "250",
+    "position": 217
+  },
+  "引": {
+    "name": "引",
+    "category": "250",
+    "position": 218
+  },
+  "使": {
+    "name": "使",
+    "category": "250",
+    "position": 219
+  },
+  "求": {
+    "name": "求",
+    "category": "250",
+    "position": 220
+  },
+  "所": {
+    "name": "所",
+    "category": "250",
+    "position": 221
+  },
+  "次": {
+    "name": "次",
+    "category": "250",
+    "position": 222
+  },
+  "水": {
+    "name": "水",
+    "category": "250",
+    "position": 223
+  },
+  "半": {
+    "name": "半",
+    "category": "250",
+    "position": 224
+  },
+  "品": {
+    "name": "品",
+    "category": "250",
+    "position": 225
+  },
+  "昨": {
+    "name": "昨",
+    "category": "250",
+    "position": 226
+  },
+  "論": {
+    "name": "論",
+    "category": "250",
+    "position": 227
+  },
+  "計": {
+    "name": "計",
+    "category": "250",
+    "position": 228
+  },
+  "死": {
+    "name": "死",
+    "category": "250",
+    "position": 229
+  },
+  "官": {
+    "name": "官",
+    "category": "250",
+    "position": 230
+  },
+  "増": {
+    "name": "増",
+    "category": "250",
+    "position": 231
+  },
+  "係": {
+    "name": "係",
+    "category": "250",
+    "position": 232
+  },
+  "感": {
+    "name": "感",
+    "category": "250",
+    "position": 233
+  },
+  "特": {
+    "name": "特",
+    "category": "250",
+    "position": 234
+  },
+  "情": {
+    "name": "情",
+    "category": "250",
+    "position": 235
+  },
+  "投": {
+    "name": "投",
+    "category": "250",
+    "position": 236
+  },
+  "示": {
+    "name": "示",
+    "category": "250",
+    "position": 237
+  },
+  "変": {
+    "name": "変",
+    "category": "250",
+    "position": 238
+  },
+  "打": {
+    "name": "打",
+    "category": "250",
+    "position": 239
+  },
+  "男": {
+    "name": "男",
+    "category": "250",
+    "position": 240
+  },
+  "基": {
+    "name": "基",
+    "category": "250",
+    "position": 241
+  },
+  "私": {
+    "name": "私",
+    "category": "250",
+    "position": 242
+  },
+  "各": {
+    "name": "各",
+    "category": "250",
+    "position": 243
+  },
+  "始": {
+    "name": "始",
+    "category": "250",
+    "position": 244
+  },
+  "島": {
+    "name": "島",
+    "category": "250",
+    "position": 245
+  },
+  "直": {
+    "name": "直",
+    "category": "250",
+    "position": 246
+  },
+  "両": {
+    "name": "両",
+    "category": "250",
+    "position": 247
+  },
+  "朝": {
+    "name": "朝",
+    "category": "250",
+    "position": 248
+  },
+  "革": {
+    "name": "革",
+    "category": "250",
+    "position": 249
+  },
+  "価": {
+    "name": "価",
+    "category": "250",
+    "position": 250
+  },
+  "式": {
+    "name": "式",
+    "category": "500",
+    "position": 1
+  },
+  "確": {
+    "name": "確",
+    "category": "500",
+    "position": 2
+  },
+  "村": {
+    "name": "村",
+    "category": "500",
+    "position": 3
+  },
+  "提": {
+    "name": "提",
+    "category": "500",
+    "position": 4
+  },
+  "運": {
+    "name": "運",
+    "category": "500",
+    "position": 5
+  },
+  "終": {
+    "name": "終",
+    "category": "500",
+    "position": 6
+  },
+  "挙": {
+    "name": "挙",
+    "category": "500",
+    "position": 7
+  },
+  "果": {
+    "name": "果",
+    "category": "500",
+    "position": 8
+  },
+  "西": {
+    "name": "西",
+    "category": "500",
+    "position": 9
+  },
+  "勢": {
+    "name": "勢",
+    "category": "500",
+    "position": 10
+  },
+  "減": {
+    "name": "減",
+    "category": "500",
+    "position": 11
+  },
+  "台": {
+    "name": "台",
+    "category": "500",
+    "position": 12
+  },
+  "広": {
+    "name": "広",
+    "category": "500",
+    "position": 13
+  },
+  "容": {
+    "name": "容",
+    "category": "500",
+    "position": 14
+  },
+  "必": {
+    "name": "必",
+    "category": "500",
+    "position": 15
+  },
+  "応": {
+    "name": "応",
+    "category": "500",
+    "position": 16
+  },
+  "演": {
+    "name": "演",
+    "category": "500",
+    "position": 17
+  },
+  "電": {
+    "name": "電",
+    "category": "500",
+    "position": 18
+  },
+  "歳": {
+    "name": "歳",
+    "category": "500",
+    "position": 19
+  },
+  "住": {
+    "name": "住",
+    "category": "500",
+    "position": 20
+  },
+  "争": {
+    "name": "争",
+    "category": "500",
+    "position": 21
+  },
+  "談": {
+    "name": "談",
+    "category": "500",
+    "position": 22
+  },
+  "能": {
+    "name": "能",
+    "category": "500",
+    "position": 23
+  },
+  "無": {
+    "name": "無",
+    "category": "500",
+    "position": 24
+  },
+  "再": {
+    "name": "再",
+    "category": "500",
+    "position": 25
+  },
+  "位": {
+    "name": "位",
+    "category": "500",
+    "position": 26
+  },
+  "置": {
+    "name": "置",
+    "category": "500",
+    "position": 27
+  },
+  "企": {
+    "name": "企",
+    "category": "500",
+    "position": 28
+  },
+  "真": {
+    "name": "真",
+    "category": "500",
+    "position": 29
+  },
+  "流": {
+    "name": "流",
+    "category": "500",
+    "position": 30
+  },
+  "格": {
+    "name": "格",
+    "category": "500",
+    "position": 31
+  },
+  "有": {
+    "name": "有",
+    "category": "500",
+    "position": 32
+  },
+  "疑": {
+    "name": "疑",
+    "category": "500",
+    "position": 33
+  },
+  "口": {
+    "name": "口",
+    "category": "500",
+    "position": 34
+  },
+  "過": {
+    "name": "過",
+    "category": "500",
+    "position": 35
+  },
+  "局": {
+    "name": "局",
+    "category": "500",
+    "position": 36
+  },
+  "少": {
+    "name": "少",
+    "category": "500",
+    "position": 37
+  },
+  "放": {
+    "name": "放",
+    "category": "500",
+    "position": 38
+  },
+  "税": {
+    "name": "税",
+    "category": "500",
+    "position": 39
+  },
+  "検": {
+    "name": "検",
+    "category": "500",
+    "position": 40
+  },
+  "藤": {
+    "name": "藤",
+    "category": "500",
+    "position": 41
+  },
+  "町": {
+    "name": "町",
+    "category": "500",
+    "position": 42
+  },
+  "常": {
+    "name": "常",
+    "category": "500",
+    "position": 43
+  },
+  "校": {
+    "name": "校",
+    "category": "500",
+    "position": 44
+  },
+  "料": {
+    "name": "料",
+    "category": "500",
+    "position": 45
+  },
+  "沢": {
+    "name": "沢",
+    "category": "500",
+    "position": 46
+  },
+  "裁": {
+    "name": "裁",
+    "category": "500",
+    "position": 47
+  },
+  "状": {
+    "name": "状",
+    "category": "500",
+    "position": 48
+  },
+  "工": {
+    "name": "工",
+    "category": "500",
+    "position": 49
+  },
+  "建": {
+    "name": "建",
+    "category": "500",
+    "position": 50
+  },
+  "語": {
+    "name": "語",
+    "category": "500",
+    "position": 51
+  },
+  "球": {
+    "name": "球",
+    "category": "500",
+    "position": 52
+  },
+  "営": {
+    "name": "営",
+    "category": "500",
+    "position": 53
+  },
+  "空": {
+    "name": "空",
+    "category": "500",
+    "position": 54
+  },
+  "職": {
+    "name": "職",
+    "category": "500",
+    "position": 55
+  },
+  "証": {
+    "name": "証",
+    "category": "500",
+    "position": 56
+  },
+  "土": {
+    "name": "土",
+    "category": "500",
+    "position": 57
+  },
+  "与": {
+    "name": "与",
+    "category": "500",
+    "position": 58
+  },
+  "急": {
+    "name": "急",
+    "category": "500",
+    "position": 59
+  },
+  "止": {
+    "name": "止",
+    "category": "500",
+    "position": 60
+  },
+  "送": {
+    "name": "送",
+    "category": "500",
+    "position": 61
+  },
+  "援": {
+    "name": "援",
+    "category": "500",
+    "position": 62
+  },
+  "供": {
+    "name": "供",
+    "category": "500",
+    "position": 63
+  },
+  "可": {
+    "name": "可",
+    "category": "500",
+    "position": 64
+  },
+  "役": {
+    "name": "役",
+    "category": "500",
+    "position": 65
+  },
+  "構": {
+    "name": "構",
+    "category": "500",
+    "position": 66
+  },
+  "木": {
+    "name": "木",
+    "category": "500",
+    "position": 67
+  },
+  "割": {
+    "name": "割",
+    "category": "500",
+    "position": 68
+  },
+  "聞": {
+    "name": "聞",
+    "category": "500",
+    "position": 69
+  },
+  "身": {
+    "name": "身",
+    "category": "500",
+    "position": 70
+  },
+  "費": {
+    "name": "費",
+    "category": "500",
+    "position": 71
+  },
+  "付": {
+    "name": "付",
+    "category": "500",
+    "position": 72
+  },
+  "施": {
+    "name": "施",
+    "category": "500",
+    "position": 73
+  },
+  "切": {
+    "name": "切",
+    "category": "500",
+    "position": 74
+  },
+  "由": {
+    "name": "由",
+    "category": "500",
+    "position": 75
+  },
+  "説": {
+    "name": "説",
+    "category": "500",
+    "position": 76
+  },
+  "転": {
+    "name": "転",
+    "category": "500",
+    "position": 77
+  },
+  "食": {
+    "name": "食",
+    "category": "500",
+    "position": 78
+  },
+  "比": {
+    "name": "比",
+    "category": "500",
+    "position": 79
+  },
+  "難": {
+    "name": "難",
+    "category": "500",
+    "position": 80
+  },
+  "防": {
+    "name": "防",
+    "category": "500",
+    "position": 81
+  },
+  "補": {
+    "name": "補",
+    "category": "500",
+    "position": 82
+  },
+  "車": {
+    "name": "車",
+    "category": "500",
+    "position": 83
+  },
+  "優": {
+    "name": "優",
+    "category": "500",
+    "position": 84
+  },
+  "夫": {
+    "name": "夫",
+    "category": "500",
+    "position": 85
+  },
+  "研": {
+    "name": "研",
+    "category": "500",
+    "position": 86
+  },
+  "収": {
+    "name": "収",
+    "category": "500",
+    "position": 87
+  },
+  "断": {
+    "name": "断",
+    "category": "500",
+    "position": 88
+  },
+  "井": {
+    "name": "井",
+    "category": "500",
+    "position": 89
+  },
+  "何": {
+    "name": "何",
+    "category": "500",
+    "position": 90
+  },
+  "南": {
+    "name": "南",
+    "category": "500",
+    "position": 91
+  },
+  "石": {
+    "name": "石",
+    "category": "500",
+    "position": 92
+  },
+  "足": {
+    "name": "足",
+    "category": "500",
+    "position": 93
+  },
+  "違": {
+    "name": "違",
+    "category": "500",
+    "position": 94
+  },
+  "消": {
+    "name": "消",
+    "category": "500",
+    "position": 95
+  },
+  "境": {
+    "name": "境",
+    "category": "500",
+    "position": 96
+  },
+  "神": {
+    "name": "神",
+    "category": "500",
+    "position": 97
+  },
+  "番": {
+    "name": "番",
+    "category": "500",
+    "position": 98
+  },
+  "規": {
+    "name": "規",
+    "category": "500",
+    "position": 99
+  },
+  "術": {
+    "name": "術",
+    "category": "500",
+    "position": 100
+  },
+  "護": {
+    "name": "護",
+    "category": "500",
+    "position": 101
+  },
+  "展": {
+    "name": "展",
+    "category": "500",
+    "position": 102
+  },
+  "態": {
+    "name": "態",
+    "category": "500",
+    "position": 103
+  },
+  "導": {
+    "name": "導",
+    "category": "500",
+    "position": 104
+  },
+  "鮮": {
+    "name": "鮮",
+    "category": "500",
+    "position": 105
+  },
+  "備": {
+    "name": "備",
+    "category": "500",
+    "position": 106
+  },
+  "宅": {
+    "name": "宅",
+    "category": "500",
+    "position": 107
+  },
+  "害": {
+    "name": "害",
+    "category": "500",
+    "position": 108
+  },
+  "配": {
+    "name": "配",
+    "category": "500",
+    "position": 109
+  },
+  "副": {
+    "name": "副",
+    "category": "500",
+    "position": 110
+  },
+  "算": {
+    "name": "算",
+    "category": "500",
+    "position": 111
+  },
+  "視": {
+    "name": "視",
+    "category": "500",
+    "position": 112
+  },
+  "条": {
+    "name": "条",
+    "category": "500",
+    "position": 113
+  },
+  "幹": {
+    "name": "幹",
+    "category": "500",
+    "position": 114
+  },
+  "独": {
+    "name": "独",
+    "category": "500",
+    "position": 115
+  },
+  "警": {
+    "name": "警",
+    "category": "500",
+    "position": 116
+  },
+  "宮": {
+    "name": "宮",
+    "category": "500",
+    "position": 117
+  },
+  "究": {
+    "name": "究",
+    "category": "500",
+    "position": 118
+  },
+  "育": {
+    "name": "育",
+    "category": "500",
+    "position": 119
+  },
+  "席": {
+    "name": "席",
+    "category": "500",
+    "position": 120
+  },
+  "輸": {
+    "name": "輸",
+    "category": "500",
+    "position": 121
+  },
+  "訪": {
+    "name": "訪",
+    "category": "500",
+    "position": 122
+  },
+  "楽": {
+    "name": "楽",
+    "category": "500",
+    "position": 123
+  },
+  "起": {
+    "name": "起",
+    "category": "500",
+    "position": 124
+  },
+  "万": {
+    "name": "万",
+    "category": "500",
+    "position": 125
+  },
+  "着": {
+    "name": "着",
+    "category": "500",
+    "position": 126
+  },
+  "乗": {
+    "name": "乗",
+    "category": "500",
+    "position": 127
+  },
+  "店": {
+    "name": "店",
+    "category": "500",
+    "position": 128
+  },
+  "述": {
+    "name": "述",
+    "category": "500",
+    "position": 129
+  },
+  "残": {
+    "name": "残",
+    "category": "500",
+    "position": 130
+  },
+  "想": {
+    "name": "想",
+    "category": "500",
+    "position": 131
+  },
+  "線": {
+    "name": "線",
+    "category": "500",
+    "position": 132
+  },
+  "率": {
+    "name": "率",
+    "category": "500",
+    "position": 133
+  },
+  "病": {
+    "name": "病",
+    "category": "500",
+    "position": 134
+  },
+  "農": {
+    "name": "農",
+    "category": "500",
+    "position": 135
+  },
+  "州": {
+    "name": "州",
+    "category": "500",
+    "position": 136
+  },
+  "武": {
+    "name": "武",
+    "category": "500",
+    "position": 137
+  },
+  "声": {
+    "name": "声",
+    "category": "500",
+    "position": 138
+  },
+  "質": {
+    "name": "質",
+    "category": "500",
+    "position": 139
+  },
+  "念": {
+    "name": "念",
+    "category": "500",
+    "position": 140
+  },
+  "待": {
+    "name": "待",
+    "category": "500",
+    "position": 141
+  },
+  "試": {
+    "name": "試",
+    "category": "500",
+    "position": 142
+  },
+  "族": {
+    "name": "族",
+    "category": "500",
+    "position": 143
+  },
+  "象": {
+    "name": "象",
+    "category": "500",
+    "position": 144
+  },
+  "銀": {
+    "name": "銀",
+    "category": "500",
+    "position": 145
+  },
+  "域": {
+    "name": "域",
+    "category": "500",
+    "position": 146
+  },
+  "助": {
+    "name": "助",
+    "category": "500",
+    "position": 147
+  },
+  "労": {
+    "name": "労",
+    "category": "500",
+    "position": 148
+  },
+  "例": {
+    "name": "例",
+    "category": "500",
+    "position": 149
+  },
+  "衛": {
+    "name": "衛",
+    "category": "500",
+    "position": 150
+  },
+  "然": {
+    "name": "然",
+    "category": "500",
+    "position": 151
+  },
+  "早": {
+    "name": "早",
+    "category": "500",
+    "position": 152
+  },
+  "張": {
+    "name": "張",
+    "category": "500",
+    "position": 153
+  },
+  "映": {
+    "name": "映",
+    "category": "500",
+    "position": 154
+  },
+  "限": {
+    "name": "限",
+    "category": "500",
+    "position": 155
+  },
+  "親": {
+    "name": "親",
+    "category": "500",
+    "position": 156
+  },
+  "額": {
+    "name": "額",
+    "category": "500",
+    "position": 157
+  },
+  "監": {
+    "name": "監",
+    "category": "500",
+    "position": 158
+  },
+  "環": {
+    "name": "環",
+    "category": "500",
+    "position": 159
+  },
+  "験": {
+    "name": "験",
+    "category": "500",
+    "position": 160
+  },
+  "追": {
+    "name": "追",
+    "category": "500",
+    "position": 161
+  },
+  "審": {
+    "name": "審",
+    "category": "500",
+    "position": 162
+  },
+  "商": {
+    "name": "商",
+    "category": "500",
+    "position": 163
+  },
+  "葉": {
+    "name": "葉",
+    "category": "500",
+    "position": 164
+  },
+  "義": {
+    "name": "義",
+    "category": "500",
+    "position": 165
+  },
+  "伝": {
+    "name": "伝",
+    "category": "500",
+    "position": 166
+  },
+  "働": {
+    "name": "働",
+    "category": "500",
+    "position": 167
+  },
+  "形": {
+    "name": "形",
+    "category": "500",
+    "position": 168
+  },
+  "景": {
+    "name": "景",
+    "category": "500",
+    "position": 169
+  },
+  "落": {
+    "name": "落",
+    "category": "500",
+    "position": 170
+  },
+  "欧": {
+    "name": "欧",
+    "category": "500",
+    "position": 171
+  },
+  "担": {
+    "name": "担",
+    "category": "500",
+    "position": 172
+  },
+  "好": {
+    "name": "好",
+    "category": "500",
+    "position": 173
+  },
+  "退": {
+    "name": "退",
+    "category": "500",
+    "position": 174
+  },
+  "準": {
+    "name": "準",
+    "category": "500",
+    "position": 175
+  },
+  "賞": {
+    "name": "賞",
+    "category": "500",
+    "position": 176
+  },
+  "訴": {
+    "name": "訴",
+    "category": "500",
+    "position": 177
+  },
+  "辺": {
+    "name": "辺",
+    "category": "500",
+    "position": 178
+  },
+  "造": {
+    "name": "造",
+    "category": "500",
+    "position": 179
+  },
+  "英": {
+    "name": "英",
+    "category": "500",
+    "position": 180
+  },
+  "被": {
+    "name": "被",
+    "category": "500",
+    "position": 181
+  },
+  "株": {
+    "name": "株",
+    "category": "500",
+    "position": 182
+  },
+  "頭": {
+    "name": "頭",
+    "category": "500",
+    "position": 183
+  },
+  "技": {
+    "name": "技",
+    "category": "500",
+    "position": 184
+  },
+  "低": {
+    "name": "低",
+    "category": "500",
+    "position": 185
+  },
+  "毎": {
+    "name": "毎",
+    "category": "500",
+    "position": 186
+  },
+  "医": {
+    "name": "医",
+    "category": "500",
+    "position": 187
+  },
+  "復": {
+    "name": "復",
+    "category": "500",
+    "position": 188
+  },
+  "仕": {
+    "name": "仕",
+    "category": "500",
+    "position": 189
+  },
+  "去": {
+    "name": "去",
+    "category": "500",
+    "position": 190
+  },
+  "姿": {
+    "name": "姿",
+    "category": "500",
+    "position": 191
+  },
+  "味": {
+    "name": "味",
+    "category": "500",
+    "position": 192
+  },
+  "負": {
+    "name": "負",
+    "category": "500",
+    "position": 193
+  },
+  "閣": {
+    "name": "閣",
+    "category": "500",
+    "position": 194
+  },
+  "韓": {
+    "name": "韓",
+    "category": "500",
+    "position": 195
+  },
+  "渡": {
+    "name": "渡",
+    "category": "500",
+    "position": 196
+  },
+  "失": {
+    "name": "失",
+    "category": "500",
+    "position": 197
+  },
+  "移": {
+    "name": "移",
+    "category": "500",
+    "position": 198
+  },
+  "差": {
+    "name": "差",
+    "category": "500",
+    "position": 199
+  },
+  "衆": {
+    "name": "衆",
+    "category": "500",
+    "position": 200
+  },
+  "個": {
+    "name": "個",
+    "category": "500",
+    "position": 201
+  },
+  "門": {
+    "name": "門",
+    "category": "500",
+    "position": 202
+  },
+  "写": {
+    "name": "写",
+    "category": "500",
+    "position": 203
+  },
+  "評": {
+    "name": "評",
+    "category": "500",
+    "position": 204
+  },
+  "課": {
+    "name": "課",
+    "category": "500",
+    "position": 205
+  },
+  "末": {
+    "name": "末",
+    "category": "500",
+    "position": 206
+  },
+  "守": {
+    "name": "守",
+    "category": "500",
+    "position": 207
+  },
+  "若": {
+    "name": "若",
+    "category": "500",
+    "position": 208
+  },
+  "脳": {
+    "name": "脳",
+    "category": "500",
+    "position": 209
+  },
+  "極": {
+    "name": "極",
+    "category": "500",
+    "position": 210
+  },
+  "種": {
+    "name": "種",
+    "category": "500",
+    "position": 211
+  },
+  "美": {
+    "name": "美",
+    "category": "500",
+    "position": 212
+  },
+  "岡": {
+    "name": "岡",
+    "category": "500",
+    "position": 213
+  },
+  "影": {
+    "name": "影",
+    "category": "500",
+    "position": 214
+  },
+  "命": {
+    "name": "命",
+    "category": "500",
+    "position": 215
+  },
+  "含": {
+    "name": "含",
+    "category": "500",
+    "position": 216
+  },
+  "福": {
+    "name": "福",
+    "category": "500",
+    "position": 217
+  },
+  "蔵": {
+    "name": "蔵",
+    "category": "500",
+    "position": 218
+  },
+  "量": {
+    "name": "量",
+    "category": "500",
+    "position": 219
+  },
+  "望": {
+    "name": "望",
+    "category": "500",
+    "position": 220
+  },
+  "松": {
+    "name": "松",
+    "category": "500",
+    "position": 221
+  },
+  "非": {
+    "name": "非",
+    "category": "500",
+    "position": 222
+  },
+  "撃": {
+    "name": "撃",
+    "category": "500",
+    "position": 223
+  },
+  "佐": {
+    "name": "佐",
+    "category": "500",
+    "position": 224
+  },
+  "核": {
+    "name": "核",
+    "category": "500",
+    "position": 225
+  },
+  "観": {
+    "name": "観",
+    "category": "500",
+    "position": 226
+  },
+  "察": {
+    "name": "察",
+    "category": "500",
+    "position": 227
+  },
+  "整": {
+    "name": "整",
+    "category": "500",
+    "position": 228
+  },
+  "段": {
+    "name": "段",
+    "category": "500",
+    "position": 229
+  },
+  "横": {
+    "name": "横",
+    "category": "500",
+    "position": 230
+  },
+  "融": {
+    "name": "融",
+    "category": "500",
+    "position": 231
+  },
+  "型": {
+    "name": "型",
+    "category": "500",
+    "position": 232
+  },
+  "白": {
+    "name": "白",
+    "category": "500",
+    "position": 233
+  },
+  "深": {
+    "name": "深",
+    "category": "500",
+    "position": 234
+  },
+  "字": {
+    "name": "字",
+    "category": "500",
+    "position": 235
+  },
+  "答": {
+    "name": "答",
+    "category": "500",
+    "position": 236
+  },
+  "夜": {
+    "name": "夜",
+    "category": "500",
+    "position": 237
+  },
+  "製": {
+    "name": "製",
+    "category": "500",
+    "position": 238
+  },
+  "票": {
+    "name": "票",
+    "category": "500",
+    "position": 239
+  },
+  "況": {
+    "name": "況",
+    "category": "500",
+    "position": 240
+  },
+  "音": {
+    "name": "音",
+    "category": "500",
+    "position": 241
+  },
+  "申": {
+    "name": "申",
+    "category": "500",
+    "position": 242
+  },
+  "様": {
+    "name": "様",
+    "category": "500",
+    "position": 243
+  },
+  "財": {
+    "name": "財",
+    "category": "500",
+    "position": 244
+  },
+  "港": {
+    "name": "港",
+    "category": "500",
+    "position": 245
+  },
+  "識": {
+    "name": "識",
+    "category": "500",
+    "position": 246
+  },
+  "注": {
+    "name": "注",
+    "category": "500",
+    "position": 247
+  },
+  "呼": {
+    "name": "呼",
+    "category": "500",
+    "position": 248
+  },
+  "渉": {
+    "name": "渉",
+    "category": "500",
+    "position": 249
+  },
+  "達": {
+    "name": "達",
+    "category": "500",
+    "position": 250
+  },
+  "良": {
+    "name": "良",
+    "category": "750",
+    "position": 1
+  },
+  "響": {
+    "name": "響",
+    "category": "750",
+    "position": 2
+  },
+  "阪": {
+    "name": "阪",
+    "category": "750",
+    "position": 3
+  },
+  "帰": {
+    "name": "帰",
+    "category": "750",
+    "position": 4
+  },
+  "針": {
+    "name": "針",
+    "category": "750",
+    "position": 5
+  },
+  "専": {
+    "name": "専",
+    "category": "750",
+    "position": 6
+  },
+  "推": {
+    "name": "推",
+    "category": "750",
+    "position": 7
+  },
+  "谷": {
+    "name": "谷",
+    "category": "750",
+    "position": 8
+  },
+  "古": {
+    "name": "古",
+    "category": "750",
+    "position": 9
+  },
+  "候": {
+    "name": "候",
+    "category": "750",
+    "position": 10
+  },
+  "史": {
+    "name": "史",
+    "category": "750",
+    "position": 11
+  },
+  "天": {
+    "name": "天",
+    "category": "750",
+    "position": 12
+  },
+  "階": {
+    "name": "階",
+    "category": "750",
+    "position": 13
+  },
+  "程": {
+    "name": "程",
+    "category": "750",
+    "position": 14
+  },
+  "満": {
+    "name": "満",
+    "category": "750",
+    "position": 15
+  },
+  "敗": {
+    "name": "敗",
+    "category": "750",
+    "position": 16
+  },
+  "管": {
+    "name": "管",
+    "category": "750",
+    "position": 17
+  },
+  "値": {
+    "name": "値",
+    "category": "750",
+    "position": 18
+  },
+  "歌": {
+    "name": "歌",
+    "category": "750",
+    "position": 19
+  },
+  "買": {
+    "name": "買",
+    "category": "750",
+    "position": 20
+  },
+  "突": {
+    "name": "突",
+    "category": "750",
+    "position": 21
+  },
+  "兵": {
+    "name": "兵",
+    "category": "750",
+    "position": 22
+  },
+  "接": {
+    "name": "接",
+    "category": "750",
+    "position": 23
+  },
+  "請": {
+    "name": "請",
+    "category": "750",
+    "position": 24
+  },
+  "器": {
+    "name": "器",
+    "category": "750",
+    "position": 25
+  },
+  "士": {
+    "name": "士",
+    "category": "750",
+    "position": 26
+  },
+  "光": {
+    "name": "光",
+    "category": "750",
+    "position": 27
+  },
+  "討": {
+    "name": "討",
+    "category": "750",
+    "position": 28
+  },
+  "路": {
+    "name": "路",
+    "category": "750",
+    "position": 29
+  },
+  "悪": {
+    "name": "悪",
+    "category": "750",
+    "position": 30
+  },
+  "科": {
+    "name": "科",
+    "category": "750",
+    "position": 31
+  },
+  "攻": {
+    "name": "攻",
+    "category": "750",
+    "position": 32
+  },
+  "崎": {
+    "name": "崎",
+    "category": "750",
+    "position": 33
+  },
+  "督": {
+    "name": "督",
+    "category": "750",
+    "position": 34
+  },
+  "授": {
+    "name": "授",
+    "category": "750",
+    "position": 35
+  },
+  "催": {
+    "name": "催",
+    "category": "750",
+    "position": 36
+  },
+  "細": {
+    "name": "細",
+    "category": "750",
+    "position": 37
+  },
+  "効": {
+    "name": "効",
+    "category": "750",
+    "position": 38
+  },
+  "図": {
+    "name": "図",
+    "category": "750",
+    "position": 39
+  },
+  "週": {
+    "name": "週",
+    "category": "750",
+    "position": 40
+  },
+  "積": {
+    "name": "積",
+    "category": "750",
+    "position": 41
+  },
+  "丸": {
+    "name": "丸",
+    "category": "750",
+    "position": 42
+  },
+  "他": {
+    "name": "他",
+    "category": "750",
+    "position": 43
+  },
+  "及": {
+    "name": "及",
+    "category": "750",
+    "position": 44
+  },
+  "湾": {
+    "name": "湾",
+    "category": "750",
+    "position": 45
+  },
+  "録": {
+    "name": "録",
+    "category": "750",
+    "position": 46
+  },
+  "処": {
+    "name": "処",
+    "category": "750",
+    "position": 47
+  },
+  "省": {
+    "name": "省",
+    "category": "750",
+    "position": 48
+  },
+  "旧": {
+    "name": "旧",
+    "category": "750",
+    "position": 49
+  },
+  "室": {
+    "name": "室",
+    "category": "750",
+    "position": 50
+  },
+  "憲": {
+    "name": "憲",
+    "category": "750",
+    "position": 51
+  },
+  "太": {
+    "name": "太",
+    "category": "750",
+    "position": 52
+  },
+  "橋": {
+    "name": "橋",
+    "category": "750",
+    "position": 53
+  },
+  "歩": {
+    "name": "歩",
+    "category": "750",
+    "position": 54
+  },
+  "離": {
+    "name": "離",
+    "category": "750",
+    "position": 55
+  },
+  "岸": {
+    "name": "岸",
+    "category": "750",
+    "position": 56
+  },
+  "客": {
+    "name": "客",
+    "category": "750",
+    "position": 57
+  },
+  "風": {
+    "name": "風",
+    "category": "750",
+    "position": 58
+  },
+  "紙": {
+    "name": "紙",
+    "category": "750",
+    "position": 59
+  },
+  "激": {
+    "name": "激",
+    "category": "750",
+    "position": 60
+  },
+  "否": {
+    "name": "否",
+    "category": "750",
+    "position": 61
+  },
+  "周": {
+    "name": "周",
+    "category": "750",
+    "position": 62
+  },
+  "師": {
+    "name": "師",
+    "category": "750",
+    "position": 63
+  },
+  "摘": {
+    "name": "摘",
+    "category": "750",
+    "position": 64
+  },
+  "材": {
+    "name": "材",
+    "category": "750",
+    "position": 65
+  },
+  "登": {
+    "name": "登",
+    "category": "750",
+    "position": 66
+  },
+  "系": {
+    "name": "系",
+    "category": "750",
+    "position": 67
+  },
+  "批": {
+    "name": "批",
+    "category": "750",
+    "position": 68
+  },
+  "郎": {
+    "name": "郎",
+    "category": "750",
+    "position": 69
+  },
+  "母": {
+    "name": "母",
+    "category": "750",
+    "position": 70
+  },
+  "易": {
+    "name": "易",
+    "category": "750",
+    "position": 71
+  },
+  "健": {
+    "name": "健",
+    "category": "750",
+    "position": 72
+  },
+  "黒": {
+    "name": "黒",
+    "category": "750",
+    "position": 73
+  },
+  "火": {
+    "name": "火",
+    "category": "750",
+    "position": 74
+  },
+  "戸": {
+    "name": "戸",
+    "category": "750",
+    "position": 75
+  },
+  "速": {
+    "name": "速",
+    "category": "750",
+    "position": 76
+  },
+  "存": {
+    "name": "存",
+    "category": "750",
+    "position": 77
+  },
+  "花": {
+    "name": "花",
+    "category": "750",
+    "position": 78
+  },
+  "春": {
+    "name": "春",
+    "category": "750",
+    "position": 79
+  },
+  "飛": {
+    "name": "飛",
+    "category": "750",
+    "position": 80
+  },
+  "殺": {
+    "name": "殺",
+    "category": "750",
+    "position": 81
+  },
+  "央": {
+    "name": "央",
+    "category": "750",
+    "position": 82
+  },
+  "券": {
+    "name": "券",
+    "category": "750",
+    "position": 83
+  },
+  "赤": {
+    "name": "赤",
+    "category": "750",
+    "position": 84
+  },
+  "号": {
+    "name": "号",
+    "category": "750",
+    "position": 85
+  },
+  "単": {
+    "name": "単",
+    "category": "750",
+    "position": 86
+  },
+  "盟": {
+    "name": "盟",
+    "category": "750",
+    "position": 87
+  },
+  "座": {
+    "name": "座",
+    "category": "750",
+    "position": 88
+  },
+  "青": {
+    "name": "青",
+    "category": "750",
+    "position": 89
+  },
+  "破": {
+    "name": "破",
+    "category": "750",
+    "position": 90
+  },
+  "編": {
+    "name": "編",
+    "category": "750",
+    "position": 91
+  },
+  "捜": {
+    "name": "捜",
+    "category": "750",
+    "position": 92
+  },
+  "竹": {
+    "name": "竹",
+    "category": "750",
+    "position": 93
+  },
+  "除": {
+    "name": "除",
+    "category": "750",
+    "position": 94
+  },
+  "完": {
+    "name": "完",
+    "category": "750",
+    "position": 95
+  },
+  "降": {
+    "name": "降",
+    "category": "750",
+    "position": 96
+  },
+  "超": {
+    "name": "超",
+    "category": "750",
+    "position": 97
+  },
+  "責": {
+    "name": "責",
+    "category": "750",
+    "position": 98
+  },
+  "並": {
+    "name": "並",
+    "category": "750",
+    "position": 99
+  },
+  "療": {
+    "name": "療",
+    "category": "750",
+    "position": 100
+  },
+  "従": {
+    "name": "従",
+    "category": "750",
+    "position": 101
+  },
+  "右": {
+    "name": "右",
+    "category": "750",
+    "position": 102
+  },
+  "修": {
+    "name": "修",
+    "category": "750",
+    "position": 103
+  },
+  "捕": {
+    "name": "捕",
+    "category": "750",
+    "position": 104
+  },
+  "隊": {
+    "name": "隊",
+    "category": "750",
+    "position": 105
+  },
+  "危": {
+    "name": "危",
+    "category": "750",
+    "position": 106
+  },
+  "採": {
+    "name": "採",
+    "category": "750",
+    "position": 107
+  },
+  "織": {
+    "name": "織",
+    "category": "750",
+    "position": 108
+  },
+  "森": {
+    "name": "森",
+    "category": "750",
+    "position": 109
+  },
+  "競": {
+    "name": "競",
+    "category": "750",
+    "position": 110
+  },
+  "拡": {
+    "name": "拡",
+    "category": "750",
+    "position": 111
+  },
+  "故": {
+    "name": "故",
+    "category": "750",
+    "position": 112
+  },
+  "館": {
+    "name": "館",
+    "category": "750",
+    "position": 113
+  },
+  "振": {
+    "name": "振",
+    "category": "750",
+    "position": 114
+  },
+  "給": {
+    "name": "給",
+    "category": "750",
+    "position": 115
+  },
+  "屋": {
+    "name": "屋",
+    "category": "750",
+    "position": 116
+  },
+  "介": {
+    "name": "介",
+    "category": "750",
+    "position": 117
+  },
+  "読": {
+    "name": "読",
+    "category": "750",
+    "position": 118
+  },
+  "弁": {
+    "name": "弁",
+    "category": "750",
+    "position": 119
+  },
+  "根": {
+    "name": "根",
+    "category": "750",
+    "position": 120
+  },
+  "色": {
+    "name": "色",
+    "category": "750",
+    "position": 121
+  },
+  "友": {
+    "name": "友",
+    "category": "750",
+    "position": 122
+  },
+  "苦": {
+    "name": "苦",
+    "category": "750",
+    "position": 123
+  },
+  "就": {
+    "name": "就",
+    "category": "750",
+    "position": 124
+  },
+  "迎": {
+    "name": "迎",
+    "category": "750",
+    "position": 125
+  },
+  "走": {
+    "name": "走",
+    "category": "750",
+    "position": 126
+  },
+  "販": {
+    "name": "販",
+    "category": "750",
+    "position": 127
+  },
+  "園": {
+    "name": "園",
+    "category": "750",
+    "position": 128
+  },
+  "具": {
+    "name": "具",
+    "category": "750",
+    "position": 129
+  },
+  "左": {
+    "name": "左",
+    "category": "750",
+    "position": 130
+  },
+  "異": {
+    "name": "異",
+    "category": "750",
+    "position": 131
+  },
+  "歴": {
+    "name": "歴",
+    "category": "750",
+    "position": 132
+  },
+  "辞": {
+    "name": "辞",
+    "category": "750",
+    "position": 133
+  },
+  "将": {
+    "name": "将",
+    "category": "750",
+    "position": 134
+  },
+  "秋": {
+    "name": "秋",
+    "category": "750",
+    "position": 135
+  },
+  "因": {
+    "name": "因",
+    "category": "750",
+    "position": 136
+  },
+  "献": {
+    "name": "献",
+    "category": "750",
+    "position": 137
+  },
+  "厳": {
+    "name": "厳",
+    "category": "750",
+    "position": 138
+  },
+  "馬": {
+    "name": "馬",
+    "category": "750",
+    "position": 139
+  },
+  "愛": {
+    "name": "愛",
+    "category": "750",
+    "position": 140
+  },
+  "幅": {
+    "name": "幅",
+    "category": "750",
+    "position": 141
+  },
+  "休": {
+    "name": "休",
+    "category": "750",
+    "position": 142
+  },
+  "維": {
+    "name": "維",
+    "category": "750",
+    "position": 143
+  },
+  "富": {
+    "name": "富",
+    "category": "750",
+    "position": 144
+  },
+  "浜": {
+    "name": "浜",
+    "category": "750",
+    "position": 145
+  },
+  "父": {
+    "name": "父",
+    "category": "750",
+    "position": 146
+  },
+  "遺": {
+    "name": "遺",
+    "category": "750",
+    "position": 147
+  },
+  "彼": {
+    "name": "彼",
+    "category": "750",
+    "position": 148
+  },
+  "般": {
+    "name": "般",
+    "category": "750",
+    "position": 149
+  },
+  "未": {
+    "name": "未",
+    "category": "750",
+    "position": 150
+  },
+  "塁": {
+    "name": "塁",
+    "category": "750",
+    "position": 151
+  },
+  "貿": {
+    "name": "貿",
+    "category": "750",
+    "position": 152
+  },
+  "講": {
+    "name": "講",
+    "category": "750",
+    "position": 153
+  },
+  "邦": {
+    "name": "邦",
+    "category": "750",
+    "position": 154
+  },
+  "舞": {
+    "name": "舞",
+    "category": "750",
+    "position": 155
+  },
+  "林": {
+    "name": "林",
+    "category": "750",
+    "position": 156
+  },
+  "装": {
+    "name": "装",
+    "category": "750",
+    "position": 157
+  },
+  "諸": {
+    "name": "諸",
+    "category": "750",
+    "position": 158
+  },
+  "夏": {
+    "name": "夏",
+    "category": "750",
+    "position": 159
+  },
+  "素": {
+    "name": "素",
+    "category": "750",
+    "position": 160
+  },
+  "亡": {
+    "name": "亡",
+    "category": "750",
+    "position": 161
+  },
+  "劇": {
+    "name": "劇",
+    "category": "750",
+    "position": 162
+  },
+  "河": {
+    "name": "河",
+    "category": "750",
+    "position": 163
+  },
+  "遣": {
+    "name": "遣",
+    "category": "750",
+    "position": 164
+  },
+  "航": {
+    "name": "航",
+    "category": "750",
+    "position": 165
+  },
+  "抗": {
+    "name": "抗",
+    "category": "750",
+    "position": 166
+  },
+  "冷": {
+    "name": "冷",
+    "category": "750",
+    "position": 167
+  },
+  "模": {
+    "name": "模",
+    "category": "750",
+    "position": 168
+  },
+  "雄": {
+    "name": "雄",
+    "category": "750",
+    "position": 169
+  },
+  "適": {
+    "name": "適",
+    "category": "750",
+    "position": 170
+  },
+  "婦": {
+    "name": "婦",
+    "category": "750",
+    "position": 171
+  },
+  "鉄": {
+    "name": "鉄",
+    "category": "750",
+    "position": 172
+  },
+  "寄": {
+    "name": "寄",
+    "category": "750",
+    "position": 173
+  },
+  "益": {
+    "name": "益",
+    "category": "750",
+    "position": 174
+  },
+  "込": {
+    "name": "込",
+    "category": "750",
+    "position": 175
+  },
+  "顔": {
+    "name": "顔",
+    "category": "750",
+    "position": 176
+  },
+  "緊": {
+    "name": "緊",
+    "category": "750",
+    "position": 177
+  },
+  "類": {
+    "name": "類",
+    "category": "750",
+    "position": 178
+  },
+  "児": {
+    "name": "児",
+    "category": "750",
+    "position": 179
+  },
+  "余": {
+    "name": "余",
+    "category": "750",
+    "position": 180
+  },
+  "禁": {
+    "name": "禁",
+    "category": "750",
+    "position": 181
+  },
+  "印": {
+    "name": "印",
+    "category": "750",
+    "position": 182
+  },
+  "逆": {
+    "name": "逆",
+    "category": "750",
+    "position": 183
+  },
+  "王": {
+    "name": "王",
+    "category": "750",
+    "position": 184
+  },
+  "返": {
+    "name": "返",
+    "category": "750",
+    "position": 185
+  },
+  "標": {
+    "name": "標",
+    "category": "750",
+    "position": 186
+  },
+  "換": {
+    "name": "換",
+    "category": "750",
+    "position": 187
+  },
+  "久": {
+    "name": "久",
+    "category": "750",
+    "position": 188
+  },
+  "短": {
+    "name": "短",
+    "category": "750",
+    "position": 189
+  },
+  "油": {
+    "name": "油",
+    "category": "750",
+    "position": 190
+  },
+  "妻": {
+    "name": "妻",
+    "category": "750",
+    "position": 191
+  },
+  "暴": {
+    "name": "暴",
+    "category": "750",
+    "position": 192
+  },
+  "輪": {
+    "name": "輪",
+    "category": "750",
+    "position": 193
+  },
+  "占": {
+    "name": "占",
+    "category": "750",
+    "position": 194
+  },
+  "宣": {
+    "name": "宣",
+    "category": "750",
+    "position": 195
+  },
+  "背": {
+    "name": "背",
+    "category": "750",
+    "position": 196
+  },
+  "昭": {
+    "name": "昭",
+    "category": "750",
+    "position": 197
+  },
+  "廃": {
+    "name": "廃",
+    "category": "750",
+    "position": 198
+  },
+  "植": {
+    "name": "植",
+    "category": "750",
+    "position": 199
+  },
+  "熱": {
+    "name": "熱",
+    "category": "750",
+    "position": 200
+  },
+  "宿": {
+    "name": "宿",
+    "category": "750",
+    "position": 201
+  },
+  "薬": {
+    "name": "薬",
+    "category": "750",
+    "position": 202
+  },
+  "伊": {
+    "name": "伊",
+    "category": "750",
+    "position": 203
+  },
+  "江": {
+    "name": "江",
+    "category": "750",
+    "position": 204
+  },
+  "清": {
+    "name": "清",
+    "category": "750",
+    "position": 205
+  },
+  "習": {
+    "name": "習",
+    "category": "750",
+    "position": 206
+  },
+  "険": {
+    "name": "険",
+    "category": "750",
+    "position": 207
+  },
+  "頼": {
+    "name": "頼",
+    "category": "750",
+    "position": 208
+  },
+  "僚": {
+    "name": "僚",
+    "category": "750",
+    "position": 209
+  },
+  "覚": {
+    "name": "覚",
+    "category": "750",
+    "position": 210
+  },
+  "吉": {
+    "name": "吉",
+    "category": "750",
+    "position": 211
+  },
+  "盛": {
+    "name": "盛",
+    "category": "750",
+    "position": 212
+  },
+  "船": {
+    "name": "船",
+    "category": "750",
+    "position": 213
+  },
+  "倍": {
+    "name": "倍",
+    "category": "750",
+    "position": 214
+  },
+  "均": {
+    "name": "均",
+    "category": "750",
+    "position": 215
+  },
+  "億": {
+    "name": "億",
+    "category": "750",
+    "position": 216
+  },
+  "途": {
+    "name": "途",
+    "category": "750",
+    "position": 217
+  },
+  "圧": {
+    "name": "圧",
+    "category": "750",
+    "position": 218
+  },
+  "芸": {
+    "name": "芸",
+    "category": "750",
+    "position": 219
+  },
+  "許": {
+    "name": "許",
+    "category": "750",
+    "position": 220
+  },
+  "皇": {
+    "name": "皇",
+    "category": "750",
+    "position": 221
+  },
+  "臨": {
+    "name": "臨",
+    "category": "750",
+    "position": 222
+  },
+  "踏": {
+    "name": "踏",
+    "category": "750",
+    "position": 223
+  },
+  "駅": {
+    "name": "駅",
+    "category": "750",
+    "position": 224
+  },
+  "署": {
+    "name": "署",
+    "category": "750",
+    "position": 225
+  },
+  "抜": {
+    "name": "抜",
+    "category": "750",
+    "position": 226
+  },
+  "壊": {
+    "name": "壊",
+    "category": "750",
+    "position": 227
+  },
+  "債": {
+    "name": "債",
+    "category": "750",
+    "position": 228
+  },
+  "便": {
+    "name": "便",
+    "category": "750",
+    "position": 229
+  },
+  "伸": {
+    "name": "伸",
+    "category": "750",
+    "position": 230
+  },
+  "留": {
+    "name": "留",
+    "category": "750",
+    "position": 231
+  },
+  "罪": {
+    "name": "罪",
+    "category": "750",
+    "position": 232
+  },
+  "停": {
+    "name": "停",
+    "category": "750",
+    "position": 233
+  },
+  "興": {
+    "name": "興",
+    "category": "750",
+    "position": 234
+  },
+  "爆": {
+    "name": "爆",
+    "category": "750",
+    "position": 235
+  },
+  "陸": {
+    "name": "陸",
+    "category": "750",
+    "position": 236
+  },
+  "玉": {
+    "name": "玉",
+    "category": "750",
+    "position": 237
+  },
+  "源": {
+    "name": "源",
+    "category": "750",
+    "position": 238
+  },
+  "儀": {
+    "name": "儀",
+    "category": "750",
+    "position": 239
+  },
+  "波": {
+    "name": "波",
+    "category": "750",
+    "position": 240
+  },
+  "創": {
+    "name": "創",
+    "category": "750",
+    "position": 241
+  },
+  "障": {
+    "name": "障",
+    "category": "750",
+    "position": 242
+  },
+  "継": {
+    "name": "継",
+    "category": "750",
+    "position": 243
+  },
+  "筋": {
+    "name": "筋",
+    "category": "750",
+    "position": 244
+  },
+  "狙": {
+    "name": "狙",
+    "category": "750",
+    "position": 245
+  },
+  "帯": {
+    "name": "帯",
+    "category": "750",
+    "position": 246
+  },
+  "延": {
+    "name": "延",
+    "category": "750",
+    "position": 247
+  },
+  "羽": {
+    "name": "羽",
+    "category": "750",
+    "position": 248
+  },
+  "努": {
+    "name": "努",
+    "category": "750",
+    "position": 249
+  },
+  "固": {
+    "name": "固",
+    "category": "750",
+    "position": 250
+  },
+  "闘": {
+    "name": "闘",
+    "category": "1000",
+    "position": 1
+  },
+  "精": {
+    "name": "精",
+    "category": "1000",
+    "position": 2
+  },
+  "則": {
+    "name": "則",
+    "category": "1000",
+    "position": 3
+  },
+  "葬": {
+    "name": "葬",
+    "category": "1000",
+    "position": 4
+  },
+  "乱": {
+    "name": "乱",
+    "category": "1000",
+    "position": 5
+  },
+  "避": {
+    "name": "避",
+    "category": "1000",
+    "position": 6
+  },
+  "普": {
+    "name": "普",
+    "category": "1000",
+    "position": 7
+  },
+  "散": {
+    "name": "散",
+    "category": "1000",
+    "position": 8
+  },
+  "司": {
+    "name": "司",
+    "category": "1000",
+    "position": 9
+  },
+  "康": {
+    "name": "康",
+    "category": "1000",
+    "position": 10
+  },
+  "測": {
+    "name": "測",
+    "category": "1000",
+    "position": 11
+  },
+  "豊": {
+    "name": "豊",
+    "category": "1000",
+    "position": 12
+  },
+  "洋": {
+    "name": "洋",
+    "category": "1000",
+    "position": 13
+  },
+  "静": {
+    "name": "静",
+    "category": "1000",
+    "position": 14
+  },
+  "善": {
+    "name": "善",
+    "category": "1000",
+    "position": 15
+  },
+  "逮": {
+    "name": "逮",
+    "category": "1000",
+    "position": 16
+  },
+  "婚": {
+    "name": "婚",
+    "category": "1000",
+    "position": 17
+  },
+  "厚": {
+    "name": "厚",
+    "category": "1000",
+    "position": 18
+  },
+  "喜": {
+    "name": "喜",
+    "category": "1000",
+    "position": 19
+  },
+  "齢": {
+    "name": "齢",
+    "category": "1000",
+    "position": 20
+  },
+  "囲": {
+    "name": "囲",
+    "category": "1000",
+    "position": 21
+  },
+  "卒": {
+    "name": "卒",
+    "category": "1000",
+    "position": 22
+  },
+  "迫": {
+    "name": "迫",
+    "category": "1000",
+    "position": 23
+  },
+  "略": {
+    "name": "略",
+    "category": "1000",
+    "position": 24
+  },
+  "承": {
+    "name": "承",
+    "category": "1000",
+    "position": 25
+  },
+  "浮": {
+    "name": "浮",
+    "category": "1000",
+    "position": 26
+  },
+  "惑": {
+    "name": "惑",
+    "category": "1000",
+    "position": 27
+  },
+  "崩": {
+    "name": "崩",
+    "category": "1000",
+    "position": 28
+  },
+  "順": {
+    "name": "順",
+    "category": "1000",
+    "position": 29
+  },
+  "紀": {
+    "name": "紀",
+    "category": "1000",
+    "position": 30
+  },
+  "聴": {
+    "name": "聴",
+    "category": "1000",
+    "position": 31
+  },
+  "脱": {
+    "name": "脱",
+    "category": "1000",
+    "position": 32
+  },
+  "旅": {
+    "name": "旅",
+    "category": "1000",
+    "position": 33
+  },
+  "絶": {
+    "name": "絶",
+    "category": "1000",
+    "position": 34
+  },
+  "級": {
+    "name": "級",
+    "category": "1000",
+    "position": 35
+  },
+  "幸": {
+    "name": "幸",
+    "category": "1000",
+    "position": 36
+  },
+  "岩": {
+    "name": "岩",
+    "category": "1000",
+    "position": 37
+  },
+  "練": {
+    "name": "練",
+    "category": "1000",
+    "position": 38
+  },
+  "押": {
+    "name": "押",
+    "category": "1000",
+    "position": 39
+  },
+  "軽": {
+    "name": "軽",
+    "category": "1000",
+    "position": 40
+  },
+  "倒": {
+    "name": "倒",
+    "category": "1000",
+    "position": 41
+  },
+  "了": {
+    "name": "了",
+    "category": "1000",
+    "position": 42
+  },
+  "庁": {
+    "name": "庁",
+    "category": "1000",
+    "position": 43
+  },
+  "博": {
+    "name": "博",
+    "category": "1000",
+    "position": 44
+  },
+  "城": {
+    "name": "城",
+    "category": "1000",
+    "position": 45
+  },
+  "患": {
+    "name": "患",
+    "category": "1000",
+    "position": 46
+  },
+  "締": {
+    "name": "締",
+    "category": "1000",
+    "position": 47
+  },
+  "等": {
+    "name": "等",
+    "category": "1000",
+    "position": 48
+  },
+  "救": {
+    "name": "救",
+    "category": "1000",
+    "position": 49
+  },
+  "執": {
+    "name": "執",
+    "category": "1000",
+    "position": 50
+  },
+  "層": {
+    "name": "層",
+    "category": "1000",
+    "position": 51
+  },
+  "版": {
+    "name": "版",
+    "category": "1000",
+    "position": 52
+  },
+  "老": {
+    "name": "老",
+    "category": "1000",
+    "position": 53
+  },
+  "令": {
+    "name": "令",
+    "category": "1000",
+    "position": 54
+  },
+  "角": {
+    "name": "角",
+    "category": "1000",
+    "position": 55
+  },
+  "絡": {
+    "name": "絡",
+    "category": "1000",
+    "position": 56
+  },
+  "損": {
+    "name": "損",
+    "category": "1000",
+    "position": 57
+  },
+  "房": {
+    "name": "房",
+    "category": "1000",
+    "position": 58
+  },
+  "募": {
+    "name": "募",
+    "category": "1000",
+    "position": 59
+  },
+  "曲": {
+    "name": "曲",
+    "category": "1000",
+    "position": 60
+  },
+  "撤": {
+    "name": "撤",
+    "category": "1000",
+    "position": 61
+  },
+  "裏": {
+    "name": "裏",
+    "category": "1000",
+    "position": 62
+  },
+  "払": {
+    "name": "払",
+    "category": "1000",
+    "position": 63
+  },
+  "削": {
+    "name": "削",
+    "category": "1000",
+    "position": 64
+  },
+  "密": {
+    "name": "密",
+    "category": "1000",
+    "position": 65
+  },
+  "庭": {
+    "name": "庭",
+    "category": "1000",
+    "position": 66
+  },
+  "徒": {
+    "name": "徒",
+    "category": "1000",
+    "position": 67
+  },
+  "措": {
+    "name": "措",
+    "category": "1000",
+    "position": 68
+  },
+  "仏": {
+    "name": "仏",
+    "category": "1000",
+    "position": 69
+  },
+  "績": {
+    "name": "績",
+    "category": "1000",
+    "position": 70
+  },
+  "築": {
+    "name": "築",
+    "category": "1000",
+    "position": 71
+  },
+  "貨": {
+    "name": "貨",
+    "category": "1000",
+    "position": 72
+  },
+  "志": {
+    "name": "志",
+    "category": "1000",
+    "position": 73
+  },
+  "混": {
+    "name": "混",
+    "category": "1000",
+    "position": 74
+  },
+  "載": {
+    "name": "載",
+    "category": "1000",
+    "position": 75
+  },
+  "昇": {
+    "name": "昇",
+    "category": "1000",
+    "position": 76
+  },
+  "池": {
+    "name": "池",
+    "category": "1000",
+    "position": 77
+  },
+  "陣": {
+    "name": "陣",
+    "category": "1000",
+    "position": 78
+  },
+  "我": {
+    "name": "我",
+    "category": "1000",
+    "position": 79
+  },
+  "勤": {
+    "name": "勤",
+    "category": "1000",
+    "position": 80
+  },
+  "為": {
+    "name": "為",
+    "category": "1000",
+    "position": 81
+  },
+  "血": {
+    "name": "血",
+    "category": "1000",
+    "position": 82
+  },
+  "遅": {
+    "name": "遅",
+    "category": "1000",
+    "position": 83
+  },
+  "抑": {
+    "name": "抑",
+    "category": "1000",
+    "position": 84
+  },
+  "幕": {
+    "name": "幕",
+    "category": "1000",
+    "position": 85
+  },
+  "居": {
+    "name": "居",
+    "category": "1000",
+    "position": 86
+  },
+  "染": {
+    "name": "染",
+    "category": "1000",
+    "position": 87
+  },
+  "温": {
+    "name": "温",
+    "category": "1000",
+    "position": 88
+  },
+  "雑": {
+    "name": "雑",
+    "category": "1000",
+    "position": 89
+  },
+  "招": {
+    "name": "招",
+    "category": "1000",
+    "position": 90
+  },
+  "奈": {
+    "name": "奈",
+    "category": "1000",
+    "position": 91
+  },
+  "季": {
+    "name": "季",
+    "category": "1000",
+    "position": 92
+  },
+  "困": {
+    "name": "困",
+    "category": "1000",
+    "position": 93
+  },
+  "星": {
+    "name": "星",
+    "category": "1000",
+    "position": 94
+  },
+  "傷": {
+    "name": "傷",
+    "category": "1000",
+    "position": 95
+  },
+  "永": {
+    "name": "永",
+    "category": "1000",
+    "position": 96
+  },
+  "択": {
+    "name": "択",
+    "category": "1000",
+    "position": 97
+  },
+  "秀": {
+    "name": "秀",
+    "category": "1000",
+    "position": 98
+  },
+  "著": {
+    "name": "著",
+    "category": "1000",
+    "position": 99
+  },
+  "徴": {
+    "name": "徴",
+    "category": "1000",
+    "position": 100
+  },
+  "誌": {
+    "name": "誌",
+    "category": "1000",
+    "position": 101
+  },
+  "庫": {
+    "name": "庫",
+    "category": "1000",
+    "position": 102
+  },
+  "弾": {
+    "name": "弾",
+    "category": "1000",
+    "position": 103
+  },
+  "償": {
+    "name": "償",
+    "category": "1000",
+    "position": 104
+  },
+  "刊": {
+    "name": "刊",
+    "category": "1000",
+    "position": 105
+  },
+  "像": {
+    "name": "像",
+    "category": "1000",
+    "position": 106
+  },
+  "功": {
+    "name": "功",
+    "category": "1000",
+    "position": 107
+  },
+  "拠": {
+    "name": "拠",
+    "category": "1000",
+    "position": 108
+  },
+  "香": {
+    "name": "香",
+    "category": "1000",
+    "position": 109
+  },
+  "欠": {
+    "name": "欠",
+    "category": "1000",
+    "position": 110
+  },
+  "更": {
+    "name": "更",
+    "category": "1000",
+    "position": 111
+  },
+  "秘": {
+    "name": "秘",
+    "category": "1000",
+    "position": 112
+  },
+  "拒": {
+    "name": "拒",
+    "category": "1000",
+    "position": 113
+  },
+  "刑": {
+    "name": "刑",
+    "category": "1000",
+    "position": 114
+  },
+  "坂": {
+    "name": "坂",
+    "category": "1000",
+    "position": 115
+  },
+  "刻": {
+    "name": "刻",
+    "category": "1000",
+    "position": 116
+  },
+  "底": {
+    "name": "底",
+    "category": "1000",
+    "position": 117
+  },
+  "賛": {
+    "name": "賛",
+    "category": "1000",
+    "position": 118
+  },
+  "塚": {
+    "name": "塚",
+    "category": "1000",
+    "position": 119
+  },
+  "致": {
+    "name": "致",
+    "category": "1000",
+    "position": 120
+  },
+  "抱": {
+    "name": "抱",
+    "category": "1000",
+    "position": 121
+  },
+  "繰": {
+    "name": "繰",
+    "category": "1000",
+    "position": 122
+  },
+  "服": {
+    "name": "服",
+    "category": "1000",
+    "position": 123
+  },
+  "犯": {
+    "name": "犯",
+    "category": "1000",
+    "position": 124
+  },
+  "尾": {
+    "name": "尾",
+    "category": "1000",
+    "position": 125
+  },
+  "描": {
+    "name": "描",
+    "category": "1000",
+    "position": 126
+  },
+  "布": {
+    "name": "布",
+    "category": "1000",
+    "position": 127
+  },
+  "恐": {
+    "name": "恐",
+    "category": "1000",
+    "position": 128
+  },
+  "寺": {
+    "name": "寺",
+    "category": "1000",
+    "position": 129
+  },
+  "鈴": {
+    "name": "鈴",
+    "category": "1000",
+    "position": 130
+  },
+  "盤": {
+    "name": "盤",
+    "category": "1000",
+    "position": 131
+  },
+  "息": {
+    "name": "息",
+    "category": "1000",
+    "position": 132
+  },
+  "宇": {
+    "name": "宇",
+    "category": "1000",
+    "position": 133
+  },
+  "項": {
+    "name": "項",
+    "category": "1000",
+    "position": 134
+  },
+  "喪": {
+    "name": "喪",
+    "category": "1000",
+    "position": 135
+  },
+  "伴": {
+    "name": "伴",
+    "category": "1000",
+    "position": 136
+  },
+  "遠": {
+    "name": "遠",
+    "category": "1000",
+    "position": 137
+  },
+  "養": {
+    "name": "養",
+    "category": "1000",
+    "position": 138
+  },
+  "懸": {
+    "name": "懸",
+    "category": "1000",
+    "position": 139
+  },
+  "戻": {
+    "name": "戻",
+    "category": "1000",
+    "position": 140
+  },
+  "街": {
+    "name": "街",
+    "category": "1000",
+    "position": 141
+  },
+  "巨": {
+    "name": "巨",
+    "category": "1000",
+    "position": 142
+  },
+  "震": {
+    "name": "震",
+    "category": "1000",
+    "position": 143
+  },
+  "願": {
+    "name": "願",
+    "category": "1000",
+    "position": 144
+  },
+  "絵": {
+    "name": "絵",
+    "category": "1000",
+    "position": 145
+  },
+  "希": {
+    "name": "希",
+    "category": "1000",
+    "position": 146
+  },
+  "越": {
+    "name": "越",
+    "category": "1000",
+    "position": 147
+  },
+  "契": {
+    "name": "契",
+    "category": "1000",
+    "position": 148
+  },
+  "掲": {
+    "name": "掲",
+    "category": "1000",
+    "position": 149
+  },
+  "躍": {
+    "name": "躍",
+    "category": "1000",
+    "position": 150
+  },
+  "棄": {
+    "name": "棄",
+    "category": "1000",
+    "position": 151
+  },
+  "欲": {
+    "name": "欲",
+    "category": "1000",
+    "position": 152
+  },
+  "痛": {
+    "name": "痛",
+    "category": "1000",
+    "position": 153
+  },
+  "触": {
+    "name": "触",
+    "category": "1000",
+    "position": 154
+  },
+  "邸": {
+    "name": "邸",
+    "category": "1000",
+    "position": 155
+  },
+  "依": {
+    "name": "依",
+    "category": "1000",
+    "position": 156
+  },
+  "籍": {
+    "name": "籍",
+    "category": "1000",
+    "position": 157
+  },
+  "汚": {
+    "name": "汚",
+    "category": "1000",
+    "position": 158
+  },
+  "縮": {
+    "name": "縮",
+    "category": "1000",
+    "position": 159
+  },
+  "還": {
+    "name": "還",
+    "category": "1000",
+    "position": 160
+  },
+  "枚": {
+    "name": "枚",
+    "category": "1000",
+    "position": 161
+  },
+  "属": {
+    "name": "属",
+    "category": "1000",
+    "position": 162
+  },
+  "笑": {
+    "name": "笑",
+    "category": "1000",
+    "position": 163
+  },
+  "互": {
+    "name": "互",
+    "category": "1000",
+    "position": 164
+  },
+  "複": {
+    "name": "複",
+    "category": "1000",
+    "position": 165
+  },
+  "慮": {
+    "name": "慮",
+    "category": "1000",
+    "position": 166
+  },
+  "郵": {
+    "name": "郵",
+    "category": "1000",
+    "position": 167
+  },
+  "束": {
+    "name": "束",
+    "category": "1000",
+    "position": 168
+  },
+  "仲": {
+    "name": "仲",
+    "category": "1000",
+    "position": 169
+  },
+  "栄": {
+    "name": "栄",
+    "category": "1000",
+    "position": 170
+  },
+  "札": {
+    "name": "札",
+    "category": "1000",
+    "position": 171
+  },
+  "枠": {
+    "name": "枠",
+    "category": "1000",
+    "position": 172
+  },
+  "似": {
+    "name": "似",
+    "category": "1000",
+    "position": 173
+  },
+  "夕": {
+    "name": "夕",
+    "category": "1000",
+    "position": 174
+  },
+  "恵": {
+    "name": "恵",
+    "category": "1000",
+    "position": 175
+  },
+  "板": {
+    "name": "板",
+    "category": "1000",
+    "position": 176
+  },
+  "列": {
+    "name": "列",
+    "category": "1000",
+    "position": 177
+  },
+  "露": {
+    "name": "露",
+    "category": "1000",
+    "position": 178
+  },
+  "沖": {
+    "name": "沖",
+    "category": "1000",
+    "position": 179
+  },
+  "探": {
+    "name": "探",
+    "category": "1000",
+    "position": 180
+  },
+  "逃": {
+    "name": "逃",
+    "category": "1000",
+    "position": 181
+  },
+  "借": {
+    "name": "借",
+    "category": "1000",
+    "position": 182
+  },
+  "緩": {
+    "name": "緩",
+    "category": "1000",
+    "position": 183
+  },
+  "節": {
+    "name": "節",
+    "category": "1000",
+    "position": 184
+  },
+  "需": {
+    "name": "需",
+    "category": "1000",
+    "position": 185
+  },
+  "骨": {
+    "name": "骨",
+    "category": "1000",
+    "position": 186
+  },
+  "射": {
+    "name": "射",
+    "category": "1000",
+    "position": 187
+  },
+  "傾": {
+    "name": "傾",
+    "category": "1000",
+    "position": 188
+  },
+  "届": {
+    "name": "届",
+    "category": "1000",
+    "position": 189
+  },
+  "曜": {
+    "name": "曜",
+    "category": "1000",
+    "position": 190
+  },
+  "遊": {
+    "name": "遊",
+    "category": "1000",
+    "position": 191
+  },
+  "迷": {
+    "name": "迷",
+    "category": "1000",
+    "position": 192
+  },
+  "夢": {
+    "name": "夢",
+    "category": "1000",
+    "position": 193
+  },
+  "巻": {
+    "name": "巻",
+    "category": "1000",
+    "position": 194
+  },
+  "購": {
+    "name": "購",
+    "category": "1000",
+    "position": 195
+  },
+  "揮": {
+    "name": "揮",
+    "category": "1000",
+    "position": 196
+  },
+  "君": {
+    "name": "君",
+    "category": "1000",
+    "position": 197
+  },
+  "燃": {
+    "name": "燃",
+    "category": "1000",
+    "position": 198
+  },
+  "充": {
+    "name": "充",
+    "category": "1000",
+    "position": 199
+  },
+  "雨": {
+    "name": "雨",
+    "category": "1000",
+    "position": 200
+  },
+  "閉": {
+    "name": "閉",
+    "category": "1000",
+    "position": 201
+  },
+  "緒": {
+    "name": "緒",
+    "category": "1000",
+    "position": 202
+  },
+  "跡": {
+    "name": "跡",
+    "category": "1000",
+    "position": 203
+  },
+  "包": {
+    "name": "包",
+    "category": "1000",
+    "position": 204
+  },
+  "駐": {
+    "name": "駐",
+    "category": "1000",
+    "position": 205
+  },
+  "貢": {
+    "name": "貢",
+    "category": "1000",
+    "position": 206
+  },
+  "鹿": {
+    "name": "鹿",
+    "category": "1000",
+    "position": 207
+  },
+  "弱": {
+    "name": "弱",
+    "category": "1000",
+    "position": 208
+  },
+  "却": {
+    "name": "却",
+    "category": "1000",
+    "position": 209
+  },
+  "端": {
+    "name": "端",
+    "category": "1000",
+    "position": 210
+  },
+  "賃": {
+    "name": "賃",
+    "category": "1000",
+    "position": 211
+  },
+  "折": {
+    "name": "折",
+    "category": "1000",
+    "position": 212
+  },
+  "紹": {
+    "name": "紹",
+    "category": "1000",
+    "position": 213
+  },
+  "獲": {
+    "name": "獲",
+    "category": "1000",
+    "position": 214
+  },
+  "郡": {
+    "name": "郡",
+    "category": "1000",
+    "position": 215
+  },
+  "併": {
+    "name": "併",
+    "category": "1000",
+    "position": 216
+  },
+  "草": {
+    "name": "草",
+    "category": "1000",
+    "position": 217
+  },
+  "徹": {
+    "name": "徹",
+    "category": "1000",
+    "position": 218
+  },
+  "飲": {
+    "name": "飲",
+    "category": "1000",
+    "position": 219
+  },
+  "貴": {
+    "name": "貴",
+    "category": "1000",
+    "position": 220
+  },
+  "埼": {
+    "name": "埼",
+    "category": "1000",
+    "position": 221
+  },
+  "衝": {
+    "name": "衝",
+    "category": "1000",
+    "position": 222
+  },
+  "焦": {
+    "name": "焦",
+    "category": "1000",
+    "position": 223
+  },
+  "奪": {
+    "name": "奪",
+    "category": "1000",
+    "position": 224
+  },
+  "雇": {
+    "name": "雇",
+    "category": "1000",
+    "position": 225
+  },
+  "災": {
+    "name": "災",
+    "category": "1000",
+    "position": 226
+  },
+  "浦": {
+    "name": "浦",
+    "category": "1000",
+    "position": 227
+  },
+  "暮": {
+    "name": "暮",
+    "category": "1000",
+    "position": 228
+  },
+  "替": {
+    "name": "替",
+    "category": "1000",
+    "position": 229
+  },
+  "析": {
+    "name": "析",
+    "category": "1000",
+    "position": 230
+  },
+  "預": {
+    "name": "預",
+    "category": "1000",
+    "position": 231
+  },
+  "焼": {
+    "name": "焼",
+    "category": "1000",
+    "position": 232
+  },
+  "簡": {
+    "name": "簡",
+    "category": "1000",
+    "position": 233
+  },
+  "譲": {
+    "name": "譲",
+    "category": "1000",
+    "position": 234
+  },
+  "称": {
+    "name": "称",
+    "category": "1000",
+    "position": 235
+  },
+  "肉": {
+    "name": "肉",
+    "category": "1000",
+    "position": 236
+  },
+  "納": {
+    "name": "納",
+    "category": "1000",
+    "position": 237
+  },
+  "樹": {
+    "name": "樹",
+    "category": "1000",
+    "position": 238
+  },
+  "挑": {
+    "name": "挑",
+    "category": "1000",
+    "position": 239
+  },
+  "章": {
+    "name": "章",
+    "category": "1000",
+    "position": 240
+  },
+  "臓": {
+    "name": "臓",
+    "category": "1000",
+    "position": 241
+  },
+  "律": {
+    "name": "律",
+    "category": "1000",
+    "position": 242
+  },
+  "誘": {
+    "name": "誘",
+    "category": "1000",
+    "position": 243
+  },
+  "紛": {
+    "name": "紛",
+    "category": "1000",
+    "position": 244
+  },
+  "貸": {
+    "name": "貸",
+    "category": "1000",
+    "position": 245
+  },
+  "至": {
+    "name": "至",
+    "category": "1000",
+    "position": 246
+  },
+  "宗": {
+    "name": "宗",
+    "category": "1000",
+    "position": 247
+  },
+  "促": {
+    "name": "促",
+    "category": "1000",
+    "position": 248
+  },
+  "慎": {
+    "name": "慎",
+    "category": "1000",
+    "position": 249
+  },
+  "控": {
+    "name": "控",
+    "category": "1000",
+    "position": 250
+  },
+  "贈": {
+    "name": "贈",
+    "category": "1250",
+    "position": 1
+  },
+  "智": {
+    "name": "智",
+    "category": "1250",
+    "position": 2
+  },
+  "握": {
+    "name": "握",
+    "category": "1250",
+    "position": 3
+  },
+  "照": {
+    "name": "照",
+    "category": "1250",
+    "position": 4
+  },
+  "宙": {
+    "name": "宙",
+    "category": "1250",
+    "position": 5
+  },
+  "酒": {
+    "name": "酒",
+    "category": "1250",
+    "position": 6
+  },
+  "俊": {
+    "name": "俊",
+    "category": "1250",
+    "position": 7
+  },
+  "銭": {
+    "name": "銭",
+    "category": "1250",
+    "position": 8
+  },
+  "薄": {
+    "name": "薄",
+    "category": "1250",
+    "position": 9
+  },
+  "堂": {
+    "name": "堂",
+    "category": "1250",
+    "position": 10
+  },
+  "渋": {
+    "name": "渋",
+    "category": "1250",
+    "position": 11
+  },
+  "群": {
+    "name": "群",
+    "category": "1250",
+    "position": 12
+  },
+  "銃": {
+    "name": "銃",
+    "category": "1250",
+    "position": 13
+  },
+  "悲": {
+    "name": "悲",
+    "category": "1250",
+    "position": 14
+  },
+  "秒": {
+    "name": "秒",
+    "category": "1250",
+    "position": 15
+  },
+  "操": {
+    "name": "操",
+    "category": "1250",
+    "position": 16
+  },
+  "携": {
+    "name": "携",
+    "category": "1250",
+    "position": 17
+  },
+  "奥": {
+    "name": "奥",
+    "category": "1250",
+    "position": 18
+  },
+  "診": {
+    "name": "診",
+    "category": "1250",
+    "position": 19
+  },
+  "詰": {
+    "name": "詰",
+    "category": "1250",
+    "position": 20
+  },
+  "託": {
+    "name": "託",
+    "category": "1250",
+    "position": 21
+  },
+  "晴": {
+    "name": "晴",
+    "category": "1250",
+    "position": 22
+  },
+  "撮": {
+    "name": "撮",
+    "category": "1250",
+    "position": 23
+  },
+  "誕": {
+    "name": "誕",
+    "category": "1250",
+    "position": 24
+  },
+  "侵": {
+    "name": "侵",
+    "category": "1250",
+    "position": 25
+  },
+  "括": {
+    "name": "括",
+    "category": "1250",
+    "position": 26
+  },
+  "掛": {
+    "name": "掛",
+    "category": "1250",
+    "position": 27
+  },
+  "謝": {
+    "name": "謝",
+    "category": "1250",
+    "position": 28
+  },
+  "双": {
+    "name": "双",
+    "category": "1250",
+    "position": 29
+  },
+  "孝": {
+    "name": "孝",
+    "category": "1250",
+    "position": 30
+  },
+  "刺": {
+    "name": "刺",
+    "category": "1250",
+    "position": 31
+  },
+  "到": {
+    "name": "到",
+    "category": "1250",
+    "position": 32
+  },
+  "駆": {
+    "name": "駆",
+    "category": "1250",
+    "position": 33
+  },
+  "寝": {
+    "name": "寝",
+    "category": "1250",
+    "position": 34
+  },
+  "透": {
+    "name": "透",
+    "category": "1250",
+    "position": 35
+  },
+  "津": {
+    "name": "津",
+    "category": "1250",
+    "position": 36
+  },
+  "壁": {
+    "name": "壁",
+    "category": "1250",
+    "position": 37
+  },
+  "稲": {
+    "name": "稲",
+    "category": "1250",
+    "position": 38
+  },
+  "仮": {
+    "name": "仮",
+    "category": "1250",
+    "position": 39
+  },
+  "暗": {
+    "name": "暗",
+    "category": "1250",
+    "position": 40
+  },
+  "裂": {
+    "name": "裂",
+    "category": "1250",
+    "position": 41
+  },
+  "敏": {
+    "name": "敏",
+    "category": "1250",
+    "position": 42
+  },
+  "鳥": {
+    "name": "鳥",
+    "category": "1250",
+    "position": 43
+  },
+  "純": {
+    "name": "純",
+    "category": "1250",
+    "position": 44
+  },
+  "是": {
+    "name": "是",
+    "category": "1250",
+    "position": 45
+  },
+  "飯": {
+    "name": "飯",
+    "category": "1250",
+    "position": 46
+  },
+  "排": {
+    "name": "排",
+    "category": "1250",
+    "position": 47
+  },
+  "裕": {
+    "name": "裕",
+    "category": "1250",
+    "position": 48
+  },
+  "堅": {
+    "name": "堅",
+    "category": "1250",
+    "position": 49
+  },
+  "訳": {
+    "name": "訳",
+    "category": "1250",
+    "position": 50
+  },
+  "盗": {
+    "name": "盗",
+    "category": "1250",
+    "position": 51
+  },
+  "芝": {
+    "name": "芝",
+    "category": "1250",
+    "position": 52
+  },
+  "綱": {
+    "name": "綱",
+    "category": "1250",
+    "position": 53
+  },
+  "吸": {
+    "name": "吸",
+    "category": "1250",
+    "position": 54
+  },
+  "典": {
+    "name": "典",
+    "category": "1250",
+    "position": 55
+  },
+  "賀": {
+    "name": "賀",
+    "category": "1250",
+    "position": 56
+  },
+  "扱": {
+    "name": "扱",
+    "category": "1250",
+    "position": 57
+  },
+  "顧": {
+    "name": "顧",
+    "category": "1250",
+    "position": 58
+  },
+  "弘": {
+    "name": "弘",
+    "category": "1250",
+    "position": 59
+  },
+  "看": {
+    "name": "看",
+    "category": "1250",
+    "position": 60
+  },
+  "訟": {
+    "name": "訟",
+    "category": "1250",
+    "position": 61
+  },
+  "戒": {
+    "name": "戒",
+    "category": "1250",
+    "position": 62
+  },
+  "祉": {
+    "name": "祉",
+    "category": "1250",
+    "position": 63
+  },
+  "誉": {
+    "name": "誉",
+    "category": "1250",
+    "position": 64
+  },
+  "歓": {
+    "name": "歓",
+    "category": "1250",
+    "position": 65
+  },
+  "勉": {
+    "name": "勉",
+    "category": "1250",
+    "position": 66
+  },
+  "奏": {
+    "name": "奏",
+    "category": "1250",
+    "position": 67
+  },
+  "勧": {
+    "name": "勧",
+    "category": "1250",
+    "position": 68
+  },
+  "騒": {
+    "name": "騒",
+    "category": "1250",
+    "position": 69
+  },
+  "翌": {
+    "name": "翌",
+    "category": "1250",
+    "position": 70
+  },
+  "陽": {
+    "name": "陽",
+    "category": "1250",
+    "position": 71
+  },
+  "閥": {
+    "name": "閥",
+    "category": "1250",
+    "position": 72
+  },
+  "甲": {
+    "name": "甲",
+    "category": "1250",
+    "position": 73
+  },
+  "快": {
+    "name": "快",
+    "category": "1250",
+    "position": 74
+  },
+  "縄": {
+    "name": "縄",
+    "category": "1250",
+    "position": 75
+  },
+  "片": {
+    "name": "片",
+    "category": "1250",
+    "position": 76
+  },
+  "郷": {
+    "name": "郷",
+    "category": "1250",
+    "position": 77
+  },
+  "敬": {
+    "name": "敬",
+    "category": "1250",
+    "position": 78
+  },
+  "揺": {
+    "name": "揺",
+    "category": "1250",
+    "position": 79
+  },
+  "免": {
+    "name": "免",
+    "category": "1250",
+    "position": 80
+  },
+  "既": {
+    "name": "既",
+    "category": "1250",
+    "position": 81
+  },
+  "薦": {
+    "name": "薦",
+    "category": "1250",
+    "position": 82
+  },
+  "隣": {
+    "name": "隣",
+    "category": "1250",
+    "position": 83
+  },
+  "悩": {
+    "name": "悩",
+    "category": "1250",
+    "position": 84
+  },
+  "華": {
+    "name": "華",
+    "category": "1250",
+    "position": 85
+  },
+  "泉": {
+    "name": "泉",
+    "category": "1250",
+    "position": 86
+  },
+  "御": {
+    "name": "御",
+    "category": "1250",
+    "position": 87
+  },
+  "範": {
+    "name": "範",
+    "category": "1250",
+    "position": 88
+  },
+  "隠": {
+    "name": "隠",
+    "category": "1250",
+    "position": 89
+  },
+  "冬": {
+    "name": "冬",
+    "category": "1250",
+    "position": 90
+  },
+  "徳": {
+    "name": "徳",
+    "category": "1250",
+    "position": 91
+  },
+  "皮": {
+    "name": "皮",
+    "category": "1250",
+    "position": 92
+  },
+  "哲": {
+    "name": "哲",
+    "category": "1250",
+    "position": 93
+  },
+  "漁": {
+    "name": "漁",
+    "category": "1250",
+    "position": 94
+  },
+  "杉": {
+    "name": "杉",
+    "category": "1250",
+    "position": 95
+  },
+  "里": {
+    "name": "里",
+    "category": "1250",
+    "position": 96
+  },
+  "釈": {
+    "name": "釈",
+    "category": "1250",
+    "position": 97
+  },
+  "己": {
+    "name": "己",
+    "category": "1250",
+    "position": 98
+  },
+  "荒": {
+    "name": "荒",
+    "category": "1250",
+    "position": 99
+  },
+  "貯": {
+    "name": "貯",
+    "category": "1250",
+    "position": 100
+  },
+  "硬": {
+    "name": "硬",
+    "category": "1250",
+    "position": 101
+  },
+  "妥": {
+    "name": "妥",
+    "category": "1250",
+    "position": 102
+  },
+  "威": {
+    "name": "威",
+    "category": "1250",
+    "position": 103
+  },
+  "豪": {
+    "name": "豪",
+    "category": "1250",
+    "position": 104
+  },
+  "熊": {
+    "name": "熊",
+    "category": "1250",
+    "position": 105
+  },
+  "歯": {
+    "name": "歯",
+    "category": "1250",
+    "position": 106
+  },
+  "滞": {
+    "name": "滞",
+    "category": "1250",
+    "position": 107
+  },
+  "微": {
+    "name": "微",
+    "category": "1250",
+    "position": 108
+  },
+  "隆": {
+    "name": "隆",
+    "category": "1250",
+    "position": 109
+  },
+  "埋": {
+    "name": "埋",
+    "category": "1250",
+    "position": 110
+  },
+  "症": {
+    "name": "症",
+    "category": "1250",
+    "position": 111
+  },
+  "暫": {
+    "name": "暫",
+    "category": "1250",
+    "position": 112
+  },
+  "忠": {
+    "name": "忠",
+    "category": "1250",
+    "position": 113
+  },
+  "倉": {
+    "name": "倉",
+    "category": "1250",
+    "position": 114
+  },
+  "昼": {
+    "name": "昼",
+    "category": "1250",
+    "position": 115
+  },
+  "茶": {
+    "name": "茶",
+    "category": "1250",
+    "position": 116
+  },
+  "彦": {
+    "name": "彦",
+    "category": "1250",
+    "position": 117
+  },
+  "肝": {
+    "name": "肝",
+    "category": "1250",
+    "position": 118
+  },
+  "柱": {
+    "name": "柱",
+    "category": "1250",
+    "position": 119
+  },
+  "喚": {
+    "name": "喚",
+    "category": "1250",
+    "position": 120
+  },
+  "沿": {
+    "name": "沿",
+    "category": "1250",
+    "position": 121
+  },
+  "妙": {
+    "name": "妙",
+    "category": "1250",
+    "position": 122
+  },
+  "唱": {
+    "name": "唱",
+    "category": "1250",
+    "position": 123
+  },
+  "祭": {
+    "name": "祭",
+    "category": "1250",
+    "position": 124
+  },
+  "袋": {
+    "name": "袋",
+    "category": "1250",
+    "position": 125
+  },
+  "阿": {
+    "name": "阿",
+    "category": "1250",
+    "position": 126
+  },
+  "索": {
+    "name": "索",
+    "category": "1250",
+    "position": 127
+  },
+  "誠": {
+    "name": "誠",
+    "category": "1250",
+    "position": 128
+  },
+  "忘": {
+    "name": "忘",
+    "category": "1250",
+    "position": 129
+  },
+  "襲": {
+    "name": "襲",
+    "category": "1250",
+    "position": 130
+  },
+  "雪": {
+    "name": "雪",
+    "category": "1250",
+    "position": 131
+  },
+  "筆": {
+    "name": "筆",
+    "category": "1250",
+    "position": 132
+  },
+  "吹": {
+    "name": "吹",
+    "category": "1250",
+    "position": 133
+  },
+  "訓": {
+    "name": "訓",
+    "category": "1250",
+    "position": 134
+  },
+  "懇": {
+    "name": "懇",
+    "category": "1250",
+    "position": 135
+  },
+  "浴": {
+    "name": "浴",
+    "category": "1250",
+    "position": 136
+  },
+  "俳": {
+    "name": "俳",
+    "category": "1250",
+    "position": 137
+  },
+  "童": {
+    "name": "童",
+    "category": "1250",
+    "position": 138
+  },
+  "宝": {
+    "name": "宝",
+    "category": "1250",
+    "position": 139
+  },
+  "柄": {
+    "name": "柄",
+    "category": "1250",
+    "position": 140
+  },
+  "驚": {
+    "name": "驚",
+    "category": "1250",
+    "position": 141
+  },
+  "麻": {
+    "name": "麻",
+    "category": "1250",
+    "position": 142
+  },
+  "封": {
+    "name": "封",
+    "category": "1250",
+    "position": 143
+  },
+  "胸": {
+    "name": "胸",
+    "category": "1250",
+    "position": 144
+  },
+  "娘": {
+    "name": "娘",
+    "category": "1250",
+    "position": 145
+  },
+  "砂": {
+    "name": "砂",
+    "category": "1250",
+    "position": 146
+  },
+  "李": {
+    "name": "李",
+    "category": "1250",
+    "position": 147
+  },
+  "塩": {
+    "name": "塩",
+    "category": "1250",
+    "position": 148
+  },
+  "浩": {
+    "name": "浩",
+    "category": "1250",
+    "position": 149
+  },
+  "誤": {
+    "name": "誤",
+    "category": "1250",
+    "position": 150
+  },
+  "剤": {
+    "name": "剤",
+    "category": "1250",
+    "position": 151
+  },
+  "瀬": {
+    "name": "瀬",
+    "category": "1250",
+    "position": 152
+  },
+  "趣": {
+    "name": "趣",
+    "category": "1250",
+    "position": 153
+  },
+  "陥": {
+    "name": "陥",
+    "category": "1250",
+    "position": 154
+  },
+  "斎": {
+    "name": "斎",
+    "category": "1250",
+    "position": 155
+  },
+  "貫": {
+    "name": "貫",
+    "category": "1250",
+    "position": 156
+  },
+  "仙": {
+    "name": "仙",
+    "category": "1250",
+    "position": 157
+  },
+  "慰": {
+    "name": "慰",
+    "category": "1250",
+    "position": 158
+  },
+  "賢": {
+    "name": "賢",
+    "category": "1250",
+    "position": 159
+  },
+  "序": {
+    "name": "序",
+    "category": "1250",
+    "position": 160
+  },
+  "弟": {
+    "name": "弟",
+    "category": "1250",
+    "position": 161
+  },
+  "旬": {
+    "name": "旬",
+    "category": "1250",
+    "position": 162
+  },
+  "腕": {
+    "name": "腕",
+    "category": "1250",
+    "position": 163
+  },
+  "兼": {
+    "name": "兼",
+    "category": "1250",
+    "position": 164
+  },
+  "聖": {
+    "name": "聖",
+    "category": "1250",
+    "position": 165
+  },
+  "旨": {
+    "name": "旨",
+    "category": "1250",
+    "position": 166
+  },
+  "即": {
+    "name": "即",
+    "category": "1250",
+    "position": 167
+  },
+  "洗": {
+    "name": "洗",
+    "category": "1250",
+    "position": 168
+  },
+  "柳": {
+    "name": "柳",
+    "category": "1250",
+    "position": 169
+  },
+  "舎": {
+    "name": "舎",
+    "category": "1250",
+    "position": 170
+  },
+  "偽": {
+    "name": "偽",
+    "category": "1250",
+    "position": 171
+  },
+  "較": {
+    "name": "較",
+    "category": "1250",
+    "position": 172
+  },
+  "覇": {
+    "name": "覇",
+    "category": "1250",
+    "position": 173
+  },
+  "兆": {
+    "name": "兆",
+    "category": "1250",
+    "position": 174
+  },
+  "床": {
+    "name": "床",
+    "category": "1250",
+    "position": 175
+  },
+  "畑": {
+    "name": "畑",
+    "category": "1250",
+    "position": 176
+  },
+  "慣": {
+    "name": "慣",
+    "category": "1250",
+    "position": 177
+  },
+  "詳": {
+    "name": "詳",
+    "category": "1250",
+    "position": 178
+  },
+  "毛": {
+    "name": "毛",
+    "category": "1250",
+    "position": 179
+  },
+  "緑": {
+    "name": "緑",
+    "category": "1250",
+    "position": 180
+  },
+  "尊": {
+    "name": "尊",
+    "category": "1250",
+    "position": 181
+  },
+  "抵": {
+    "name": "抵",
+    "category": "1250",
+    "position": 182
+  },
+  "脅": {
+    "name": "脅",
+    "category": "1250",
+    "position": 183
+  },
+  "祝": {
+    "name": "祝",
+    "category": "1250",
+    "position": 184
+  },
+  "礼": {
+    "name": "礼",
+    "category": "1250",
+    "position": 185
+  },
+  "窓": {
+    "name": "窓",
+    "category": "1250",
+    "position": 186
+  },
+  "柔": {
+    "name": "柔",
+    "category": "1250",
+    "position": 187
+  },
+  "茂": {
+    "name": "茂",
+    "category": "1250",
+    "position": 188
+  },
+  "犠": {
+    "name": "犠",
+    "category": "1250",
+    "position": 189
+  },
+  "旗": {
+    "name": "旗",
+    "category": "1250",
+    "position": 190
+  },
+  "距": {
+    "name": "距",
+    "category": "1250",
+    "position": 191
+  },
+  "雅": {
+    "name": "雅",
+    "category": "1250",
+    "position": 192
+  },
+  "飾": {
+    "name": "飾",
+    "category": "1250",
+    "position": 193
+  },
+  "網": {
+    "name": "網",
+    "category": "1250",
+    "position": 194
+  },
+  "竜": {
+    "name": "竜",
+    "category": "1250",
+    "position": 195
+  },
+  "詩": {
+    "name": "詩",
+    "category": "1250",
+    "position": 196
+  },
+  "昔": {
+    "name": "昔",
+    "category": "1250",
+    "position": 197
+  },
+  "繁": {
+    "name": "繁",
+    "category": "1250",
+    "position": 198
+  },
+  "殿": {
+    "name": "殿",
+    "category": "1250",
+    "position": 199
+  },
+  "濃": {
+    "name": "濃",
+    "category": "1250",
+    "position": 200
+  },
+  "翼": {
+    "name": "翼",
+    "category": "1250",
+    "position": 201
+  },
+  "牛": {
+    "name": "牛",
+    "category": "1250",
+    "position": 202
+  },
+  "茨": {
+    "name": "茨",
+    "category": "1250",
+    "position": 203
+  },
+  "潟": {
+    "name": "潟",
+    "category": "1250",
+    "position": 204
+  },
+  "敵": {
+    "name": "敵",
+    "category": "1250",
+    "position": 205
+  },
+  "魅": {
+    "name": "魅",
+    "category": "1250",
+    "position": 206
+  },
+  "嫌": {
+    "name": "嫌",
+    "category": "1250",
+    "position": 207
+  },
+  "魚": {
+    "name": "魚",
+    "category": "1250",
+    "position": 208
+  },
+  "斉": {
+    "name": "斉",
+    "category": "1250",
+    "position": 209
+  },
+  "液": {
+    "name": "液",
+    "category": "1250",
+    "position": 210
+  },
+  "貧": {
+    "name": "貧",
+    "category": "1250",
+    "position": 211
+  },
+  "敷": {
+    "name": "敷",
+    "category": "1250",
+    "position": 212
+  },
+  "擁": {
+    "name": "擁",
+    "category": "1250",
+    "position": 213
+  },
+  "衣": {
+    "name": "衣",
+    "category": "1250",
+    "position": 214
+  },
+  "肩": {
+    "name": "肩",
+    "category": "1250",
+    "position": 215
+  },
+  "圏": {
+    "name": "圏",
+    "category": "1250",
+    "position": 216
+  },
+  "零": {
+    "name": "零",
+    "category": "1250",
+    "position": 217
+  },
+  "酸": {
+    "name": "酸",
+    "category": "1250",
+    "position": 218
+  },
+  "兄": {
+    "name": "兄",
+    "category": "1250",
+    "position": 219
+  },
+  "罰": {
+    "name": "罰",
+    "category": "1250",
+    "position": 220
+  },
+  "怒": {
+    "name": "怒",
+    "category": "1250",
+    "position": 221
+  },
+  "滅": {
+    "name": "滅",
+    "category": "1250",
+    "position": 222
+  },
+  "泳": {
+    "name": "泳",
+    "category": "1250",
+    "position": 223
+  },
+  "礎": {
+    "name": "礎",
+    "category": "1250",
+    "position": 224
+  },
+  "腐": {
+    "name": "腐",
+    "category": "1250",
+    "position": 225
+  },
+  "祖": {
+    "name": "祖",
+    "category": "1250",
+    "position": 226
+  },
+  "幼": {
+    "name": "幼",
+    "category": "1250",
+    "position": 227
+  },
+  "脚": {
+    "name": "脚",
+    "category": "1250",
+    "position": 228
+  },
+  "菱": {
+    "name": "菱",
+    "category": "1250",
+    "position": 229
+  },
+  "荷": {
+    "name": "荷",
+    "category": "1250",
+    "position": 230
+  },
+  "潮": {
+    "name": "潮",
+    "category": "1250",
+    "position": 231
+  },
+  "梅": {
+    "name": "梅",
+    "category": "1250",
+    "position": 232
+  },
+  "泊": {
+    "name": "泊",
+    "category": "1250",
+    "position": 233
+  },
+  "尽": {
+    "name": "尽",
+    "category": "1250",
+    "position": 234
+  },
+  "杯": {
+    "name": "杯",
+    "category": "1250",
+    "position": 235
+  },
+  "僕": {
+    "name": "僕",
+    "category": "1250",
+    "position": 236
+  },
+  "桜": {
+    "name": "桜",
+    "category": "1250",
+    "position": 237
+  },
+  "滑": {
+    "name": "滑",
+    "category": "1250",
+    "position": 238
+  },
+  "孤": {
+    "name": "孤",
+    "category": "1250",
+    "position": 239
+  },
+  "黄": {
+    "name": "黄",
+    "category": "1250",
+    "position": 240
+  },
+  "煕": {
+    "name": "煕",
+    "category": "1250",
+    "position": 241
+  },
+  "炎": {
+    "name": "炎",
+    "category": "1250",
+    "position": 242
+  },
+  "賠": {
+    "name": "賠",
+    "category": "1250",
+    "position": 243
+  },
+  "句": {
+    "name": "句",
+    "category": "1250",
+    "position": 244
+  },
+  "寿": {
+    "name": "寿",
+    "category": "1250",
+    "position": 245
+  },
+  "鋼": {
+    "name": "鋼",
+    "category": "1250",
+    "position": 246
+  },
+  "頑": {
+    "name": "頑",
+    "category": "1250",
+    "position": 247
+  },
+  "甘": {
+    "name": "甘",
+    "category": "1250",
+    "position": 248
+  },
+  "臣": {
+    "name": "臣",
+    "category": "1250",
+    "position": 249
+  },
+  "鎖": {
+    "name": "鎖",
+    "category": "1250",
+    "position": 250
+  },
+  "彩": {
+    "name": "彩",
+    "category": "1500",
+    "position": 1
+  },
+  "摩": {
+    "name": "摩",
+    "category": "1500",
+    "position": 2
+  },
+  "浅": {
+    "name": "浅",
+    "category": "1500",
+    "position": 3
+  },
+  "励": {
+    "name": "励",
+    "category": "1500",
+    "position": 4
+  },
+  "掃": {
+    "name": "掃",
+    "category": "1500",
+    "position": 5
+  },
+  "雲": {
+    "name": "雲",
+    "category": "1500",
+    "position": 6
+  },
+  "掘": {
+    "name": "掘",
+    "category": "1500",
+    "position": 7
+  },
+  "縦": {
+    "name": "縦",
+    "category": "1500",
+    "position": 8
+  },
+  "輝": {
+    "name": "輝",
+    "category": "1500",
+    "position": 9
+  },
+  "蓄": {
+    "name": "蓄",
+    "category": "1500",
+    "position": 10
+  },
+  "軸": {
+    "name": "軸",
+    "category": "1500",
+    "position": 11
+  },
+  "巡": {
+    "name": "巡",
+    "category": "1500",
+    "position": 12
+  },
+  "疲": {
+    "name": "疲",
+    "category": "1500",
+    "position": 13
+  },
+  "稼": {
+    "name": "稼",
+    "category": "1500",
+    "position": 14
+  },
+  "瞬": {
+    "name": "瞬",
+    "category": "1500",
+    "position": 15
+  },
+  "捨": {
+    "name": "捨",
+    "category": "1500",
+    "position": 16
+  },
+  "皆": {
+    "name": "皆",
+    "category": "1500",
+    "position": 17
+  },
+  "砲": {
+    "name": "砲",
+    "category": "1500",
+    "position": 18
+  },
+  "軟": {
+    "name": "軟",
+    "category": "1500",
+    "position": 19
+  },
+  "噴": {
+    "name": "噴",
+    "category": "1500",
+    "position": 20
+  },
+  "沈": {
+    "name": "沈",
+    "category": "1500",
+    "position": 21
+  },
+  "誇": {
+    "name": "誇",
+    "category": "1500",
+    "position": 22
+  },
+  "祥": {
+    "name": "祥",
+    "category": "1500",
+    "position": 23
+  },
+  "牲": {
+    "name": "牲",
+    "category": "1500",
+    "position": 24
+  },
+  "秩": {
+    "name": "秩",
+    "category": "1500",
+    "position": 25
+  },
+  "帝": {
+    "name": "帝",
+    "category": "1500",
+    "position": 26
+  },
+  "宏": {
+    "name": "宏",
+    "category": "1500",
+    "position": 27
+  },
+  "唆": {
+    "name": "唆",
+    "category": "1500",
+    "position": 28
+  },
+  "鳴": {
+    "name": "鳴",
+    "category": "1500",
+    "position": 29
+  },
+  "阻": {
+    "name": "阻",
+    "category": "1500",
+    "position": 30
+  },
+  "泰": {
+    "name": "泰",
+    "category": "1500",
+    "position": 31
+  },
+  "賄": {
+    "name": "賄",
+    "category": "1500",
+    "position": 32
+  },
+  "撲": {
+    "name": "撲",
+    "category": "1500",
+    "position": 33
+  },
+  "凍": {
+    "name": "凍",
+    "category": "1500",
+    "position": 34
+  },
+  "堀": {
+    "name": "堀",
+    "category": "1500",
+    "position": 35
+  },
+  "腹": {
+    "name": "腹",
+    "category": "1500",
+    "position": 36
+  },
+  "菊": {
+    "name": "菊",
+    "category": "1500",
+    "position": 37
+  },
+  "絞": {
+    "name": "絞",
+    "category": "1500",
+    "position": 38
+  },
+  "乳": {
+    "name": "乳",
+    "category": "1500",
+    "position": 39
+  },
+  "煙": {
+    "name": "煙",
+    "category": "1500",
+    "position": 40
+  },
+  "縁": {
+    "name": "縁",
+    "category": "1500",
+    "position": 41
+  },
+  "唯": {
+    "name": "唯",
+    "category": "1500",
+    "position": 42
+  },
+  "膨": {
+    "name": "膨",
+    "category": "1500",
+    "position": 43
+  },
+  "矢": {
+    "name": "矢",
+    "category": "1500",
+    "position": 44
+  },
+  "耐": {
+    "name": "耐",
+    "category": "1500",
+    "position": 45
+  },
+  "恋": {
+    "name": "恋",
+    "category": "1500",
+    "position": 46
+  },
+  "塾": {
+    "name": "塾",
+    "category": "1500",
+    "position": 47
+  },
+  "漏": {
+    "name": "漏",
+    "category": "1500",
+    "position": 48
+  },
+  "紅": {
+    "name": "紅",
+    "category": "1500",
+    "position": 49
+  },
+  "慶": {
+    "name": "慶",
+    "category": "1500",
+    "position": 50
+  },
+  "猛": {
+    "name": "猛",
+    "category": "1500",
+    "position": 51
+  },
+  "芳": {
+    "name": "芳",
+    "category": "1500",
+    "position": 52
+  },
+  "懲": {
+    "name": "懲",
+    "category": "1500",
+    "position": 53
+  },
+  "郊": {
+    "name": "郊",
+    "category": "1500",
+    "position": 54
+  },
+  "剣": {
+    "name": "剣",
+    "category": "1500",
+    "position": 55
+  },
+  "腰": {
+    "name": "腰",
+    "category": "1500",
+    "position": 56
+  },
+  "炭": {
+    "name": "炭",
+    "category": "1500",
+    "position": 57
+  },
+  "踊": {
+    "name": "踊",
+    "category": "1500",
+    "position": 58
+  },
+  "幌": {
+    "name": "幌",
+    "category": "1500",
+    "position": 59
+  },
+  "彰": {
+    "name": "彰",
+    "category": "1500",
+    "position": 60
+  },
+  "棋": {
+    "name": "棋",
+    "category": "1500",
+    "position": 61
+  },
+  "丁": {
+    "name": "丁",
+    "category": "1500",
+    "position": 62
+  },
+  "冊": {
+    "name": "冊",
+    "category": "1500",
+    "position": 63
+  },
+  "恒": {
+    "name": "恒",
+    "category": "1500",
+    "position": 64
+  },
+  "眠": {
+    "name": "眠",
+    "category": "1500",
+    "position": 65
+  },
+  "揚": {
+    "name": "揚",
+    "category": "1500",
+    "position": 66
+  },
+  "冒": {
+    "name": "冒",
+    "category": "1500",
+    "position": 67
+  },
+  "之": {
+    "name": "之",
+    "category": "1500",
+    "position": 68
+  },
+  "勇": {
+    "name": "勇",
+    "category": "1500",
+    "position": 69
+  },
+  "曽": {
+    "name": "曽",
+    "category": "1500",
+    "position": 70
+  },
+  "械": {
+    "name": "械",
+    "category": "1500",
+    "position": 71
+  },
+  "倫": {
+    "name": "倫",
+    "category": "1500",
+    "position": 72
+  },
+  "陳": {
+    "name": "陳",
+    "category": "1500",
+    "position": 73
+  },
+  "憶": {
+    "name": "憶",
+    "category": "1500",
+    "position": 74
+  },
+  "怖": {
+    "name": "怖",
+    "category": "1500",
+    "position": 75
+  },
+  "犬": {
+    "name": "犬",
+    "category": "1500",
+    "position": 76
+  },
+  "菜": {
+    "name": "菜",
+    "category": "1500",
+    "position": 77
+  },
+  "耳": {
+    "name": "耳",
+    "category": "1500",
+    "position": 78
+  },
+  "潜": {
+    "name": "潜",
+    "category": "1500",
+    "position": 79
+  },
+  "珍": {
+    "name": "珍",
+    "category": "1500",
+    "position": 80
+  },
+  "梨": {
+    "name": "梨",
+    "category": "1500",
+    "position": 81
+  },
+  "仁": {
+    "name": "仁",
+    "category": "1500",
+    "position": 82
+  },
+  "克": {
+    "name": "克",
+    "category": "1500",
+    "position": 83
+  },
+  "岳": {
+    "name": "岳",
+    "category": "1500",
+    "position": 84
+  },
+  "概": {
+    "name": "概",
+    "category": "1500",
+    "position": 85
+  },
+  "拘": {
+    "name": "拘",
+    "category": "1500",
+    "position": 86
+  },
+  "墓": {
+    "name": "墓",
+    "category": "1500",
+    "position": 87
+  },
+  "黙": {
+    "name": "黙",
+    "category": "1500",
+    "position": 88
+  },
+  "須": {
+    "name": "須",
+    "category": "1500",
+    "position": 89
+  },
+  "偏": {
+    "name": "偏",
+    "category": "1500",
+    "position": 90
+  },
+  "雰": {
+    "name": "雰",
+    "category": "1500",
+    "position": 91
+  },
+  "卵": {
+    "name": "卵",
+    "category": "1500",
+    "position": 92
+  },
+  "遇": {
+    "name": "遇",
+    "category": "1500",
+    "position": 93
+  },
+  "湖": {
+    "name": "湖",
+    "category": "1500",
+    "position": 94
+  },
+  "諮": {
+    "name": "諮",
+    "category": "1500",
+    "position": 95
+  },
+  "狭": {
+    "name": "狭",
+    "category": "1500",
+    "position": 96
+  },
+  "喫": {
+    "name": "喫",
+    "category": "1500",
+    "position": 97
+  },
+  "卓": {
+    "name": "卓",
+    "category": "1500",
+    "position": 98
+  },
+  "干": {
+    "name": "干",
+    "category": "1500",
+    "position": 99
+  },
+  "頂": {
+    "name": "頂",
+    "category": "1500",
+    "position": 100
+  },
+  "虫": {
+    "name": "虫",
+    "category": "1500",
+    "position": 101
+  },
+  "刷": {
+    "name": "刷",
+    "category": "1500",
+    "position": 102
+  },
+  "亀": {
+    "name": "亀",
+    "category": "1500",
+    "position": 103
+  },
+  "糧": {
+    "name": "糧",
+    "category": "1500",
+    "position": 104
+  },
+  "梶": {
+    "name": "梶",
+    "category": "1500",
+    "position": 105
+  },
+  "湯": {
+    "name": "湯",
+    "category": "1500",
+    "position": 106
+  },
+  "箱": {
+    "name": "箱",
+    "category": "1500",
+    "position": 107
+  },
+  "簿": {
+    "name": "簿",
+    "category": "1500",
+    "position": 108
+  },
+  "炉": {
+    "name": "炉",
+    "category": "1500",
+    "position": 109
+  },
+  "牧": {
+    "name": "牧",
+    "category": "1500",
+    "position": 110
+  },
+  "殊": {
+    "name": "殊",
+    "category": "1500",
+    "position": 111
+  },
+  "殖": {
+    "name": "殖",
+    "category": "1500",
+    "position": 112
+  },
+  "艦": {
+    "name": "艦",
+    "category": "1500",
+    "position": 113
+  },
+  "溶": {
+    "name": "溶",
+    "category": "1500",
+    "position": 114
+  },
+  "輩": {
+    "name": "輩",
+    "category": "1500",
+    "position": 115
+  },
+  "穴": {
+    "name": "穴",
+    "category": "1500",
+    "position": 116
+  },
+  "奇": {
+    "name": "奇",
+    "category": "1500",
+    "position": 117
+  },
+  "慢": {
+    "name": "慢",
+    "category": "1500",
+    "position": 118
+  },
+  "鶴": {
+    "name": "鶴",
+    "category": "1500",
+    "position": 119
+  },
+  "謀": {
+    "name": "謀",
+    "category": "1500",
+    "position": 120
+  },
+  "暖": {
+    "name": "暖",
+    "category": "1500",
+    "position": 121
+  },
+  "昌": {
+    "name": "昌",
+    "category": "1500",
+    "position": 122
+  },
+  "拍": {
+    "name": "拍",
+    "category": "1500",
+    "position": 123
+  },
+  "朗": {
+    "name": "朗",
+    "category": "1500",
+    "position": 124
+  },
+  "丈": {
+    "name": "丈",
+    "category": "1500",
+    "position": 125
+  },
+  "鉱": {
+    "name": "鉱",
+    "category": "1500",
+    "position": 126
+  },
+  "寛": {
+    "name": "寛",
+    "category": "1500",
+    "position": 127
+  },
+  "覆": {
+    "name": "覆",
+    "category": "1500",
+    "position": 128
+  },
+  "胞": {
+    "name": "胞",
+    "category": "1500",
+    "position": 129
+  },
+  "泣": {
+    "name": "泣",
+    "category": "1500",
+    "position": 130
+  },
+  "涙": {
+    "name": "涙",
+    "category": "1500",
+    "position": 131
+  },
+  "隔": {
+    "name": "隔",
+    "category": "1500",
+    "position": 132
+  },
+  "浄": {
+    "name": "浄",
+    "category": "1500",
+    "position": 133
+  },
+  "匹": {
+    "name": "匹",
+    "category": "1500",
+    "position": 134
+  },
+  "没": {
+    "name": "没",
+    "category": "1500",
+    "position": 135
+  },
+  "暇": {
+    "name": "暇",
+    "category": "1500",
+    "position": 136
+  },
+  "肺": {
+    "name": "肺",
+    "category": "1500",
+    "position": 137
+  },
+  "孫": {
+    "name": "孫",
+    "category": "1500",
+    "position": 138
+  },
+  "貞": {
+    "name": "貞",
+    "category": "1500",
+    "position": 139
+  },
+  "靖": {
+    "name": "靖",
+    "category": "1500",
+    "position": 140
+  },
+  "鑑": {
+    "name": "鑑",
+    "category": "1500",
+    "position": 141
+  },
+  "飼": {
+    "name": "飼",
+    "category": "1500",
+    "position": 142
+  },
+  "陰": {
+    "name": "陰",
+    "category": "1500",
+    "position": 143
+  },
+  "銘": {
+    "name": "銘",
+    "category": "1500",
+    "position": 144
+  },
+  "鋭": {
+    "name": "鋭",
+    "category": "1500",
+    "position": 145
+  },
+  "随": {
+    "name": "随",
+    "category": "1500",
+    "position": 146
+  },
+  "烈": {
+    "name": "烈",
+    "category": "1500",
+    "position": 147
+  },
+  "尋": {
+    "name": "尋",
+    "category": "1500",
+    "position": 148
+  },
+  "渕": {
+    "name": "渕",
+    "category": "1500",
+    "position": 149
+  },
+  "稿": {
+    "name": "稿",
+    "category": "1500",
+    "position": 150
+  },
+  "枝": {
+    "name": "枝",
+    "category": "1500",
+    "position": 151
+  },
+  "丹": {
+    "name": "丹",
+    "category": "1500",
+    "position": 152
+  },
+  "啓": {
+    "name": "啓",
+    "category": "1500",
+    "position": 153
+  },
+  "也": {
+    "name": "也",
+    "category": "1500",
+    "position": 154
+  },
+  "丘": {
+    "name": "丘",
+    "category": "1500",
+    "position": 155
+  },
+  "棟": {
+    "name": "棟",
+    "category": "1500",
+    "position": 156
+  },
+  "壌": {
+    "name": "壌",
+    "category": "1500",
+    "position": 157
+  },
+  "漫": {
+    "name": "漫",
+    "category": "1500",
+    "position": 158
+  },
+  "玄": {
+    "name": "玄",
+    "category": "1500",
+    "position": 159
+  },
+  "粘": {
+    "name": "粘",
+    "category": "1500",
+    "position": 160
+  },
+  "悟": {
+    "name": "悟",
+    "category": "1500",
+    "position": 161
+  },
+  "舗": {
+    "name": "舗",
+    "category": "1500",
+    "position": 162
+  },
+  "妊": {
+    "name": "妊",
+    "category": "1500",
+    "position": 163
+  },
+  "塗": {
+    "name": "塗",
+    "category": "1500",
+    "position": 164
+  },
+  "熟": {
+    "name": "熟",
+    "category": "1500",
+    "position": 165
+  },
+  "軒": {
+    "name": "軒",
+    "category": "1500",
+    "position": 166
+  },
+  "旭": {
+    "name": "旭",
+    "category": "1500",
+    "position": 167
+  },
+  "恩": {
+    "name": "恩",
+    "category": "1500",
+    "position": 168
+  },
+  "毒": {
+    "name": "毒",
+    "category": "1500",
+    "position": 169
+  },
+  "騰": {
+    "name": "騰",
+    "category": "1500",
+    "position": 170
+  },
+  "往": {
+    "name": "往",
+    "category": "1500",
+    "position": 171
+  },
+  "豆": {
+    "name": "豆",
+    "category": "1500",
+    "position": 172
+  },
+  "遂": {
+    "name": "遂",
+    "category": "1500",
+    "position": 173
+  },
+  "晩": {
+    "name": "晩",
+    "category": "1500",
+    "position": 174
+  },
+  "狂": {
+    "name": "狂",
+    "category": "1500",
+    "position": 175
+  },
+  "叫": {
+    "name": "叫",
+    "category": "1500",
+    "position": 176
+  },
+  "栃": {
+    "name": "栃",
+    "category": "1500",
+    "position": 177
+  },
+  "岐": {
+    "name": "岐",
+    "category": "1500",
+    "position": 178
+  },
+  "陛": {
+    "name": "陛",
+    "category": "1500",
+    "position": 179
+  },
+  "緯": {
+    "name": "緯",
+    "category": "1500",
+    "position": 180
+  },
+  "培": {
+    "name": "培",
+    "category": "1500",
+    "position": 181
+  },
+  "衰": {
+    "name": "衰",
+    "category": "1500",
+    "position": 182
+  },
+  "艇": {
+    "name": "艇",
+    "category": "1500",
+    "position": 183
+  },
+  "屈": {
+    "name": "屈",
+    "category": "1500",
+    "position": 184
+  },
+  "径": {
+    "name": "径",
+    "category": "1500",
+    "position": 185
+  },
+  "淡": {
+    "name": "淡",
+    "category": "1500",
+    "position": 186
+  },
+  "抽": {
+    "name": "抽",
+    "category": "1500",
+    "position": 187
+  },
+  "披": {
+    "name": "披",
+    "category": "1500",
+    "position": 188
+  },
+  "廷": {
+    "name": "廷",
+    "category": "1500",
+    "position": 189
+  },
+  "錦": {
+    "name": "錦",
+    "category": "1500",
+    "position": 190
+  },
+  "准": {
+    "name": "准",
+    "category": "1500",
+    "position": 191
+  },
+  "暑": {
+    "name": "暑",
+    "category": "1500",
+    "position": 192
+  },
+  "拝": {
+    "name": "拝",
+    "category": "1500",
+    "position": 193
+  },
+  "磯": {
+    "name": "磯",
+    "category": "1500",
+    "position": 194
+  },
+  "奨": {
+    "name": "奨",
+    "category": "1500",
+    "position": 195
+  },
+  "妹": {
+    "name": "妹",
+    "category": "1500",
+    "position": 196
+  },
+  "浸": {
+    "name": "浸",
+    "category": "1500",
+    "position": 197
+  },
+  "剰": {
+    "name": "剰",
+    "category": "1500",
+    "position": 198
+  },
+  "胆": {
+    "name": "胆",
+    "category": "1500",
+    "position": 199
+  },
+  "氷": {
+    "name": "氷",
+    "category": "1500",
+    "position": 200
+  },
+  "繊": {
+    "name": "繊",
+    "category": "1500",
+    "position": 201
+  },
+  "駒": {
+    "name": "駒",
+    "category": "1500",
+    "position": 202
+  },
+  "乾": {
+    "name": "乾",
+    "category": "1500",
+    "position": 203
+  },
+  "虚": {
+    "name": "虚",
+    "category": "1500",
+    "position": 204
+  },
+  "棒": {
+    "name": "棒",
+    "category": "1500",
+    "position": 205
+  },
+  "寒": {
+    "name": "寒",
+    "category": "1500",
+    "position": 206
+  },
+  "孜": {
+    "name": "孜",
+    "category": "1500",
+    "position": 207
+  },
+  "霊": {
+    "name": "霊",
+    "category": "1500",
+    "position": 208
+  },
+  "帳": {
+    "name": "帳",
+    "category": "1500",
+    "position": 209
+  },
+  "悔": {
+    "name": "悔",
+    "category": "1500",
+    "position": 210
+  },
+  "諭": {
+    "name": "諭",
+    "category": "1500",
+    "position": 211
+  },
+  "祈": {
+    "name": "祈",
+    "category": "1500",
+    "position": 212
+  },
+  "惨": {
+    "name": "惨",
+    "category": "1500",
+    "position": 213
+  },
+  "虐": {
+    "name": "虐",
+    "category": "1500",
+    "position": 214
+  },
+  "翻": {
+    "name": "翻",
+    "category": "1500",
+    "position": 215
+  },
+  "墜": {
+    "name": "墜",
+    "category": "1500",
+    "position": 216
+  },
+  "沼": {
+    "name": "沼",
+    "category": "1500",
+    "position": 217
+  },
+  "据": {
+    "name": "据",
+    "category": "1500",
+    "position": 218
+  },
+  "肥": {
+    "name": "肥",
+    "category": "1500",
+    "position": 219
+  },
+  "徐": {
+    "name": "徐",
+    "category": "1500",
+    "position": 220
+  },
+  "糖": {
+    "name": "糖",
+    "category": "1500",
+    "position": 221
+  },
+  "搭": {
+    "name": "搭",
+    "category": "1500",
+    "position": 222
+  },
+  "姉": {
+    "name": "姉",
+    "category": "1500",
+    "position": 223
+  },
+  "髪": {
+    "name": "髪",
+    "category": "1500",
+    "position": 224
+  },
+  "忙": {
+    "name": "忙",
+    "category": "1500",
+    "position": 225
+  },
+  "盾": {
+    "name": "盾",
+    "category": "1500",
+    "position": 226
+  },
+  "脈": {
+    "name": "脈",
+    "category": "1500",
+    "position": 227
+  },
+  "滝": {
+    "name": "滝",
+    "category": "1500",
+    "position": 228
+  },
+  "拾": {
+    "name": "拾",
+    "category": "1500",
+    "position": 229
+  },
+  "軌": {
+    "name": "軌",
+    "category": "1500",
+    "position": 230
+  },
+  "俵": {
+    "name": "俵",
+    "category": "1500",
+    "position": 231
+  },
+  "妨": {
+    "name": "妨",
+    "category": "1500",
+    "position": 232
+  },
+  "盧": {
+    "name": "盧",
+    "category": "1500",
+    "position": 233
+  },
+  "粉": {
+    "name": "粉",
+    "category": "1500",
+    "position": 234
+  },
+  "擦": {
+    "name": "擦",
+    "category": "1500",
+    "position": 235
+  },
+  "鯨": {
+    "name": "鯨",
+    "category": "1500",
+    "position": 236
+  },
+  "漢": {
+    "name": "漢",
+    "category": "1500",
+    "position": 237
+  },
+  "糸": {
+    "name": "糸",
+    "category": "1500",
+    "position": 238
+  },
+  "荘": {
+    "name": "荘",
+    "category": "1500",
+    "position": 239
+  },
+  "諾": {
+    "name": "諾",
+    "category": "1500",
+    "position": 240
+  },
+  "雷": {
+    "name": "雷",
+    "category": "1500",
+    "position": 241
+  },
+  "漂": {
+    "name": "漂",
+    "category": "1500",
+    "position": 242
+  },
+  "懐": {
+    "name": "懐",
+    "category": "1500",
+    "position": 243
+  },
+  "勘": {
+    "name": "勘",
+    "category": "1500",
+    "position": 244
+  },
+  "綿": {
+    "name": "綿",
+    "category": "1500",
+    "position": 245
+  },
+  "栽": {
+    "name": "栽",
+    "category": "1500",
+    "position": 246
+  },
+  "才": {
+    "name": "才",
+    "category": "1500",
+    "position": 247
+  },
+  "拐": {
+    "name": "拐",
+    "category": "1500",
+    "position": 248
+  },
+  "笠": {
+    "name": "笠",
+    "category": "1500",
+    "position": 249
+  },
+  "駄": {
+    "name": "駄",
+    "category": "1500",
+    "position": 250
+  },
+  "添": {
+    "name": "添",
+    "category": "1750",
+    "position": 1
+  },
+  "汗": {
+    "name": "汗",
+    "category": "1750",
+    "position": 2
+  },
+  "冠": {
+    "name": "冠",
+    "category": "1750",
+    "position": 3
+  },
+  "斜": {
+    "name": "斜",
+    "category": "1750",
+    "position": 4
+  },
+  "銅": {
+    "name": "銅",
+    "category": "1750",
+    "position": 5
+  },
+  "鏡": {
+    "name": "鏡",
+    "category": "1750",
+    "position": 6
+  },
+  "聡": {
+    "name": "聡",
+    "category": "1750",
+    "position": 7
+  },
+  "浪": {
+    "name": "浪",
+    "category": "1750",
+    "position": 8
+  },
+  "亜": {
+    "name": "亜",
+    "category": "1750",
+    "position": 9
+  },
+  "覧": {
+    "name": "覧",
+    "category": "1750",
+    "position": 10
+  },
+  "詐": {
+    "name": "詐",
+    "category": "1750",
+    "position": 11
+  },
+  "壇": {
+    "name": "壇",
+    "category": "1750",
+    "position": 12
+  },
+  "勲": {
+    "name": "勲",
+    "category": "1750",
+    "position": 13
+  },
+  "魔": {
+    "name": "魔",
+    "category": "1750",
+    "position": 14
+  },
+  "酬": {
+    "name": "酬",
+    "category": "1750",
+    "position": 15
+  },
+  "紫": {
+    "name": "紫",
+    "category": "1750",
+    "position": 16
+  },
+  "湿": {
+    "name": "湿",
+    "category": "1750",
+    "position": 17
+  },
+  "曙": {
+    "name": "曙",
+    "category": "1750",
+    "position": 18
+  },
+  "紋": {
+    "name": "紋",
+    "category": "1750",
+    "position": 19
+  },
+  "卸": {
+    "name": "卸",
+    "category": "1750",
+    "position": 20
+  },
+  "奮": {
+    "name": "奮",
+    "category": "1750",
+    "position": 21
+  },
+  "趙": {
+    "name": "趙",
+    "category": "1750",
+    "position": 22
+  },
+  "欄": {
+    "name": "欄",
+    "category": "1750",
+    "position": 23
+  },
+  "逸": {
+    "name": "逸",
+    "category": "1750",
+    "position": 24
+  },
+  "涯": {
+    "name": "涯",
+    "category": "1750",
+    "position": 25
+  },
+  "拓": {
+    "name": "拓",
+    "category": "1750",
+    "position": 26
+  },
+  "眼": {
+    "name": "眼",
+    "category": "1750",
+    "position": 27
+  },
+  "瓶": {
+    "name": "瓶",
+    "category": "1750",
+    "position": 28
+  },
+  "獄": {
+    "name": "獄",
+    "category": "1750",
+    "position": 29
+  },
+  "筑": {
+    "name": "筑",
+    "category": "1750",
+    "position": 30
+  },
+  "尚": {
+    "name": "尚",
+    "category": "1750",
+    "position": 31
+  },
+  "阜": {
+    "name": "阜",
+    "category": "1750",
+    "position": 32
+  },
+  "彫": {
+    "name": "彫",
+    "category": "1750",
+    "position": 33
+  },
+  "咲": {
+    "name": "咲",
+    "category": "1750",
+    "position": 34
+  },
+  "穏": {
+    "name": "穏",
+    "category": "1750",
+    "position": 35
+  },
+  "顕": {
+    "name": "顕",
+    "category": "1750",
+    "position": 36
+  },
+  "巧": {
+    "name": "巧",
+    "category": "1750",
+    "position": 37
+  },
+  "矛": {
+    "name": "矛",
+    "category": "1750",
+    "position": 38
+  },
+  "垣": {
+    "name": "垣",
+    "category": "1750",
+    "position": 39
+  },
+  "召": {
+    "name": "召",
+    "category": "1750",
+    "position": 40
+  },
+  "欺": {
+    "name": "欺",
+    "category": "1750",
+    "position": 41
+  },
+  "釣": {
+    "name": "釣",
+    "category": "1750",
+    "position": 42
+  },
+  "缶": {
+    "name": "缶",
+    "category": "1750",
+    "position": 43
+  },
+  "萩": {
+    "name": "萩",
+    "category": "1750",
+    "position": 44
+  },
+  "粧": {
+    "name": "粧",
+    "category": "1750",
+    "position": 45
+  },
+  "隻": {
+    "name": "隻",
+    "category": "1750",
+    "position": 46
+  },
+  "葛": {
+    "name": "葛",
+    "category": "1750",
+    "position": 47
+  },
+  "脂": {
+    "name": "脂",
+    "category": "1750",
+    "position": 48
+  },
+  "粛": {
+    "name": "粛",
+    "category": "1750",
+    "position": 49
+  },
+  "栗": {
+    "name": "栗",
+    "category": "1750",
+    "position": 50
+  },
+  "愚": {
+    "name": "愚",
+    "category": "1750",
+    "position": 51
+  },
+  "蒸": {
+    "name": "蒸",
+    "category": "1750",
+    "position": 52
+  },
+  "嘉": {
+    "name": "嘉",
+    "category": "1750",
+    "position": 53
+  },
+  "遭": {
+    "name": "遭",
+    "category": "1750",
+    "position": 54
+  },
+  "架": {
+    "name": "架",
+    "category": "1750",
+    "position": 55
+  },
+  "篠": {
+    "name": "篠",
+    "category": "1750",
+    "position": 56
+  },
+  "鬼": {
+    "name": "鬼",
+    "category": "1750",
+    "position": 57
+  },
+  "庶": {
+    "name": "庶",
+    "category": "1750",
+    "position": 58
+  },
+  "肌": {
+    "name": "肌",
+    "category": "1750",
+    "position": 59
+  },
+  "稚": {
+    "name": "稚",
+    "category": "1750",
+    "position": 60
+  },
+  "靴": {
+    "name": "靴",
+    "category": "1750",
+    "position": 61
+  },
+  "菅": {
+    "name": "菅",
+    "category": "1750",
+    "position": 62
+  },
+  "滋": {
+    "name": "滋",
+    "category": "1750",
+    "position": 63
+  },
+  "幻": {
+    "name": "幻",
+    "category": "1750",
+    "position": 64
+  },
+  "煮": {
+    "name": "煮",
+    "category": "1750",
+    "position": 65
+  },
+  "姫": {
+    "name": "姫",
+    "category": "1750",
+    "position": 66
+  },
+  "誓": {
+    "name": "誓",
+    "category": "1750",
+    "position": 67
+  },
+  "耕": {
+    "name": "耕",
+    "category": "1750",
+    "position": 68
+  },
+  "把": {
+    "name": "把",
+    "category": "1750",
+    "position": 69
+  },
+  "践": {
+    "name": "践",
+    "category": "1750",
+    "position": 70
+  },
+  "呈": {
+    "name": "呈",
+    "category": "1750",
+    "position": 71
+  },
+  "疎": {
+    "name": "疎",
+    "category": "1750",
+    "position": 72
+  },
+  "仰": {
+    "name": "仰",
+    "category": "1750",
+    "position": 73
+  },
+  "鈍": {
+    "name": "鈍",
+    "category": "1750",
+    "position": 74
+  },
+  "恥": {
+    "name": "恥",
+    "category": "1750",
+    "position": 75
+  },
+  "剛": {
+    "name": "剛",
+    "category": "1750",
+    "position": 76
+  },
+  "疾": {
+    "name": "疾",
+    "category": "1750",
+    "position": 77
+  },
+  "征": {
+    "name": "征",
+    "category": "1750",
+    "position": 78
+  },
+  "砕": {
+    "name": "砕",
+    "category": "1750",
+    "position": 79
+  },
+  "謡": {
+    "name": "謡",
+    "category": "1750",
+    "position": 80
+  },
+  "嫁": {
+    "name": "嫁",
+    "category": "1750",
+    "position": 81
+  },
+  "謙": {
+    "name": "謙",
+    "category": "1750",
+    "position": 82
+  },
+  "后": {
+    "name": "后",
+    "category": "1750",
+    "position": 83
+  },
+  "嘆": {
+    "name": "嘆",
+    "category": "1750",
+    "position": 84
+  },
+  "俣": {
+    "name": "俣",
+    "category": "1750",
+    "position": 85
+  },
+  "菌": {
+    "name": "菌",
+    "category": "1750",
+    "position": 86
+  },
+  "鎌": {
+    "name": "鎌",
+    "category": "1750",
+    "position": 87
+  },
+  "巣": {
+    "name": "巣",
+    "category": "1750",
+    "position": 88
+  },
+  "泥": {
+    "name": "泥",
+    "category": "1750",
+    "position": 89
+  },
+  "頻": {
+    "name": "頻",
+    "category": "1750",
+    "position": 90
+  },
+  "琴": {
+    "name": "琴",
+    "category": "1750",
+    "position": 91
+  },
+  "班": {
+    "name": "班",
+    "category": "1750",
+    "position": 92
+  },
+  "淵": {
+    "name": "淵",
+    "category": "1750",
+    "position": 93
+  },
+  "棚": {
+    "name": "棚",
+    "category": "1750",
+    "position": 94
+  },
+  "潔": {
+    "name": "潔",
+    "category": "1750",
+    "position": 95
+  },
+  "酷": {
+    "name": "酷",
+    "category": "1750",
+    "position": 96
+  },
+  "宰": {
+    "name": "宰",
+    "category": "1750",
+    "position": 97
+  },
+  "廊": {
+    "name": "廊",
+    "category": "1750",
+    "position": 98
+  },
+  "寂": {
+    "name": "寂",
+    "category": "1750",
+    "position": 99
+  },
+  "辰": {
+    "name": "辰",
+    "category": "1750",
+    "position": 100
+  },
+  "隅": {
+    "name": "隅",
+    "category": "1750",
+    "position": 101
+  },
+  "偶": {
+    "name": "偶",
+    "category": "1750",
+    "position": 102
+  },
+  "霞": {
+    "name": "霞",
+    "category": "1750",
+    "position": 103
+  },
+  "伏": {
+    "name": "伏",
+    "category": "1750",
+    "position": 104
+  },
+  "灯": {
+    "name": "灯",
+    "category": "1750",
+    "position": 105
+  },
+  "柏": {
+    "name": "柏",
+    "category": "1750",
+    "position": 106
+  },
+  "辛": {
+    "name": "辛",
+    "category": "1750",
+    "position": 107
+  },
+  "磨": {
+    "name": "磨",
+    "category": "1750",
+    "position": 108
+  },
+  "碁": {
+    "name": "碁",
+    "category": "1750",
+    "position": 109
+  },
+  "俗": {
+    "name": "俗",
+    "category": "1750",
+    "position": 110
+  },
+  "漠": {
+    "name": "漠",
+    "category": "1750",
+    "position": 111
+  },
+  "邪": {
+    "name": "邪",
+    "category": "1750",
+    "position": 112
+  },
+  "晶": {
+    "name": "晶",
+    "category": "1750",
+    "position": 113
+  },
+  "辻": {
+    "name": "辻",
+    "category": "1750",
+    "position": 114
+  },
+  "麦": {
+    "name": "麦",
+    "category": "1750",
+    "position": 115
+  },
+  "墨": {
+    "name": "墨",
+    "category": "1750",
+    "position": 116
+  },
+  "鎮": {
+    "name": "鎮",
+    "category": "1750",
+    "position": 117
+  },
+  "洞": {
+    "name": "洞",
+    "category": "1750",
+    "position": 118
+  },
+  "履": {
+    "name": "履",
+    "category": "1750",
+    "position": 119
+  },
+  "劣": {
+    "name": "劣",
+    "category": "1750",
+    "position": 120
+  },
+  "那": {
+    "name": "那",
+    "category": "1750",
+    "position": 121
+  },
+  "殴": {
+    "name": "殴",
+    "category": "1750",
+    "position": 122
+  },
+  "娠": {
+    "name": "娠",
+    "category": "1750",
+    "position": 123
+  },
+  "奉": {
+    "name": "奉",
+    "category": "1750",
+    "position": 124
+  },
+  "憂": {
+    "name": "憂",
+    "category": "1750",
+    "position": 125
+  },
+  "朴": {
+    "name": "朴",
+    "category": "1750",
+    "position": 126
+  },
+  "亭": {
+    "name": "亭",
+    "category": "1750",
+    "position": 127
+  },
+  "姓": {
+    "name": "姓",
+    "category": "1750",
+    "position": 128
+  },
+  "淳": {
+    "name": "淳",
+    "category": "1750",
+    "position": 129
+  },
+  "荻": {
+    "name": "荻",
+    "category": "1750",
+    "position": 130
+  },
+  "筒": {
+    "name": "筒",
+    "category": "1750",
+    "position": 131
+  },
+  "鼻": {
+    "name": "鼻",
+    "category": "1750",
+    "position": 132
+  },
+  "嶋": {
+    "name": "嶋",
+    "category": "1750",
+    "position": 133
+  },
+  "怪": {
+    "name": "怪",
+    "category": "1750",
+    "position": 134
+  },
+  "粒": {
+    "name": "粒",
+    "category": "1750",
+    "position": 135
+  },
+  "詞": {
+    "name": "詞",
+    "category": "1750",
+    "position": 136
+  },
+  "鳩": {
+    "name": "鳩",
+    "category": "1750",
+    "position": 137
+  },
+  "柴": {
+    "name": "柴",
+    "category": "1750",
+    "position": 138
+  },
+  "偉": {
+    "name": "偉",
+    "category": "1750",
+    "position": 139
+  },
+  "酔": {
+    "name": "酔",
+    "category": "1750",
+    "position": 140
+  },
+  "惜": {
+    "name": "惜",
+    "category": "1750",
+    "position": 141
+  },
+  "穫": {
+    "name": "穫",
+    "category": "1750",
+    "position": 142
+  },
+  "佳": {
+    "name": "佳",
+    "category": "1750",
+    "position": 143
+  },
+  "潤": {
+    "name": "潤",
+    "category": "1750",
+    "position": 144
+  },
+  "悼": {
+    "name": "悼",
+    "category": "1750",
+    "position": 145
+  },
+  "乏": {
+    "name": "乏",
+    "category": "1750",
+    "position": 146
+  },
+  "胃": {
+    "name": "胃",
+    "category": "1750",
+    "position": 147
+  },
+  "該": {
+    "name": "該",
+    "category": "1750",
+    "position": 148
+  },
+  "赴": {
+    "name": "赴",
+    "category": "1750",
+    "position": 149
+  },
+  "桑": {
+    "name": "桑",
+    "category": "1750",
+    "position": 150
+  },
+  "桂": {
+    "name": "桂",
+    "category": "1750",
+    "position": 151
+  },
+  "髄": {
+    "name": "髄",
+    "category": "1750",
+    "position": 152
+  },
+  "虎": {
+    "name": "虎",
+    "category": "1750",
+    "position": 153
+  },
+  "盆": {
+    "name": "盆",
+    "category": "1750",
+    "position": 154
+  },
+  "晋": {
+    "name": "晋",
+    "category": "1750",
+    "position": 155
+  },
+  "穂": {
+    "name": "穂",
+    "category": "1750",
+    "position": 156
+  },
+  "壮": {
+    "name": "壮",
+    "category": "1750",
+    "position": 157
+  },
+  "堤": {
+    "name": "堤",
+    "category": "1750",
+    "position": 158
+  },
+  "飢": {
+    "name": "飢",
+    "category": "1750",
+    "position": 159
+  },
+  "傍": {
+    "name": "傍",
+    "category": "1750",
+    "position": 160
+  },
+  "疫": {
+    "name": "疫",
+    "category": "1750",
+    "position": 161
+  },
+  "累": {
+    "name": "累",
+    "category": "1750",
+    "position": 162
+  },
+  "痴": {
+    "name": "痴",
+    "category": "1750",
+    "position": 163
+  },
+  "搬": {
+    "name": "搬",
+    "category": "1750",
+    "position": 164
+  },
+  "畳": {
+    "name": "畳",
+    "category": "1750",
+    "position": 165
+  },
+  "晃": {
+    "name": "晃",
+    "category": "1750",
+    "position": 166
+  },
+  "癒": {
+    "name": "癒",
+    "category": "1750",
+    "position": 167
+  },
+  "桐": {
+    "name": "桐",
+    "category": "1750",
+    "position": 168
+  },
+  "寸": {
+    "name": "寸",
+    "category": "1750",
+    "position": 169
+  },
+  "郭": {
+    "name": "郭",
+    "category": "1750",
+    "position": 170
+  },
+  "机": {
+    "name": "机",
+    "category": "1750",
+    "position": 171
+  },
+  "尿": {
+    "name": "尿",
+    "category": "1750",
+    "position": 172
+  },
+  "凶": {
+    "name": "凶",
+    "category": "1750",
+    "position": 173
+  },
+  "吐": {
+    "name": "吐",
+    "category": "1750",
+    "position": 174
+  },
+  "宴": {
+    "name": "宴",
+    "category": "1750",
+    "position": 175
+  },
+  "鷹": {
+    "name": "鷹",
+    "category": "1750",
+    "position": 176
+  },
+  "賓": {
+    "name": "賓",
+    "category": "1750",
+    "position": 177
+  },
+  "虜": {
+    "name": "虜",
+    "category": "1750",
+    "position": 178
+  },
+  "膚": {
+    "name": "膚",
+    "category": "1750",
+    "position": 179
+  },
+  "陶": {
+    "name": "陶",
+    "category": "1750",
+    "position": 180
+  },
+  "鐘": {
+    "name": "鐘",
+    "category": "1750",
+    "position": 181
+  },
+  "憾": {
+    "name": "憾",
+    "category": "1750",
+    "position": 182
+  },
+  "畿": {
+    "name": "畿",
+    "category": "1750",
+    "position": 183
+  },
+  "猪": {
+    "name": "猪",
+    "category": "1750",
+    "position": 184
+  },
+  "紘": {
+    "name": "紘",
+    "category": "1750",
+    "position": 185
+  },
+  "磁": {
+    "name": "磁",
+    "category": "1750",
+    "position": 186
+  },
+  "弥": {
+    "name": "弥",
+    "category": "1750",
+    "position": 187
+  },
+  "昆": {
+    "name": "昆",
+    "category": "1750",
+    "position": 188
+  },
+  "粗": {
+    "name": "粗",
+    "category": "1750",
+    "position": 189
+  },
+  "訂": {
+    "name": "訂",
+    "category": "1750",
+    "position": 190
+  },
+  "芽": {
+    "name": "芽",
+    "category": "1750",
+    "position": 191
+  },
+  "尻": {
+    "name": "尻",
+    "category": "1750",
+    "position": 192
+  },
+  "庄": {
+    "name": "庄",
+    "category": "1750",
+    "position": 193
+  },
+  "傘": {
+    "name": "傘",
+    "category": "1750",
+    "position": 194
+  },
+  "敦": {
+    "name": "敦",
+    "category": "1750",
+    "position": 195
+  },
+  "騎": {
+    "name": "騎",
+    "category": "1750",
+    "position": 196
+  },
+  "寧": {
+    "name": "寧",
+    "category": "1750",
+    "position": 197
+  },
+  "濯": {
+    "name": "濯",
+    "category": "1750",
+    "position": 198
+  },
+  "循": {
+    "name": "循",
+    "category": "1750",
+    "position": 199
+  },
+  "忍": {
+    "name": "忍",
+    "category": "1750",
+    "position": 200
+  },
+  "磐": {
+    "name": "磐",
+    "category": "1750",
+    "position": 201
+  },
+  "猫": {
+    "name": "猫",
+    "category": "1750",
+    "position": 202
+  },
+  "怠": {
+    "name": "怠",
+    "category": "1750",
+    "position": 203
+  },
+  "如": {
+    "name": "如",
+    "category": "1750",
+    "position": 204
+  },
+  "寮": {
+    "name": "寮",
+    "category": "1750",
+    "position": 205
+  },
+  "祐": {
+    "name": "祐",
+    "category": "1750",
+    "position": 206
+  },
+  "鵬": {
+    "name": "鵬",
+    "category": "1750",
+    "position": 207
+  },
+  "塔": {
+    "name": "塔",
+    "category": "1750",
+    "position": 208
+  },
+  "沸": {
+    "name": "沸",
+    "category": "1750",
+    "position": 209
+  },
+  "鉛": {
+    "name": "鉛",
+    "category": "1750",
+    "position": 210
+  },
+  "珠": {
+    "name": "珠",
+    "category": "1750",
+    "position": 211
+  },
+  "凝": {
+    "name": "凝",
+    "category": "1750",
+    "position": 212
+  },
+  "苗": {
+    "name": "苗",
+    "category": "1750",
+    "position": 213
+  },
+  "獣": {
+    "name": "獣",
+    "category": "1750",
+    "position": 214
+  },
+  "哀": {
+    "name": "哀",
+    "category": "1750",
+    "position": 215
+  },
+  "跳": {
+    "name": "跳",
+    "category": "1750",
+    "position": 216
+  },
+  "灰": {
+    "name": "灰",
+    "category": "1750",
+    "position": 217
+  },
+  "匠": {
+    "name": "匠",
+    "category": "1750",
+    "position": 218
+  },
+  "菓": {
+    "name": "菓",
+    "category": "1750",
+    "position": 219
+  },
+  "垂": {
+    "name": "垂",
+    "category": "1750",
+    "position": 220
+  },
+  "蛇": {
+    "name": "蛇",
+    "category": "1750",
+    "position": 221
+  },
+  "澄": {
+    "name": "澄",
+    "category": "1750",
+    "position": 222
+  },
+  "縫": {
+    "name": "縫",
+    "category": "1750",
+    "position": 223
+  },
+  "僧": {
+    "name": "僧",
+    "category": "1750",
+    "position": 224
+  },
+  "幾": {
+    "name": "幾",
+    "category": "1750",
+    "position": 225
+  },
+  "眺": {
+    "name": "眺",
+    "category": "1750",
+    "position": 226
+  },
+  "唐": {
+    "name": "唐",
+    "category": "1750",
+    "position": 227
+  },
+  "亘": {
+    "name": "亘",
+    "category": "1750",
+    "position": 228
+  },
+  "呉": {
+    "name": "呉",
+    "category": "1750",
+    "position": 229
+  },
+  "凡": {
+    "name": "凡",
+    "category": "1750",
+    "position": 230
+  },
+  "憩": {
+    "name": "憩",
+    "category": "1750",
+    "position": 231
+  },
+  "鄭": {
+    "name": "鄭",
+    "category": "1750",
+    "position": 232
+  },
+  "芦": {
+    "name": "芦",
+    "category": "1750",
+    "position": 233
+  },
+  "龍": {
+    "name": "龍",
+    "category": "1750",
+    "position": 234
+  },
+  "媛": {
+    "name": "媛",
+    "category": "1750",
+    "position": 235
+  },
+  "溝": {
+    "name": "溝",
+    "category": "1750",
+    "position": 236
+  },
+  "恭": {
+    "name": "恭",
+    "category": "1750",
+    "position": 237
+  },
+  "刈": {
+    "name": "刈",
+    "category": "1750",
+    "position": 238
+  },
+  "睡": {
+    "name": "睡",
+    "category": "1750",
+    "position": 239
+  },
+  "錯": {
+    "name": "錯",
+    "category": "1750",
+    "position": 240
+  },
+  "伯": {
+    "name": "伯",
+    "category": "1750",
+    "position": 241
+  },
+  "帽": {
+    "name": "帽",
+    "category": "1750",
+    "position": 242
+  },
+  "笹": {
+    "name": "笹",
+    "category": "1750",
+    "position": 243
+  },
+  "穀": {
+    "name": "穀",
+    "category": "1750",
+    "position": 244
+  },
+  "柿": {
+    "name": "柿",
+    "category": "1750",
+    "position": 245
+  },
+  "陵": {
+    "name": "陵",
+    "category": "1750",
+    "position": 246
+  },
+  "霧": {
+    "name": "霧",
+    "category": "1750",
+    "position": 247
+  },
+  "魂": {
+    "name": "魂",
+    "category": "1750",
+    "position": 248
+  },
+  "枯": {
+    "name": "枯",
+    "category": "1750",
+    "position": 249
+  },
+  "弊": {
+    "name": "弊",
+    "category": "1750",
+    "position": 250
+  },
+  "釧": {
+    "name": "釧",
+    "category": "2000",
+    "position": 1
+  },
+  "妃": {
+    "name": "妃",
+    "category": "2000",
+    "position": 2
+  },
+  "舶": {
+    "name": "舶",
+    "category": "2000",
+    "position": 3
+  },
+  "餓": {
+    "name": "餓",
+    "category": "2000",
+    "position": 4
+  },
+  "腎": {
+    "name": "腎",
+    "category": "2000",
+    "position": 5
+  },
+  "窮": {
+    "name": "窮",
+    "category": "2000",
+    "position": 6
+  },
+  "掌": {
+    "name": "掌",
+    "category": "2000",
+    "position": 7
+  },
+  "麗": {
+    "name": "麗",
+    "category": "2000",
+    "position": 8
+  },
+  "綾": {
+    "name": "綾",
+    "category": "2000",
+    "position": 9
+  },
+  "臭": {
+    "name": "臭",
+    "category": "2000",
+    "position": 10
+  },
+  "釜": {
+    "name": "釜",
+    "category": "2000",
+    "position": 11
+  },
+  "悦": {
+    "name": "悦",
+    "category": "2000",
+    "position": 12
+  },
+  "刃": {
+    "name": "刃",
+    "category": "2000",
+    "position": 13
+  },
+  "縛": {
+    "name": "縛",
+    "category": "2000",
+    "position": 14
+  },
+  "暦": {
+    "name": "暦",
+    "category": "2000",
+    "position": 15
+  },
+  "宜": {
+    "name": "宜",
+    "category": "2000",
+    "position": 16
+  },
+  "盲": {
+    "name": "盲",
+    "category": "2000",
+    "position": 17
+  },
+  "粋": {
+    "name": "粋",
+    "category": "2000",
+    "position": 18
+  },
+  "辱": {
+    "name": "辱",
+    "category": "2000",
+    "position": 19
+  },
+  "毅": {
+    "name": "毅",
+    "category": "2000",
+    "position": 20
+  },
+  "轄": {
+    "name": "轄",
+    "category": "2000",
+    "position": 21
+  },
+  "猿": {
+    "name": "猿",
+    "category": "2000",
+    "position": 22
+  },
+  "弦": {
+    "name": "弦",
+    "category": "2000",
+    "position": 23
+  },
+  "嶌": {
+    "name": "嶌",
+    "category": "2000",
+    "position": 24
+  },
+  "稔": {
+    "name": "稔",
+    "category": "2000",
+    "position": 25
+  },
+  "窒": {
+    "name": "窒",
+    "category": "2000",
+    "position": 26
+  },
+  "炊": {
+    "name": "炊",
+    "category": "2000",
+    "position": 27
+  },
+  "洪": {
+    "name": "洪",
+    "category": "2000",
+    "position": 28
+  },
+  "摂": {
+    "name": "摂",
+    "category": "2000",
+    "position": 29
+  },
+  "飽": {
+    "name": "飽",
+    "category": "2000",
+    "position": 30
+  },
+  "函": {
+    "name": "函",
+    "category": "2000",
+    "position": 31
+  },
+  "冗": {
+    "name": "冗",
+    "category": "2000",
+    "position": 32
+  },
+  "涼": {
+    "name": "涼",
+    "category": "2000",
+    "position": 33
+  },
+  "桃": {
+    "name": "桃",
+    "category": "2000",
+    "position": 34
+  },
+  "狩": {
+    "name": "狩",
+    "category": "2000",
+    "position": 35
+  },
+  "舟": {
+    "name": "舟",
+    "category": "2000",
+    "position": 36
+  },
+  "貝": {
+    "name": "貝",
+    "category": "2000",
+    "position": 37
+  },
+  "朱": {
+    "name": "朱",
+    "category": "2000",
+    "position": 38
+  },
+  "渦": {
+    "name": "渦",
+    "category": "2000",
+    "position": 39
+  },
+  "紳": {
+    "name": "紳",
+    "category": "2000",
+    "position": 40
+  },
+  "枢": {
+    "name": "枢",
+    "category": "2000",
+    "position": 41
+  },
+  "碑": {
+    "name": "碑",
+    "category": "2000",
+    "position": 42
+  },
+  "鍛": {
+    "name": "鍛",
+    "category": "2000",
+    "position": 43
+  },
+  "刀": {
+    "name": "刀",
+    "category": "2000",
+    "position": 44
+  },
+  "鼓": {
+    "name": "鼓",
+    "category": "2000",
+    "position": 45
+  },
+  "裸": {
+    "name": "裸",
+    "category": "2000",
+    "position": 46
+  },
+  "鴨": {
+    "name": "鴨",
+    "category": "2000",
+    "position": 47
+  },
+  "符": {
+    "name": "符",
+    "category": "2000",
+    "position": 48
+  },
+  "猶": {
+    "name": "猶",
+    "category": "2000",
+    "position": 49
+  },
+  "塊": {
+    "name": "塊",
+    "category": "2000",
+    "position": 50
+  },
+  "旋": {
+    "name": "旋",
+    "category": "2000",
+    "position": 51
+  },
+  "弓": {
+    "name": "弓",
+    "category": "2000",
+    "position": 52
+  },
+  "幣": {
+    "name": "幣",
+    "category": "2000",
+    "position": 53
+  },
+  "膜": {
+    "name": "膜",
+    "category": "2000",
+    "position": 54
+  },
+  "扇": {
+    "name": "扇",
+    "category": "2000",
+    "position": 55
+  },
+  "脇": {
+    "name": "脇",
+    "category": "2000",
+    "position": 56
+  },
+  "腸": {
+    "name": "腸",
+    "category": "2000",
+    "position": 57
+  },
+  "憎": {
+    "name": "憎",
+    "category": "2000",
+    "position": 58
+  },
+  "槽": {
+    "name": "槽",
+    "category": "2000",
+    "position": 59
+  },
+  "鍋": {
+    "name": "鍋",
+    "category": "2000",
+    "position": 60
+  },
+  "慈": {
+    "name": "慈",
+    "category": "2000",
+    "position": 61
+  },
+  "皿": {
+    "name": "皿",
+    "category": "2000",
+    "position": 62
+  },
+  "肯": {
+    "name": "肯",
+    "category": "2000",
+    "position": 63
+  },
+  "樋": {
+    "name": "樋",
+    "category": "2000",
+    "position": 64
+  },
+  "楊": {
+    "name": "楊",
+    "category": "2000",
+    "position": 65
+  },
+  "伐": {
+    "name": "伐",
+    "category": "2000",
+    "position": 66
+  },
+  "駿": {
+    "name": "駿",
+    "category": "2000",
+    "position": 67
+  },
+  "漬": {
+    "name": "漬",
+    "category": "2000",
+    "position": 68
+  },
+  "燥": {
+    "name": "燥",
+    "category": "2000",
+    "position": 69
+  },
+  "糾": {
+    "name": "糾",
+    "category": "2000",
+    "position": 70
+  },
+  "亮": {
+    "name": "亮",
+    "category": "2000",
+    "position": 71
+  },
+  "墳": {
+    "name": "墳",
+    "category": "2000",
+    "position": 72
+  },
+  "坪": {
+    "name": "坪",
+    "category": "2000",
+    "position": 73
+  },
+  "畜": {
+    "name": "畜",
+    "category": "2000",
+    "position": 74
+  },
+  "紺": {
+    "name": "紺",
+    "category": "2000",
+    "position": 75
+  },
+  "慌": {
+    "name": "慌",
+    "category": "2000",
+    "position": 76
+  },
+  "娯": {
+    "name": "娯",
+    "category": "2000",
+    "position": 77
+  },
+  "吾": {
+    "name": "吾",
+    "category": "2000",
+    "position": 78
+  },
+  "椿": {
+    "name": "椿",
+    "category": "2000",
+    "position": 79
+  },
+  "舌": {
+    "name": "舌",
+    "category": "2000",
+    "position": 80
+  },
+  "羅": {
+    "name": "羅",
+    "category": "2000",
+    "position": 81
+  },
+  "坊": {
+    "name": "坊",
+    "category": "2000",
+    "position": 82
+  },
+  "峡": {
+    "name": "峡",
+    "category": "2000",
+    "position": 83
+  },
+  "俸": {
+    "name": "俸",
+    "category": "2000",
+    "position": 84
+  },
+  "厘": {
+    "name": "厘",
+    "category": "2000",
+    "position": 85
+  },
+  "峰": {
+    "name": "峰",
+    "category": "2000",
+    "position": 86
+  },
+  "圭": {
+    "name": "圭",
+    "category": "2000",
+    "position": 87
+  },
+  "醸": {
+    "name": "醸",
+    "category": "2000",
+    "position": 88
+  },
+  "蓮": {
+    "name": "蓮",
+    "category": "2000",
+    "position": 89
+  },
+  "弔": {
+    "name": "弔",
+    "category": "2000",
+    "position": 90
+  },
+  "乙": {
+    "name": "乙",
+    "category": "2000",
+    "position": 91
+  },
+  "倶": {
+    "name": "倶",
+    "category": "2000",
+    "position": 92
+  },
+  "汁": {
+    "name": "汁",
+    "category": "2000",
+    "position": 93
+  },
+  "尼": {
+    "name": "尼",
+    "category": "2000",
+    "position": 94
+  },
+  "遍": {
+    "name": "遍",
+    "category": "2000",
+    "position": 95
+  },
+  "堺": {
+    "name": "堺",
+    "category": "2000",
+    "position": 96
+  },
+  "衡": {
+    "name": "衡",
+    "category": "2000",
+    "position": 97
+  },
+  "呆": {
+    "name": "呆",
+    "category": "2000",
+    "position": 98
+  },
+  "薫": {
+    "name": "薫",
+    "category": "2000",
+    "position": 99
+  },
+  "瓦": {
+    "name": "瓦",
+    "category": "2000",
+    "position": 100
+  },
+  "猟": {
+    "name": "猟",
+    "category": "2000",
+    "position": 101
+  },
+  "羊": {
+    "name": "羊",
+    "category": "2000",
+    "position": 102
+  },
+  "窪": {
+    "name": "窪",
+    "category": "2000",
+    "position": 103
+  },
+  "款": {
+    "name": "款",
+    "category": "2000",
+    "position": 104
+  },
+  "閲": {
+    "name": "閲",
+    "category": "2000",
+    "position": 105
+  },
+  "雀": {
+    "name": "雀",
+    "category": "2000",
+    "position": 106
+  },
+  "偵": {
+    "name": "偵",
+    "category": "2000",
+    "position": 107
+  },
+  "喝": {
+    "name": "喝",
+    "category": "2000",
+    "position": 108
+  },
+  "敢": {
+    "name": "敢",
+    "category": "2000",
+    "position": 109
+  },
+  "畠": {
+    "name": "畠",
+    "category": "2000",
+    "position": 110
+  },
+  "胎": {
+    "name": "胎",
+    "category": "2000",
+    "position": 111
+  },
+  "酵": {
+    "name": "酵",
+    "category": "2000",
+    "position": 112
+  },
+  "憤": {
+    "name": "憤",
+    "category": "2000",
+    "position": 113
+  },
+  "豚": {
+    "name": "豚",
+    "category": "2000",
+    "position": 114
+  },
+  "遮": {
+    "name": "遮",
+    "category": "2000",
+    "position": 115
+  },
+  "扉": {
+    "name": "扉",
+    "category": "2000",
+    "position": 116
+  },
+  "硫": {
+    "name": "硫",
+    "category": "2000",
+    "position": 117
+  },
+  "赦": {
+    "name": "赦",
+    "category": "2000",
+    "position": 118
+  },
+  "挫": {
+    "name": "挫",
+    "category": "2000",
+    "position": 119
+  },
+  "挟": {
+    "name": "挟",
+    "category": "2000",
+    "position": 120
+  },
+  "窃": {
+    "name": "窃",
+    "category": "2000",
+    "position": 121
+  },
+  "泡": {
+    "name": "泡",
+    "category": "2000",
+    "position": 122
+  },
+  "瑞": {
+    "name": "瑞",
+    "category": "2000",
+    "position": 123
+  },
+  "又": {
+    "name": "又",
+    "category": "2000",
+    "position": 124
+  },
+  "慨": {
+    "name": "慨",
+    "category": "2000",
+    "position": 125
+  },
+  "紡": {
+    "name": "紡",
+    "category": "2000",
+    "position": 126
+  },
+  "恨": {
+    "name": "恨",
+    "category": "2000",
+    "position": 127
+  },
+  "肪": {
+    "name": "肪",
+    "category": "2000",
+    "position": 128
+  },
+  "扶": {
+    "name": "扶",
+    "category": "2000",
+    "position": 129
+  },
+  "戯": {
+    "name": "戯",
+    "category": "2000",
+    "position": 130
+  },
+  "伍": {
+    "name": "伍",
+    "category": "2000",
+    "position": 131
+  },
+  "忌": {
+    "name": "忌",
+    "category": "2000",
+    "position": 132
+  },
+  "濁": {
+    "name": "濁",
+    "category": "2000",
+    "position": 133
+  },
+  "奔": {
+    "name": "奔",
+    "category": "2000",
+    "position": 134
+  },
+  "斗": {
+    "name": "斗",
+    "category": "2000",
+    "position": 135
+  },
+  "蘭": {
+    "name": "蘭",
+    "category": "2000",
+    "position": 136
+  },
+  "蒲": {
+    "name": "蒲",
+    "category": "2000",
+    "position": 137
+  },
+  "迅": {
+    "name": "迅",
+    "category": "2000",
+    "position": 138
+  },
+  "肖": {
+    "name": "肖",
+    "category": "2000",
+    "position": 139
+  },
+  "鉢": {
+    "name": "鉢",
+    "category": "2000",
+    "position": 140
+  },
+  "朽": {
+    "name": "朽",
+    "category": "2000",
+    "position": 141
+  },
+  "殻": {
+    "name": "殻",
+    "category": "2000",
+    "position": 142
+  },
+  "享": {
+    "name": "享",
+    "category": "2000",
+    "position": 143
+  },
+  "秦": {
+    "name": "秦",
+    "category": "2000",
+    "position": 144
+  },
+  "茅": {
+    "name": "茅",
+    "category": "2000",
+    "position": 145
+  },
+  "藩": {
+    "name": "藩",
+    "category": "2000",
+    "position": 146
+  },
+  "沙": {
+    "name": "沙",
+    "category": "2000",
+    "position": 147
+  },
+  "輔": {
+    "name": "輔",
+    "category": "2000",
+    "position": 148
+  },
+  "曇": {
+    "name": "曇",
+    "category": "2000",
+    "position": 149
+  },
+  "媒": {
+    "name": "媒",
+    "category": "2000",
+    "position": 150
+  },
+  "鶏": {
+    "name": "鶏",
+    "category": "2000",
+    "position": 151
+  },
+  "禅": {
+    "name": "禅",
+    "category": "2000",
+    "position": 152
+  },
+  "嘱": {
+    "name": "嘱",
+    "category": "2000",
+    "position": 153
+  },
+  "胴": {
+    "name": "胴",
+    "category": "2000",
+    "position": 154
+  },
+  "粕": {
+    "name": "粕",
+    "category": "2000",
+    "position": 155
+  },
+  "冨": {
+    "name": "冨",
+    "category": "2000",
+    "position": 156
+  },
+  "迭": {
+    "name": "迭",
+    "category": "2000",
+    "position": 157
+  },
+  "挿": {
+    "name": "挿",
+    "category": "2000",
+    "position": 158
+  },
+  "湘": {
+    "name": "湘",
+    "category": "2000",
+    "position": 159
+  },
+  "嵐": {
+    "name": "嵐",
+    "category": "2000",
+    "position": 160
+  },
+  "椎": {
+    "name": "椎",
+    "category": "2000",
+    "position": 161
+  },
+  "灘": {
+    "name": "灘",
+    "category": "2000",
+    "position": 162
+  },
+  "堰": {
+    "name": "堰",
+    "category": "2000",
+    "position": 163
+  },
+  "獅": {
+    "name": "獅",
+    "category": "2000",
+    "position": 164
+  },
+  "姜": {
+    "name": "姜",
+    "category": "2000",
+    "position": 165
+  },
+  "絹": {
+    "name": "絹",
+    "category": "2000",
+    "position": 166
+  },
+  "陪": {
+    "name": "陪",
+    "category": "2000",
+    "position": 167
+  },
+  "剖": {
+    "name": "剖",
+    "category": "2000",
+    "position": 168
+  },
+  "譜": {
+    "name": "譜",
+    "category": "2000",
+    "position": 169
+  },
+  "郁": {
+    "name": "郁",
+    "category": "2000",
+    "position": 170
+  },
+  "悠": {
+    "name": "悠",
+    "category": "2000",
+    "position": 171
+  },
+  "淑": {
+    "name": "淑",
+    "category": "2000",
+    "position": 172
+  },
+  "帆": {
+    "name": "帆",
+    "category": "2000",
+    "position": 173
+  },
+  "暁": {
+    "name": "暁",
+    "category": "2000",
+    "position": 174
+  },
+  "鷲": {
+    "name": "鷲",
+    "category": "2000",
+    "position": 175
+  },
+  "傑": {
+    "name": "傑",
+    "category": "2000",
+    "position": 176
+  },
+  "楠": {
+    "name": "楠",
+    "category": "2000",
+    "position": 177
+  },
+  "笛": {
+    "name": "笛",
+    "category": "2000",
+    "position": 178
+  },
+  "芥": {
+    "name": "芥",
+    "category": "2000",
+    "position": 179
+  },
+  "其": {
+    "name": "其",
+    "category": "2000",
+    "position": 180
+  },
+  "玲": {
+    "name": "玲",
+    "category": "2000",
+    "position": 181
+  },
+  "奴": {
+    "name": "奴",
+    "category": "2000",
+    "position": 182
+  },
+  "誰": {
+    "name": "誰",
+    "category": "2000",
+    "position": 183
+  },
+  "錠": {
+    "name": "錠",
+    "category": "2000",
+    "position": 184
+  },
+  "拳": {
+    "name": "拳",
+    "category": "2000",
+    "position": 185
+  },
+  "翔": {
+    "name": "翔",
+    "category": "2000",
+    "position": 186
+  },
+  "遷": {
+    "name": "遷",
+    "category": "2000",
+    "position": 187
+  },
+  "拙": {
+    "name": "拙",
+    "category": "2000",
+    "position": 188
+  },
+  "侍": {
+    "name": "侍",
+    "category": "2000",
+    "position": 189
+  },
+  "尺": {
+    "name": "尺",
+    "category": "2000",
+    "position": 190
+  },
+  "峠": {
+    "name": "峠",
+    "category": "2000",
+    "position": 191
+  },
+  "篤": {
+    "name": "篤",
+    "category": "2000",
+    "position": 192
+  },
+  "肇": {
+    "name": "肇",
+    "category": "2000",
+    "position": 193
+  },
+  "渇": {
+    "name": "渇",
+    "category": "2000",
+    "position": 194
+  },
+  "榎": {
+    "name": "榎",
+    "category": "2000",
+    "position": 195
+  },
+  "俺": {
+    "name": "俺",
+    "category": "2000",
+    "position": 196
+  },
+  "劉": {
+    "name": "劉",
+    "category": "2000",
+    "position": 197
+  },
+  "幡": {
+    "name": "幡",
+    "category": "2000",
+    "position": 198
+  },
+  "諏": {
+    "name": "諏",
+    "category": "2000",
+    "position": 199
+  },
+  "叔": {
+    "name": "叔",
+    "category": "2000",
+    "position": 200
+  },
+  "雌": {
+    "name": "雌",
+    "category": "2000",
+    "position": 201
+  },
+  "亨": {
+    "name": "亨",
+    "category": "2000",
+    "position": 202
+  },
+  "堪": {
+    "name": "堪",
+    "category": "2000",
+    "position": 203
+  },
+  "叙": {
+    "name": "叙",
+    "category": "2000",
+    "position": 204
+  },
+  "酢": {
+    "name": "酢",
+    "category": "2000",
+    "position": 205
+  },
+  "吟": {
+    "name": "吟",
+    "category": "2000",
+    "position": 206
+  },
+  "逓": {
+    "name": "逓",
+    "category": "2000",
+    "position": 207
+  },
+  "痕": {
+    "name": "痕",
+    "category": "2000",
+    "position": 208
+  },
+  "嶺": {
+    "name": "嶺",
+    "category": "2000",
+    "position": 209
+  },
+  "袖": {
+    "name": "袖",
+    "category": "2000",
+    "position": 210
+  },
+  "甚": {
+    "name": "甚",
+    "category": "2000",
+    "position": 211
+  },
+  "喬": {
+    "name": "喬",
+    "category": "2000",
+    "position": 212
+  },
+  "崔": {
+    "name": "崔",
+    "category": "2000",
+    "position": 213
+  },
+  "妖": {
+    "name": "妖",
+    "category": "2000",
+    "position": 214
+  },
+  "琵": {
+    "name": "琵",
+    "category": "2000",
+    "position": 215
+  },
+  "琶": {
+    "name": "琶",
+    "category": "2000",
+    "position": 216
+  },
+  "聯": {
+    "name": "聯",
+    "category": "2000",
+    "position": 217
+  },
+  "蘇": {
+    "name": "蘇",
+    "category": "2000",
+    "position": 218
+  },
+  "闇": {
+    "name": "闇",
+    "category": "2000",
+    "position": 219
+  },
+  "崇": {
+    "name": "崇",
+    "category": "2000",
+    "position": 220
+  },
+  "漆": {
+    "name": "漆",
+    "category": "2000",
+    "position": 221
+  },
+  "岬": {
+    "name": "岬",
+    "category": "2000",
+    "position": 222
+  },
+  "癖": {
+    "name": "癖",
+    "category": "2000",
+    "position": 223
+  },
+  "愉": {
+    "name": "愉",
+    "category": "2000",
+    "position": 224
+  },
+  "寅": {
+    "name": "寅",
+    "category": "2000",
+    "position": 225
+  },
+  "捉": {
+    "name": "捉",
+    "category": "2000",
+    "position": 226
+  },
+  "礁": {
+    "name": "礁",
+    "category": "2000",
+    "position": 227
+  },
+  "乃": {
+    "name": "乃",
+    "category": "2000",
+    "position": 228
+  },
+  "洲": {
+    "name": "洲",
+    "category": "2000",
+    "position": 229
+  },
+  "屯": {
+    "name": "屯",
+    "category": "2000",
+    "position": 230
+  },
+  "樽": {
+    "name": "樽",
+    "category": "2000",
+    "position": 231
+  },
+  "樺": {
+    "name": "樺",
+    "category": "2000",
+    "position": 232
+  },
+  "槙": {
+    "name": "槙",
+    "category": "2000",
+    "position": 233
+  },
+  "薩": {
+    "name": "薩",
+    "category": "2000",
+    "position": 234
+  },
+  "姻": {
+    "name": "姻",
+    "category": "2000",
+    "position": 235
+  },
+  "巌": {
+    "name": "巌",
+    "category": "2000",
+    "position": 236
+  },
+  "淀": {
+    "name": "淀",
+    "category": "2000",
+    "position": 237
+  },
+  "麹": {
+    "name": "麹",
+    "category": "2000",
+    "position": 238
+  },
+  "賭": {
+    "name": "賭",
+    "category": "2000",
+    "position": 239
+  },
+  "擬": {
+    "name": "擬",
+    "category": "2000",
+    "position": 240
+  },
+  "塀": {
+    "name": "塀",
+    "category": "2000",
+    "position": 241
+  },
+  "唇": {
+    "name": "唇",
+    "category": "2000",
+    "position": 242
+  },
+  "睦": {
+    "name": "睦",
+    "category": "2000",
+    "position": 243
+  },
+  "閑": {
+    "name": "閑",
+    "category": "2000",
+    "position": 244
+  },
+  "胡": {
+    "name": "胡",
+    "category": "2000",
+    "position": 245
+  },
+  "幽": {
+    "name": "幽",
+    "category": "2000",
+    "position": 246
+  },
+  "峻": {
+    "name": "峻",
+    "category": "2000",
+    "position": 247
+  },
+  "曹": {
+    "name": "曹",
+    "category": "2000",
+    "position": 248
+  },
+  "哨": {
+    "name": "哨",
+    "category": "2000",
+    "position": 249
+  },
+  "詠": {
+    "name": "詠",
+    "category": "2000",
+    "position": 250
+  },
+  "炒": {
+    "name": "炒",
+    "category": "2250",
+    "position": 1
+  },
+  "屏": {
+    "name": "屏",
+    "category": "2250",
+    "position": 2
+  },
+  "卑": {
+    "name": "卑",
+    "category": "2250",
+    "position": 3
+  },
+  "侮": {
+    "name": "侮",
+    "category": "2250",
+    "position": 4
+  },
+  "鋳": {
+    "name": "鋳",
+    "category": "2250",
+    "position": 5
+  },
+  "抹": {
+    "name": "抹",
+    "category": "2250",
+    "position": 6
+  },
+  "尉": {
+    "name": "尉",
+    "category": "2250",
+    "position": 7
+  },
+  "槻": {
+    "name": "槻",
+    "category": "2250",
+    "position": 8
+  },
+  "隷": {
+    "name": "隷",
+    "category": "2250",
+    "position": 9
+  },
+  "禍": {
+    "name": "禍",
+    "category": "2250",
+    "position": 10
+  },
+  "蝶": {
+    "name": "蝶",
+    "category": "2250",
+    "position": 11
+  },
+  "酪": {
+    "name": "酪",
+    "category": "2250",
+    "position": 12
+  },
+  "茎": {
+    "name": "茎",
+    "category": "2250",
+    "position": 13
+  },
+  "汎": {
+    "name": "汎",
+    "category": "2250",
+    "position": 14
+  },
+  "頃": {
+    "name": "頃",
+    "category": "2250",
+    "position": 15
+  },
+  "帥": {
+    "name": "帥",
+    "category": "2250",
+    "position": 16
+  },
+  "梁": {
+    "name": "梁",
+    "category": "2250",
+    "position": 17
+  },
+  "逝": {
+    "name": "逝",
+    "category": "2250",
+    "position": 18
+  },
+  "滴": {
+    "name": "滴",
+    "category": "2250",
+    "position": 19
+  },
+  "汽": {
+    "name": "汽",
+    "category": "2250",
+    "position": 20
+  },
+  "謎": {
+    "name": "謎",
+    "category": "2250",
+    "position": 21
+  },
+  "琢": {
+    "name": "琢",
+    "category": "2250",
+    "position": 22
+  },
+  "箕": {
+    "name": "箕",
+    "category": "2250",
+    "position": 23
+  },
+  "匿": {
+    "name": "匿",
+    "category": "2250",
+    "position": 24
+  },
+  "爪": {
+    "name": "爪",
+    "category": "2250",
+    "position": 25
+  },
+  "芭": {
+    "name": "芭",
+    "category": "2250",
+    "position": 26
+  },
+  "逗": {
+    "name": "逗",
+    "category": "2250",
+    "position": 27
+  },
+  "苫": {
+    "name": "苫",
+    "category": "2250",
+    "position": 28
+  },
+  "鍵": {
+    "name": "鍵",
+    "category": "2250",
+    "position": 29
+  },
+  "襟": {
+    "name": "襟",
+    "category": "2250",
+    "position": 30
+  },
+  "蛍": {
+    "name": "蛍",
+    "category": "2250",
+    "position": 31
+  },
+  "楢": {
+    "name": "楢",
+    "category": "2250",
+    "position": 32
+  },
+  "蕉": {
+    "name": "蕉",
+    "category": "2250",
+    "position": 33
+  },
+  "兜": {
+    "name": "兜",
+    "category": "2250",
+    "position": 34
+  },
+  "寡": {
+    "name": "寡",
+    "category": "2250",
+    "position": 35
+  },
+  "琉": {
+    "name": "琉",
+    "category": "2250",
+    "position": 36
+  },
+  "痢": {
+    "name": "痢",
+    "category": "2250",
+    "position": 37
+  },
+  "庸": {
+    "name": "庸",
+    "category": "2250",
+    "position": 38
+  },
+  "朋": {
+    "name": "朋",
+    "category": "2250",
+    "position": 39
+  },
+  "坑": {
+    "name": "坑",
+    "category": "2250",
+    "position": 40
+  },
+  "姑": {
+    "name": "姑",
+    "category": "2250",
+    "position": 41
+  },
+  "烏": {
+    "name": "烏",
+    "category": "2250",
+    "position": 42
+  },
+  "藍": {
+    "name": "藍",
+    "category": "2250",
+    "position": 43
+  },
+  "僑": {
+    "name": "僑",
+    "category": "2250",
+    "position": 44
+  },
+  "賊": {
+    "name": "賊",
+    "category": "2250",
+    "position": 45
+  },
+  "搾": {
+    "name": "搾",
+    "category": "2250",
+    "position": 46
+  },
+  "奄": {
+    "name": "奄",
+    "category": "2250",
+    "position": 47
+  },
+  "臼": {
+    "name": "臼",
+    "category": "2250",
+    "position": 48
+  },
+  "畔": {
+    "name": "畔",
+    "category": "2250",
+    "position": 49
+  },
+  "遼": {
+    "name": "遼",
+    "category": "2250",
+    "position": 50
+  },
+  "唄": {
+    "name": "唄",
+    "category": "2250",
+    "position": 51
+  },
+  "孔": {
+    "name": "孔",
+    "category": "2250",
+    "position": 52
+  },
+  "橘": {
+    "name": "橘",
+    "category": "2250",
+    "position": 53
+  },
+  "漱": {
+    "name": "漱",
+    "category": "2250",
+    "position": 54
+  },
+  "呂": {
+    "name": "呂",
+    "category": "2250",
+    "position": 55
+  },
+  "桧": {
+    "name": "桧",
+    "category": "2250",
+    "position": 56
+  },
+  "拷": {
+    "name": "拷",
+    "category": "2250",
+    "position": 57
+  },
+  "宋": {
+    "name": "宋",
+    "category": "2250",
+    "position": 58
+  },
+  "嬢": {
+    "name": "嬢",
+    "category": "2250",
+    "position": 59
+  },
+  "苑": {
+    "name": "苑",
+    "category": "2250",
+    "position": 60
+  },
+  "巽": {
+    "name": "巽",
+    "category": "2250",
+    "position": 61
+  },
+  "杜": {
+    "name": "杜",
+    "category": "2250",
+    "position": 62
+  },
+  "渓": {
+    "name": "渓",
+    "category": "2250",
+    "position": 63
+  },
+  "翁": {
+    "name": "翁",
+    "category": "2250",
+    "position": 64
+  },
+  "藝": {
+    "name": "藝",
+    "category": "2250",
+    "position": 65
+  },
+  "廉": {
+    "name": "廉",
+    "category": "2250",
+    "position": 66
+  },
+  "牙": {
+    "name": "牙",
+    "category": "2250",
+    "position": 67
+  },
+  "謹": {
+    "name": "謹",
+    "category": "2250",
+    "position": 68
+  },
+  "瞳": {
+    "name": "瞳",
+    "category": "2250",
+    "position": 69
+  },
+  "湧": {
+    "name": "湧",
+    "category": "2250",
+    "position": 70
+  },
+  "欣": {
+    "name": "欣",
+    "category": "2250",
+    "position": 71
+  },
+  "窯": {
+    "name": "窯",
+    "category": "2250",
+    "position": 72
+  },
+  "褒": {
+    "name": "褒",
+    "category": "2250",
+    "position": 73
+  },
+  "醜": {
+    "name": "醜",
+    "category": "2250",
+    "position": 74
+  },
+  "魏": {
+    "name": "魏",
+    "category": "2250",
+    "position": 75
+  },
+  "篇": {
+    "name": "篇",
+    "category": "2250",
+    "position": 76
+  },
+  "升": {
+    "name": "升",
+    "category": "2250",
+    "position": 77
+  },
+  "此": {
+    "name": "此",
+    "category": "2250",
+    "position": 78
+  },
+  "峯": {
+    "name": "峯",
+    "category": "2250",
+    "position": 79
+  },
+  "殉": {
+    "name": "殉",
+    "category": "2250",
+    "position": 80
+  },
+  "煩": {
+    "name": "煩",
+    "category": "2250",
+    "position": 81
+  },
+  "巴": {
+    "name": "巴",
+    "category": "2250",
+    "position": 82
+  },
+  "禎": {
+    "name": "禎",
+    "category": "2250",
+    "position": 83
+  },
+  "枕": {
+    "name": "枕",
+    "category": "2250",
+    "position": 84
+  },
+  "劾": {
+    "name": "劾",
+    "category": "2250",
+    "position": 85
+  },
+  "菩": {
+    "name": "菩",
+    "category": "2250",
+    "position": 86
+  },
+  "堕": {
+    "name": "堕",
+    "category": "2250",
+    "position": 87
+  },
+  "丼": {
+    "name": "丼",
+    "category": "2250",
+    "position": 88
+  },
+  "租": {
+    "name": "租",
+    "category": "2250",
+    "position": 89
+  },
+  "檜": {
+    "name": "檜",
+    "category": "2250",
+    "position": 90
+  },
+  "稜": {
+    "name": "稜",
+    "category": "2250",
+    "position": 91
+  },
+  "牟": {
+    "name": "牟",
+    "category": "2250",
+    "position": 92
+  },
+  "桟": {
+    "name": "桟",
+    "category": "2250",
+    "position": 93
+  },
+  "榊": {
+    "name": "榊",
+    "category": "2250",
+    "position": 94
+  },
+  "錫": {
+    "name": "錫",
+    "category": "2250",
+    "position": 95
+  },
+  "荏": {
+    "name": "荏",
+    "category": "2250",
+    "position": 96
+  },
+  "惧": {
+    "name": "惧",
+    "category": "2250",
+    "position": 97
+  },
+  "倭": {
+    "name": "倭",
+    "category": "2250",
+    "position": 98
+  },
+  "婿": {
+    "name": "婿",
+    "category": "2250",
+    "position": 99
+  },
+  "慕": {
+    "name": "慕",
+    "category": "2250",
+    "position": 100
+  },
+  "廟": {
+    "name": "廟",
+    "category": "2250",
+    "position": 101
+  },
+  "銚": {
+    "name": "銚",
+    "category": "2250",
+    "position": 102
+  },
+  "斐": {
+    "name": "斐",
+    "category": "2250",
+    "position": 103
+  },
+  "罷": {
+    "name": "罷",
+    "category": "2250",
+    "position": 104
+  },
+  "矯": {
+    "name": "矯",
+    "category": "2250",
+    "position": 105
+  },
+  "某": {
+    "name": "某",
+    "category": "2250",
+    "position": 106
+  },
+  "囚": {
+    "name": "囚",
+    "category": "2250",
+    "position": 107
+  },
+  "魁": {
+    "name": "魁",
+    "category": "2250",
+    "position": 108
+  },
+  "薮": {
+    "name": "薮",
+    "category": "2250",
+    "position": 109
+  },
+  "虹": {
+    "name": "虹",
+    "category": "2250",
+    "position": 110
+  },
+  "鴻": {
+    "name": "鴻",
+    "category": "2250",
+    "position": 111
+  },
+  "泌": {
+    "name": "泌",
+    "category": "2250",
+    "position": 112
+  },
+  "於": {
+    "name": "於",
+    "category": "2250",
+    "position": 113
+  },
+  "赳": {
+    "name": "赳",
+    "category": "2250",
+    "position": 114
+  },
+  "漸": {
+    "name": "漸",
+    "category": "2250",
+    "position": 115
+  },
+  "逢": {
+    "name": "逢",
+    "category": "2250",
+    "position": 116
+  },
+  "凧": {
+    "name": "凧",
+    "category": "2250",
+    "position": 117
+  },
+  "鵜": {
+    "name": "鵜",
+    "category": "2250",
+    "position": 118
+  },
+  "庵": {
+    "name": "庵",
+    "category": "2250",
+    "position": 119
+  },
+  "膳": {
+    "name": "膳",
+    "category": "2250",
+    "position": 120
+  },
+  "蚊": {
+    "name": "蚊",
+    "category": "2250",
+    "position": 121
+  },
+  "葵": {
+    "name": "葵",
+    "category": "2250",
+    "position": 122
+  },
+  "厄": {
+    "name": "厄",
+    "category": "2250",
+    "position": 123
+  },
+  "藻": {
+    "name": "藻",
+    "category": "2250",
+    "position": 124
+  },
+  "萬": {
+    "name": "萬",
+    "category": "2250",
+    "position": 125
+  },
+  "禄": {
+    "name": "禄",
+    "category": "2250",
+    "position": 126
+  },
+  "孟": {
+    "name": "孟",
+    "category": "2250",
+    "position": 127
+  },
+  "鴈": {
+    "name": "鴈",
+    "category": "2250",
+    "position": 128
+  },
+  "狼": {
+    "name": "狼",
+    "category": "2250",
+    "position": 129
+  },
+  "嫡": {
+    "name": "嫡",
+    "category": "2250",
+    "position": 130
+  },
+  "呪": {
+    "name": "呪",
+    "category": "2250",
+    "position": 131
+  },
+  "斬": {
+    "name": "斬",
+    "category": "2250",
+    "position": 132
+  },
+  "尖": {
+    "name": "尖",
+    "category": "2250",
+    "position": 133
+  },
+  "翫": {
+    "name": "翫",
+    "category": "2250",
+    "position": 134
+  },
+  "嶽": {
+    "name": "嶽",
+    "category": "2250",
+    "position": 135
+  },
+  "尭": {
+    "name": "尭",
+    "category": "2250",
+    "position": 136
+  },
+  "怨": {
+    "name": "怨",
+    "category": "2250",
+    "position": 137
+  },
+  "卿": {
+    "name": "卿",
+    "category": "2250",
+    "position": 138
+  },
+  "串": {
+    "name": "串",
+    "category": "2250",
+    "position": 139
+  },
+  "已": {
+    "name": "已",
+    "category": "2250",
+    "position": 140
+  },
+  "嚇": {
+    "name": "嚇",
+    "category": "2250",
+    "position": 141
+  },
+  "巳": {
+    "name": "巳",
+    "category": "2250",
+    "position": 142
+  },
+  "凸": {
+    "name": "凸",
+    "category": "2250",
+    "position": 143
+  },
+  "暢": {
+    "name": "暢",
+    "category": "2250",
+    "position": 144
+  },
+  "腫": {
+    "name": "腫",
+    "category": "2250",
+    "position": 145
+  },
+  "粟": {
+    "name": "粟",
+    "category": "2250",
+    "position": 146
+  },
+  "燕": {
+    "name": "燕",
+    "category": "2250",
+    "position": 147
+  },
+  "韻": {
+    "name": "韻",
+    "category": "2250",
+    "position": 148
+  },
+  "綴": {
+    "name": "綴",
+    "category": "2250",
+    "position": 149
+  },
+  "埴": {
+    "name": "埴",
+    "category": "2250",
+    "position": 150
+  },
+  "霜": {
+    "name": "霜",
+    "category": "2250",
+    "position": 151
+  },
+  "餅": {
+    "name": "餅",
+    "category": "2250",
+    "position": 152
+  },
+  "魯": {
+    "name": "魯",
+    "category": "2250",
+    "position": 153
+  },
+  "硝": {
+    "name": "硝",
+    "category": "2250",
+    "position": 154
+  },
+  "牡": {
+    "name": "牡",
+    "category": "2250",
+    "position": 155
+  },
+  "箸": {
+    "name": "箸",
+    "category": "2250",
+    "position": 156
+  },
+  "勅": {
+    "name": "勅",
+    "category": "2250",
+    "position": 157
+  },
+  "芹": {
+    "name": "芹",
+    "category": "2250",
+    "position": 158
+  },
+  "杏": {
+    "name": "杏",
+    "category": "2250",
+    "position": 159
+  },
+  "迦": {
+    "name": "迦",
+    "category": "2250",
+    "position": 160
+  },
+  "棺": {
+    "name": "棺",
+    "category": "2250",
+    "position": 161
+  },
+  "儒": {
+    "name": "儒",
+    "category": "2250",
+    "position": 162
+  },
+  "鳳": {
+    "name": "鳳",
+    "category": "2250",
+    "position": 163
+  },
+  "馨": {
+    "name": "馨",
+    "category": "2250",
+    "position": 164
+  },
+  "斑": {
+    "name": "斑",
+    "category": "2250",
+    "position": 165
+  },
+  "蔭": {
+    "name": "蔭",
+    "category": "2250",
+    "position": 166
+  },
+  "焉": {
+    "name": "焉",
+    "category": "2250",
+    "position": 167
+  },
+  "慧": {
+    "name": "慧",
+    "category": "2250",
+    "position": 168
+  },
+  "祇": {
+    "name": "祇",
+    "category": "2250",
+    "position": 169
+  },
+  "摯": {
+    "name": "摯",
+    "category": "2250",
+    "position": 170
+  },
+  "愁": {
+    "name": "愁",
+    "category": "2250",
+    "position": 171
+  },
+  "鷺": {
+    "name": "鷺",
+    "category": "2250",
+    "position": 172
+  },
+  "楼": {
+    "name": "楼",
+    "category": "2250",
+    "position": 173
+  },
+  "彬": {
+    "name": "彬",
+    "category": "2250",
+    "position": 174
+  },
+  "袴": {
+    "name": "袴",
+    "category": "2250",
+    "position": 175
+  },
+  "匡": {
+    "name": "匡",
+    "category": "2250",
+    "position": 176
+  },
+  "眉": {
+    "name": "眉",
+    "category": "2250",
+    "position": 177
+  },
+  "苅": {
+    "name": "苅",
+    "category": "2250",
+    "position": 178
+  },
+  "讃": {
+    "name": "讃",
+    "category": "2250",
+    "position": 179
+  },
+  "尹": {
+    "name": "尹",
+    "category": "2250",
+    "position": 180
+  },
+  "欽": {
+    "name": "欽",
+    "category": "2250",
+    "position": 181
+  },
+  "薪": {
+    "name": "薪",
+    "category": "2250",
+    "position": 182
+  },
+  "湛": {
+    "name": "湛",
+    "category": "2250",
+    "position": 183
+  },
+  "堆": {
+    "name": "堆",
+    "category": "2250",
+    "position": 184
+  },
+  "狐": {
+    "name": "狐",
+    "category": "2250",
+    "position": 185
+  },
+  "褐": {
+    "name": "褐",
+    "category": "2250",
+    "position": 186
+  },
+  "鴎": {
+    "name": "鴎",
+    "category": "2250",
+    "position": 187
+  },
+  "瀋": {
+    "name": "瀋",
+    "category": "2250",
+    "position": 188
+  },
+  "挺": {
+    "name": "挺",
+    "category": "2250",
+    "position": 189
+  },
+  "賜": {
+    "name": "賜",
+    "category": "2250",
+    "position": 190
+  },
+  "嵯": {
+    "name": "嵯",
+    "category": "2250",
+    "position": 191
+  },
+  "雁": {
+    "name": "雁",
+    "category": "2250",
+    "position": 192
+  },
+  "佃": {
+    "name": "佃",
+    "category": "2250",
+    "position": 193
+  },
+  "綜": {
+    "name": "綜",
+    "category": "2250",
+    "position": 194
+  },
+  "繕": {
+    "name": "繕",
+    "category": "2250",
+    "position": 195
+  },
+  "狛": {
+    "name": "狛",
+    "category": "2250",
+    "position": 196
+  },
+  "壷": {
+    "name": "壷",
+    "category": "2250",
+    "position": 197
+  },
+  "橿": {
+    "name": "橿",
+    "category": "2250",
+    "position": 198
+  },
+  "栓": {
+    "name": "栓",
+    "category": "2250",
+    "position": 199
+  },
+  "翠": {
+    "name": "翠",
+    "category": "2250",
+    "position": 200
+  },
+  "鮎": {
+    "name": "鮎",
+    "category": "2250",
+    "position": 201
+  },
+  "芯": {
+    "name": "芯",
+    "category": "2250",
+    "position": 202
+  },
+  "蜜": {
+    "name": "蜜",
+    "category": "2250",
+    "position": 203
+  },
+  "播": {
+    "name": "播",
+    "category": "2250",
+    "position": 204
+  },
+  "榛": {
+    "name": "榛",
+    "category": "2250",
+    "position": 205
+  },
+  "凹": {
+    "name": "凹",
+    "category": "2250",
+    "position": 206
+  },
+  "艶": {
+    "name": "艶",
+    "category": "2250",
+    "position": 207
+  },
+  "帖": {
+    "name": "帖",
+    "category": "2250",
+    "position": 208
+  },
+  "伺": {
+    "name": "伺",
+    "category": "2250",
+    "position": 209
+  },
+  "桶": {
+    "name": "桶",
+    "category": "2250",
+    "position": 210
+  },
+  "惣": {
+    "name": "惣",
+    "category": "2250",
+    "position": 211
+  },
+  "股": {
+    "name": "股",
+    "category": "2250",
+    "position": 212
+  },
+  "匂": {
+    "name": "匂",
+    "category": "2250",
+    "position": 213
+  },
+  "鞍": {
+    "name": "鞍",
+    "category": "2250",
+    "position": 214
+  },
+  "蔦": {
+    "name": "蔦",
+    "category": "2250",
+    "position": 215
+  },
+  "玩": {
+    "name": "玩",
+    "category": "2250",
+    "position": 216
+  },
+  "萱": {
+    "name": "萱",
+    "category": "2250",
+    "position": 217
+  },
+  "梯": {
+    "name": "梯",
+    "category": "2250",
+    "position": 218
+  },
+  "雫": {
+    "name": "雫",
+    "category": "2250",
+    "position": 219
+  },
+  "絆": {
+    "name": "絆",
+    "category": "2250",
+    "position": 220
+  },
+  "錬": {
+    "name": "錬",
+    "category": "2250",
+    "position": 221
+  },
+  "湊": {
+    "name": "湊",
+    "category": "2250",
+    "position": 222
+  },
+  "蜂": {
+    "name": "蜂",
+    "category": "2250",
+    "position": 223
+  },
+  "隼": {
+    "name": "隼",
+    "category": "2250",
+    "position": 224
+  },
+  "舵": {
+    "name": "舵",
+    "category": "2250",
+    "position": 225
+  },
+  "渚": {
+    "name": "渚",
+    "category": "2250",
+    "position": 226
+  },
+  "珂": {
+    "name": "珂",
+    "category": "2250",
+    "position": 227
+  },
+  "煥": {
+    "name": "煥",
+    "category": "2250",
+    "position": 228
+  },
+  "衷": {
+    "name": "衷",
+    "category": "2250",
+    "position": 229
+  },
+  "逐": {
+    "name": "逐",
+    "category": "2250",
+    "position": 230
+  },
+  "斥": {
+    "name": "斥",
+    "category": "2250",
+    "position": 231
+  },
+  "稀": {
+    "name": "稀",
+    "category": "2250",
+    "position": 232
+  },
+  "癌": {
+    "name": "癌",
+    "category": "2250",
+    "position": 233
+  },
+  "峨": {
+    "name": "峨",
+    "category": "2250",
+    "position": 234
+  },
+  "嘘": {
+    "name": "嘘",
+    "category": "2250",
+    "position": 235
+  },
+  "旛": {
+    "name": "旛",
+    "category": "2250",
+    "position": 236
+  },
+  "篭": {
+    "name": "篭",
+    "category": "2250",
+    "position": 237
+  },
+  "芙": {
+    "name": "芙",
+    "category": "2250",
+    "position": 238
+  },
+  "詔": {
+    "name": "詔",
+    "category": "2250",
+    "position": 239
+  },
+  "皐": {
+    "name": "皐",
+    "category": "2250",
+    "position": 240
+  },
+  "雛": {
+    "name": "雛",
+    "category": "2250",
+    "position": 241
+  },
+  "娼": {
+    "name": "娼",
+    "category": "2250",
+    "position": 242
+  },
+  "篆": {
+    "name": "篆",
+    "category": "2250",
+    "position": 243
+  },
+  "鮫": {
+    "name": "鮫",
+    "category": "2250",
+    "position": 244
+  },
+  "椅": {
+    "name": "椅",
+    "category": "2250",
+    "position": 245
+  },
+  "惟": {
+    "name": "惟",
+    "category": "2250",
+    "position": 246
+  },
+  "牌": {
+    "name": "牌",
+    "category": "2250",
+    "position": 247
+  },
+  "宕": {
+    "name": "宕",
+    "category": "2250",
+    "position": 248
+  },
+  "喧": {
+    "name": "喧",
+    "category": "2250",
+    "position": 249
+  },
+  "佑": {
+    "name": "佑",
+    "category": "2250",
+    "position": 250
+  },
+  "蒋": {
+    "name": "蒋",
+    "category": "2501",
+    "position": 1
+  },
+  "樟": {
+    "name": "樟",
+    "category": "2501",
+    "position": 2
+  },
+  "耀": {
+    "name": "耀",
+    "category": "2501",
+    "position": 3
+  },
+  "黛": {
+    "name": "黛",
+    "category": "2501",
+    "position": 4
+  },
+  "叱": {
+    "name": "叱",
+    "category": "2501",
+    "position": 5
+  },
+  "櫛": {
+    "name": "櫛",
+    "category": "2501",
+    "position": 6
+  },
+  "渥": {
+    "name": "渥",
+    "category": "2501",
+    "position": 7
+  },
+  "挨": {
+    "name": "挨",
+    "category": "2501",
+    "position": 8
+  },
+  "憧": {
+    "name": "憧",
+    "category": "2501",
+    "position": 9
+  },
+  "濡": {
+    "name": "濡",
+    "category": "2501",
+    "position": 10
+  },
+  "槍": {
+    "name": "槍",
+    "category": "2501",
+    "position": 11
+  },
+  "宵": {
+    "name": "宵",
+    "category": "2501",
+    "position": 12
+  },
+  "襄": {
+    "name": "襄",
+    "category": "2501",
+    "position": 13
+  },
+  "妄": {
+    "name": "妄",
+    "category": "2501",
+    "position": 14
+  },
+  "惇": {
+    "name": "惇",
+    "category": "2501",
+    "position": 15
+  },
+  "蛋": {
+    "name": "蛋",
+    "category": "2501",
+    "position": 16
+  },
+  "脩": {
+    "name": "脩",
+    "category": "2501",
+    "position": 17
+  },
+  "笘": {
+    "name": "笘",
+    "category": "2501",
+    "position": 18
+  },
+  "宍": {
+    "name": "宍",
+    "category": "2501",
+    "position": 19
+  },
+  "甫": {
+    "name": "甫",
+    "category": "2501",
+    "position": 20
+  },
+  "酌": {
+    "name": "酌",
+    "category": "2501",
+    "position": 21
+  },
+  "蚕": {
+    "name": "蚕",
+    "category": "2501",
+    "position": 22
+  },
+  "壕": {
+    "name": "壕",
+    "category": "2501",
+    "position": 23
+  },
+  "嬉": {
+    "name": "嬉",
+    "category": "2501",
+    "position": 24
+  },
+  "囃": {
+    "name": "囃",
+    "category": "2501",
+    "position": 25
+  },
+  "蒼": {
+    "name": "蒼",
+    "category": "2501",
+    "position": 26
+  },
+  "餌": {
+    "name": "餌",
+    "category": "2501",
+    "position": 27
+  },
+  "簗": {
+    "name": "簗",
+    "category": "2501",
+    "position": 28
+  },
+  "峙": {
+    "name": "峙",
+    "category": "2501",
+    "position": 29
+  },
+  "粥": {
+    "name": "粥",
+    "category": "2501",
+    "position": 30
+  },
+  "舘": {
+    "name": "舘",
+    "category": "2501",
+    "position": 31
+  },
+  "銕": {
+    "name": "銕",
+    "category": "2501",
+    "position": 32
+  },
+  "鄒": {
+    "name": "鄒",
+    "category": "2501",
+    "position": 33
+  },
+  "蜷": {
+    "name": "蜷",
+    "category": "2501",
+    "position": 34
+  },
+  "暉": {
+    "name": "暉",
+    "category": "2501",
+    "position": 35
+  },
+  "捧": {
+    "name": "捧",
+    "category": "2501",
+    "position": 36
+  },
+  "頒": {
+    "name": "頒",
+    "category": "2501",
+    "position": 37
+  },
+  "只": {
+    "name": "只",
+    "category": "2501",
+    "position": 38
+  },
+  "肢": {
+    "name": "肢",
+    "category": "2501",
+    "position": 39
+  },
+  "箏": {
+    "name": "箏",
+    "category": "2501",
+    "position": 40
+  },
+  "檀": {
+    "name": "檀",
+    "category": "2501",
+    "position": 41
+  },
+  "鵠": {
+    "name": "鵠",
+    "category": "2501",
+    "position": 42
+  },
+  "凱": {
+    "name": "凱",
+    "category": "2501",
+    "position": 43
+  },
+  "彗": {
+    "name": "彗",
+    "category": "2501",
+    "position": 44
+  },
+  "謄": {
+    "name": "謄",
+    "category": "2501",
+    "position": 45
+  },
+  "諌": {
+    "name": "諌",
+    "category": "2501",
+    "position": 46
+  },
+  "樫": {
+    "name": "樫",
+    "category": "2501",
+    "position": 47
+  },
+  "噂": {
+    "name": "噂",
+    "category": "2501",
+    "position": 48
+  },
+  "脊": {
+    "name": "脊",
+    "category": "2501",
+    "position": 49
+  },
+  "牝": {
+    "name": "牝",
+    "category": "2501",
+    "position": 50
+  },
+  "梓": {
+    "name": "梓",
+    "category": "2501",
+    "position": 51
+  },
+  "洛": {
+    "name": "洛",
+    "category": "2501",
+    "position": 52
+  },
+  "醍": {
+    "name": "醍",
+    "category": "2501",
+    "position": 53
+  },
+  "砦": {
+    "name": "砦",
+    "category": "2501",
+    "position": 54
+  },
+  "丑": {
+    "name": "丑",
+    "category": "2501",
+    "position": 55
+  },
+  "笏": {
+    "name": "笏",
+    "category": "2501",
+    "position": 56
+  },
+  "蕨": {
+    "name": "蕨",
+    "category": "2501",
+    "position": 57
+  },
+  "噺": {
+    "name": "噺",
+    "category": "2501",
+    "position": 58
+  },
+  "抒": {
+    "name": "抒",
+    "category": "2501",
+    "position": 59
+  },
+  "嗣": {
+    "name": "嗣",
+    "category": "2501",
+    "position": 60
+  },
+  "隈": {
+    "name": "隈",
+    "category": "2501",
+    "position": 61
+  },
+  "叶": {
+    "name": "叶",
+    "category": "2501",
+    "position": 62
+  },
+  "凄": {
+    "name": "凄",
+    "category": "2501",
+    "position": 63
+  },
+  "汐": {
+    "name": "汐",
+    "category": "2501",
+    "position": 64
+  },
+  "絢": {
+    "name": "絢",
+    "category": "2501",
+    "position": 65
+  },
+  "叩": {
+    "name": "叩",
+    "category": "2501",
+    "position": 66
+  },
+  "嫉": {
+    "name": "嫉",
+    "category": "2501",
+    "position": 67
+  },
+  "朔": {
+    "name": "朔",
+    "category": "2501",
+    "position": 68
+  },
+  "蔡": {
+    "name": "蔡",
+    "category": "2501",
+    "position": 69
+  },
+  "膝": {
+    "name": "膝",
+    "category": "2501",
+    "position": 70
+  },
+  "鍾": {
+    "name": "鍾",
+    "category": "2501",
+    "position": 71
+  },
+  "仇": {
+    "name": "仇",
+    "category": "2501",
+    "position": 72
+  },
+  "伽": {
+    "name": "伽",
+    "category": "2501",
+    "position": 73
+  },
+  "夷": {
+    "name": "夷",
+    "category": "2501",
+    "position": 74
+  },
+  "恣": {
+    "name": "恣",
+    "category": "2501",
+    "position": 75
+  },
+  "瞑": {
+    "name": "瞑",
+    "category": "2501",
+    "position": 76
+  },
+  "畝": {
+    "name": "畝",
+    "category": "2501",
+    "position": 77
+  },
+  "抄": {
+    "name": "抄",
+    "category": "2501",
+    "position": 78
+  },
+  "杭": {
+    "name": "杭",
+    "category": "2501",
+    "position": 79
+  },
+  "寓": {
+    "name": "寓",
+    "category": "2501",
+    "position": 80
+  },
+  "麺": {
+    "name": "麺",
+    "category": "2501",
+    "position": 81
+  },
+  "戴": {
+    "name": "戴",
+    "category": "2501",
+    "position": 82
+  },
+  "爽": {
+    "name": "爽",
+    "category": "2501",
+    "position": 83
+  },
+  "裾": {
+    "name": "裾",
+    "category": "2501",
+    "position": 84
+  },
+  "黎": {
+    "name": "黎",
+    "category": "2501",
+    "position": 85
+  },
+  "惰": {
+    "name": "惰",
+    "category": "2501",
+    "position": 86
+  },
+  "坐": {
+    "name": "坐",
+    "category": "2501",
+    "position": 87
+  },
+  "鍼": {
+    "name": "鍼",
+    "category": "2501",
+    "position": 88
+  },
+  "蛮": {
+    "name": "蛮",
+    "category": "2501",
+    "position": 89
+  },
+  "塙": {
+    "name": "塙",
+    "category": "2501",
+    "position": 90
+  },
+  "冴": {
+    "name": "冴",
+    "category": "2501",
+    "position": 91
+  },
+  "旺": {
+    "name": "旺",
+    "category": "2501",
+    "position": 92
+  },
+  "葦": {
+    "name": "葦",
+    "category": "2501",
+    "position": 93
+  },
+  "礒": {
+    "name": "礒",
+    "category": "2501",
+    "position": 94
+  },
+  "咸": {
+    "name": "咸",
+    "category": "2501",
+    "position": 95
+  },
+  "萌": {
+    "name": "萌",
+    "category": "2501",
+    "position": 96
+  },
+  "饗": {
+    "name": "饗",
+    "category": "2501",
+    "position": 97
+  },
+  "歪": {
+    "name": "歪",
+    "category": "2501",
+    "position": 98
+  },
+  "冥": {
+    "name": "冥",
+    "category": "2501",
+    "position": 99
+  },
+  "偲": {
+    "name": "偲",
+    "category": "2501",
+    "position": 100
+  },
+  "壱": {
+    "name": "壱",
+    "category": "2501",
+    "position": 101
+  },
+  "瑠": {
+    "name": "瑠",
+    "category": "2501",
+    "position": 102
+  },
+  "韮": {
+    "name": "韮",
+    "category": "2501",
+    "position": 103
+  },
+  "漕": {
+    "name": "漕",
+    "category": "2501",
+    "position": 104
+  },
+  "杵": {
+    "name": "杵",
+    "category": "2501",
+    "position": 105
+  },
+  "薔": {
+    "name": "薔",
+    "category": "2501",
+    "position": 106
+  },
+  "膠": {
+    "name": "膠",
+    "category": "2501",
+    "position": 107
+  },
+  "允": {
+    "name": "允",
+    "category": "2501",
+    "position": 108
+  },
+  "眞": {
+    "name": "眞",
+    "category": "2501",
+    "position": 109
+  },
+  "蒙": {
+    "name": "蒙",
+    "category": "2501",
+    "position": 110
+  },
+  "蕃": {
+    "name": "蕃",
+    "category": "2501",
+    "position": 111
+  },
+  "呑": {
+    "name": "呑",
+    "category": "2501",
+    "position": 112
+  },
+  "侯": {
+    "name": "侯",
+    "category": "2501",
+    "position": 113
+  },
+  "碓": {
+    "name": "碓",
+    "category": "2501",
+    "position": 114
+  },
+  "茗": {
+    "name": "茗",
+    "category": "2501",
+    "position": 115
+  },
+  "麓": {
+    "name": "麓",
+    "category": "2501",
+    "position": 116
+  },
+  "瀕": {
+    "name": "瀕",
+    "category": "2501",
+    "position": 117
+  },
+  "蒔": {
+    "name": "蒔",
+    "category": "2501",
+    "position": 118
+  },
+  "鯉": {
+    "name": "鯉",
+    "category": "2501",
+    "position": 119
+  },
+  "竪": {
+    "name": "竪",
+    "category": "2501",
+    "position": 120
+  },
+  "弧": {
+    "name": "弧",
+    "category": "2501",
+    "position": 121
+  },
+  "稽": {
+    "name": "稽",
+    "category": "2501",
+    "position": 122
+  },
+  "瘤": {
+    "name": "瘤",
+    "category": "2501",
+    "position": 123
+  },
+  "澤": {
+    "name": "澤",
+    "category": "2501",
+    "position": 124
+  },
+  "溥": {
+    "name": "溥",
+    "category": "2501",
+    "position": 125
+  },
+  "遥": {
+    "name": "遥",
+    "category": "2501",
+    "position": 126
+  },
+  "蹴": {
+    "name": "蹴",
+    "category": "2501",
+    "position": 127
+  },
+  "或": {
+    "name": "或",
+    "category": "2501",
+    "position": 128
+  },
+  "訃": {
+    "name": "訃",
+    "category": "2501",
+    "position": 129
+  },
+  "矩": {
+    "name": "矩",
+    "category": "2501",
+    "position": 130
+  },
+  "厦": {
+    "name": "厦",
+    "category": "2501",
+    "position": 131
+  },
+  "冤": {
+    "name": "冤",
+    "category": "2501",
+    "position": 132
+  },
+  "剥": {
+    "name": "剥",
+    "category": "2501",
+    "position": 133
+  },
+  "舜": {
+    "name": "舜",
+    "category": "2501",
+    "position": 134
+  },
+  "侠": {
+    "name": "侠",
+    "category": "2501",
+    "position": 135
+  },
+  "贅": {
+    "name": "贅",
+    "category": "2501",
+    "position": 136
+  },
+  "杖": {
+    "name": "杖",
+    "category": "2501",
+    "position": 137
+  },
+  "蓋": {
+    "name": "蓋",
+    "category": "2501",
+    "position": 138
+  },
+  "畏": {
+    "name": "畏",
+    "category": "2501",
+    "position": 139
+  },
+  "喉": {
+    "name": "喉",
+    "category": "2501",
+    "position": 140
+  },
+  "汪": {
+    "name": "汪",
+    "category": "2501",
+    "position": 141
+  },
+  "猷": {
+    "name": "猷",
+    "category": "2501",
+    "position": 142
+  },
+  "瑛": {
+    "name": "瑛",
+    "category": "2501",
+    "position": 143
+  },
+  "搜": {
+    "name": "搜",
+    "category": "2501",
+    "position": 144
+  },
+  "曼": {
+    "name": "曼",
+    "category": "2501",
+    "position": 145
+  },
+  "附": {
+    "name": "附",
+    "category": "2501",
+    "position": 146
+  },
+  "彪": {
+    "name": "彪",
+    "category": "2501",
+    "position": 147
+  },
+  "撚": {
+    "name": "撚",
+    "category": "2501",
+    "position": 148
+  },
+  "噛": {
+    "name": "噛",
+    "category": "2501",
+    "position": 149
+  },
+  "卯": {
+    "name": "卯",
+    "category": "2501",
+    "position": 150
+  },
+  "桝": {
+    "name": "桝",
+    "category": "2501",
+    "position": 151
+  },
+  "撫": {
+    "name": "撫",
+    "category": "2501",
+    "position": 152
+  },
+  "喋": {
+    "name": "喋",
+    "category": "2501",
+    "position": 153
+  },
+  "但": {
+    "name": "但",
+    "category": "2501",
+    "position": 154
+  },
+  "溢": {
+    "name": "溢",
+    "category": "2501",
+    "position": 155
+  },
+  "闊": {
+    "name": "闊",
+    "category": "2501",
+    "position": 156
+  },
+  "藏": {
+    "name": "藏",
+    "category": "2501",
+    "position": 157
+  },
+  "浙": {
+    "name": "浙",
+    "category": "2501",
+    "position": 158
+  },
+  "彭": {
+    "name": "彭",
+    "category": "2501",
+    "position": 159
+  },
+  "淘": {
+    "name": "淘",
+    "category": "2501",
+    "position": 160
+  },
+  "剃": {
+    "name": "剃",
+    "category": "2501",
+    "position": 161
+  },
+  "揃": {
+    "name": "揃",
+    "category": "2501",
+    "position": 162
+  },
+  "綺": {
+    "name": "綺",
+    "category": "2501",
+    "position": 163
+  },
+  "徘": {
+    "name": "徘",
+    "category": "2501",
+    "position": 164
+  },
+  "巷": {
+    "name": "巷",
+    "category": "2501",
+    "position": 165
+  },
+  "竿": {
+    "name": "竿",
+    "category": "2501",
+    "position": 166
+  },
+  "蟹": {
+    "name": "蟹",
+    "category": "2501",
+    "position": 167
+  },
+  "芋": {
+    "name": "芋",
+    "category": "2501",
+    "position": 168
+  },
+  "袁": {
+    "name": "袁",
+    "category": "2501",
+    "position": 169
+  },
+  "舩": {
+    "name": "舩",
+    "category": "2501",
+    "position": 170
+  },
+  "拭": {
+    "name": "拭",
+    "category": "2501",
+    "position": 171
+  },
+  "茜": {
+    "name": "茜",
+    "category": "2501",
+    "position": 172
+  },
+  "凌": {
+    "name": "凌",
+    "category": "2501",
+    "position": 173
+  },
+  "頬": {
+    "name": "頬",
+    "category": "2501",
+    "position": 174
+  },
+  "厨": {
+    "name": "厨",
+    "category": "2501",
+    "position": 175
+  },
+  "犀": {
+    "name": "犀",
+    "category": "2501",
+    "position": 176
+  },
+  "簑": {
+    "name": "簑",
+    "category": "2501",
+    "position": 177
+  },
+  "皓": {
+    "name": "皓",
+    "category": "2501",
+    "position": 178
+  },
+  "甦": {
+    "name": "甦",
+    "category": "2501",
+    "position": 179
+  },
+  "洸": {
+    "name": "洸",
+    "category": "2501",
+    "position": 180
+  },
+  "毬": {
+    "name": "毬",
+    "category": "2501",
+    "position": 181
+  },
+  "檄": {
+    "name": "檄",
+    "category": "2501",
+    "position": 182
+  },
+  "姚": {
+    "name": "姚",
+    "category": "2501",
+    "position": 183
+  },
+  "蛭": {
+    "name": "蛭",
+    "category": "2501",
+    "position": 184
+  },
+  "婆": {
+    "name": "婆",
+    "category": "2501",
+    "position": 185
+  },
+  "叢": {
+    "name": "叢",
+    "category": "2501",
+    "position": 186
+  },
+  "椙": {
+    "name": "椙",
+    "category": "2501",
+    "position": 187
+  },
+  "轟": {
+    "name": "轟",
+    "category": "2501",
+    "position": 188
+  },
+  "贋": {
+    "name": "贋",
+    "category": "2501",
+    "position": 189
+  },
+  "洒": {
+    "name": "洒",
+    "category": "2501",
+    "position": 190
+  },
+  "貰": {
+    "name": "貰",
+    "category": "2501",
+    "position": 191
+  },
+  "儲": {
+    "name": "儲",
+    "category": "2501",
+    "position": 192
+  },
+  "緋": {
+    "name": "緋",
+    "category": "2501",
+    "position": 193
+  },
+  "貼": {
+    "name": "貼",
+    "category": "2501",
+    "position": 194
+  },
+  "諜": {
+    "name": "諜",
+    "category": "2501",
+    "position": 195
+  },
+  "鯛": {
+    "name": "鯛",
+    "category": "2501",
+    "position": 196
+  },
+  "蓼": {
+    "name": "蓼",
+    "category": "2501",
+    "position": 197
+  },
+  "甕": {
+    "name": "甕",
+    "category": "2501",
+    "position": 198
+  },
+  "喘": {
+    "name": "喘",
+    "category": "2501",
+    "position": 199
+  },
+  "怜": {
+    "name": "怜",
+    "category": "2501",
+    "position": 200
+  },
+  "溜": {
+    "name": "溜",
+    "category": "2501",
+    "position": 201
+  },
+  "邑": {
+    "name": "邑",
+    "category": "2501",
+    "position": 202
+  },
+  "鉾": {
+    "name": "鉾",
+    "category": "2501",
+    "position": 203
+  },
+  "倣": {
+    "name": "倣",
+    "category": "2501",
+    "position": 204
+  },
+  "碧": {
+    "name": "碧",
+    "category": "2501",
+    "position": 205
+  },
+  "燈": {
+    "name": "燈",
+    "category": "2501",
+    "position": 206
+  },
+  "諦": {
+    "name": "諦",
+    "category": "2501",
+    "position": 207
+  },
+  "煎": {
+    "name": "煎",
+    "category": "2501",
+    "position": 208
+  },
+  "瓜": {
+    "name": "瓜",
+    "category": "2501",
+    "position": 209
+  },
+  "緻": {
+    "name": "緻",
+    "category": "2501",
+    "position": 210
+  },
+  "哺": {
+    "name": "哺",
+    "category": "2501",
+    "position": 211
+  },
+  "槌": {
+    "name": "槌",
+    "category": "2501",
+    "position": 212
+  },
+  "啄": {
+    "name": "啄",
+    "category": "2501",
+    "position": 213
+  },
+  "穣": {
+    "name": "穣",
+    "category": "2501",
+    "position": 214
+  },
+  "嗜": {
+    "name": "嗜",
+    "category": "2501",
+    "position": 215
+  },
+  "偕": {
+    "name": "偕",
+    "category": "2501",
+    "position": 216
+  },
+  "罵": {
+    "name": "罵",
+    "category": "2501",
+    "position": 217
+  },
+  "酉": {
+    "name": "酉",
+    "category": "2501",
+    "position": 218
+  },
+  "蹄": {
+    "name": "蹄",
+    "category": "2501",
+    "position": 219
+  },
+  "頚": {
+    "name": "頚",
+    "category": "2501",
+    "position": 220
+  },
+  "胚": {
+    "name": "胚",
+    "category": "2501",
+    "position": 221
+  },
+  "牢": {
+    "name": "牢",
+    "category": "2501",
+    "position": 222
+  },
+  "糞": {
+    "name": "糞",
+    "category": "2501",
+    "position": 223
+  },
+  "悌": {
+    "name": "悌",
+    "category": "2501",
+    "position": 224
+  },
+  "吊": {
+    "name": "吊",
+    "category": "2501",
+    "position": 225
+  },
+  "楕": {
+    "name": "楕",
+    "category": "2501",
+    "position": 226
+  },
+  "鮭": {
+    "name": "鮭",
+    "category": "2501",
+    "position": 227
+  },
+  "乞": {
+    "name": "乞",
+    "category": "2501",
+    "position": 228
+  },
+  "倹": {
+    "name": "倹",
+    "category": "2501",
+    "position": 229
+  },
+  "嗅": {
+    "name": "嗅",
+    "category": "2501",
+    "position": 230
+  },
+  "詫": {
+    "name": "詫",
+    "category": "2501",
+    "position": 231
+  },
+  "鱒": {
+    "name": "鱒",
+    "category": "2501",
+    "position": 232
+  },
+  "蔑": {
+    "name": "蔑",
+    "category": "2501",
+    "position": 233
+  },
+  "轍": {
+    "name": "轍",
+    "category": "2501",
+    "position": 234
+  },
+  "醤": {
+    "name": "醤",
+    "category": "2501",
+    "position": 235
+  },
+  "惚": {
+    "name": "惚",
+    "category": "2501",
+    "position": 236
+  },
+  "廣": {
+    "name": "廣",
+    "category": "2501",
+    "position": 237
+  },
+  "藁": {
+    "name": "藁",
+    "category": "2501",
+    "position": 238
+  },
+  "柚": {
+    "name": "柚",
+    "category": "2501",
+    "position": 239
+  },
+  "舛": {
+    "name": "舛",
+    "category": "2501",
+    "position": 240
+  },
+  "縞": {
+    "name": "縞",
+    "category": "2501",
+    "position": 241
+  },
+  "謳": {
+    "name": "謳",
+    "category": "2501",
+    "position": 242
+  },
+  "杞": {
+    "name": "杞",
+    "category": "2501",
+    "position": 243
+  },
+  "鱗": {
+    "name": "鱗",
+    "category": "2501",
+    "position": 244
+  },
+  "繭": {
+    "name": "繭",
+    "category": "2501",
+    "position": 245
+  },
+  "釘": {
+    "name": "釘",
+    "category": "2501",
+    "position": 246
+  },
+  "弛": {
+    "name": "弛",
+    "category": "2501",
+    "position": 247
+  },
+  "狸": {
+    "name": "狸",
+    "category": "2501",
+    "position": 248
+  },
+  "壬": {
+    "name": "壬",
+    "category": "2501",
+    "position": 249
+  },
+  "硯": {
+    "name": "硯",
+    "category": "2501",
+    "position": 250
+  },
+  "蝦": {
+    "name": "蝦",
+    "category": "2501",
+    "position": 251
+  }
+}

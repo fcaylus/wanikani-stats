@@ -118,5 +118,21 @@
       }
     ],
     "categories_name_format": "%sth Grade"
+  },
+  "frequency": {
+    "display_name": "Frequency",
+    "categories": [
+      "250",
+      "500",
+      "750",
+      "1000",
+      "1250",
+      "1500",
+      "1750",
+      "2000",
+      "2250",
+      "2501"
+    ],
+    "categories_name_format": "%s"
   }
 }
