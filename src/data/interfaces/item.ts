@@ -6,6 +6,8 @@ export interface Item {
     name: string;
     // Characters used to display it (if exists)
     characters?: string;
+    // Readings
+    readings?: string[];
     // SRS level
     srs?: number;
     // Category (can be level, difficulty ... It depends on the source)

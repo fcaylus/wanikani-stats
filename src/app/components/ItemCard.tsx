@@ -14,7 +14,8 @@ const useStyles = makeStyles(() => ({
         height: 32,
         transition: "none",
         backgroundColor: colors.unknown,
-        color: "#000000"
+        color: "#000000",
+        textTransform: "capitalize"
     },
     image: {
         width: 16,
@@ -33,6 +34,8 @@ export default React.memo((props: Item & { className?: string }) => {
     const imageComponent = !props.characters && props.image ?
         <img className={classes.image} alt={displayedText} src={props.image}/> : null;
 
+    const title = displayedText + (props.readings ? (" (" + props.readings.join(" / ") + ")") : "");
+
     return (
         <Button
             size="medium"
@@ -48,7 +51,7 @@ export default React.memo((props: Item & { className?: string }) => {
             disableRipple
             disableFocusRipple
             disableTouchRipple
-            title={displayedText}>
+            title={title}>
             {imageComponent ? imageComponent : displayedText}
         </Button>
     );

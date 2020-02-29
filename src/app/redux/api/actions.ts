@@ -1,10 +1,12 @@
 import {API_ERROR, API_START, API_SUCCESS, ApiActionTypes} from "./types";
 import {AnyAction} from "redux";
 import axios from "axios";
-import {INTERNAL_SERVER_ERROR} from "http-status-codes";
+import {ACCEPTED, INTERNAL_SERVER_ERROR} from "http-status-codes";
 import {RootState} from "../store";
 import {PaginatedEndpointResult} from "../../../server/interfaces/paginated";
 import {ThunkDispatch} from "redux-thunk";
+import redirect from "../../../redirect";
+import {IncomingMessage, ServerResponse} from "http";
 
 /**
  * Action sent when an API fetch is started
@@ -61,8 +63,18 @@ export const apiSuccess = (label: string, data: any, isNextPage?: boolean): ApiA
  * to be append to the store).
  * @param apiKey Optional apiKey. Useful for the login page when the token is not stored yet in cookies.
  * @param noCache If specified, fetch the data even if it's stored in the store
+ * @param req Optional request object. Used to redirect on the server side in case the WK data are not ready
+ * @param res Optional response object. Used to redirect on the server side in case the WK data are not ready
  */
-export const fetchApi = (label: string, url: string, method: string, apiKey: string | undefined, data?: any, isNextPage?: boolean, noCache?: boolean) => {
+export const fetchApi = (label: string,
+                         url: string,
+                         method: string,
+                         apiKey: string | undefined,
+                         data?: any,
+                         isNextPage?: boolean,
+                         noCache?: boolean,
+                         req?: IncomingMessage,
+                         res?: ServerResponse) => {
     const baseUrl = process.browser ? "" : "http://localhost:3000";
 
     return (dispatch: ThunkDispatch<any, any, AnyAction>, getState: () => RootState) => {
@@ -78,7 +90,7 @@ export const fetchApi = (label: string, url: string, method: string, apiKey: str
         }
 
         // Otherwise, get the data from the API
-        return fetchData(dispatch, url, method, apiKey, label, baseUrl, data, isNextPage);
+        return fetchData(dispatch, url, method, apiKey, label, baseUrl, data, isNextPage, req, res);
     }
 };
 
@@ -89,7 +101,9 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
                    label: string,
                    baseUrl: string,
                    data?: any,
-                   isNextPage?: boolean) => {
+                   isNextPage?: boolean,
+                   req?: IncomingMessage,
+                   res?: ServerResponse) => {
     dispatch(apiStart(label, isNextPage));
 
     return new Promise((resolve, reject) => {
@@ -106,6 +120,14 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
             },
             [dataOrParams]: data
         }).then(response => {
+            // If the response code is ACCEPTED, this means the server is downloading WK subjects. Redirect the user to a
+            // waiting page
+            if (response.status === ACCEPTED) {
+                redirect("/wait", req, res, false, true);
+                resolve();
+                return;
+            }
+
             // If it's a paginated result, also trigger a API_NEXT_PAGE action.
             // In this case, the next page url is parsed and a new fetch is performed.
             // Only the actual data is saved to the store

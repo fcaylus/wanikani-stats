@@ -42,8 +42,8 @@ export default function PageHeader() {
     const classes = useStyles();
     const router = useRouter();
 
-    // For /login, only display a minimal header
-    const minimal = router.pathname == "/login";
+    // For /login and /wait, only display a minimal header
+    const minimal = router.pathname == "/login" || router.pathname == "/wait";
 
     return (
         <header className={classes.root}>

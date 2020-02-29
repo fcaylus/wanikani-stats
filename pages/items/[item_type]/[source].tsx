@@ -26,11 +26,11 @@ import {fetchApi} from "../../../src/app/redux/api/actions";
 import {RootState} from "../../../src/app/redux/store";
 import {ApiResultState} from "../../../src/app/redux/api/types";
 import {ReduxNextPageContext} from "../../../src/app/redux/interfaces";
-import redirect from "../../../src/server/redirect";
+import redirect from "../../../src/redirect";
 import {ItemCategory} from "../../../src/data/interfaces/item";
 import {itemTypeExists, sourceExistsForItemType} from "../../../src/data/data";
 import {getApiKey, hasApiKey} from "../../../src/app/apiKey";
-import {IncomingMessage} from "http";
+import {IncomingMessage, ServerResponse} from "http";
 import {ProgressHashMap} from "../../../src/server/interfaces/progress";
 
 const sourcesForType = (type: string) => {
@@ -43,10 +43,10 @@ const labelFromItemTypeAndSource = (itemType: string, source: string) => {
 };
 
 // Wrapper around the fetchApi() redux action
-const fetchItems = (itemType: string, source: string, req?: IncomingMessage) => {
+const fetchItems = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
     const label = labelFromItemTypeAndSource(itemType, source);
     const url = "/api/items/" + label;
-    return fetchApi(label, url, "GET", getApiKey(req));
+    return fetchApi(label, url, "GET", getApiKey(req), undefined, undefined, undefined, req, res);
 };
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -297,19 +297,19 @@ ItemPage.getInitialProps = async (ctx: ReduxNextPageContext): Promise<ItemPagePr
         }
 
         // Default to wanikani
-        redirect("/items/" + item_type.toString() + "/wanikani", ctx.res);
+        redirect("/items/" + item_type.toString() + "/wanikani", ctx.req, ctx.res);
         return {initialDataLength: 0};
     }
 
     // Check if logged
     if (!hasApiKey(ctx.req)) {
-        redirect("/login", ctx.res);
+        redirect("/login", ctx.req, ctx.res, false, true);
         return {initialDataLength: 0};
     }
 
     // Wait for the API call to finished.
     if (!process.browser) {
-        await ctx.store.dispatch(fetchItems(item_type.toString(), source.toString(), ctx.req));
+        await ctx.store.dispatch(fetchItems(item_type.toString(), source.toString(), ctx.req, ctx.res));
         const res = ctx.store.getState().api.results[labelFromItemTypeAndSource(item_type.toString(), source.toString())];
         return {
             initialDataLength: res && !res.error && !res.fetching ? res.data.length : 0

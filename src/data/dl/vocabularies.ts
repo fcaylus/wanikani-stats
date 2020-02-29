@@ -4,6 +4,7 @@ import {Item} from "../interfaces/item";
 /**
  * Return the list of available vocabularies on WaniKani.
  * Since this isn't paginated, this can take a while.
+ * See: https://docs.api.wanikani.com/#vocabulary-attributes
  */
 export default async (apiKey: string): Promise<Item[] | null> => {
     const result = await parseWaniKaniApiPages(apiKey, (data: any[]): Item[] => {
@@ -18,7 +19,10 @@ export default async (apiKey: string): Promise<Item[] | null> => {
                     position: voc.data.lesson_position,
                     subPosition: voc.id,
                     url: voc.data.document_url,
-                    srs: 0
+                    srs: 0,
+                    readings: voc.data.readings.map((reading: any) => {
+                        return reading.reading;
+                    })
                 })
             }
         }

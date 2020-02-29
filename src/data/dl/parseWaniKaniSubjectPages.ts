@@ -18,7 +18,8 @@ export default async (apiKey: string, parseFunction: (data: any[]) => Item[], ty
         // Only for the first loop
         if (!nextUrl) {
             result = await api.get("subjects", {
-                types: type
+                types: type,
+                hidden: false
             });
         } else {
             result = await api.get("", null, {
@@ -39,6 +40,10 @@ export default async (apiKey: string, parseFunction: (data: any[]) => Item[], ty
         // Check if there is a new page after
         if (!result.data.pages || !result.data.pages.next_url) {
             newDataAvailable = false;
+        }
+
+        if (nextUrl) {
+            console.log("--> " + nextUrl);
         }
     }
 

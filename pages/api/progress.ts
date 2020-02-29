@@ -15,7 +15,7 @@ import subjectNameForId from "../../src/data/sources/wanikani/subjectNameForId";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const requestParsedResult = await parseApiRequest(req, "GET");
     if (requestParsedResult.error) {
-        return res.status(requestParsedResult.errorCode).send("ERROR " + requestParsedResult.errorCode.toString());
+        return res.status(requestParsedResult.errorCode).send(requestParsedResult.errorCode.toString());
     }
     const apiKey = requestParsedResult.apiKey;
 

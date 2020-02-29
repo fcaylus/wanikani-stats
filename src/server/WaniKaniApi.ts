@@ -27,7 +27,6 @@ const axiosInstance = axios.create({
  *
  * Every request is cached in memory on the server-side to limit the number of requests to WaniKani servers.
  */
-
 export default (apiKey: string) => {
     const api = {
         instance: () => {

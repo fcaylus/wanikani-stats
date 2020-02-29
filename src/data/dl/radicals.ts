@@ -4,6 +4,7 @@ import {Item} from "../interfaces/item";
 /**
  * Return the list of available radicals on WaniKani.
  * Since this isn't paginated, this can take a while.
+ * See: https://docs.api.wanikani.com/#radical-attributes
  */
 export default async (apiKey: string): Promise<Item[] | null> => {
     const result = await parseWaniKaniApiPages(apiKey, (data: any[]): Item[] => {

@@ -1,7 +1,7 @@
 import {NextApiRequest} from "next";
-import {METHOD_NOT_ALLOWED, OK, UNAUTHORIZED} from "http-status-codes";
+import {ACCEPTED, METHOD_NOT_ALLOWED, OK, UNAUTHORIZED} from "http-status-codes";
 import isUUID from "../isUUID";
-import {downloadAllSubjectsIfNecessary} from "../data/dl/dl";
+import {downloadAllSubjects, needToDownloadWKSubjects} from "../data/dl/dl";
 import {loginIfNecessary} from "./users";
 import {parse as cookieParse} from "cookie";
 import {API_KEY_COOKIE_NAME} from "../app/apiKey";
@@ -56,7 +56,10 @@ export default async (req: NextApiRequest, method: string, loginCheck = true): P
 
     // Download WK subjects if needed. This is called at every request since the data is required for most of the request
     // Actually, only the first request of the first user will download something since it's stored to filesystem
-    await downloadAllSubjectsIfNecessary(apiKey);
+    if (needToDownloadWKSubjects()) {
+        downloadAllSubjects(apiKey);
+        return Promise.resolve({error: true, errorCode: ACCEPTED, apiKey: ""});
+    }
 
     return Promise.resolve({error: false, errorCode: OK, apiKey: apiKey});
 }

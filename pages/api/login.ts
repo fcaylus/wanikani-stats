@@ -9,7 +9,7 @@ import {login} from "../../src/server/users";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const requestParsedResult = await parseApiRequest(req, "GET", false);
     if (requestParsedResult.error) {
-        return res.status(requestParsedResult.errorCode).send("ERROR " + requestParsedResult.errorCode.toString());
+        return res.status(requestParsedResult.errorCode).send(requestParsedResult.errorCode.toString());
     }
 
     const result = await login(requestParsedResult.apiKey);

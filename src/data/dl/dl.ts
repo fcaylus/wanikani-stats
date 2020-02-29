@@ -6,6 +6,7 @@ import rimraf from "rimraf";
 import {Item} from "../interfaces/item";
 
 export const TEMP_WK_DIRECTORY = ".temp";
+const DOWNLOAD_INDICATOR_FILE = TEMP_WK_DIRECTORY + "/downloading";
 
 export const ALLOWED_DOWNLOAD_TYPES = ["radical", "kanji", "vocabulary", "subjects_id_name"];
 
@@ -17,12 +18,20 @@ export const isDownloaded = (type: string): boolean => {
     return fs.existsSync(fileNameForType(type));
 };
 
+export const isDownloading = () => {
+    return fs.existsSync(DOWNLOAD_INDICATOR_FILE);
+};
+
 /**
  * Download all WaniKani subjects and save them to a temp directory.
  * If the directory already exists, redownload everything.
  * @param apiKey
  */
 export const downloadAllSubjects = async (apiKey: string) => {
+    if (isDownloading()) {
+        return;
+    }
+
     console.log("Downloading WK subjects ...");
 
     // Remove previous directory
@@ -32,6 +41,8 @@ export const downloadAllSubjects = async (apiKey: string) => {
     if (!fs.existsSync(TEMP_WK_DIRECTORY)) {
         fs.mkdirSync(TEMP_WK_DIRECTORY);
     }
+    fs.writeFileSync(DOWNLOAD_INDICATOR_FILE, " ");
+
 
     const types = [
         {
@@ -61,7 +72,8 @@ export const downloadAllSubjects = async (apiKey: string) => {
                 // @ts-ignore
                 itemsList.push(...results[index]);
                 // Write to file
-                fs.writeFileSync(fileNameForType(types[index].name), JSON.stringify(results[index]));
+                fs.writeFileSync(fileNameForType(types[index].name), JSON.stringify(results[index], undefined, 2));
+                console.log("-> " + types[index].name + " downloaded !");
             }
         }
     });
@@ -79,6 +91,7 @@ export const downloadAllSubjects = async (apiKey: string) => {
     fs.writeFileSync(fileNameForType("subjects_id_name"), JSON.stringify(idsHash));
 
     console.log("WaniKani subjects downloaded !");
+    fs.unlinkSync(DOWNLOAD_INDICATOR_FILE);
 };
 
 /**
@@ -92,4 +105,13 @@ export const downloadAllSubjectsIfNecessary = async (apiKey: string) => {
             return;
         }
     }
+};
+
+export const needToDownloadWKSubjects = () => {
+    for (const type of ALLOWED_DOWNLOAD_TYPES) {
+        if (!isDownloaded(type)) {
+            return true;
+        }
+    }
+    return false;
 };
