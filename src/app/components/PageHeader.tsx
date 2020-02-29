@@ -5,40 +5,39 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import {Tab, Tabs} from "@material-ui/core";
 import {useRouter} from "next/router";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {},
+        root: {
+            zIndex: theme.zIndex.drawer + 1
+        },
         menuButton: {
             marginRight: theme.spacing(2),
+            [theme.breakpoints.up("md")]: {
+                display: "none"
+            }
         },
-        title: {
-            display: "none",
-            [theme.breakpoints.up('sm')]: {
-                display: "block",
-            },
-        },
+        title: {},
         logo: {
-            // TODO: use a computed value instead of "32px" ?
-            maxHeight: "32px",
-            marginRight: theme.spacing(2)
-        },
-        tabs: {
-            marginLeft: "auto",
-            minHeight: "inherit",
-        },
-        tabsFlexContainer: {
-            height: "100%"
+            maxHeight: 32,
+            marginRight: theme.spacing(2),
+            display: "none",
+            [theme.breakpoints.up("sm")]: {
+                display: "block"
+            }
         }
     }),
 );
 
+interface PageHeaderProps {
+    toggleDrawer: () => any
+}
+
 /**
  * Header displayed on every page
  */
-export default function PageHeader() {
+export default function PageHeader(props: PageHeaderProps) {
     const classes = useStyles();
     const router = useRouter();
 
@@ -49,33 +48,22 @@ export default function PageHeader() {
         <header className={classes.root}>
             <AppBar position="fixed">
                 <Toolbar>
-                    {!minimal &&
-                    <IconButton
-                        edge="start"
-                        className={classes.menuButton}
-                        color="inherit"
-                        aria-label="open drawer"
-                    >
-                        <MenuIcon/>
-                    </IconButton>
-                    }
+                    {!minimal && (
+                        <IconButton
+                            edge="start"
+                            className={classes.menuButton}
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={props.toggleDrawer}
+                        >
+                            <MenuIcon/>
+                        </IconButton>
+                    )}
 
                     <img src="/favicon-32x32.png" alt={process.env.appName} className={classes.logo}/>
                     <Typography className={classes.title} variant="h6" noWrap>
                         {process.env.appName}
                     </Typography>
-
-                    {!minimal &&
-                    <Tabs
-                        value={"items"}
-                        className={classes.tabs}
-                        classes={{
-                            flexContainer: classes.tabsFlexContainer
-                        }}
-                    >
-                        <Tab value="items" label="Items"/>
-                    </Tabs>
-                    }
                 </Toolbar>
             </AppBar>
         </header>
