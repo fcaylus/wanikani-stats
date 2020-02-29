@@ -9,6 +9,7 @@ import {ApiResultState} from "../src/app/redux/api/types";
 import {RootState} from "../src/app/redux/store";
 import {useRouter} from "next/router";
 import {saveApiKey} from "../src/app/apiKey";
+import redirect, {DEFAULT_REDIRECT_URL} from "../src/redirect";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -49,9 +50,7 @@ function LoginPage() {
     if (loginResult && !loginResult.fetching && !loginResult.error) {
         // Successfully logged in
         saveApiKey(token);
-        router.push("/items/[item_type]/[source]", "/items/kanji/wanikani", {
-            shallow: false
-        });
+        redirect(router.query.redirect ? decodeURI(router.query.redirect.toString()) : DEFAULT_REDIRECT_URL)
     }
 
     if (loginResult && !loginResult.fetching && loginResult.error) {

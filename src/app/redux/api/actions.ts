@@ -1,7 +1,7 @@
 import {API_ERROR, API_START, API_SUCCESS, ApiActionTypes} from "./types";
 import {AnyAction} from "redux";
 import axios from "axios";
-import {ACCEPTED, INTERNAL_SERVER_ERROR} from "http-status-codes";
+import {ACCEPTED, INTERNAL_SERVER_ERROR, UNAUTHORIZED} from "http-status-codes";
 import {RootState} from "../store";
 import {PaginatedEndpointResult} from "../../../server/interfaces/paginated";
 import {ThunkDispatch} from "redux-thunk";
@@ -150,6 +150,14 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
 
         }).catch(error => {
             const errorCode = error.response && error.response.status ? error.response.status : INTERNAL_SERVER_ERROR;
+
+            // If the authentication failed, redirect the user
+            if (errorCode == UNAUTHORIZED) {
+                redirect("/login", req, res, false, true);
+                reject();
+                return;
+            }
+
             console.error("API error");
             console.error(error);
 
