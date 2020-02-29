@@ -116,6 +116,23 @@ const mergeWithWKData = (fileData: ItemsHashMap, wkFileData: Item[], itemType: s
             delete fileData[item.name];
         }
 
+        // For vocabulary, check in the readings of wanikani also
+        // If found, keep the WaniKani name and characters
+        if (itemType == "vocabulary" && item.readings) {
+            for (const reading of item.readings) {
+                if (fileData[reading]) {
+                    item = {
+                        ...item,
+                        ...fileData[reading],
+                        name: item.name,
+                        characters: item.characters
+                    };
+                    delete fileData[reading];
+                    break;
+                }
+            }
+        }
+
         data[index] = item;
     }
 
