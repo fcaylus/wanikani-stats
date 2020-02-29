@@ -182,7 +182,6 @@ function ItemPage(props: ItemPageProps) {
     useEffect(() => {
         if (apiResults && !apiResults.fetching && !apiResults.error) {
             displayItemListProgressively();
-            console.log("update");
         }
     }, [apiResults, displayedDataLength]);
 

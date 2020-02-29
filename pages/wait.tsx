@@ -50,7 +50,6 @@ export default function WaitPage() {
             if (apiResult.data.status == "ready") {
                 redirect(router.query.redirect ? decodeURI(router.query.redirect.toString()) : DEFAULT_REDIRECT_URL);
             } else {
-                console.log("not ready");
                 checkIfReady();
             }
         }
