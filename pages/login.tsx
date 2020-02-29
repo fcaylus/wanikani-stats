@@ -14,8 +14,11 @@ import redirect, {DEFAULT_REDIRECT_URL} from "../src/redirect";
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "center"
+        flexDirection: "column",
+        alignItems: "center",
+        "& > *": {
+            margin: theme.spacing(2)
+        }
     },
     container: {
         width: "fit-content",
@@ -29,6 +32,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     loginButton: {
         marginLeft: "auto"
+    },
+    image: {
+        maxWidth: 100,
+        maxHeight: 100,
+        objectFit: "contain"
     }
 }));
 
@@ -79,6 +87,10 @@ function LoginPage() {
 
     return (
         <PageContent pageTitle="Login" className={classes.root}>
+            <img src={"/android-chrome-192x192.png"} alt={process.env.appName + " logo"} className={classes.image}/>
+            <Typography variant="h4" component="h1" gutterBottom>
+                {process.env.appName}
+            </Typography>
             <Paper elevation={5} className={classes.container}>
                 <Typography variant="h6">
                     Please enter your API (V2) access token
@@ -103,11 +115,5 @@ function LoginPage() {
         </PageContent>
     );
 }
-
-// Server-side rendering
-LoginPage.getInitialProps = async () => {
-    return {}
-};
-
 
 export default LoginPage;
