@@ -1,13 +1,18 @@
 import React from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
-import {Typography} from "@material-ui/core";
+import {Box, Typography} from "@material-ui/core";
 import ItemCard from "./ItemCard";
 import {ProgressHashMap} from "../../server/interfaces/progress";
 import {ItemCategory} from "../../data/interfaces/item";
 
 const useStyles = makeStyles((theme: Theme) => ({
-    loadingUserProgress: {
-        marginLeft: theme.spacing(1)
+    header: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        "& > *": {
+            paddingRight: theme.spacing(1)
+        }
     },
     list: {
         display: "flex",
@@ -30,7 +35,10 @@ export default React.memo((props: ItemCategory & { progress?: ProgressHashMap })
     return (
         <React.Fragment>
             {props.headerText && (
-                <Typography variant="h6">{props.headerText}</Typography>
+                <Box className={classes.header}>
+                    <Typography variant="h6">{props.headerText}</Typography>
+                    <Typography variant="body1">({props.items.length} items)</Typography>
+                </Box>
             )}
             <div className={classes.list}>
                 {props.items.map((item, index) => {
