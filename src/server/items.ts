@@ -5,6 +5,7 @@ import {Item, ItemCategory, ItemsHashMap} from "../data/interfaces/item";
 import {sourceExistsForItemType} from "../data/data";
 import compareStrings from "../compareStrings";
 import {readFile} from "../data/sources/sources";
+import {maxLevelAllowed} from "./users";
 
 // Cache file reads in memory because it can take a lot of time to read them from file system
 let itemsCache: { [name: string]: any } = {};
@@ -148,25 +149,43 @@ const mergeWithWKData = (fileData: ItemsHashMap, wkFileData: Item[], itemType: s
     return data;
 };
 
+// Only returns WaniKani data with level lower than the specified maximum
+const filterWaniKaniData = (wkFileData: Item[], maxLevel: number): Item[] => {
+    if (maxLevel == 60) {
+        return wkFileData;
+    }
+
+    let data: Item[] = [];
+    wkFileData.map((item) => {
+        if (item.category && parseInt(item.category, 10) <= maxLevel) {
+            data.push(item);
+        }
+    });
+    return data;
+};
+
 /**
  * Return the items list for a specified source and type.
  * NOTE: WaniKani data must be downloaded before this call since no checks are performed.
+ * apiKey is used to retrieve the user info and thus the level limit of the user
  */
-export const getItems = (source: string, type: string): ItemCategory[] | null => {
+export const getItems = async (source: string, type: string, apiKey: string): Promise<ItemCategory[] | null> => {
     // Bad source and/or item type
     if (!sourceExistsForItemType(source, type)) {
         return null;
     }
 
+    const maxLevel: number = await maxLevelAllowed(apiKey);
+
     // If in cache, return it
-    const label = type + "/" + source;
+    const label = type + "/" + source + "/" + maxLevel.toString();
     if (itemsCache[label]) {
         return itemsCache[label]
     }
 
     // Read the corresponding file depending on the source type and merge it with the WaniKani data
     let fileData: ItemsHashMap | null = null;
-    let wkFileData: Item[] = readWaniKaniFile(type);
+    let wkFileData: Item[] = filterWaniKaniData(readWaniKaniFile(type), maxLevel);
     let mergedData: Item[];
     if (source === "wanikani") {
         mergedData = wkFileData;

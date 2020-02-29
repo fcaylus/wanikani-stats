@@ -68,3 +68,12 @@ export const logout = (token: string) => {
         delete users[token];
     }
 };
+
+export const maxLevelAllowed = async (token: string): Promise<number> => {
+    const wkResult = await WaniKaniApi(token).get("user");
+    if (wkResult && !wkResult.error) {
+        const user = wkResult.data.data;
+        return user.subscription.max_level_granted;
+    }
+    return 0;
+};

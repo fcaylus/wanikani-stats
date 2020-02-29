@@ -18,7 +18,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     // Get items
-    const items = getItems(source, item_type);
+    const items = await getItems(source, item_type, requestParsedResult.apiKey);
     if (!items) {
         return res.status(NOT_FOUND).send("NOT FOUND");
     }
