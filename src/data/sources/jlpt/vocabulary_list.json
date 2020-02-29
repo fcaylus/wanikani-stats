@@ -36,8 +36,8 @@
   },
   "開く": {
     "name": "開く",
-    "category": "4",
-    "position": 438
+    "category": "5",
+    "position": 8
   },
   "開ける": {
     "name": "開ける",
@@ -71,8 +71,8 @@
   },
   "明日": {
     "name": "明日",
-    "category": "4",
-    "position": 12
+    "category": "5",
+    "position": 15
   },
   "あそこ": {
     "name": "あそこ",
@@ -86,7 +86,7 @@
   },
   "暖かい": {
     "name": "暖かい",
-    "category": "3",
+    "category": "5",
     "position": 18
   },
   "頭": {
@@ -126,8 +126,8 @@
   },
   "後": {
     "name": "後",
-    "category": "3",
-    "position": 1292
+    "category": "5",
+    "position": 26
   },
   "あなた": {
     "name": "あなた",
@@ -147,7 +147,7 @@
   "あの": {
     "name": "あの",
     "category": "5",
-    "position": 31
+    "position": 30
   },
   "アパート": {
     "name": "アパート",
@@ -166,8 +166,8 @@
   },
   "甘い": {
     "name": "甘い",
-    "category": "1",
-    "position": 274
+    "category": "5",
+    "position": 35
   },
   "あまり": {
     "name": "あまり",
@@ -216,8 +216,8 @@
   },
   "言う": {
     "name": "言う",
-    "category": "3",
-    "position": 1605
+    "category": "5",
+    "position": 45
   },
   "家": {
     "name": "家",
@@ -232,7 +232,7 @@
   "行く": {
     "name": "行く",
     "category": "5",
-    "position": 631
+    "position": 48
   },
   "いくつ": {
     "name": "いくつ",
@@ -276,8 +276,8 @@
   },
   "一日": {
     "name": "一日",
-    "category": "1",
-    "position": 179
+    "category": "5",
+    "position": 57
   },
   "いちばん": {
     "name": "いちばん",
@@ -306,8 +306,8 @@
   },
   "いつも": {
     "name": "いつも",
-    "category": "3",
-    "position": 100
+    "category": "5",
+    "position": 63
   },
   "犬": {
     "name": "犬",
@@ -336,13 +336,13 @@
   },
   "入口": {
     "name": "入口",
-    "category": "1",
-    "position": 226
+    "category": "5",
+    "position": 69
   },
   "居る": {
     "name": "居る",
-    "category": "3",
-    "position": 217
+    "category": "5",
+    "position": 70
   },
   "要る": {
     "name": "要る",
@@ -366,13 +366,13 @@
   },
   "上": {
     "name": "上",
-    "category": "3",
-    "position": 759
+    "category": "5",
+    "position": 75
   },
   "後ろ": {
     "name": "後ろ",
-    "category": "3",
-    "position": 134
+    "category": "5",
+    "position": 76
   },
   "薄い": {
     "name": "薄い",
@@ -522,7 +522,7 @@
   "伯父/叔父": {
     "name": "伯父/叔父",
     "category": "5",
-    "position": 108
+    "position": 106
   },
   "教える": {
     "name": "教える",
@@ -556,8 +556,8 @@
   },
   "弟": {
     "name": "弟",
-    "category": "1",
-    "position": 401
+    "category": "5",
+    "position": 114
   },
   "男": {
     "name": "男",
@@ -571,13 +571,13 @@
   },
   "一昨日": {
     "name": "一昨日",
-    "category": "2",
-    "position": 76
+    "category": "5",
+    "position": 117
   },
   "一昨年": {
     "name": "一昨年",
-    "category": "2",
-    "position": 77
+    "category": "5",
+    "position": 118
   },
   "大人": {
     "name": "大人",
@@ -766,8 +766,8 @@
   },
   "方": {
     "name": "方",
-    "category": "3",
-    "position": 1453
+    "category": "5",
+    "position": 156
   },
   "学校": {
     "name": "学校",
@@ -786,8 +786,8 @@
   },
   "角": {
     "name": "角",
-    "category": "1",
-    "position": 500
+    "category": "5",
+    "position": 160
   },
   "かばん": {
     "name": "かばん",
@@ -816,13 +816,13 @@
   },
   "辛い": {
     "name": "辛い",
-    "category": "3",
-    "position": 1115
+    "category": "5",
+    "position": 166
   },
   "体": {
     "name": "体",
-    "category": "1",
-    "position": 2098
+    "category": "5",
+    "position": 167
   },
   "借りる": {
     "name": "借りる",
@@ -866,8 +866,8 @@
   },
   "黄色": {
     "name": "黄色",
-    "category": "1",
-    "position": 341
+    "category": "5",
+    "position": 176
   },
   "黄色い": {
     "name": "黄色い",
@@ -921,8 +921,8 @@
   },
   "九": {
     "name": "九",
-    "category": "3",
-    "position": 436
+    "category": "5",
+    "position": 187
   },
   "牛肉": {
     "name": "牛肉",
@@ -936,8 +936,8 @@
   },
   "今日": {
     "name": "今日",
-    "category": "3",
-    "position": 594
+    "category": "5",
+    "position": 190
   },
   "教室": {
     "name": "教室",
@@ -1056,8 +1056,8 @@
   },
   "来る": {
     "name": "来る",
-    "category": "1",
-    "position": 728
+    "category": "5",
+    "position": 214
   },
   "車": {
     "name": "車",
@@ -1156,8 +1156,8 @@
   },
   "ここ": {
     "name": "ここ",
-    "category": "3",
-    "position": 563
+    "category": "5",
+    "position": 234
   },
   "午後": {
     "name": "午後",
@@ -1216,8 +1216,8 @@
   },
   "この": {
     "name": "この",
-    "category": "3",
-    "position": 578
+    "category": "5",
+    "position": 246
   },
   "御飯": {
     "name": "御飯",
@@ -1271,8 +1271,8 @@
   },
   "魚": {
     "name": "魚",
-    "category": "3",
-    "position": 126
+    "category": "5",
+    "position": 257
   },
   "先": {
     "name": "先",
@@ -1316,23 +1316,23 @@
   },
   "三": {
     "name": "三",
-    "category": "1",
-    "position": 2945
+    "category": "5",
+    "position": 266
   },
   "散歩": {
     "name": "散歩",
-    "category": "3",
-    "position": 645
+    "category": "5",
+    "position": 267
   },
   "四": {
     "name": "四",
-    "category": "3",
-    "position": 1655
+    "category": "5",
+    "position": 268
   },
   "塩": {
     "name": "塩",
-    "category": "1",
-    "position": 314
+    "category": "5",
+    "position": 269
   },
   "しかし": {
     "name": "しかし",
@@ -1361,13 +1361,13 @@
   },
   "下": {
     "name": "下",
-    "category": "3",
-    "position": 710
+    "category": "5",
+    "position": 275
   },
   "七": {
     "name": "七",
-    "category": "3",
-    "position": 1229
+    "category": "5",
+    "position": 276
   },
   "質問": {
     "name": "質問",
@@ -1436,8 +1436,8 @@
   },
   "十": {
     "name": "十",
-    "category": "3",
-    "position": 1168
+    "category": "5",
+    "position": 290
   },
   "授業": {
     "name": "授業",
@@ -1451,13 +1451,13 @@
   },
   "上手": {
     "name": "上手",
-    "category": "1",
-    "position": 288
+    "category": "5",
+    "position": 293
   },
   "丈夫": {
     "name": "丈夫",
-    "category": "1",
-    "position": 1585
+    "category": "5",
+    "position": 294
   },
   "しょうゆ": {
     "name": "しょうゆ",
@@ -1571,8 +1571,8 @@
   },
   "背": {
     "name": "背",
-    "category": "3",
-    "position": 872
+    "category": "5",
+    "position": 317
   },
   "生徒": {
     "name": "生徒",
@@ -1636,8 +1636,8 @@
   },
   "掃除": {
     "name": "掃除",
-    "category": "3",
-    "position": 932
+    "category": "5",
+    "position": 330
   },
   "そうして/そして": {
     "name": "そうして/そして",
@@ -1666,8 +1666,8 @@
   },
   "その": {
     "name": "その",
-    "category": "3",
-    "position": 949
+    "category": "5",
+    "position": 336
   },
   "そば": {
     "name": "そば",
@@ -1676,13 +1676,13 @@
   },
   "空": {
     "name": "空",
-    "category": "3",
-    "position": 314
+    "category": "5",
+    "position": 338
   },
   "それ": {
     "name": "それ",
-    "category": "3",
-    "position": 954
+    "category": "5",
+    "position": 339
   },
   "それから": {
     "name": "それから",
@@ -1727,7 +1727,7 @@
   "たいへん": {
     "name": "たいへん",
     "category": "5",
-    "position": 349
+    "position": 348
   },
   "高い": {
     "name": "高い",
@@ -1801,8 +1801,8 @@
   },
   "誰": {
     "name": "誰",
-    "category": "1",
-    "position": 1911
+    "category": "5",
+    "position": 364
   },
   "誕生日": {
     "name": "誕生日",
@@ -1881,8 +1881,8 @@
   },
   "次": {
     "name": "次",
-    "category": "1",
-    "position": 1275
+    "category": "5",
+    "position": 382
   },
   "着く": {
     "name": "着く",
@@ -1956,8 +1956,8 @@
   },
   "できる": {
     "name": "できる",
-    "category": "3",
-    "position": 1132
+    "category": "5",
+    "position": 397
   },
   "出口": {
     "name": "出口",
@@ -1971,8 +1971,8 @@
   },
   "では": {
     "name": "では",
-    "category": "3",
-    "position": 1143
+    "category": "5",
+    "position": 400
   },
   "デパート": {
     "name": "デパート",
@@ -1981,8 +1981,8 @@
   },
   "でも": {
     "name": "でも",
-    "category": "3",
-    "position": 1145
+    "category": "5",
+    "position": 402
   },
   "出る": {
     "name": "出る",
@@ -2016,8 +2016,8 @@
   },
   "戸": {
     "name": "戸",
-    "category": "1",
-    "position": 997
+    "category": "5",
+    "position": 409
   },
   "ドア": {
     "name": "ドア",
@@ -2131,8 +2131,8 @@
   },
   "止まる": {
     "name": "止まる",
-    "category": "1",
-    "position": 2235
+    "category": "5",
+    "position": 432
   },
   "友達": {
     "name": "友達",
@@ -2166,8 +2166,8 @@
   },
   "どれ": {
     "name": "どれ",
-    "category": "3",
-    "position": 1206
+    "category": "5",
+    "position": 439
   },
   "ナイフ": {
     "name": "ナイフ",
@@ -2176,8 +2176,8 @@
   },
   "中": {
     "name": "中",
-    "category": "3",
-    "position": 1066
+    "category": "5",
+    "position": 441
   },
   "長い": {
     "name": "長い",
@@ -2221,8 +2221,8 @@
   },
   "七日": {
     "name": "七日",
-    "category": "1",
-    "position": 2356
+    "category": "5",
+    "position": 450
   },
   "名前": {
     "name": "名前",
@@ -2251,8 +2251,8 @@
   },
   "何": {
     "name": "何",
-    "category": "3",
-    "position": 1230
+    "category": "5",
+    "position": 456
   },
   "二": {
     "name": "二",
@@ -2361,13 +2361,13 @@
   },
   "灰皿": {
     "name": "灰皿",
-    "category": "1",
-    "position": 2473
+    "category": "5",
+    "position": 478
   },
   "入る": {
     "name": "入る",
-    "category": "1",
-    "position": 229
+    "category": "5",
+    "position": 479
   },
   "葉書": {
     "name": "葉書",
@@ -2531,8 +2531,8 @@
   },
   "東": {
     "name": "東",
-    "category": "1",
-    "position": 44
+    "category": "5",
+    "position": 512
   },
   "引く": {
     "name": "引く",
@@ -2541,8 +2541,8 @@
   },
   "弾く": {
     "name": "弾く",
-    "category": "1",
-    "position": 2506
+    "category": "5",
+    "position": 514
   },
   "低い": {
     "name": "低い",
@@ -2561,8 +2561,8 @@
   },
   "人": {
     "name": "人",
-    "category": "1",
-    "position": 1597
+    "category": "5",
+    "position": 518
   },
   "一つ": {
     "name": "一つ",
@@ -2576,13 +2576,13 @@
   },
   "一人": {
     "name": "一人",
-    "category": "1",
-    "position": 183
+    "category": "5",
+    "position": 521
   },
   "暇": {
     "name": "暇",
-    "category": "1",
-    "position": 209
+    "category": "5",
+    "position": 522
   },
   "百": {
     "name": "百",
@@ -2656,8 +2656,8 @@
   },
   "二人": {
     "name": "二人",
-    "category": "1",
-    "position": 2403
+    "category": "5",
+    "position": 537
   },
   "二日": {
     "name": "二日",
@@ -2831,8 +2831,8 @@
   },
   "前": {
     "name": "前",
-    "category": "1",
-    "position": 1714
+    "category": "5",
+    "position": 572
   },
   "曲る": {
     "name": "曲る",
@@ -2886,8 +2886,8 @@
   },
   "万": {
     "name": "万",
-    "category": "1",
-    "position": 2587
+    "category": "5",
+    "position": 583
   },
   "万年筆": {
     "name": "万年筆",
@@ -2916,8 +2916,8 @@
   },
   "店": {
     "name": "店",
-    "category": "1",
-    "position": 2136
+    "category": "5",
+    "position": 589
   },
   "見せる": {
     "name": "見せる",
@@ -2951,8 +2951,8 @@
   },
   "南": {
     "name": "南",
-    "category": "1",
-    "position": 2379
+    "category": "5",
+    "position": 596
   },
   "耳": {
     "name": "耳",
@@ -3006,8 +3006,8 @@
   },
   "眼鏡": {
     "name": "眼鏡",
-    "category": "1",
-    "position": 684
+    "category": "5",
+    "position": 607
   },
   "もう": {
     "name": "もう",
@@ -3041,8 +3041,8 @@
   },
   "門": {
     "name": "門",
-    "category": "1",
-    "position": 565
+    "category": "5",
+    "position": 614
   },
   "問題": {
     "name": "問題",
@@ -3171,8 +3171,8 @@
   },
   "夜": {
     "name": "夜",
-    "category": "3",
-    "position": 1624
+    "category": "5",
+    "position": 641
   },
   "弱い": {
     "name": "弱い",
@@ -3251,8 +3251,8 @@
   },
   "練習": {
     "name": "練習",
-    "category": "3",
-    "position": 1677
+    "category": "5",
+    "position": 657
   },
   "廊下": {
     "name": "廊下",
@@ -3261,8 +3261,8 @@
   },
   "六": {
     "name": "六",
-    "category": "1",
-    "position": 2991
+    "category": "5",
+    "position": 659
   },
   "ワイシャツ": {
     "name": "ワイシャツ",
@@ -3286,8 +3286,8 @@
   },
   "私": {
     "name": "私",
-    "category": "1",
-    "position": 49
+    "category": "5",
+    "position": 664
   },
   "渡す": {
     "name": "渡す",
@@ -3301,8 +3301,8 @@
   },
   "悪い": {
     "name": "悪い",
-    "category": "1",
-    "position": 2392
+    "category": "5",
+    "position": 668
   },
   "より、ほう": {
     "name": "より、ほう",
@@ -3321,8 +3321,8 @@
   },
   "間": {
     "name": "間",
-    "category": "3",
-    "position": 1486
+    "category": "4",
+    "position": 3
   },
   "合う": {
     "name": "合う",
@@ -3336,8 +3336,8 @@
   },
   "上る": {
     "name": "上る",
-    "category": "2",
-    "position": 1322
+    "category": "4",
+    "position": 6
   },
   "赤ん坊": {
     "name": "赤ん坊",
@@ -3346,8 +3346,8 @@
   },
   "空く": {
     "name": "空く",
-    "category": "3",
-    "position": 850
+    "category": "4",
+    "position": 8
   },
   "あげる": {
     "name": "あげる",
@@ -3516,8 +3516,8 @@
   },
   "打つ": {
     "name": "打つ",
-    "category": "3",
-    "position": 1422
+    "category": "4",
+    "position": 43
   },
   "美しい": {
     "name": "美しい",
@@ -3571,8 +3571,8 @@
   },
   "遠慮": {
     "name": "遠慮",
-    "category": "3",
-    "position": 174
+    "category": "4",
+    "position": 54
   },
   "おいでになる": {
     "name": "おいでになる",
@@ -3631,8 +3631,8 @@
   },
   "怒る": {
     "name": "怒る",
-    "category": "1",
-    "position": 134
+    "category": "4",
+    "position": 66
   },
   "押し入れ": {
     "name": "押し入れ",
@@ -3671,8 +3671,8 @@
   },
   "音": {
     "name": "音",
-    "category": "1",
-    "position": 2419
+    "category": "4",
+    "position": 74
   },
   "落す": {
     "name": "落す",
@@ -3726,8 +3726,8 @@
   },
   "表": {
     "name": "表",
-    "category": "3",
-    "position": 1382
+    "category": "4",
+    "position": 85
   },
   "親": {
     "name": "親",
@@ -3827,7 +3827,7 @@
   "ガス": {
     "name": "ガス",
     "category": "4",
-    "position": 550
+    "position": 105
   },
   "堅/硬/固い": {
     "name": "堅/硬/固い",
@@ -4007,7 +4007,7 @@
   "君": {
     "name": "君",
     "category": "4",
-    "position": 162
+    "position": 141
   },
   "決める": {
     "name": "決める",
@@ -4132,7 +4132,7 @@
   "消しゴム": {
     "name": "消しゴム",
     "category": "4",
-    "position": 555
+    "position": 167
   },
   "下宿": {
     "name": "下宿",
@@ -4146,8 +4146,8 @@
   },
   "けれど/けれども": {
     "name": "けれど/けれども",
-    "category": "2",
-    "position": 483
+    "category": "4",
+    "position": 170
   },
   "原因": {
     "name": "原因",
@@ -4256,8 +4256,8 @@
   },
   "故障": {
     "name": "故障",
-    "category": "3",
-    "position": 565
+    "category": "4",
+    "position": 192
   },
   "ご存じ": {
     "name": "ご存じ",
@@ -4366,8 +4366,8 @@
   },
   "下る": {
     "name": "下る",
-    "category": "2",
-    "position": 431
+    "category": "4",
+    "position": 214
   },
   "盛ん": {
     "name": "盛ん",
@@ -4426,13 +4426,13 @@
   },
   "市": {
     "name": "市",
-    "category": "1",
-    "position": 173
+    "category": "4",
+    "position": 226
   },
   "字": {
     "name": "字",
-    "category": "1",
-    "position": 39
+    "category": "4",
+    "position": 227
   },
   "試合": {
     "name": "試合",
@@ -4541,8 +4541,8 @@
   },
   "十分": {
     "name": "十分",
-    "category": "1",
-    "position": 1540
+    "category": "4",
+    "position": 249
   },
   "趣味": {
     "name": "趣味",
@@ -4681,8 +4681,8 @@
   },
   "すると": {
     "name": "すると",
-    "category": "3",
-    "position": 870
+    "category": "4",
+    "position": 277
   },
   "生活": {
     "name": "生活",
@@ -4691,8 +4691,8 @@
   },
   "生産": {
     "name": "生産",
-    "category": "3",
-    "position": 885
+    "category": "4",
+    "position": 279
   },
   "政治": {
     "name": "政治",
@@ -4741,8 +4741,8 @@
   },
   "そう": {
     "name": "そう",
-    "category": "3",
-    "position": 927
+    "category": "4",
+    "position": 289
   },
   "育てる": {
     "name": "育てる",
@@ -4796,8 +4796,8 @@
   },
   "退院": {
     "name": "退院",
-    "category": "2",
-    "position": 982
+    "category": "4",
+    "position": 300
   },
   "大学生": {
     "name": "大学生",
@@ -4806,8 +4806,8 @@
   },
   "大事": {
     "name": "大事",
-    "category": "1",
-    "position": 347
+    "category": "4",
+    "position": 302
   },
   "大体": {
     "name": "大体",
@@ -4821,8 +4821,8 @@
   },
   "大分": {
     "name": "大分",
-    "category": "2",
-    "position": 995
+    "category": "4",
+    "position": 305
   },
   "台風": {
     "name": "台風",
@@ -4836,8 +4836,8 @@
   },
   "だから": {
     "name": "だから",
-    "category": "3",
-    "position": 996
+    "category": "4",
+    "position": 308
   },
   "確か": {
     "name": "確か",
@@ -4866,8 +4866,8 @@
   },
   "畳": {
     "name": "畳",
-    "category": "1",
-    "position": 1571
+    "category": "4",
+    "position": 314
   },
   "立てる": {
     "name": "立てる",
@@ -4932,7 +4932,7 @@
   "チェック・する": {
     "name": "チェック・する",
     "category": "4",
-    "position": 569
+    "position": 327
   },
   "力": {
     "name": "力",
@@ -5011,8 +5011,8 @@
   },
   "包む": {
     "name": "包む",
-    "category": "1",
-    "position": 889
+    "category": "4",
+    "position": 343
   },
   "妻": {
     "name": "妻",
@@ -5086,8 +5086,8 @@
   },
   "都": {
     "name": "都",
-    "category": "3",
-    "position": 1532
+    "category": "4",
+    "position": 358
   },
   "道具": {
     "name": "道具",
@@ -5131,8 +5131,8 @@
   },
   "途中": {
     "name": "途中",
-    "category": "1",
-    "position": 2064
+    "category": "4",
+    "position": 367
   },
   "特急": {
     "name": "特急",
@@ -5151,8 +5151,8 @@
   },
   "止める": {
     "name": "止める",
-    "category": "1",
-    "position": 2237
+    "category": "4",
+    "position": 371
   },
   "取り替える": {
     "name": "取り替える",
@@ -5256,8 +5256,8 @@
   },
   "入学": {
     "name": "入学",
-    "category": "3",
-    "position": 1257
+    "category": "4",
+    "position": 392
   },
   "似る": {
     "name": "似る",
@@ -5341,8 +5341,8 @@
   },
   "拝見": {
     "name": "拝見",
-    "category": "2",
-    "position": 1331
+    "category": "4",
+    "position": 409
   },
   "歯医者": {
     "name": "歯医者",
@@ -5411,8 +5411,8 @@
   },
   "日": {
     "name": "日",
-    "category": "3",
-    "position": 1250
+    "category": "4",
+    "position": 423
   },
   "火": {
     "name": "火",
@@ -5486,8 +5486,8 @@
   },
   "昼間": {
     "name": "昼間",
-    "category": "1",
-    "position": 1983
+    "category": "4",
+    "position": 439
   },
   "昼休み": {
     "name": "昼休み",
@@ -5551,8 +5551,8 @@
   },
   "不便": {
     "name": "不便",
-    "category": "1",
-    "position": 2713
+    "category": "4",
+    "position": 452
   },
   "踏む": {
     "name": "踏む",
@@ -5606,8 +5606,8 @@
   },
   "僕": {
     "name": "僕",
-    "category": "1",
-    "position": 1364
+    "category": "4",
+    "position": 463
   },
   "星": {
     "name": "星",
@@ -5701,8 +5701,8 @@
   },
   "皆": {
     "name": "皆",
-    "category": "3",
-    "position": 1537
+    "category": "4",
+    "position": 482
   },
   "港": {
     "name": "港",
@@ -5781,8 +5781,8 @@
   },
   "木綿": {
     "name": "木綿",
-    "category": "1",
-    "position": 821
+    "category": "4",
+    "position": 498
   },
   "森": {
     "name": "森",
@@ -5876,8 +5876,8 @@
   },
   "汚れる": {
     "name": "汚れる",
-    "category": "1",
-    "position": 931
+    "category": "4",
+    "position": 518
   },
   "予習": {
     "name": "予習",
@@ -5961,8 +5961,8 @@
   },
   "訳": {
     "name": "訳",
-    "category": "3",
-    "position": 1593
+    "category": "4",
+    "position": 535
   },
   "忘れ物": {
     "name": "忘れ物",
@@ -6061,8 +6061,8 @@
   },
   "コンピューター": {
     "name": "コンピューター",
-    "category": "3",
-    "position": 1726
+    "category": "4",
+    "position": 557
   },
   "サラダ": {
     "name": "サラダ",
@@ -6271,8 +6271,8 @@
   },
   "辺り": {
     "name": "辺り",
-    "category": "1",
-    "position": 2839
+    "category": "3",
+    "position": 19
   },
   "当たる": {
     "name": "当たる",
@@ -6326,8 +6326,8 @@
   },
   "余り": {
     "name": "余り",
-    "category": "1",
-    "position": 119
+    "category": "3",
+    "position": 30
   },
   "誤り": {
     "name": "誤り",
@@ -6336,8 +6336,8 @@
   },
   "粗い": {
     "name": "粗い",
-    "category": "2",
-    "position": 43
+    "category": "3",
+    "position": 32
   },
   "嵐": {
     "name": "嵐",
@@ -6721,8 +6721,8 @@
   },
   "否": {
     "name": "否",
-    "category": "1",
-    "position": 123
+    "category": "3",
+    "position": 111
   },
   "以来": {
     "name": "以来",
@@ -6902,7 +6902,7 @@
   "得る": {
     "name": "得る",
     "category": "3",
-    "position": 166
+    "position": 149
   },
   "嬉しい": {
     "name": "嬉しい",
@@ -6937,7 +6937,7 @@
   "柄": {
     "name": "柄",
     "category": "3",
-    "position": 315
+    "position": 156
   },
   "永遠": {
     "name": "永遠",
@@ -6977,7 +6977,7 @@
   "描く": {
     "name": "描く",
     "category": "3",
-    "position": 255
+    "position": 164
   },
   "餌": {
     "name": "餌",
@@ -6991,8 +6991,8 @@
   },
   "縁": {
     "name": "縁",
-    "category": "1",
-    "position": 313
+    "category": "3",
+    "position": 168
   },
   "延期": {
     "name": "延期",
@@ -7021,8 +7021,8 @@
   },
   "御": {
     "name": "御",
-    "category": "1",
-    "position": 1142
+    "category": "3",
+    "position": 175
   },
   "老い": {
     "name": "老い",
@@ -7266,8 +7266,8 @@
   },
   "会": {
     "name": "会",
-    "category": "1",
-    "position": 300
+    "category": "3",
+    "position": 226
   },
   "回": {
     "name": "回",
@@ -7422,7 +7422,7 @@
   "額": {
     "name": "額",
     "category": "3",
-    "position": 1365
+    "position": 258
   },
   "覚悟": {
     "name": "覚悟",
@@ -7532,7 +7532,7 @@
   "数": {
     "name": "数",
     "category": "3",
-    "position": 846
+    "position": 280
   },
   "稼ぐ": {
     "name": "稼ぐ",
@@ -7562,7 +7562,7 @@
   "方々": {
     "name": "方々",
     "category": "3",
-    "position": 1463
+    "position": 286
   },
   "計": {
     "name": "計",
@@ -7637,7 +7637,7 @@
   "金": {
     "name": "金",
     "category": "3",
-    "position": 423
+    "position": 301
   },
   "可能": {
     "name": "可能",
@@ -7671,8 +7671,8 @@
   },
   "雷": {
     "name": "雷",
-    "category": "1",
-    "position": 130
+    "category": "3",
+    "position": 309
   },
   "髪の毛": {
     "name": "髪の毛",
@@ -7941,8 +7941,8 @@
   },
   "傷": {
     "name": "傷",
-    "category": "1",
-    "position": 1428
+    "category": "3",
+    "position": 365
   },
   "期待": {
     "name": "期待",
@@ -8062,7 +8062,7 @@
   "球": {
     "name": "球",
     "category": "3",
-    "position": 1026
+    "position": 389
   },
   "休暇": {
     "name": "休暇",
@@ -8212,7 +8212,7 @@
   "キロ": {
     "name": "キロ",
     "category": "3",
-    "position": 1713
+    "position": 420
   },
   "記録": {
     "name": "記録",
@@ -8241,8 +8241,8 @@
   },
   "金庫": {
     "name": "金庫",
-    "category": "1",
-    "position": 572
+    "category": "3",
+    "position": 427
   },
   "禁止": {
     "name": "禁止",
@@ -8321,8 +8321,8 @@
   },
   "管": {
     "name": "管",
-    "category": "1",
-    "position": 610
+    "category": "3",
+    "position": 444
   },
   "具体": {
     "name": "具体",
@@ -8441,8 +8441,8 @@
   },
   "軍": {
     "name": "軍",
-    "category": "1",
-    "position": 144
+    "category": "3",
+    "position": 468
   },
   "軍隊": {
     "name": "軍隊",
@@ -8607,7 +8607,7 @@
   "軒": {
     "name": "軒",
     "category": "3",
-    "position": 1285
+    "position": 502
   },
   "喧嘩": {
     "name": "喧嘩",
@@ -8691,8 +8691,8 @@
   },
   "現場": {
     "name": "現場",
-    "category": "1",
-    "position": 982
+    "category": "3",
+    "position": 519
   },
   "憲法": {
     "name": "憲法",
@@ -8931,8 +8931,8 @@
   },
   "国境": {
     "name": "国境",
-    "category": "1",
-    "position": 881
+    "category": "3",
+    "position": 570
   },
   "骨折": {
     "name": "骨折",
@@ -9006,8 +9006,8 @@
   },
   "頃": {
     "name": "頃",
-    "category": "1",
-    "position": 905
+    "category": "3",
+    "position": 586
   },
   "殺す": {
     "name": "殺す",
@@ -9066,8 +9066,8 @@
   },
   "際": {
     "name": "際",
-    "category": "1",
-    "position": 820
+    "category": "3",
+    "position": 599
   },
   "最高": {
     "name": "最高",
@@ -9141,8 +9141,8 @@
   },
   "作物": {
     "name": "作物",
-    "category": "1",
-    "position": 1208
+    "category": "3",
+    "position": 614
   },
   "桜": {
     "name": "桜",
@@ -9286,8 +9286,8 @@
   },
   "賛成": {
     "name": "賛成",
-    "category": "1",
-    "position": 1254
+    "category": "3",
+    "position": 643
   },
   "酸素": {
     "name": "酸素",
@@ -9296,8 +9296,8 @@
   },
   "氏": {
     "name": "氏",
-    "category": "1",
-    "position": 252
+    "category": "3",
+    "position": 646
   },
   "詩": {
     "name": "詩",
@@ -9312,7 +9312,7 @@
   "ジェット機": {
     "name": "ジェット機",
     "category": "3",
-    "position": 1730
+    "position": 650
   },
   "直に": {
     "name": "直に",
@@ -9527,7 +9527,7 @@
   "品": {
     "name": "品",
     "category": "3",
-    "position": 1392
+    "position": 694
   },
   "支配": {
     "name": "支配",
@@ -9571,8 +9571,8 @@
   },
   "姉妹": {
     "name": "姉妹",
-    "category": "1",
-    "position": 794
+    "category": "3",
+    "position": 703
   },
   "しまう": {
     "name": "しまう",
@@ -9581,8 +9581,8 @@
   },
   "しまった": {
     "name": "しまった",
-    "category": "1",
-    "position": 1358
+    "category": "3",
+    "position": 705
   },
   "自慢": {
     "name": "自慢",
@@ -9632,12 +9632,12 @@
   "州": {
     "name": "州",
     "category": "3",
-    "position": 839
+    "position": 716
   },
   "銃": {
     "name": "銃",
-    "category": "1",
-    "position": 2067
+    "category": "3",
+    "position": 718
   },
   "周囲": {
     "name": "周囲",
@@ -9851,8 +9851,8 @@
   },
   "乗客": {
     "name": "乗客",
-    "category": "1",
-    "position": 1578
+    "category": "3",
+    "position": 762
   },
   "上京": {
     "name": "上京",
@@ -9886,8 +9886,8 @@
   },
   "少女": {
     "name": "少女",
-    "category": "1",
-    "position": 405
+    "category": "3",
+    "position": 769
   },
   "少々": {
     "name": "少々",
@@ -9941,8 +9941,8 @@
   },
   "商人": {
     "name": "商人",
-    "category": "1",
-    "position": 24
+    "category": "3",
+    "position": 780
   },
   "承認": {
     "name": "承認",
@@ -10046,8 +10046,8 @@
   },
   "女子": {
     "name": "女子",
-    "category": "1",
-    "position": 413
+    "category": "3",
+    "position": 801
   },
   "助手": {
     "name": "助手",
@@ -10096,8 +10096,8 @@
   },
   "印": {
     "name": "印",
-    "category": "1",
-    "position": 234
+    "category": "3",
+    "position": 811
   },
   "城": {
     "name": "城",
@@ -10176,8 +10176,8 @@
   },
   "身体": {
     "name": "身体",
-    "category": "1",
-    "position": 592
+    "category": "3",
+    "position": 827
   },
   "身長": {
     "name": "身長",
@@ -10196,8 +10196,8 @@
   },
   "審判": {
     "name": "審判",
-    "category": "1",
-    "position": 1505
+    "category": "3",
+    "position": 831
   },
   "人物": {
     "name": "人物",
@@ -10271,8 +10271,8 @@
   },
   "末": {
     "name": "末",
-    "category": "1",
-    "position": 280
+    "category": "3",
+    "position": 848
   },
   "姿": {
     "name": "姿",
@@ -10352,7 +10352,7 @@
   "全て": {
     "name": "全て",
     "category": "3",
-    "position": 866
+    "position": 865
   },
   "済ませる": {
     "name": "済ませる",
@@ -10367,7 +10367,7 @@
   "為る": {
     "name": "為る",
     "category": "3",
-    "position": 1240
+    "position": 869
   },
   "鋭い": {
     "name": "鋭い",
@@ -10641,8 +10641,8 @@
   },
   "象": {
     "name": "象",
-    "category": "1",
-    "position": 1426
+    "category": "3",
+    "position": 928
   },
   "騒音": {
     "name": "騒音",
@@ -10712,7 +10712,7 @@
   "注ぐ": {
     "name": "注ぐ",
     "category": "3",
-    "position": 1099
+    "position": 943
   },
   "育つ": {
     "name": "育つ",
@@ -10751,8 +10751,8 @@
   },
   "側": {
     "name": "側",
-    "category": "1",
-    "position": 680
+    "category": "3",
+    "position": 952
   },
   "粗末": {
     "name": "粗末",
@@ -10997,7 +10997,7 @@
   "唯": {
     "name": "唯",
     "category": "3",
-    "position": 1012
+    "position": 1003
   },
   "戦い": {
     "name": "戦い",
@@ -11066,13 +11066,13 @@
   },
   "他人": {
     "name": "他人",
-    "category": "1",
-    "position": 52
+    "category": "3",
+    "position": 1018
   },
   "種": {
     "name": "種",
-    "category": "1",
-    "position": 1374
+    "category": "3",
+    "position": 1019
   },
   "束": {
     "name": "束",
@@ -11082,7 +11082,7 @@
   "度": {
     "name": "度",
     "category": "3",
-    "position": 1151
+    "position": 1021
   },
   "旅": {
     "name": "旅",
@@ -11101,8 +11101,8 @@
   },
   "玉": {
     "name": "玉",
-    "category": "1",
-    "position": 850
+    "category": "3",
+    "position": 1025
   },
   "弾": {
     "name": "弾",
@@ -11286,8 +11286,8 @@
   },
   "地方": {
     "name": "地方",
-    "category": "1",
-    "position": 1513
+    "category": "3",
+    "position": 1063
   },
   "茶": {
     "name": "茶",
@@ -11527,7 +11527,7 @@
   "梅雨": {
     "name": "梅雨",
     "category": "3",
-    "position": 1302
+    "position": 1114
   },
   "釣": {
     "name": "釣",
@@ -11581,8 +11581,8 @@
   },
   "敵": {
     "name": "敵",
-    "category": "1",
-    "position": 547
+    "category": "3",
+    "position": 1126
   },
   "出来事": {
     "name": "出来事",
@@ -11796,8 +11796,8 @@
   },
   "解く": {
     "name": "解く",
-    "category": "1",
-    "position": 2841
+    "category": "3",
+    "position": 1174
   },
   "毒": {
     "name": "毒",
@@ -11867,7 +11867,7 @@
   "年月": {
     "name": "年月",
     "category": "3",
-    "position": 1275
+    "position": 1188
   },
   "図書": {
     "name": "図書",
@@ -11921,8 +11921,8 @@
   },
   "留める": {
     "name": "留める",
-    "category": "1",
-    "position": 2236
+    "category": "3",
+    "position": 1199
   },
   "友": {
     "name": "友",
@@ -12061,8 +12061,8 @@
   },
   "等": {
     "name": "等",
-    "category": "1",
-    "position": 2176
+    "category": "3",
+    "position": 1228
   },
   "何か": {
     "name": "何か",
@@ -12081,8 +12081,8 @@
   },
   "生": {
     "name": "生",
-    "category": "1",
-    "position": 692
+    "category": "3",
+    "position": 1234
   },
   "怠ける": {
     "name": "怠ける",
@@ -12221,8 +12221,8 @@
   },
   "値": {
     "name": "値",
-    "category": "1",
-    "position": 47
+    "category": "3",
+    "position": 1266
   },
   "願い": {
     "name": "願い",
@@ -12236,8 +12236,8 @@
   },
   "鼠": {
     "name": "鼠",
-    "category": "1",
-    "position": 2425
+    "category": "3",
+    "position": 1269
   },
   "値段": {
     "name": "値段",
@@ -12381,8 +12381,8 @@
   },
   "灰": {
     "name": "灰",
-    "category": "1",
-    "position": 29
+    "category": "3",
+    "position": 1301
   },
   "配達": {
     "name": "配達",
@@ -12421,8 +12421,8 @@
   },
   "吐く": {
     "name": "吐く",
-    "category": "1",
-    "position": 2053
+    "category": "3",
+    "position": 1310
   },
   "拍手": {
     "name": "拍手",
@@ -12601,8 +12601,8 @@
   },
   "原": {
     "name": "原",
-    "category": "1",
-    "position": 974
+    "category": "3",
+    "position": 1346
   },
   "針": {
     "name": "針",
@@ -12651,8 +12651,8 @@
   },
   "灯": {
     "name": "灯",
-    "category": "1",
-    "position": 2250
+    "category": "3",
+    "position": 1356
   },
   "被害": {
     "name": "被害",
@@ -12701,8 +12701,8 @@
   },
   "日付": {
     "name": "日付",
-    "category": "1",
-    "position": 564
+    "category": "3",
+    "position": 1367
   },
   "必死": {
     "name": "必死",
@@ -12726,8 +12726,8 @@
   },
   "一言": {
     "name": "一言",
-    "category": "1",
-    "position": 178
+    "category": "3",
+    "position": 1372
   },
   "人込み": {
     "name": "人込み",
@@ -12821,8 +12821,8 @@
   },
   "瓶": {
     "name": "瓶",
-    "category": "1",
-    "position": 587
+    "category": "3",
+    "position": 1393
   },
   "便": {
     "name": "便",
@@ -12837,12 +12837,12 @@
   "無": {
     "name": "無",
     "category": "3",
-    "position": 1538
+    "position": 1396
   },
   "分": {
     "name": "分",
-    "category": "1",
-    "position": 2726
+    "category": "3",
+    "position": 1397
   },
   "不安": {
     "name": "不安",
@@ -12896,8 +12896,8 @@
   },
   "節": {
     "name": "節",
-    "category": "1",
-    "position": 1706
+    "category": "3",
+    "position": 1408
   },
   "無事": {
     "name": "無事",
@@ -13031,8 +13031,8 @@
   },
   "文": {
     "name": "文",
-    "category": "1",
-    "position": 2717
+    "category": "3",
+    "position": 1438
   },
   "雰囲気": {
     "name": "雰囲気",
@@ -13061,8 +13061,8 @@
   },
   "平均": {
     "name": "平均",
-    "category": "1",
-    "position": 2369
+    "category": "3",
+    "position": 1444
   },
   "平和": {
     "name": "平和",
@@ -13162,7 +13162,7 @@
   "頬": {
     "name": "頬",
     "category": "3",
-    "position": 1477
+    "position": 1466
   },
   "他（外）": {
     "name": "他（外）",
@@ -13201,13 +13201,13 @@
   },
   "仏": {
     "name": "仏",
-    "category": "1",
-    "position": 2706
+    "category": "3",
+    "position": 1474
   },
   "骨": {
     "name": "骨",
-    "category": "1",
-    "position": 1104
+    "category": "3",
+    "position": 1475
   },
   "炎": {
     "name": "炎",
@@ -13231,8 +13231,8 @@
   },
   "濠": {
     "name": "濠",
-    "category": "1",
-    "position": 1144
+    "category": "3",
+    "position": 1481
   },
   "本当": {
     "name": "本当",
@@ -13262,7 +13262,7 @@
   "マイク": {
     "name": "マイク",
     "category": "3",
-    "position": 1789
+    "position": 1488
   },
   "迷子": {
     "name": "迷子",
@@ -13276,8 +13276,8 @@
   },
   "幕": {
     "name": "幕",
-    "category": "1",
-    "position": 2241
+    "category": "3",
+    "position": 1491
   },
   "負け": {
     "name": "負け",
@@ -13331,13 +13331,13 @@
   },
   "未だ": {
     "name": "未だ",
-    "category": "1",
-    "position": 217
+    "category": "3",
+    "position": 1502
   },
   "街": {
     "name": "街",
-    "category": "1",
-    "position": 654
+    "category": "3",
+    "position": 1503
   },
   "間違い": {
     "name": "間違い",
@@ -13436,8 +13436,8 @@
   },
   "実": {
     "name": "実",
-    "category": "1",
-    "position": 1541
+    "category": "3",
+    "position": 1523
   },
   "見送り": {
     "name": "見送り",
@@ -13466,8 +13466,8 @@
   },
   "認める": {
     "name": "認める",
-    "category": "1",
-    "position": 1324
+    "category": "3",
+    "position": 1529
   },
   "見舞い": {
     "name": "見舞い",
@@ -13476,8 +13476,8 @@
   },
   "土産": {
     "name": "土産",
-    "category": "1",
-    "position": 2311
+    "category": "3",
+    "position": 1531
   },
   "妙": {
     "name": "妙",
@@ -13486,8 +13486,8 @@
   },
   "明後日": {
     "name": "明後日",
-    "category": "1",
-    "position": 36
+    "category": "3",
+    "position": 1534
   },
   "未来": {
     "name": "未来",
@@ -13601,13 +13601,13 @@
   },
   "面": {
     "name": "面",
-    "category": "1",
-    "position": 428
+    "category": "3",
+    "position": 1559
   },
   "綿": {
     "name": "綿",
     "category": "3",
-    "position": 1692
+    "position": 1560
   },
   "免許": {
     "name": "免許",
@@ -13657,7 +13657,7 @@
   "文字": {
     "name": "文字",
     "category": "3",
-    "position": 1589
+    "position": 1570
   },
   "もしも": {
     "name": "もしも",
@@ -13696,8 +13696,8 @@
   },
   "基": {
     "name": "基",
-    "category": "1",
-    "position": 3070
+    "category": "3",
+    "position": 1578
   },
   "戻す": {
     "name": "戻す",
@@ -13756,8 +13756,8 @@
   },
   "役": {
     "name": "役",
-    "category": "1",
-    "position": 309
+    "category": "3",
+    "position": 1591
   },
   "約": {
     "name": "約",
@@ -13871,8 +13871,8 @@
   },
   "床": {
     "name": "床",
-    "category": "1",
-    "position": 2215
+    "category": "3",
+    "position": 1616
   },
   "愉快": {
     "name": "愉快",
@@ -13921,8 +13921,8 @@
   },
   "様": {
     "name": "様",
-    "category": "1",
-    "position": 1234
+    "category": "3",
+    "position": 1627
   },
   "酔う": {
     "name": "酔う",
@@ -14001,8 +14001,8 @@
   },
   "夜中": {
     "name": "夜中",
-    "category": "1",
-    "position": 3107
+    "category": "3",
+    "position": 1643
   },
   "世の中": {
     "name": "世の中",
@@ -14116,8 +14116,8 @@
   },
   "流行": {
     "name": "流行",
-    "category": "1",
-    "position": 2545
+    "category": "3",
+    "position": 1667
   },
   "量": {
     "name": "量",
@@ -14136,8 +14136,8 @@
   },
   "例": {
     "name": "例",
-    "category": "1",
-    "position": 1904
+    "category": "3",
+    "position": 1671
   },
   "礼": {
     "name": "礼",
@@ -14201,8 +14201,8 @@
   },
   "輪": {
     "name": "輪",
-    "category": "1",
-    "position": 3231
+    "category": "3",
+    "position": 1685
   },
   "わがまま": {
     "name": "わがまま",
@@ -14251,8 +14251,8 @@
   },
   "悪口": {
     "name": "悪口",
-    "category": "1",
-    "position": 58
+    "category": "3",
+    "position": 1696
   },
   "我々": {
     "name": "我々",
@@ -15151,8 +15151,8 @@
   },
   "一定": {
     "name": "一定",
-    "category": "1",
-    "position": 180
+    "category": "2",
+    "position": 80
   },
   "いっていらっしゃい": {
     "name": "いっていらっしゃい",
@@ -15776,8 +15776,8 @@
   },
   "各々": {
     "name": "各々",
-    "category": "1",
-    "position": 1810
+    "category": "2",
+    "position": 205
   },
   "伯母さん": {
     "name": "伯母さん",
@@ -16151,8 +16151,8 @@
   },
   "重なる": {
     "name": "重なる",
-    "category": "1",
-    "position": 432
+    "category": "2",
+    "position": 280
   },
   "重ねる": {
     "name": "重ねる",
@@ -16276,8 +16276,8 @@
   },
   "傾く": {
     "name": "傾く",
-    "category": "1",
-    "position": 551
+    "category": "2",
+    "position": 305
   },
   "片寄る": {
     "name": "片寄る",
@@ -16591,8 +16591,8 @@
   },
   "冠": {
     "name": "冠",
-    "category": "1",
-    "position": 612
+    "category": "2",
+    "position": 368
   },
   "漢和": {
     "name": "漢和",
@@ -17141,13 +17141,13 @@
   },
   "気配": {
     "name": "気配",
-    "category": "1",
-    "position": 742
+    "category": "2",
+    "position": 479
   },
   "下品": {
     "name": "下品",
-    "category": "1",
-    "position": 576
+    "category": "2",
+    "position": 480
   },
   "煙い": {
     "name": "煙い",
@@ -17422,7 +17422,7 @@
   "紅葉": {
     "name": "紅葉",
     "category": "2",
-    "position": 1711
+    "position": 536
   },
   "合理": {
     "name": "合理",
@@ -17536,8 +17536,8 @@
   },
   "擦る": {
     "name": "擦る",
-    "category": "1",
-    "position": 538
+    "category": "2",
+    "position": 559
   },
   "ごぞんじですか": {
     "name": "ごぞんじですか",
@@ -18031,8 +18031,8 @@
   },
   "しいんと": {
     "name": "しいんと",
-    "category": "1",
-    "position": 1284
+    "category": "2",
+    "position": 658
   },
   "自衛": {
     "name": "自衛",
@@ -18167,7 +18167,7 @@
   "湿気": {
     "name": "湿気",
     "category": "2",
-    "position": 686
+    "position": 685
   },
   "しつこい": {
     "name": "しつこい",
@@ -18371,8 +18371,8 @@
   },
   "洒落": {
     "name": "洒落",
-    "category": "1",
-    "position": 1371
+    "category": "2",
+    "position": 727
   },
   "じゃんけん": {
     "name": "じゃんけん",
@@ -18441,8 +18441,8 @@
   },
   "重役": {
     "name": "重役",
-    "category": "1",
-    "position": 435
+    "category": "2",
+    "position": 741
   },
   "終了": {
     "name": "終了",
@@ -18596,8 +18596,8 @@
   },
   "上下": {
     "name": "上下",
-    "category": "1",
-    "position": 239
+    "category": "2",
+    "position": 772
   },
   "障子": {
     "name": "障子",
@@ -18686,8 +18686,8 @@
   },
   "消耗": {
     "name": "消耗",
-    "category": "1",
-    "position": 1434
+    "category": "2",
+    "position": 790
   },
   "醤油": {
     "name": "醤油",
@@ -19266,8 +19266,8 @@
   },
   "背負う": {
     "name": "背負う",
-    "category": "1",
-    "position": 1425
+    "category": "2",
+    "position": 906
   },
   "赤道": {
     "name": "赤道",
@@ -19591,8 +19591,8 @@
   },
   "剃る": {
     "name": "剃る",
-    "category": "1",
-    "position": 1639
+    "category": "2",
+    "position": 971
   },
   "それなのに": {
     "name": "それなのに",
@@ -19971,8 +19971,8 @@
   },
   "近々": {
     "name": "近々",
-    "category": "1",
-    "position": 826
+    "category": "2",
+    "position": 1049
   },
   "近付ける": {
     "name": "近付ける",
@@ -20281,8 +20281,8 @@
   },
   "月日": {
     "name": "月日",
-    "category": "1",
-    "position": 677
+    "category": "2",
+    "position": 1111
   },
   "点く": {
     "name": "点く",
@@ -20291,8 +20291,8 @@
   },
   "突く": {
     "name": "突く",
-    "category": "1",
-    "position": 2068
+    "category": "2",
+    "position": 1113
   },
   "次ぐ": {
     "name": "次ぐ",
@@ -20396,13 +20396,13 @@
   },
   "艶": {
     "name": "艶",
-    "category": "1",
-    "position": 315
+    "category": "2",
+    "position": 1134
   },
   "強気": {
     "name": "強気",
-    "category": "1",
-    "position": 1149
+    "category": "2",
+    "position": 1135
   },
   "釣り合う": {
     "name": "釣り合う",
@@ -20636,8 +20636,8 @@
   },
   "天皇": {
     "name": "天皇",
-    "category": "1",
-    "position": 1637
+    "category": "2",
+    "position": 1182
   },
   "電波": {
     "name": "電波",
@@ -20666,8 +20666,8 @@
   },
   "銅": {
     "name": "銅",
-    "category": "1",
-    "position": 14
+    "category": "2",
+    "position": 1188
   },
   "統一": {
     "name": "統一",
@@ -20791,8 +20791,8 @@
   },
   "退く": {
     "name": "退く",
-    "category": "1",
-    "position": 1471
+    "category": "2",
+    "position": 1213
   },
   "特殊": {
     "name": "特殊",
@@ -20831,8 +20831,8 @@
   },
   "退ける": {
     "name": "退ける",
-    "category": "1",
-    "position": 1472
+    "category": "2",
+    "position": 1221
   },
   "床の間": {
     "name": "床の間",
@@ -20846,8 +20846,8 @@
   },
   "所々": {
     "name": "所々",
-    "category": "1",
-    "position": 1453
+    "category": "2",
+    "position": 1224
   },
   "都心": {
     "name": "都心",
@@ -20877,7 +20877,7 @@
   "留まる": {
     "name": "留まる",
     "category": "2",
-    "position": 1234
+    "position": 1230
   },
   "どなる": {
     "name": "どなる",
@@ -20991,8 +20991,8 @@
   },
   "中指": {
     "name": "中指",
-    "category": "1",
-    "position": 1987
+    "category": "2",
+    "position": 1254
   },
   "仲良し": {
     "name": "仲良し",
@@ -21051,8 +21051,8 @@
   },
   "何々": {
     "name": "何々",
-    "category": "1",
-    "position": 2321
+    "category": "2",
+    "position": 1266
   },
   "何分": {
     "name": "何分",
@@ -21187,7 +21187,7 @@
   "鈍い": {
     "name": "鈍い",
     "category": "2",
-    "position": 1326
+    "position": 1293
   },
   "入社": {
     "name": "入社",
@@ -21456,8 +21456,8 @@
   },
   "梯子": {
     "name": "梯子",
-    "category": "1",
-    "position": 2103
+    "category": "2",
+    "position": 1350
   },
   "始めに": {
     "name": "始めに",
@@ -22146,8 +22146,8 @@
   },
   "蓋": {
     "name": "蓋",
-    "category": "1",
-    "position": 653
+    "category": "2",
+    "position": 1488
   },
   "不通": {
     "name": "不通",
@@ -22191,8 +22191,8 @@
   },
   "父母": {
     "name": "父母",
-    "category": "1",
-    "position": 1966
+    "category": "2",
+    "position": 1497
   },
   "踏切": {
     "name": "踏切",
@@ -22856,8 +22856,8 @@
   },
   "三日月": {
     "name": "三日月",
-    "category": "1",
-    "position": 2952
+    "category": "2",
+    "position": 1630
   },
   "岬": {
     "name": "岬",
@@ -22951,8 +22951,8 @@
   },
   "ミリ": {
     "name": "ミリ",
-    "category": "1",
-    "position": 3448
+    "category": "2",
+    "position": 1649
   },
   "診る": {
     "name": "診る",
@@ -23191,8 +23191,8 @@
   },
   "潜る": {
     "name": "潜る",
-    "category": "1",
-    "position": 863
+    "category": "2",
+    "position": 1697
   },
   "もしかしたら": {
     "name": "もしかしたら",
@@ -23276,8 +23276,8 @@
   },
   "盛る": {
     "name": "盛る",
-    "category": "1",
-    "position": 1196
+    "category": "2",
+    "position": 1715
   },
   "問答": {
     "name": "問答",
@@ -23331,13 +23331,13 @@
   },
   "火傷": {
     "name": "火傷",
-    "category": "1",
-    "position": 532
+    "category": "2",
+    "position": 1726
   },
   "夜行": {
     "name": "夜行",
-    "category": "1",
-    "position": 3092
+    "category": "2",
+    "position": 1727
   },
   "矢印": {
     "name": "矢印",
@@ -23361,8 +23361,8 @@
   },
   "家主": {
     "name": "家主",
-    "category": "1",
-    "position": 127
+    "category": "2",
+    "position": 1732
   },
   "やっぱり": {
     "name": "やっぱり",
@@ -23556,8 +23556,8 @@
   },
   "汚す": {
     "name": "汚す",
-    "category": "1",
-    "position": 928
+    "category": "2",
+    "position": 1771
   },
   "寄せる": {
     "name": "寄せる",
@@ -24097,7 +24097,7 @@
   "彼方此方": {
     "name": "彼方此方",
     "category": "1",
-    "position": 55
+    "position": 53
   },
   "彼方": {
     "name": "彼方",
@@ -24587,7 +24587,7 @@
   "何れ": {
     "name": "何れ",
     "category": "1",
-    "position": 2320
+    "position": 159
   },
   "異性": {
     "name": "異性",
@@ -25272,7 +25272,7 @@
   "園": {
     "name": "園",
     "category": "1",
-    "position": 1795
+    "position": 316
   },
   "円滑": {
     "name": "円滑",
@@ -26637,7 +26637,7 @@
   "乾": {
     "name": "乾",
     "category": "1",
-    "position": 2827
+    "position": 609
   },
   "幹": {
     "name": "幹",
@@ -26652,7 +26652,7 @@
   "館": {
     "name": "館",
     "category": "1",
-    "position": 1873
+    "position": 614
   },
   "簡易": {
     "name": "簡易",
@@ -28952,7 +28952,7 @@
   "堪える": {
     "name": "堪える",
     "category": "1",
-    "position": 1859
+    "position": 1096
   },
   "火燵": {
     "name": "火燵",
@@ -32617,7 +32617,7 @@
   "丈": {
     "name": "丈",
     "category": "1",
-    "position": 1938
+    "position": 1867
   },
   "足し算": {
     "name": "足し算",
@@ -33797,7 +33797,7 @@
   "的": {
     "name": "的",
     "category": "1",
-    "position": 2923
+    "position": 2116
   },
   "適応": {
     "name": "適応",
@@ -34632,7 +34632,7 @@
   "何卒": {
     "name": "何卒",
     "category": "1",
-    "position": 2353
+    "position": 2291
   },
   "どうぞ宜しく": {
     "name": "どうぞ宜しく",
@@ -34737,7 +34737,7 @@
   "何方": {
     "name": "何方",
     "category": "1",
-    "position": 2315
+    "position": 2313
   },
   "土手": {
     "name": "土手",
@@ -35867,7 +35867,7 @@
   "判": {
     "name": "判",
     "category": "1",
-    "position": 2586
+    "position": 2553
   },
   "版": {
     "name": "版",
@@ -40393,5 +40393,90 @@
     "name": "ワット",
     "category": "1",
     "position": 3476
+  },
+  "いい": {
+    "name": "いい",
+    "category": "5",
+    "position": 43
+  },
+  "伯父": {
+    "name": "伯父",
+    "category": "5",
+    "position": 106
+  },
+  "じゃ": {
+    "name": "じゃ",
+    "category": "5",
+    "position": 286
+  },
+  "初め": {
+    "name": "初め",
+    "category": "5",
+    "position": 486
+  },
+  "見る": {
+    "name": "見る",
+    "category": "5",
+    "position": 598
+  },
+  "ゆっくり": {
+    "name": "ゆっくり",
+    "category": "5",
+    "position": 632
+  },
+  "ラジカセ": {
+    "name": "ラジカセ",
+    "category": "5",
+    "position": 647
+  },
+  "より": {
+    "name": "より",
+    "category": "5",
+    "position": 669
+  },
+  "堅": {
+    "name": "堅",
+    "category": "4",
+    "position": 106
+  },
+  "金持ち": {
+    "name": "金持ち",
+    "category": "4",
+    "position": 114
+  },
+  "けんかする": {
+    "name": "けんかする",
+    "category": "4",
+    "position": 172
+  },
+  "チェック": {
+    "name": "チェック",
+    "category": "4",
+    "position": 327
+  },
+  "替える": {
+    "name": "替える",
+    "category": "3",
+    "position": 243
+  },
+  "土曜": {
+    "name": "土曜",
+    "category": "3",
+    "position": 1202
+  },
+  "放送": {
+    "name": "放送",
+    "category": "3",
+    "position": 1460
+  },
+  "木曜": {
+    "name": "木曜",
+    "category": "3",
+    "position": 1569
+  },
+  "碌": {
+    "name": "碌",
+    "category": "1",
+    "position": 55
   }
 }

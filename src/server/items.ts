@@ -96,8 +96,6 @@ const splitIntoCategories = (fileData: Item[], source: string, itemType: string)
 const jishoUrlForItem = (name: string, type: string) => {
     if (type == "kanji") {
         return "https://jisho.org/search/" + name + "%20%23kanji";
-    } else if (type == "vocabulary") {
-        return "https://jisho.org/word/" + name;
     }
     return "https://jisho.org/search/" + name;
 };
