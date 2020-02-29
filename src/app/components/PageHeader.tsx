@@ -1,34 +1,46 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import {createStyles, makeStyles, Theme} from '@material-ui/core/styles';
+import React, {useEffect, useState} from 'react';
+import {makeStyles, Theme} from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+import LaunchIcon from '@material-ui/icons/Launch';
 import {useRouter} from "next/router";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchApi} from "../redux/api/actions";
+import {getApiKey, removeApiKey} from "../apiKey";
+import {ApiResultState} from "../redux/api/types";
+import {RootState} from "../redux/store";
+import {AppBar, Button, IconButton, Menu, MenuItem, Toolbar, Typography} from "@material-ui/core";
+import colors from "../colors";
+import redirect from "../../redirect";
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            zIndex: theme.zIndex.drawer + 1
-        },
-        menuButton: {
-            marginRight: theme.spacing(2),
-            [theme.breakpoints.up("md")]: {
-                display: "none"
-            }
-        },
-        title: {},
-        logo: {
-            maxHeight: 32,
-            marginRight: theme.spacing(2),
-            display: "none",
-            [theme.breakpoints.up("sm")]: {
-                display: "block"
-            }
+const useStyles = makeStyles((theme: Theme) => ({
+    root: {
+        zIndex: theme.zIndex.drawer + 1
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+        [theme.breakpoints.up("md")]: {
+            display: "none"
         }
-    }),
-);
+    },
+    title: {},
+    logo: {
+        maxHeight: 32,
+        marginRight: theme.spacing(2),
+        display: "none",
+        [theme.breakpoints.up("sm")]: {
+            display: "block"
+        }
+    },
+    user: {
+        marginLeft: "auto",
+        fontWeight: "bold",
+        textTransform: "unset",
+        color: colors.white
+    },
+    icon: {
+        marginLeft: theme.spacing(1)
+    }
+}));
 
 interface PageHeaderProps {
     toggleDrawer: () => any
@@ -40,9 +52,29 @@ interface PageHeaderProps {
 export default function PageHeader(props: PageHeaderProps) {
     const classes = useStyles();
     const router = useRouter();
+    const dispatch = useDispatch();
+
+    const userResult: ApiResultState = useSelector((state: RootState) => {
+        return state.api.results["user"];
+    });
+    const [userMenuAnchor, setUserMenuAnchor] = useState<HTMLElement | undefined>(undefined);
+
+    const handleUserMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setUserMenuAnchor(event.currentTarget);
+    };
+    const handleUserMenuClose = () => {
+        setUserMenuAnchor(undefined);
+    };
 
     // For /login and /wait, only display a minimal header
     const minimal = router.pathname == "/login" || router.pathname == "/wait";
+
+    useEffect(() => {
+        // Only retrieve user when we are not on a "minimal" page
+        if (!minimal) {
+            dispatch(fetchApi("user", "/api/user", "GET", getApiKey()));
+        }
+    }, []);
 
     return (
         <header className={classes.root}>
@@ -64,6 +96,35 @@ export default function PageHeader(props: PageHeaderProps) {
                     <Typography className={classes.title} variant="h6" noWrap>
                         {process.env.appName}
                     </Typography>
+
+                    {!minimal && userResult && !userResult.error && !userResult.fetching && (
+                        <React.Fragment>
+                            <Button aria-controls="user-menu" aria-haspopup={true} onClick={handleUserMenuClick}
+                                    className={classes.user}>
+                                {userResult.data.username}
+                            </Button>
+                            <Menu
+                                id="user-menu"
+                                anchorEl={userMenuAnchor}
+                                keepMounted
+                                open={!!userMenuAnchor}
+                                onClose={handleUserMenuClose}
+                            >
+                                <MenuItem onClick={() => {
+                                    window.open(userResult.data.profileUrl, "_blank");
+                                    handleUserMenuClose();
+                                }}>
+                                    WaniKani Profile
+                                    <LaunchIcon className={classes.icon} fontSize="small"/>
+                                </MenuItem>
+                                <MenuItem onClick={() => {
+                                    dispatch(fetchApi("logout", "/api/logout", "GET", getApiKey(), undefined, undefined, true));
+                                    removeApiKey();
+                                    redirect("/login");
+                                }}>Logout</MenuItem>
+                            </Menu>
+                        </React.Fragment>
+                    )}
                 </Toolbar>
             </AppBar>
         </header>

@@ -11,7 +11,10 @@ const useStyles = makeStyles((theme: Theme) => ({
         display: "flex",
         flexDirection: "row"
     },
-    offset: theme.mixins.toolbar
+    offset: theme.mixins.toolbar,
+    mainContainer: {
+        width: "100%"
+    }
 }));
 
 /**
@@ -31,7 +34,7 @@ export default function Page(props: AppProps) {
         <Box className={classes.root}>
             <PageHeader toggleDrawer={toggleDrawer}/>
             <PageNav toggleDrawer={toggleDrawer} mobileOpen={mobileOpen}/>
-            <Box>
+            <Box className={classes.mainContainer}>
                 <div className={classes.offset}/>
                 <Component {...pageProps} />
                 <PageFooter/>

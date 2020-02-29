@@ -37,3 +37,7 @@ export const saveApiKey = (token: string) => {
     Cookies.remove(API_KEY_COOKIE_NAME, {expires: 14});
     Cookies.set(API_KEY_COOKIE_NAME, token, {expires: 14}); // 14 days duration
 };
+
+export const removeApiKey = () => {
+    Cookies.remove(API_KEY_COOKIE_NAME, {expires: 14});
+};

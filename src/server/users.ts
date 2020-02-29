@@ -62,3 +62,9 @@ export const login = async (token: string): Promise<boolean> => {
     users[token] = new Date();
     return true;
 };
+
+export const logout = (token: string) => {
+    if (users[token]) {
+        delete users[token];
+    }
+};
