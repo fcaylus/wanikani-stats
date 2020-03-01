@@ -1,10 +1,10 @@
 import {NextApiRequest, NextApiResponse} from "next";
-import parseApiRequest from "../../src/server/parseApiRequest";
+import parseApiRequest from "../../../src/server/parseApiRequest";
 import {INTERNAL_SERVER_ERROR, OK} from "http-status-codes";
-import {getUser} from "../../src/server/users";
+import {getStatus} from "../../../src/server/status";
 
 /**
- * Fetch user data, and return a User object
+ * Fetch the user status and return a Status object
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const requestParsedResult = await parseApiRequest(req, "GET");
@@ -13,11 +13,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
     const apiKey = requestParsedResult.apiKey;
 
-    const user = await getUser(apiKey);
-    if (!user) {
+    const status = await getStatus(apiKey);
+    if (!status) {
         return res.status(INTERNAL_SERVER_ERROR).send("ERROR");
     }
 
     res.setHeader("Content-Type", "application/json");
-    return res.status(OK).json(user);
+    return res.status(OK).json(status);
 }

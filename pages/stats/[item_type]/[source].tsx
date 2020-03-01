@@ -163,7 +163,7 @@ function StatsPage() {
     };
 
     return (
-        <PageContent pageTitle="Items" className={classes.root} showProgress={!apiResults || apiResults.fetching}>
+        <PageContent pageTitle="Stats" className={classes.root} showProgress={!apiResults || apiResults.fetching}>
             <FormControl component="fieldset">
                 <FormLabel component="legend">Displayed source</FormLabel>
                 <RadioGroup aria-label="sources" name="sources" value={source.toString()} onChange={handleSourceChange}

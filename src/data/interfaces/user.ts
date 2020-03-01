@@ -8,4 +8,5 @@ export interface User {
     maxLevel: number;
     currentLevel: number;
     profileUrl: string;
+    startDate: Date;
 }

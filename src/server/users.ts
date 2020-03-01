@@ -1,4 +1,5 @@
 import WaniKaniApi from "./WaniKaniApi";
+import {User} from "../data/interfaces/user";
 
 /**
  * Hash map of successfully connected users.
@@ -63,12 +64,18 @@ export const login = async (token: string): Promise<boolean> => {
     return true;
 };
 
+/**
+ * Logout the user
+ */
 export const logout = (token: string) => {
     if (users[token]) {
         delete users[token];
     }
 };
 
+/**
+ * Return the maximum level allowed for the user
+ */
 export const maxLevelAllowed = async (token: string): Promise<number> => {
     const wkResult = await WaniKaniApi(token).get("user");
     if (wkResult && !wkResult.error) {
@@ -77,3 +84,27 @@ export const maxLevelAllowed = async (token: string): Promise<number> => {
     }
     return 0;
 };
+
+/**
+ * Return the user object for the specified token
+ */
+export const getUser = async (token: string): Promise<User | undefined> => {
+    // See: https://docs.api.wanikani.com/#user for endpoint documentation
+    const wkResult = await WaniKaniApi(token).get("user");
+
+    if (wkResult.error || !wkResult.data || !wkResult.data.data) {
+        return undefined
+    }
+
+    const data = wkResult.data.data;
+
+    return {
+        token: token,
+        username: data.username,
+        maxLevel: data.subscription.max_level_granted,
+        currentLevel: data.level,
+        profileUrl: data.profile_url,
+        startDate: new Date(data.started_at)
+    };
+};
+

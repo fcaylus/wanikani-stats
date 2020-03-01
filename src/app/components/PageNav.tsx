@@ -3,6 +3,7 @@ import {makeStyles, Theme} from '@material-ui/core/styles';
 import {Box, Divider, Drawer, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ShowChartIcon from "@material-ui/icons/ShowChart";
+import HomeIcon from "@material-ui/icons/Home";
 import TranslateIcon from '@material-ui/icons/Translate';
 import {useRouter} from "next/router";
 import {DEFAULT_REDIRECT_URL} from "../../redirect";
@@ -33,6 +34,14 @@ interface PageNavProps {
 }
 
 const routes = [
+    {
+        name: "Home",
+        icon: <HomeIcon/>,
+        url: "/",
+        isSame: (url: string) => {
+            return url == "/" || url == "";
+        }
+    },
     {
         name: "Items",
         icon: <TranslateIcon/>,
@@ -83,7 +92,8 @@ export default function PageNav(props: PageNavProps) {
                 <List>
                     {routes.map((route) => {
                         return (
-                            <ListItem button key={route.name} onClick={() => navClick(route)}>
+                            <ListItem button key={route.name} onClick={() => navClick(route)}
+                                      selected={route.isSame(router.pathname)}>
                                 <ListItemIcon>{route.icon}</ListItemIcon>
                                 <ListItemText primary={route.name}/>
                             </ListItem>
