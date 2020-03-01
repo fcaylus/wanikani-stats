@@ -2,7 +2,6 @@ import {createMuiTheme} from '@material-ui/core/styles';
 
 /**
  * Theme for the main app.
- * TODO: change the theme
  */
 const theme = createMuiTheme({
     palette: {
@@ -13,9 +12,9 @@ const theme = createMuiTheme({
             contrastText: "#ffffff",
         },
         secondary: {
-            main: "#ffb300",
-            light: "#ffe54c",
-            dark: "#c68400",
+            main: "#ffa000",
+            light: "#ffd149",
+            dark: "#c67100",
             contrastText: "#000000"
         },
         background: {
@@ -37,6 +36,16 @@ const theme = createMuiTheme({
             textColorSecondary: {
                 "&:hover": {
                     backgroundColor: "#ffecb3"
+                }
+            }
+        },
+        MuiTableRow: {
+            root: {
+                "&$selected, &$selected:hover": {
+                    backgroundColor: "#e1bee7",
+                    "& > *": {
+                        fontWeight: "bold !important"
+                    }
                 }
             }
         }

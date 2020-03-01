@@ -192,18 +192,22 @@ function StatsPage() {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {(apiResults.data as Stats).levels.map((level, levelIndex) => (
-                                <TableRow key={level.level} hover
-                                          selected={userResults && !userResults.error && !userResults.fetching && (userResults.data as User).currentLevel == parseInt(level.level)}>
-                                    <TableCell className={classes.cell} align="center"
-                                               variant="head" component="th">{level.level}</TableCell>
-                                    {(apiResults.data as Stats).categories.map((category, categoryIndex) => (
-                                        <TableCell
-                                            key={category} className={classes.cell}
-                                            align="center">{formatPercentage(levelIndex, categoryIndex)}</TableCell>
-                                    ))}
-                                </TableRow>
-                            ))}
+                            {(apiResults.data as Stats).levels.map((level, levelIndex) => {
+                                const isSelected = userResults && !userResults.error && !userResults.fetching && (userResults.data as User).currentLevel == parseInt(level.level);
+                                return (
+                                    <TableRow key={level.level}
+                                              selected={isSelected}
+                                              hover={!isSelected}>
+                                        <TableCell className={classes.cell} align="center"
+                                                   variant="head" component="th">{level.level}</TableCell>
+                                        {(apiResults.data as Stats).categories.map((category, categoryIndex) => (
+                                            <TableCell
+                                                key={category} className={classes.cell}
+                                                align="center">{formatPercentage(levelIndex, categoryIndex)}</TableCell>
+                                        ))}
+                                    </TableRow>
+                                );
+                            })}
                         </TableBody>
                     </Table>
                 </Paper>
