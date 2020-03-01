@@ -75,7 +75,7 @@ export const fetchApi = (label: string,
                          noCache?: boolean,
                          req?: IncomingMessage,
                          res?: ServerResponse) => {
-    const baseUrl = process.browser ? "" : "http://localhost:3000";
+    const baseUrl = process.browser ? "" : "http://localhost:" + process.env.defaultPort;
 
     return (dispatch: ThunkDispatch<any, any, AnyAction>, getState: () => RootState) => {
         if (!isNextPage) {

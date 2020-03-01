@@ -3,8 +3,8 @@ import WaniKaniApi from "../../src/server/WaniKaniApi";
 import parseApiRequest from "../../src/server/parseApiRequest";
 import {OK} from "http-status-codes";
 import {ProgressEndpointResult, ProgressHashMap} from "../../src/server/interfaces/progress";
-import absoluteUrl from "next-absolute-url";
 import subjectNameForId from "../../src/data/sources/wanikani/subjectNameForId";
+import absoluteUrl from "../../src/absoluteUrl";
 
 /**
  * Fetch user progress, depending on the query parameter:
@@ -57,7 +57,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (hasNextPage && req.url) {
         const nextPageAfterId = (new URL(wkResult.data.pages.next_url)).searchParams.get("page_after_id");
         if (nextPageAfterId) {
-            nextPageUrl = new URL(absoluteUrl(req, "localhost:3000").origin + req.url);
+            nextPageUrl = new URL(absoluteUrl(req) + req.url);
             nextPageUrl.searchParams.set("page_after_id", nextPageAfterId);
             nextPageUrl = nextPageUrl.href;
         } else {

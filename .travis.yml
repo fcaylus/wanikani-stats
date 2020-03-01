@@ -1,0 +1,28 @@
+language: node_js
+
+node_js:
+  - node
+
+services:
+  - docker
+
+branchs:
+  only:
+    - master
+    - travis
+
+before_install:
+  - sudo apt-get -y install sshpass
+
+install:
+  - yarn install
+
+script:
+  - yarn run build
+  - docker build -t "wanikani-stats/server:latest" .
+
+after_success:
+  - docker save "wanikani-stats/server:latest" > wanikani-stats_docker.tar
+  - tar -czvf wanikani-stats_docker.tar.gz wanikani-stats_docker.tar
+  - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
+  - sshpass -p ${SFTP_PASSWORD} scp -o StrictHostKeyChecking=no -i /tmp/sftp_rsa -r ./wanikani-stats_docker.tar.gz ./launch.sh ${SFTP_USER}@tranqyll.fr:wanikani-stats/
