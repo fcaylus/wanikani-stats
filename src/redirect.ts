@@ -1,6 +1,6 @@
 import {IncomingMessage, ServerResponse} from "http";
 import {PERMANENT_REDIRECT, TEMPORARY_REDIRECT} from "http-status-codes";
-import absoluteUrl from "next-absolute-url";
+import absoluteUrl from "./absoluteUrl";
 
 export const DEFAULT_REDIRECT_URL = "/items/kanji/wanikani";
 
@@ -12,12 +12,12 @@ export default (url: string, request?: IncomingMessage, response?: ServerRespons
     try {
         destUrl = new URL(url);
     } catch (e) {
-        destUrl = new URL(absoluteUrl(request).origin + url);
+        destUrl = new URL(absoluteUrl(request) + url);
     }
 
     if (!process.browser && response && request) {
         // server side
-        const currentUrl = absoluteUrl(request).origin + request.url;
+        const currentUrl = absoluteUrl(request) + request.url;
         destUrl.searchParams.set("redirect", encodeURI(currentUrl));
 
         response.writeHead(permanent ? PERMANENT_REDIRECT : TEMPORARY_REDIRECT, {
