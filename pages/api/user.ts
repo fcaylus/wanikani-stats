@@ -23,7 +23,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     const data = wkResult.data.data;
 
-    let user: User = {
+    const user: User = {
         token: apiKey,
         username: data.username,
         maxLevel: data.subscription.max_level_granted,

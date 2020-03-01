@@ -168,7 +168,7 @@ function ItemPage(props: ItemPageProps) {
         // setTimeout put the function at the end of the calling stack
         setTimeout(() => {
             if (apiResults && !apiResults.fetching && !apiResults.error) {
-                const apiLength = apiResults.data.length;
+                const apiLength = (apiResults.data as ItemCategory[]).length;
 
                 if (displayedDataLength < apiLength) {
                     // Load data by chunk of 1 category

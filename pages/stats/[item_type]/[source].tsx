@@ -35,6 +35,7 @@ import {ReduxNextPageContext} from "../../../src/app/redux/interfaces";
 import redirect from "../../../src/redirect";
 import {ItemCategory} from "../../../src/data/interfaces/item";
 import ItemList from "../../../src/app/components/ItemList";
+import {User} from "../../../src/data/interfaces/user";
 
 const sourcesForType = (type: string) => {
     return Object(itemTypesJson)[type].sources;
@@ -193,7 +194,7 @@ function StatsPage() {
                         <TableBody>
                             {(apiResults.data as Stats).levels.map((level, levelIndex) => (
                                 <TableRow key={level.level} hover
-                                          selected={userResults && !userResults.error && !userResults.fetching && userResults.data.currentLevel == parseInt(level.level)}>
+                                          selected={userResults && !userResults.error && !userResults.fetching && (userResults.data as User).currentLevel == parseInt(level.level)}>
                                     <TableCell className={classes.cell} align="center"
                                                variant="head" component="th">{level.level}</TableCell>
                                     {(apiResults.data as Stats).categories.map((category, categoryIndex) => (

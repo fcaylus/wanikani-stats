@@ -11,6 +11,7 @@ import {RootState} from "../redux/store";
 import {AppBar, Button, IconButton, Menu, MenuItem, Toolbar, Typography} from "@material-ui/core";
 import colors from "../colors";
 import redirect from "../../redirect";
+import {User} from "../../data/interfaces/user";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -101,7 +102,7 @@ export default function PageHeader(props: PageHeaderProps) {
                         <React.Fragment>
                             <Button aria-controls="user-menu" aria-haspopup={true} onClick={handleUserMenuClick}
                                     className={classes.user}>
-                                {userResult.data.username}
+                                {(userResult.data as User).username}
                             </Button>
                             <Menu
                                 id="user-menu"
@@ -111,7 +112,7 @@ export default function PageHeader(props: PageHeaderProps) {
                                 onClose={handleUserMenuClose}
                             >
                                 <MenuItem onClick={() => {
-                                    window.open(userResult.data.profileUrl, "_blank");
+                                    window.open((userResult.data as User).profileUrl, "_blank");
                                     handleUserMenuClose();
                                 }}>
                                     WaniKani Profile
