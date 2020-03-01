@@ -16,7 +16,7 @@ export interface RequestParsedResult {
  * Parse an API request and check for the method and the API key.
  * Also verify if the user is logged in and if the WaniKani data are already downloaded.
  */
-export default async (req: NextApiRequest, method: string, loginCheck = true): Promise<RequestParsedResult> => {
+export default async (req: NextApiRequest, method: string, skipWKCheck?: boolean): Promise<RequestParsedResult> => {
     if (!req.method || req.method.toUpperCase() !== method.toUpperCase()) {
         return Promise.resolve({error: true, errorCode: METHOD_NOT_ALLOWED, apiKey: ""});
     }
@@ -48,17 +48,17 @@ export default async (req: NextApiRequest, method: string, loginCheck = true): P
     }
 
     // Login
-    if (loginCheck) {
-        if (!(await loginIfNecessary(apiKey))) {
-            return Promise.resolve({error: true, errorCode: UNAUTHORIZED, apiKey: ""});
-        }
+    if (!(await loginIfNecessary(apiKey))) {
+        return Promise.resolve({error: true, errorCode: UNAUTHORIZED, apiKey: ""});
     }
 
     // Download WK subjects if needed. This is called at every request since the data is required for most of the request
     // Actually, only the first request of the first user will download something since it's stored to filesystem
     if (needToDownloadWKSubjects()) {
         downloadAllSubjects(apiKey);
-        return Promise.resolve({error: true, errorCode: ACCEPTED, apiKey: ""});
+        if (!skipWKCheck) {
+            return Promise.resolve({error: true, errorCode: ACCEPTED, apiKey: ""});
+        }
     }
 
     return Promise.resolve({error: false, errorCode: OK, apiKey: apiKey});
