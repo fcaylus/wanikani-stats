@@ -2,17 +2,20 @@
 FROM node:alpine
 
 # Set working directory
-WORKDIR /usr/app
+WORKDIR /home/node
+
+# Set user permissions
+RUN chown -R node:node /home/node
 
 # Copy package.json and yarn.lock before other files
-COPY ./package.json ./
-COPY ./yarn.lock ./
+COPY --chown=node:node ./package.json ./
+COPY --chown=node:node ./yarn.lock ./
 
 # Install dependencies
 RUN yarn install --production
 
 # Copy all files
-COPY ./ ./
+COPY --chown=node:node ./ ./
 
 # Build app
 RUN yarn run build
