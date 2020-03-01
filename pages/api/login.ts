@@ -7,7 +7,7 @@ import {login} from "../../src/server/users";
  * Challenge a login based on the user api key
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-    const requestParsedResult = await parseApiRequest(req, "GET", false);
+    const requestParsedResult = await parseApiRequest(req, "GET", true);
     if (requestParsedResult.error) {
         return res.status(requestParsedResult.errorCode).send(requestParsedResult.errorCode.toString());
     }
