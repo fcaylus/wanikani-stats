@@ -75,8 +75,7 @@ export const fetchApi = (label: string,
                          noCache?: boolean,
                          req?: IncomingMessage,
                          res?: ServerResponse) => {
-    // @ts-ignore
-    const baseUrl = process.browser ? "" : "http://localhost:" + process.env.defaultPort.toString();
+    const baseUrl = process.browser ? "" : "http://localhost:" + process.env.defaultPort;
 
     return (dispatch: ThunkDispatch<any, any, AnyAction>, getState: () => RootState) => {
         if (!isNextPage) {

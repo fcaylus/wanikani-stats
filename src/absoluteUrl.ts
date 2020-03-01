@@ -2,8 +2,7 @@ import {IncomingMessage} from "http"
 
 const absoluteUrl = (req?: IncomingMessage, localhostAddress?: string) => {
     if (!localhostAddress) {
-        // @ts-ignore
-        localhostAddress = "localhost:" + process.env.defaultPort.toString();
+        localhostAddress = "localhost:" + process.env.defaultPort;
     }
 
     let host = (req ? req.headers.host : window.location.host) || localhostAddress;

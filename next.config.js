@@ -4,6 +4,6 @@ module.exports = {
         appName: "WaniKani Stats Reloaded",
         author: "Fabien Caylus",
         authorLink: "https://github.com/fcaylus",
-        defaultPort: 3170
+        defaultPort: "3170"
     }
 };
