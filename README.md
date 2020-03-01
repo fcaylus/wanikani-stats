@@ -1,4 +1,4 @@
-# WaniKani Stats Reloaded
+# WaniKani Stats Reloaded [![Build Status](https://travis-ci.org/fcaylus/wanikani-stats.svg?branch=master)](https://travis-ci.org/fcaylus/wanikani-stats)
 
 React-based web app displaying user statistics from [wanikani.com](https://wanikani.com).
 Idea inspired by [wkstats.com](https://wkstats.com), but rewritten from scratch using React, Next.js and TypeScript.
