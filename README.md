@@ -1,4 +1,8 @@
-# WaniKani Stats Reloaded [![Build Status](https://travis-ci.org/fcaylus/wanikani-stats.svg?branch=master)](https://travis-ci.org/fcaylus/wanikani-stats)
+# WaniKani Stats Reloaded
+
+![Version](https://img.shields.io/github/package-json/v/fcaylus/wanikani-stats?style=for-the-badge)
+[![Build Status](https://img.shields.io/travis/fcaylus/wanikani-stats?style=for-the-badge)](https://travis-ci.org/fcaylus/wanikani-stats)
+[![License](https://img.shields.io/github/license/fcaylus/wanikani-stats?style=for-the-badge)](https://github.com/fcaylus/wanikani-stats/blob/master/LICENSE)
 
 React-based web app displaying user statistics from [wanikani.com](https://wanikani.com).
 Idea inspired by [wkstats.com](https://wkstats.com), but rewritten from scratch using React, Next.js and TypeScript.
