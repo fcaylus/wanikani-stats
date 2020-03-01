@@ -39,13 +39,13 @@ const sourcesForType = (type: string) => {
 
 // Create a label based on the specified query
 const labelFromItemTypeAndSource = (itemType: string, source: string) => {
-    return itemType + "/" + source;
+    return "items/" + itemType + "/" + source;
 };
 
 // Wrapper around the fetchApi() redux action
 const fetchItems = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
     const label = labelFromItemTypeAndSource(itemType, source);
-    const url = "/api/items/" + label;
+    const url = "/api/" + label;
     return fetchApi(label, url, "GET", getApiKey(req), undefined, undefined, undefined, req, res);
 };
 

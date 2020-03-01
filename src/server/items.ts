@@ -6,6 +6,7 @@ import {sourceExistsForItemType} from "../data/data";
 import compareStrings from "../compareStrings";
 import {readFile} from "../data/sources/sources";
 import {maxLevelAllowed} from "./users";
+import {LevelStats, Stats} from "../data/interfaces/stats";
 
 // Cache file reads in memory because it can take a lot of time to read them from file system
 let itemsCache: { [name: string]: any } = {};
@@ -33,12 +34,12 @@ const sortItems = (itemsList: Item[]) => {
     });
 };
 
-const splitIntoCategories = (fileData: Item[], source: string, itemType: string): ItemCategory[] => {
-    // Create each category needed by the specified source
-    // add an "_" in front of every category to prevent automatic ordering of Object.values()
-    let categories: { [category: string]: ItemCategory } = {};
-
-    for (let category of sources[source].categories) {
+/**
+ * Get the list of available categories for a source
+ */
+const categoriesForSource = (source: string) => {
+    let categories = [];
+    for (const category of sources[source].categories) {
         // Parse the category name/displayed name based on the typeof
         let categoryName;
         let displayedName;
@@ -52,11 +53,31 @@ const splitIntoCategories = (fileData: Item[], source: string, itemType: string)
             displayedName = sources[source].categories_name_format.toString().replace("%s", category)
         }
 
-        categories["_" + categoryName] = {
+        categories.push({
+            name: categoryName,
+            displayedName: displayedName
+        });
+    }
+
+    return categories;
+};
+
+
+/**
+ * Split the item list into categories
+ */
+const splitIntoCategories = (fileData: Item[], source: string, itemType: string): ItemCategory[] => {
+    // Create each category needed by the specified source
+    // add an "_" in front of every category to prevent automatic ordering of Object.values()
+    let categories: { [category: string]: ItemCategory } = {};
+
+    for (const category of categoriesForSource(source)) {
+        categories["_" + category.name] = {
             items: [],
             itemsType: itemType,
+            category: category.name,
             showUserProgress: true,
-            headerText: displayedName
+            headerText: category.displayedName
         };
     }
 
@@ -64,6 +85,7 @@ const splitIntoCategories = (fileData: Item[], source: string, itemType: string)
     categories["_" + OTHER_CATEGORY] = {
         items: [],
         itemsType: itemType,
+        category: OTHER_CATEGORY,
         showUserProgress: true,
         headerText: "Not listed"
     };
@@ -101,6 +123,20 @@ const jishoUrlForItem = (name: string, type: string) => {
     return "https://jisho.org/search/" + name;
 };
 
+/**
+ * Add default data (jisho url, ...)
+ */
+const addMinimalDefaultData = (item: Item, itemType: string) => {
+    return {
+        ...item,
+        characters: item.name,
+        url: jishoUrlForItem(item.name, itemType)
+    };
+};
+
+/**
+ * Merge fileData with the WaniKani data
+ */
 const mergeWithWKData = (fileData: ItemsHashMap, wkFileData: Item[], itemType: string) => {
     let data = wkFileData;
 
@@ -139,11 +175,7 @@ const mergeWithWKData = (fileData: ItemsHashMap, wkFileData: Item[], itemType: s
 
     // Add all items present in the data but not in WK (and set some defaults for them
     for (const item of Object.values(fileData)) {
-        data.push({
-            ...item,
-            characters: item.name,
-            url: jishoUrlForItem(item.name, itemType)
-        });
+        data.push(addMinimalDefaultData(item, itemType));
     }
 
     return data;
@@ -169,7 +201,7 @@ const filterWaniKaniData = (wkFileData: Item[], maxLevel: number): Item[] => {
  * NOTE: WaniKani data must be downloaded before this call since no checks are performed.
  * apiKey is used to retrieve the user info and thus the level limit of the user
  */
-export const getItems = async (source: string, type: string, apiKey: string): Promise<ItemCategory[] | null> => {
+export const getItems = async (source: string, type: string, apiKey: string, mergeWithWK = true): Promise<ItemCategory[] | null> => {
     // Bad source and/or item type
     if (!sourceExistsForItemType(source, type)) {
         return null;
@@ -178,22 +210,28 @@ export const getItems = async (source: string, type: string, apiKey: string): Pr
     const maxLevel: number = await maxLevelAllowed(apiKey);
 
     // If in cache, return it
-    const label = type + "/" + source + "/" + maxLevel.toString();
+    const label = type + "/" + source + "/" + maxLevel.toString() + "/" + mergeWithWK ? "merge" : "nomerge";
     if (itemsCache[label]) {
         return itemsCache[label]
     }
 
-    // Read the corresponding file depending on the source type and merge it with the WaniKani data
-    let fileData: ItemsHashMap | null = null;
-    let wkFileData: Item[] = filterWaniKaniData(readWaniKaniFile(type), maxLevel);
+    // Read the corresponding file depending on the source type and merge it (if required) with the WaniKani data
     let mergedData: Item[];
-    if (source === "wanikani") {
-        mergedData = wkFileData;
-    } else {
-        fileData = readFile(type, source);
 
-        // Merge with WK data
-        mergedData = mergeWithWKData(fileData, wkFileData, type);
+    if (!mergeWithWK) {
+        if (source === "wanikani") {
+            mergedData = filterWaniKaniData(readWaniKaniFile(type), maxLevel);
+        } else {
+            mergedData = Object.values(readFile(type, source));
+        }
+    } else {
+        let wkFileData: Item[] = filterWaniKaniData(readWaniKaniFile(type), maxLevel);
+        if (source === "wanikani") {
+            mergedData = wkFileData;
+        } else {
+            // Merge with WK data
+            mergedData = mergeWithWKData(readFile(type, source), wkFileData, type);
+        }
     }
 
     // And split the file into categories based on source_types.json
@@ -201,4 +239,93 @@ export const getItems = async (source: string, type: string, apiKey: string): Pr
 
     itemsCache[label] = data;
     return data;
+};
+
+/**
+ * Get the WaniKani items distribution stats related to the specified source.
+ */
+export const getStats = async (source: string, type: string, apiKey: string): Promise<Stats | null> => {
+    // Bad source and/or item type
+    if (!sourceExistsForItemType(source, type)) {
+        return null;
+    }
+
+    // Can't get stats for wanikani AND wanikani, that doesn't make sense
+    if (source === "wanikani") {
+        return null;
+    }
+
+    let stats: Stats = {
+        source: source,
+        categories: [],
+        displayedCategories: [],
+        levels: [],
+        otherItems: []
+    };
+
+    for (const category of categoriesForSource(source)) {
+        stats.categories.push(category.name);
+        stats.displayedCategories.push(category.displayedName);
+    }
+
+    // Get WaniKani data AND the specified source/type data
+    let wkData: ItemCategory[] | null = await getItems("wanikani", type, apiKey, false);
+    let otherData: ItemsHashMap = readFile(type, source);
+
+    if (!wkData || !otherData) {
+        return null;
+    }
+
+    // First, count the number of items in each category of other data
+    const countItems = (itemsHashMap: ItemsHashMap) => {
+        let count: { [category: string]: number } = {};
+
+        for (const item of Object.values(itemsHashMap)) {
+            if (item.category && item.category != OTHER_CATEGORY) {
+                if (count[item.category]) {
+                    count[item.category] = count[item.category] + 1;
+                } else {
+                    count[item.category] = 1;
+                }
+            }
+        }
+        return count;
+    };
+    const initialCount = countItems(otherData);
+
+    // Then, for each level of wkData, remove the items in otherData. When removed, recount the number of items
+    // to have the percentage of items.
+    for (const wkCategory of wkData) {
+        if (wkCategory.category == OTHER_CATEGORY) {
+            continue;
+        }
+
+        let levelStats: LevelStats = {
+            level: wkCategory.category,
+            categories: {}
+        };
+
+        for (const item of wkCategory.items) {
+            if (otherData[item.name]) {
+                delete otherData[item.name];
+            }
+        }
+
+        // Re-count the number of items
+        const newCount = countItems(otherData);
+
+        for (const otherCategory of Object.keys(initialCount)) {
+            const newLength = newCount[otherCategory] ? newCount[otherCategory] : 0;
+            const percentage = (initialCount[otherCategory] - newLength) / initialCount[otherCategory];
+
+            levelStats.categories[otherCategory] = percentage;
+        }
+
+        stats.levels.push(levelStats);
+    }
+
+    // Add "other items", not listed in WaniKani
+    stats.otherItems = splitIntoCategories(Object.values(otherData).map((item) => addMinimalDefaultData(item, type)), source, type);
+
+    return stats;
 };

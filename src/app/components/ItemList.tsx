@@ -32,6 +32,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 export default React.memo((props: ItemCategory & { progress?: ProgressHashMap }) => {
     const classes = useStyles();
 
+    if (props.items.length == 0) {
+        return null;
+    }
+
     return (
         <React.Fragment>
             {props.headerText && (

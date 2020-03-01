@@ -27,6 +27,7 @@ export interface Item {
 export interface ItemCategory {
     items: Item[];
     itemsType: string;
+    category: string;
     showUserProgress?: boolean
     headerText?: string;
 }

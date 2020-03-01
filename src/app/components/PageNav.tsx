@@ -2,8 +2,10 @@ import React from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
 import {Box, Divider, Drawer, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ShowChartIcon from "@material-ui/icons/ShowChart";
 import TranslateIcon from '@material-ui/icons/Translate';
 import {useRouter} from "next/router";
+import {DEFAULT_REDIRECT_URL} from "../../redirect";
 
 const drawerWidth = 240;
 
@@ -34,7 +36,18 @@ const routes = [
     {
         name: "Items",
         icon: <TranslateIcon/>,
-        url: "/items"
+        url: DEFAULT_REDIRECT_URL,
+        isSame: (url: string) => {
+            return url.startsWith("/items");
+        }
+    },
+    {
+        name: "Stats",
+        icon: <ShowChartIcon/>,
+        url: "/stats/kanji/jlpt",
+        isSame: (url: string) => {
+            return url.startsWith("/stats");
+        }
     }
 ];
 
@@ -46,9 +59,9 @@ export default function PageNav(props: PageNavProps) {
     const router = useRouter();
 
     // Handle drawer item click
-    const navClick = (url: string) => {
-        if (!router.pathname.startsWith(url)) {
-            router.push(url, undefined, {
+    const navClick = (route: any) => {
+        if (!route.isSame(router.pathname)) {
+            router.push(route.url, undefined, {
                 shallow: false
             });
         }
@@ -70,7 +83,7 @@ export default function PageNav(props: PageNavProps) {
                 <List>
                     {routes.map((route) => {
                         return (
-                            <ListItem button key={route.name} onClick={() => navClick(route.url)}>
+                            <ListItem button key={route.name} onClick={() => navClick(route)}>
                                 <ListItemIcon>{route.icon}</ListItemIcon>
                                 <ListItemText primary={route.name}/>
                             </ListItem>
