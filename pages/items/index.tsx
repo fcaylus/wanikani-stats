@@ -1,12 +1,12 @@
 import {ReduxNextPageContext} from "../../src/app/redux/interfaces";
-import redirect, {DEFAULT_REDIRECT_URL} from "../../src/redirect";
+import redirect from "../../src/redirect";
 
 function DefaultItemPage() {
     return null
 }
 
 DefaultItemPage.getInitialProps = async (ctx: ReduxNextPageContext) => {
-    redirect(DEFAULT_REDIRECT_URL, ctx.req, ctx.res, true);
+    redirect("/items/kanji/wanikani", ctx.req, ctx.res, true);
 };
 
 export default DefaultItemPage;

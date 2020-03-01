@@ -37,7 +37,7 @@ const routes = [
     {
         name: "Home",
         icon: <HomeIcon/>,
-        url: "/",
+        url: DEFAULT_REDIRECT_URL,
         isSame: (url: string) => {
             return url == "/" || url == "";
         }
@@ -45,7 +45,7 @@ const routes = [
     {
         name: "Items",
         icon: <TranslateIcon/>,
-        url: DEFAULT_REDIRECT_URL,
+        url: "/items/kanji/wanikani",
         isSame: (url: string) => {
             return url.startsWith("/items");
         }

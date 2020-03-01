@@ -2,7 +2,7 @@ import {IncomingMessage, ServerResponse} from "http";
 import {PERMANENT_REDIRECT, TEMPORARY_REDIRECT} from "http-status-codes";
 import absoluteUrl from "./absoluteUrl";
 
-export const DEFAULT_REDIRECT_URL = "/items/kanji/wanikani";
+export const DEFAULT_REDIRECT_URL = "/";
 
 /**
  * Redirect to the specified url
