@@ -5,8 +5,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../src/app/redux/store";
 import {ApiResultState} from "../src/app/redux/api/types";
 import {fetchApi} from "../src/app/redux/api/actions";
-import {getApiKey} from "../src/app/apiKey";
+import {getApiKey, hasApiKey} from "../src/app/apiKey";
 import StatusCard from "../src/app/components/StatusCard";
+import {ReduxNextPageContext} from "../src/app/redux/interfaces";
+import redirect from "../src/redirect";
+import {IncomingMessage, ServerResponse} from "http";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -25,8 +28,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-// TODO: add server side rendering to prefetch API data
-export default function Index() {
+const fetchStatus = (req?: IncomingMessage, res?: ServerResponse) => {
+    return fetchApi("status", "/api/user/status", "GET", getApiKey(req), undefined, undefined, undefined, req, res);
+};
+
+export default function IndexPage() {
     const classes = useStyles();
 
     const dispatch = useDispatch();
@@ -35,7 +41,9 @@ export default function Index() {
     });
 
     useEffect(() => {
-        dispatch(fetchApi("status", "/api/user/status", "GET", getApiKey()));
+        if (!statusResult || statusResult.error) {
+            dispatch(fetchStatus());
+        }
     }, []);
 
     return (
@@ -46,3 +54,22 @@ export default function Index() {
         </PageContent>
     );
 }
+
+// Server-side rendering
+IndexPage.getInitialProps = async (ctx: ReduxNextPageContext) => {
+    // Check if logged
+    if (!hasApiKey(ctx.req)) {
+        redirect("/login", ctx.req, ctx.res, false, true);
+        return {};
+    }
+
+    // Wait for the API call to finished.
+    if (!process.browser) {
+        await ctx.store.dispatch(fetchStatus(ctx.req, ctx.res));
+    } else {
+        ctx.store.dispatch(fetchStatus());
+    }
+
+    return {}
+};
+
