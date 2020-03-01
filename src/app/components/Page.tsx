@@ -5,6 +5,7 @@ import PageHeader from "./PageHeader";
 import PageFooter from "./PageFooter";
 import PageNav from "./PageNav";
 import {Box} from "@material-ui/core";
+import {useRouter} from "next/router";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -22,7 +23,11 @@ const useStyles = makeStyles((theme: Theme) => ({
  */
 export default function Page(props: AppProps) {
     const classes = useStyles();
+    const router = useRouter();
     const {Component, pageProps} = props;
+
+    // For /login and /wait, only display a minimal page
+    const minimal = router.pathname == "/login" || router.pathname == "/wait";
 
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -32,8 +37,8 @@ export default function Page(props: AppProps) {
 
     return (
         <Box className={classes.root}>
-            <PageHeader toggleDrawer={toggleDrawer}/>
-            <PageNav toggleDrawer={toggleDrawer} mobileOpen={mobileOpen}/>
+            <PageHeader toggleDrawer={toggleDrawer} minimal={minimal}/>
+            {!minimal && <PageNav toggleDrawer={toggleDrawer} mobileOpen={mobileOpen}/>}
             <Box className={classes.mainContainer}>
                 <div className={classes.offset}/>
                 <Component {...pageProps} />

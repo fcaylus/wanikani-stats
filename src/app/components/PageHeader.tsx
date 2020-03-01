@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import LaunchIcon from '@material-ui/icons/Launch';
-import {useRouter} from "next/router";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchApi} from "../redux/api/actions";
 import {getApiKey, removeApiKey} from "../apiKey";
@@ -44,7 +43,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 interface PageHeaderProps {
-    toggleDrawer: () => any
+    toggleDrawer: () => any,
+    minimal: boolean
 }
 
 /**
@@ -52,7 +52,6 @@ interface PageHeaderProps {
  */
 export default function PageHeader(props: PageHeaderProps) {
     const classes = useStyles();
-    const router = useRouter();
     const dispatch = useDispatch();
 
     const userResult: ApiResultState = useSelector((state: RootState) => {
@@ -67,12 +66,9 @@ export default function PageHeader(props: PageHeaderProps) {
         setUserMenuAnchor(undefined);
     };
 
-    // For /login and /wait, only display a minimal header
-    const minimal = router.pathname == "/login" || router.pathname == "/wait";
-
     useEffect(() => {
         // Only retrieve user when we are not on a "minimal" page
-        if (!minimal) {
+        if (!props.minimal) {
             dispatch(fetchApi("user", "/api/user", "GET", getApiKey()));
         }
     }, []);
@@ -81,7 +77,7 @@ export default function PageHeader(props: PageHeaderProps) {
         <header className={classes.root}>
             <AppBar position="fixed">
                 <Toolbar>
-                    {!minimal && (
+                    {!props.minimal && (
                         <IconButton
                             edge="start"
                             className={classes.menuButton}
@@ -98,7 +94,7 @@ export default function PageHeader(props: PageHeaderProps) {
                         {process.env.appName}
                     </Typography>
 
-                    {!minimal && userResult && !userResult.error && !userResult.fetching && (
+                    {!props.minimal && userResult && !userResult.error && !userResult.fetching && (
                         <React.Fragment>
                             <Button aria-controls="user-menu" aria-haspopup={true} onClick={handleUserMenuClick}
                                     className={classes.user}>
