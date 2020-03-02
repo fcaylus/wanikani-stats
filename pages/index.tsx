@@ -10,6 +10,7 @@ import StatusCard from "../src/app/components/StatusCard";
 import {ReduxNextPageContext} from "../src/app/redux/interfaces";
 import redirect from "../src/redirect";
 import {IncomingMessage, ServerResponse} from "http";
+import ItemsCountGrid from "../src/app/components/ItemsCountGrid";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -19,6 +20,9 @@ const useStyles = makeStyles((theme: Theme) => ({
         "& > *": {
             marginTop: theme.spacing(2),
             marginBottom: theme.spacing(2)
+        },
+        "& > *:first-child": {
+            marginTop: "unset"
         }
     },
     image: {
@@ -31,6 +35,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 const fetchStatus = (req?: IncomingMessage, res?: ServerResponse) => {
     return fetchApi("status", "/api/user/status", "GET", getApiKey(req), undefined, undefined, undefined, req, res);
 };
+const fetchItemsCount = (req?: IncomingMessage, res?: ServerResponse) => {
+    return fetchApi("progress/count", "/api/progress/count", "GET", getApiKey(req), undefined, undefined, undefined, req, res);
+};
+
 
 export default function IndexPage() {
     const classes = useStyles();
@@ -39,18 +47,25 @@ export default function IndexPage() {
     const statusResult: ApiResultState = useSelector((state: RootState) => {
         return state.api.results["status"];
     });
+    const itemsCountResult: ApiResultState = useSelector((state: RootState) => {
+        return state.api.results["items/count"];
+    });
 
     useEffect(() => {
         if (!statusResult || statusResult.error) {
             dispatch(fetchStatus());
+            dispatch(fetchItemsCount());
         }
     }, []);
 
     return (
         <PageContent className={classes.root} showProgress={!statusResult || statusResult.fetching}>
-            <img src={"/android-chrome-192x192.png"} alt={process.env.appName + " logo"} className={classes.image}/>
+            <ItemsCountGrid
+                itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}/>
             <StatusCard
-                status={statusResult && !statusResult.fetching && !statusResult.error ? statusResult.data : undefined}/>
+                status={statusResult && !statusResult.fetching && !statusResult.error ? statusResult.data : undefined}
+                itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}/>
+
         </PageContent>
     );
 }
@@ -66,8 +81,10 @@ IndexPage.getInitialProps = async (ctx: ReduxNextPageContext) => {
     // Wait for the API call to finished.
     if (!process.browser) {
         await ctx.store.dispatch(fetchStatus(ctx.req, ctx.res));
+        await ctx.store.dispatch(fetchItemsCount(ctx.req, ctx.res));
     } else {
         ctx.store.dispatch(fetchStatus());
+        ctx.store.dispatch(fetchItemsCount());
     }
 
     return {}

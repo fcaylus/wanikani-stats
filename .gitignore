@@ -30,3 +30,5 @@ yarn-error.log*
 
 # WebStorm configuration
 .idea
+
+test.json

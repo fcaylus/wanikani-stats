@@ -3,10 +3,10 @@ import {AnyAction} from "redux";
 import axios from "axios";
 import {ACCEPTED, INTERNAL_SERVER_ERROR, UNAUTHORIZED} from "http-status-codes";
 import {RootState} from "../store";
-import {PaginatedEndpointResult} from "../../../server/interfaces/paginated";
 import {ThunkDispatch} from "redux-thunk";
 import redirect from "../../../redirect";
 import {IncomingMessage, ServerResponse} from "http";
+import {Page} from "../../../server/interfaces/page";
 
 /**
  * Action sent when an API fetch is started
@@ -133,7 +133,7 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
             // Only the actual data is saved to the store
             if (response.data.hasNextPage !== undefined) {
                 // This is a paginated result
-                const paginatedResult: PaginatedEndpointResult = response.data;
+                const paginatedResult: Page = response.data;
                 if (paginatedResult.hasNextPage && paginatedResult.nextPageUrl) {
                     dispatch(apiSuccess(label, paginatedResult.data, isNextPage));
                     dispatch(fetchApi(label, paginatedResult.nextPageUrl, method, accessToken, undefined, true));

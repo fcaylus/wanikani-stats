@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {List, ListItem} from "@material-ui/core";
-import {ProgressHashMap} from "../../server/interfaces/progress";
+import {ProgressHashMap} from "../../data/interfaces/progress";
 import {ItemCategory} from "../../data/interfaces/item";
 import ItemList from "./ItemList";
 

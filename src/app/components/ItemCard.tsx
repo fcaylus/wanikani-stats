@@ -1,10 +1,10 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {Button} from "@material-ui/core";
-import colorFromSRS from "../colorFromSRS";
 import {Item} from "../../data/interfaces/item";
 import clsx from "clsx";
 import colors from "../colors";
+import {colorForSRS} from "../srs";
 
 const useStyles = makeStyles(() => ({
     item: {
@@ -46,7 +46,7 @@ export default React.memo((props: Item & { className?: string }) => {
             className={clsx(classes.item, props.className)}
             style={{
                 color: (props.srs && props.srs > 0) ? "#fff" : undefined,
-                backgroundColor: (props.srs && props.srs > 0) ? colorFromSRS(props.srs) : undefined,
+                backgroundColor: (props.srs && props.srs > 0) ? colorForSRS(props.srs) : undefined,
             }}
             disableRipple
             disableFocusRipple

@@ -1,9 +1,11 @@
 import React from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
 import {Status} from "../../data/interfaces/status";
-import {Card, CardContent, CardHeader, Divider, LinearProgress, List, ListItem, Typography} from "@material-ui/core";
+import {Card, CardContent, CardHeader, Divider, List, ListItem, Typography} from "@material-ui/core";
 import clsx from "clsx";
 import moment from "moment";
+import {ProgressItemsCount} from "../../data/interfaces/progress";
+import {colorForType, displayNameForType} from "../types";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {},
@@ -15,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     line: {
         display: "unset",
         alignItems: "baseline",
-        "& > *:last-child": {
+        "& > *:not(:first-child)": {
             marginLeft: theme.spacing(1),
         },
         "& > *:first-child": {
@@ -29,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface StatusCardProps {
     status?: Status;
+    itemsCount?: ProgressItemsCount;
     className?: any;
 }
 
@@ -45,9 +48,6 @@ export default function StatusCard(props: StatusCardProps) {
         <Card className={clsx(classes.root, props.className)}>
             <CardHeader title={"Summary"}/>
             <Divider/>
-            {!props.status && (
-                <LinearProgress/>
-            )}
             <CardContent>
                 <List dense className={classes.list}>
                     {props.status && props.status.currentLevel && (
@@ -62,6 +62,23 @@ export default function StatusCard(props: StatusCardProps) {
                             <Typography variant="body1" component="span">
                                 {formatDate(props.status.startDate)}
                             </Typography>
+                        </ListItem>
+                    )}
+                    {props.itemsCount && props.itemsCount.type && (
+                        <ListItem className={classes.line} disableGutters>
+                            <Typography variant="body1" component="span">Items learned:</Typography>
+                            {Object.keys(props.itemsCount.type).map((itemType) => {
+                                if (!props.itemsCount || !props.itemsCount.type) {
+                                    return null;
+                                }
+                                return (
+                                    <Typography variant="body1" component="span" style={{
+                                        color: colorForType(itemType)
+                                    }}>
+                                        {props.itemsCount.type[itemType] + " " + displayNameForType(itemType)}
+                                    </Typography>
+                                );
+                            })}
                         </ListItem>
                     )}
                 </List>
