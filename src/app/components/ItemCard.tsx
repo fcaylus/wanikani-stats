@@ -51,7 +51,8 @@ export default React.memo((props: Item & { className?: string }) => {
             disableRipple
             disableFocusRipple
             disableTouchRipple
-            title={title}>
+            title={title}
+            lang="jp">
             {imageComponent ? imageComponent : displayedText}
         </Button>
     );
