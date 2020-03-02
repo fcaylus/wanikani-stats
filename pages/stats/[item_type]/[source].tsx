@@ -1,19 +1,12 @@
 import React, {useEffect} from 'react';
 import PageContent from "../../../src/app/components/PageContent";
-import itemTypesJson from "../../../src/data/item_types.json";
-import sourceTypesJson from "../../../src/data/source_types.json"
 import {useRouter} from "next/router";
 import {INTERNAL_SERVER_ERROR, NOT_FOUND} from "http-status-codes";
 import Error from 'next/error'
 import {
-    FormControl,
-    FormControlLabel,
-    FormLabel,
     List,
     ListItem,
     Paper,
-    Radio,
-    RadioGroup,
     Table,
     TableBody,
     TableCell,
@@ -36,10 +29,7 @@ import redirect from "../../../src/redirect";
 import {ItemCategory} from "../../../src/data/interfaces/item";
 import ItemList from "../../../src/app/components/ItemList";
 import {User} from "../../../src/data/interfaces/user";
-
-const sourcesForType = (type: string) => {
-    return Object(itemTypesJson)[type].sources;
-};
+import SourceSelector from "../../../src/app/components/SourceSelector";
 
 // Create a label based on the specified query
 const labelFromItemTypeAndSource = (itemType: string, source: string) => {
@@ -57,9 +47,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     root: {
         display: "flex",
         flexDirection: "column"
-    },
-    sourcesRadioGroup: {
-        flexDirection: "row"
     },
     table: {
         width: "fit-content",
@@ -127,8 +114,7 @@ function StatsPage() {
     };
 
     // Change the "source" part of the url
-    const handleSourceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newSource = (event.target as HTMLInputElement).value;
+    const handleSourceChange = (newSource: string) => {
         if (newSource != source.toString()) {
             changeUrl(newSource);
         }
@@ -164,20 +150,8 @@ function StatsPage() {
 
     return (
         <PageContent pageTitle="Stats" className={classes.root} showProgress={!apiResults || apiResults.fetching}>
-            <FormControl component="fieldset">
-                <FormLabel component="legend">Displayed source</FormLabel>
-                <RadioGroup aria-label="sources" name="sources" value={source.toString()} onChange={handleSourceChange}
-                            className={classes.sourcesRadioGroup}>
-                    {sourcesForType(item_type.toString()).map((availableSource: string) => {
-                        if (availableSource === "wanikani") {
-                            return null;
-                        }
-                        return <FormControlLabel key={availableSource} value={availableSource}
-                                                 control={<Radio disableRipple disableTouchRipple/>}
-                                                 label={Object(sourceTypesJson)[availableSource].display_name}/>
-                    })}
-                </RadioGroup>
-            </FormControl>
+            <SourceSelector itemType={item_type.toString()} onSourceChange={handleSourceChange}
+                            value={source.toString()} excludeList={["wanikani"]}/>
 
             {apiResults && !apiResults.error && !apiResults.fetching && (
                 <Paper elevation={5} className={classes.table}>
