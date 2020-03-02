@@ -8,7 +8,12 @@ import {ProgressItemsCount} from "../../data/interfaces/progress";
 import {colorForType, displayNameForType} from "../types";
 
 const useStyles = makeStyles((theme: Theme) => ({
-    root: {},
+    root: {
+        minWidth: 300,
+        [theme.breakpoints.down(400)]: {
+            minWidth: "unset"
+        }
+    },
     list: {
         padding: 0,
         display: "flex",
@@ -35,6 +40,9 @@ interface StatusCardProps {
     className?: any;
 }
 
+/**
+ * Card containing general information about the user's progress
+ */
 export default function StatusCard(props: StatusCardProps) {
     const classes = useStyles();
 

@@ -1,9 +1,9 @@
 import {ProgressHashMap, ProgressHashMapPage, ProgressItemsCount} from "../data/interfaces/progress";
 import WaniKaniApi from "./WaniKaniApi";
 import subjectNameForId from "../data/sources/wanikani/subjectNameForId";
-import absoluteUrl from "../absoluteUrl";
 import {IncomingMessage} from "http";
-import itemTypesJson from "../../src/data/item_types.json";
+import {Page} from "./interfaces/page";
+import {itemTypes} from "../data/data";
 
 
 /**
@@ -14,67 +14,53 @@ import itemTypesJson from "../../src/data/item_types.json";
  * @param req The request object of the connection. Used to get the current url.
  * @param allPage If true, get all progress (get every pages). NOTE: Can be slow
  */
-export const getProgress = async (token: string, type?: string, pageAfterId?: string, req?: IncomingMessage, allPage = false): Promise<ProgressHashMapPage | null> => {
+export const getProgress = async (token: string, type?: string, pageAfterId?: string, req?: IncomingMessage, allPage?: boolean): Promise<ProgressHashMapPage | null> => {
     // See: https://docs.api.wanikani.com/#assignments for endpoint documentation
-    const wkResult = await WaniKaniApi(token).get("assignments", {
+    let wkResult = await WaniKaniApi(token).getPaginated("assignments", {
         subject_types: type,
-        page_after_id: pageAfterId
-    });
+        hidden: false
+    }, pageAfterId, req, allPage);
 
-    if (wkResult.error || !wkResult.data || !wkResult.data.data) {
+    if (wkResult.error || !wkResult.data) {
         return null;
     }
 
     // Convert WK API result to progress hash map
-    // See https://docs.api.wanikani.com/#assignments for data structure
-    const data = wkResult.data.data;
-    let progress: ProgressHashMap = {};
+    const parseData = (data: any): ProgressHashMap => {
+        // See https://docs.api.wanikani.com/#assignments for data structure
+        let progress: ProgressHashMap = {};
 
-    for (const assignment of data) {
-        progress[subjectNameForId(assignment.data.subject_id)] = assignment.data.srs_stage;
-    }
-
-    // Find the next page url (if needed) and add "page_after_id" query to the current url
-    let hasNextPage = !!wkResult.data.pages.next_url;
-    let nextPageUrl = undefined;
-    let nextPageAfterId = undefined;
-    if (hasNextPage) {
-        nextPageAfterId = (new URL(wkResult.data.pages.next_url)).searchParams.get("page_after_id");
-        nextPageAfterId = nextPageAfterId == null ? undefined : nextPageAfterId;
-
-        if (!nextPageAfterId) {
-            hasNextPage = false;
-        } else if (req && req.url) {
-            nextPageUrl = new URL(absoluteUrl(req) + req.url);
-            nextPageUrl.searchParams.set("page_after_id", nextPageAfterId);
-            nextPageUrl = nextPageUrl.href;
+        for (const assignment of data) {
+            progress[subjectNameForId(assignment.data.subject_id)] = assignment.data.srs_stage;
         }
-    }
-
-    let page: ProgressHashMapPage = {
-        nextPageUrl: nextPageUrl,
-        hasNextPage: hasNextPage,
-        data: progress
+        return progress;
     };
 
-    if (allPage) {
-        // Call recursively this function and merge element
-        if (hasNextPage) {
-            const nextPagesResult = await getProgress(token, type, nextPageAfterId, req, true);
-            if (nextPagesResult) {
-                page.data = {
-                    ...page.data,
-                    ...nextPagesResult.data
-                }
-            }
-        }
-        page.hasNextPage = false;
-        page.nextPageUrl = undefined;
-    }
+    if (!allPage) {
+        let page: Page = wkResult.data;
+        page.data = parseData(page.data);
 
-    return page;
+        return page;
+    } else {
+        let pageResult: ProgressHashMapPage = {
+            hasNextPage: false,
+            nextPageUrl: undefined,
+            data: {}
+        };
+
+        // Merge all pages
+        for (const page of wkResult.data) {
+            pageResult.data = {...pageResult.data, ...parseData(page.data)}
+        }
+
+        return pageResult;
+    }
 };
 
+/**
+ * Count every items and group them by srs and type
+ * @param token
+ */
 export const getItemsCount = async (token: string): Promise<ProgressItemsCount> => {
     let counts: ProgressItemsCount = {
         srs: {},
@@ -83,9 +69,7 @@ export const getItemsCount = async (token: string): Promise<ProgressItemsCount> 
 
     // First step is to retrieve the progress of all items of all pages
     // For each progress, the corresponding srs count is increased
-    const types = Object.keys(itemTypesJson);
-
-    for (const type of types) {
+    for (const type of itemTypes()) {
         const typeProgress = await getProgress(token, type, undefined, undefined, true);
         if (typeProgress) {
             counts.type[type] = Object.keys(typeProgress.data).length;

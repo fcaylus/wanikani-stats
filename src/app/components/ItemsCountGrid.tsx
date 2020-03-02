@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         "& > *:first-child": {
             fontWeight: "bold"
         }
-    },
+    }
 }));
 
 interface ItemsCountProps {
@@ -23,6 +23,9 @@ interface ItemsCountProps {
     className?: any;
 }
 
+/**
+ * Display item counts by type as a banner (like on the WaniKani website)
+ */
 export default function ItemsCountGrid(props: ItemsCountProps) {
     const classes = useStyles();
 

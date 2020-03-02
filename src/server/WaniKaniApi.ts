@@ -1,6 +1,9 @@
 import axios, {AxiosRequestConfig} from "axios";
-import {INTERNAL_SERVER_ERROR} from "http-status-codes";
+import {INTERNAL_SERVER_ERROR, OK} from "http-status-codes";
 import {setupCache} from "axios-cache-adapter";
+import {IncomingMessage} from "http";
+import absoluteUrl from "../absoluteUrl";
+import {Page} from "./interfaces/page";
 
 export interface ApiResult {
     error: boolean;
@@ -13,7 +16,10 @@ const cacheStore = setupCache({
     maxAge: 3 * 60 * 60 * 1000,
     clearOnStale: false,
     clearOnError: true,
-    readOnError: true
+    readOnError: true,
+    exclude: {
+        query: false
+    }
 });
 
 const axiosInstance = axios.create({
@@ -28,16 +34,28 @@ const axiosInstance = axios.create({
  * Every request is cached in memory on the server-side to limit the number of requests to WaniKani servers.
  */
 export default (apiKey: string) => {
-    return {
+    const api = {
         instance: () => {
             return axiosInstance;
         },
+        /**
+         * Get request
+         * @param endpoint The endpoint to get
+         * @param params Params of the GET request
+         * @param config Additional params for axios
+         */
         get: async (endpoint: string, params?: any, config?: AxiosRequestConfig): Promise<ApiResult> => {
             return axiosInstance.get(endpoint, {
                 params: params,
                 headers: {"Authorization": "Bearer " + apiKey},
                 ...config
             }).then((res) => {
+                if (res.request.fromCache) {
+                    console.log("Served from cache: " + res.config.url);
+                } else {
+                    console.log("Served from internet: " + res.config.url);
+                }
+
                 return {
                     error: false,
                     errorCode: res.status,
@@ -72,6 +90,78 @@ export default (apiKey: string) => {
                     }
                 }
             });
+        },
+        /**
+         * Fetch the specified endpoint with a GET request and parse it as a paginate response from WaniKani. The data
+         * field of the result is either a Page or Page[] (depending on allPage).
+         * @param endpoint The endpoint to get. It has to return a paginate response
+         * @param params Params of the request
+         * @param pageAfterId If specified, allows to retrieve a specified page. Otherwise, the first page is fetched
+         * @param req Request object of the user's connection to the API. Used to find the current url
+         * @param allPage If true, fetch all pages at once and return a list of Pages
+         * @param config Optional axios config
+         */
+        getPaginated: async (endpoint: string, params?: any, pageAfterId?: string, req?: IncomingMessage, allPage?: boolean, config?: AxiosRequestConfig): Promise<ApiResult> => {
+            // Get the data
+            const result = await api.get(endpoint, {
+                ...params,
+                page_after_id: pageAfterId
+            }, config);
+
+            if (result.error || !result.data) {
+                return result;
+            }
+
+            // Find the next page url (if it exists) and add "page_after_id" query to the current url
+            let hasNextPage = !!result.data.pages.next_url;
+            let nextPageUrl = undefined;
+            let nextPageAfterId = undefined;
+            if (hasNextPage) {
+                // Find the page_after_id param
+                nextPageAfterId = (new URL(result.data.pages.next_url)).searchParams.get("page_after_id");
+                nextPageAfterId = nextPageAfterId == null ? undefined : nextPageAfterId;
+
+                if (!nextPageAfterId) {
+                    hasNextPage = false;
+                } else if (req && req.url) {
+                    // Append the page_after_id param to the current url
+                    nextPageUrl = new URL(absoluteUrl(req) + req.url);
+                    nextPageUrl.searchParams.set("page_after_id", nextPageAfterId);
+                    nextPageUrl = nextPageUrl.href;
+                }
+            }
+
+            const page: Page = {
+                nextPageUrl: nextPageUrl,
+                hasNextPage: hasNextPage,
+                data: result.data.data
+            };
+
+            let apiResult: ApiResult = {
+                error: false,
+                errorCode: OK,
+                data: page
+            };
+
+            // Retrieve all available pages
+            // In this case, the function will return a list of page
+            if (allPage) {
+                // Call recursively this function and merge element
+                if (hasNextPage) {
+                    const nextApiResult = await api.getPaginated(endpoint, params, nextPageAfterId, req, true, config);
+                    if (nextApiResult) {
+                        apiResult.data = [
+                            page,
+                            ...nextApiResult.data
+                        ]
+                    }
+                } else {
+                    apiResult.data = [page];
+                }
+            }
+
+            return apiResult;
         }
     };
+    return api;
 }

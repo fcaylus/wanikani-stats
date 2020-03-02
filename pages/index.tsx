@@ -11,6 +11,8 @@ import {ReduxNextPageContext} from "../src/app/redux/interfaces";
 import redirect from "../src/redirect";
 import {IncomingMessage, ServerResponse} from "http";
 import ItemsCountGrid from "../src/app/components/ItemsCountGrid";
+import AccuracyCard from "../src/app/components/AccuracyCard";
+import {Grid} from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -24,22 +26,22 @@ const useStyles = makeStyles((theme: Theme) => ({
         "& > *:first-child": {
             marginTop: "unset"
         }
-    },
-    image: {
-        maxWidth: 100,
-        maxHeight: 100,
-        objectFit: "contain"
     }
 }));
 
 const fetchStatus = (req?: IncomingMessage, res?: ServerResponse) => {
     return fetchApi("status", "/api/user/status", "GET", getApiKey(req), undefined, undefined, undefined, req, res);
 };
-const fetchItemsCount = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi("progress/count", "/api/progress/count", "GET", getApiKey(req), undefined, undefined, undefined, req, res);
+const fetchItemsCount = () => {
+    return fetchApi("progress/count", "/api/progress/count", "GET", getApiKey());
+};
+const fetchAccuracy = () => {
+    return fetchApi("progress/accuracy", "/api/progress/accuracy", "GET", getApiKey());
 };
 
-
+/**
+ * Home page of the app
+ */
 export default function IndexPage() {
     const classes = useStyles();
 
@@ -48,24 +50,49 @@ export default function IndexPage() {
         return state.api.results["status"];
     });
     const itemsCountResult: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results["items/count"];
+        return state.api.results["progress/count"];
+    });
+    const accuracyResult: ApiResultState = useSelector((state: RootState) => {
+        return state.api.results["progress/accuracy"];
     });
 
     useEffect(() => {
         if (!statusResult || statusResult.error) {
             dispatch(fetchStatus());
+        }
+        if (!itemsCountResult || itemsCountResult.error) {
             dispatch(fetchItemsCount());
+        }
+        if (!accuracyResult || accuracyResult.error) {
+            dispatch(fetchAccuracy());
         }
     }, []);
 
     return (
-        <PageContent className={classes.root} showProgress={!statusResult || statusResult.fetching}>
+        <PageContent className={classes.root}
+                     showProgress={
+                         !statusResult
+                         || statusResult.fetching
+                         || !itemsCountResult
+                         || itemsCountResult.fetching
+                         || !accuracyResult
+                         || accuracyResult.fetching}>
             <ItemsCountGrid
                 itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}/>
-            <StatusCard
-                status={statusResult && !statusResult.fetching && !statusResult.error ? statusResult.data : undefined}
-                itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}/>
 
+            <Grid container spacing={2}>
+                <Grid item xs>
+                    <StatusCard
+                        status={statusResult && !statusResult.fetching && !statusResult.error ? statusResult.data : undefined}
+                        itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}/>
+                </Grid>
+                {accuracyResult && !accuracyResult.fetching && !accuracyResult.error && (
+                    <Grid item xs>
+                        <AccuracyCard
+                            accuracy={accuracyResult && !accuracyResult.fetching && !accuracyResult.error ? accuracyResult.data : undefined}/>
+                    </Grid>
+                )}
+            </Grid>
         </PageContent>
     );
 }
@@ -81,10 +108,6 @@ IndexPage.getInitialProps = async (ctx: ReduxNextPageContext) => {
     // Wait for the API call to finished.
     if (!process.browser) {
         await ctx.store.dispatch(fetchStatus(ctx.req, ctx.res));
-        await ctx.store.dispatch(fetchItemsCount(ctx.req, ctx.res));
-    } else {
-        ctx.store.dispatch(fetchStatus());
-        ctx.store.dispatch(fetchItemsCount());
     }
 
     return {}
