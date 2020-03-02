@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import PageContent from "../../../src/app/components/PageContent";
+import PageContent from "../../../src/app/components/page/PageContent";
 import {useRouter} from "next/router";
 import {INTERNAL_SERVER_ERROR, NOT_FOUND} from "http-status-codes";
 import Error from 'next/error'
@@ -17,7 +17,7 @@ import {ReduxNextPageContext} from "../../../src/app/redux/interfaces";
 import redirect from "../../../src/redirect";
 import {User} from "../../../src/data/interfaces/user";
 import SourceSelector from "../../../src/app/components/SourceSelector";
-import CategoryList from "../../../src/app/components/CategoryList";
+import CategoryList from "../../../src/app/components/items/CategoryList";
 
 // Create a label based on the specified query
 const labelFromItemTypeAndSource = (itemType: string, source: string) => {

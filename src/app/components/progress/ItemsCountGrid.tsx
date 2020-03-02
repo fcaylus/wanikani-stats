@@ -2,9 +2,9 @@ import React from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
 import {Grid, Paper, Typography} from "@material-ui/core";
 import clsx from "clsx";
-import {ProgressItemsCount} from "../../data/interfaces/progress";
-import {colorForSRS, nameForSRS, srsGroups} from "../srs";
-import colors from "../colors";
+import {ProgressItemsCount} from "../../../data/interfaces/progress";
+import {colorForSRS, nameForSRS, srsGroups} from "../../srs";
+import colors from "../../colors";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {},

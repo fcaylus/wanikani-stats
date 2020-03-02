@@ -1,10 +1,10 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {Button} from "@material-ui/core";
-import {Item} from "../../data/interfaces/item";
+import {Item} from "../../../data/interfaces/item";
 import clsx from "clsx";
-import colors from "../colors";
-import {colorForSRS} from "../srs";
+import colors from "../../colors";
+import {colorForSRS} from "../../srs";
 
 const useStyles = makeStyles(() => ({
     item: {

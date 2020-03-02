@@ -1,11 +1,11 @@
 import React from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
-import {Status} from "../../data/interfaces/status";
+import {Status} from "../../../data/interfaces/status";
 import {Card, CardContent, CardHeader, Divider, List, ListItem, Typography} from "@material-ui/core";
 import clsx from "clsx";
 import moment from "moment";
-import {ProgressItemsCount} from "../../data/interfaces/progress";
-import {colorForType, displayNameForType} from "../types";
+import {ProgressItemsCount} from "../../../data/interfaces/progress";
+import {colorForType, displayNameForType} from "../../types";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {

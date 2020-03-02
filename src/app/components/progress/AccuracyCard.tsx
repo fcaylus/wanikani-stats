@@ -12,10 +12,10 @@ import {
     TableRow
 } from "@material-ui/core";
 import clsx from "clsx";
-import {Accuracy} from "../../data/interfaces/accuracy";
-import capitalize from "../../capitalize";
-import {itemTypes} from "../../data/data";
-import {colorForType, displayNameForType} from "../types";
+import {Accuracy} from "../../../data/interfaces/accuracy";
+import capitalize from "../../../capitalize";
+import {itemTypes} from "../../../data/data";
+import {colorForType, displayNameForType} from "../../types";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {},

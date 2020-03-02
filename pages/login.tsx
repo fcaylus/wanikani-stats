@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import PageContent from "../src/app/components/PageContent";
+import PageContent from "../src/app/components/page/PageContent";
 import {Button, Link, Paper, TextField, Theme, Typography} from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
 import isUUID from "../src/isUUID";

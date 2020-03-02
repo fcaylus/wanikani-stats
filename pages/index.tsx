@@ -1,17 +1,17 @@
 import React, {useEffect} from 'react';
-import PageContent from "../src/app/components/PageContent";
+import PageContent from "../src/app/components/page/PageContent";
 import {makeStyles, Theme} from "@material-ui/core/styles";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../src/app/redux/store";
 import {ApiResultState} from "../src/app/redux/api/types";
 import {fetchApi} from "../src/app/redux/api/actions";
 import {getApiKey, hasApiKey} from "../src/app/apiKey";
-import StatusCard from "../src/app/components/StatusCard";
+import StatusCard from "../src/app/components/progress/StatusCard";
 import {ReduxNextPageContext} from "../src/app/redux/interfaces";
 import redirect from "../src/redirect";
 import {IncomingMessage, ServerResponse} from "http";
-import ItemsCountGrid from "../src/app/components/ItemsCountGrid";
-import AccuracyCard from "../src/app/components/AccuracyCard";
+import ItemsCountGrid from "../src/app/components/progress/ItemsCountGrid";
+import AccuracyCard from "../src/app/components/progress/AccuracyCard";
 import {Grid} from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => ({

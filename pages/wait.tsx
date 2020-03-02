@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import PageContent from "../src/app/components/PageContent";
+import PageContent from "../src/app/components/page/PageContent";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../src/app/redux/store";
 import {fetchApi} from "../src/app/redux/api/actions";

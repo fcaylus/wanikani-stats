@@ -6,7 +6,7 @@ import ShowChartIcon from "@material-ui/icons/ShowChart";
 import HomeIcon from "@material-ui/icons/Home";
 import TranslateIcon from '@material-ui/icons/Translate';
 import {useRouter} from "next/router";
-import {DEFAULT_REDIRECT_URL} from "../../redirect";
+import {DEFAULT_REDIRECT_URL} from "../../../redirect";
 
 const drawerWidth = 240;
 

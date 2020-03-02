@@ -3,7 +3,7 @@ import App from 'next/app';
 import {ThemeProvider} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/app/theme';
-import Page from "../src/app/components/Page";
+import Page from "../src/app/components/page/Page";
 import {Provider} from "react-redux";
 import configureStore from "../src/app/redux/configureStore";
 import withRedux from "next-redux-wrapper";

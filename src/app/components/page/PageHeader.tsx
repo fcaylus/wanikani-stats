@@ -3,14 +3,14 @@ import {makeStyles, Theme} from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import LaunchIcon from '@material-ui/icons/Launch';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchApi} from "../redux/api/actions";
-import {getApiKey, removeApiKey} from "../apiKey";
-import {ApiResultState} from "../redux/api/types";
-import {RootState} from "../redux/store";
+import {fetchApi} from "../../redux/api/actions";
+import {getApiKey, removeApiKey} from "../../apiKey";
+import {ApiResultState} from "../../redux/api/types";
+import {RootState} from "../../redux/store";
 import {AppBar, Button, IconButton, Menu, MenuItem, Toolbar, Typography} from "@material-ui/core";
-import colors from "../colors";
-import redirect from "../../redirect";
-import {User} from "../../data/interfaces/user";
+import colors from "../../colors";
+import redirect from "../../../redirect";
+import {User} from "../../../data/interfaces/user";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {

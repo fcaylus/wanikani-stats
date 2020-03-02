@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import PageContent from "../../../src/app/components/PageContent";
+import PageContent from "../../../src/app/components/page/PageContent";
 import {useRouter} from "next/router";
 import {INTERNAL_SERVER_ERROR, NOT_FOUND} from "http-status-codes";
 import Error from 'next/error'
@@ -16,7 +16,7 @@ import {getApiKey, hasApiKey} from "../../../src/app/apiKey";
 import {IncomingMessage, ServerResponse} from "http";
 import SourceSelector from "../../../src/app/components/SourceSelector";
 import TypeSelector from "../../../src/app/components/TypeSelector";
-import CategoryList from "../../../src/app/components/CategoryList";
+import CategoryList from "../../../src/app/components/items/CategoryList";
 
 // Create a label based on the specified query
 const labelFromItemTypeAndSource = (itemType: string, source: string) => {
