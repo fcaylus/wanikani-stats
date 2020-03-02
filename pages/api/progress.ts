@@ -2,7 +2,7 @@ import {NextApiRequest, NextApiResponse} from "next";
 import parseApiRequest from "../../src/server/parseApiRequest";
 import {INTERNAL_SERVER_ERROR, OK} from "http-status-codes";
 import {getProgress} from "../../src/server/progress";
-import itemTypesJson from "../../src/data/item_types.json";
+import {itemTypes} from "../../src/data/data";
 
 /**
  * Fetch user progress, depending on the query parameter:
@@ -21,7 +21,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     let type = undefined;
     if (req.query && req.query.type) {
         const queryType = req.query.type.toString().toLowerCase();
-        if (Object.keys(itemTypesJson).includes(queryType)) {
+        if (itemTypes().includes(queryType)) {
             type = queryType;
         }
     }
