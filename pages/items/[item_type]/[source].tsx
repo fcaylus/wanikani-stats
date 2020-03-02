@@ -1,10 +1,9 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import PageContent from "../../../src/app/components/PageContent";
-import ItemList from "../../../src/app/components/ItemList";
 import {useRouter} from "next/router";
 import {INTERNAL_SERVER_ERROR, NOT_FOUND} from "http-status-codes";
 import Error from 'next/error'
-import {CircularProgress, List, ListItem, Theme} from '@material-ui/core';
+import {CircularProgress, Theme} from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchApi} from "../../../src/app/redux/api/actions";
@@ -12,13 +11,12 @@ import {RootState} from "../../../src/app/redux/store";
 import {ApiResultState} from "../../../src/app/redux/api/types";
 import {ReduxNextPageContext} from "../../../src/app/redux/interfaces";
 import redirect from "../../../src/redirect";
-import {ItemCategory} from "../../../src/data/interfaces/item";
 import {itemTypeExists, sourceExistsForItemType} from "../../../src/data/data";
 import {getApiKey, hasApiKey} from "../../../src/app/apiKey";
 import {IncomingMessage, ServerResponse} from "http";
-import {ProgressHashMap} from "../../../src/server/interfaces/progress";
 import SourceSelector from "../../../src/app/components/SourceSelector";
 import TypeSelector from "../../../src/app/components/TypeSelector";
+import CategoryList from "../../../src/app/components/CategoryList";
 
 // Create a label based on the specified query
 const labelFromItemTypeAndSource = (itemType: string, source: string) => {
@@ -44,32 +42,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         margin: theme.spacing(3),
         marginRight: "auto",
         marginLeft: "auto"
-    },
-    list: {
-        display: "flex",
-        flexDirection: "column"
-    },
-    categoryItem: {
-        flexDirection: "column",
-        alignItems: "unset",
-        position: "unset",
-        padding: 0
     }
 }));
-
-interface CategoryListItemProps {
-    categoryProps: ItemCategory,
-    progress?: ProgressHashMap
-}
-
-const CategoryListItem = React.memo((props: CategoryListItemProps) => {
-    const classes = useStyles();
-    return (
-        <ListItem dense disableGutters className={classes.categoryItem}>
-            <ItemList {...props.categoryProps} progress={props.progress}/>
-        </ListItem>
-    );
-});
 
 interface ItemPageProps {
     initialDataLength: number
@@ -94,12 +68,8 @@ function ItemPage(props: ItemPageProps) {
     const apiResults: ApiResultState = useSelector((state: RootState) => {
         return state.api.results[apiLabel];
     });
-    // displayedDataLength increase progressively to improve the "Time to Content" of the page
-    const [displayedDataLength, setDisplayedDataLength] = useState(props.initialDataLength);
-    // Allow to properly stop the progressive rendering when changing page
-    const [displayingProgressively, setDisplayingProgressively] = useState(false);
-    // Controls the main progress bar
-    const [isLoading, setLoading] = useState(true);
+    // Allow to avoid a full re-render of all items just before the url change
+    const [showItems, setShowItems] = useState(true);
 
     /*
      * API user progress results state and selector
@@ -109,10 +79,13 @@ function ItemPage(props: ItemPageProps) {
         return state.api.results[progressApiLabel];
     });
 
+    // Controls the main progress bar
+    const [isLoading, setLoading] = useState(true);
+
     // Use to schedule the change of url AFTER the last renders that removes every items from the list
     const [needNewUrl, setNeedNewUrl] = useState<any>(undefined);
 
-    // If a new url is schedule, redierct to it.
+    // If a new url is scheduled, redirect to it.
     useEffect(() => {
         if (needNewUrl) {
             setNeedNewUrl(undefined);
@@ -156,44 +129,12 @@ function ItemPage(props: ItemPageProps) {
         }
     }, [progressResults]);
 
-    /**
-     * Display item list one category at a time. This avoid one big refresh of the page, and allow a better
-     * "Time to content" time of the page since the item list can be huge.
-     * When a category is added, displayedDataLength state is modified, which trigger an effect calling this method again.
-     */
-    const displayItemListProgressively = () => {
-        // Inspired by: https://itnext.io/handling-large-lists-and-tables-in-react-238397854625
-        // setTimeout put the function at the end of the calling stack
-        setTimeout(() => {
-            if (apiResults && !apiResults.fetching && !apiResults.error && displayingProgressively) {
-                const apiLength = (apiResults.data as ItemCategory[]).length;
-
-                if (displayedDataLength < apiLength) {
-                    // Load data by chunk of 1 category
-                    const newLength = Math.min(apiLength, displayedDataLength + 1);
-                    setDisplayedDataLength(newLength);
-                } else {
-                    setDisplayingProgressively(false);
-                }
-            }
-        }, 0);
-    };
-
-    // On data change, trigger the "progressive" rendering of items.
+    // On new data available, start to show the items
     useEffect(() => {
-        if (apiResults && !apiResults.fetching && !apiResults.error) {
-            if (!displayingProgressively) {
-                setDisplayingProgressively(true);
-            }
+        if (apiResults && !apiResults.error && !apiResults.fetching && !showItems) {
+            setShowItems(true);
         }
     }, [apiResults]);
-
-    // Display items "step by step"
-    useEffect(() => {
-        if (displayingProgressively) {
-            displayItemListProgressively();
-        }
-    }, [displayingProgressively, displayedDataLength]);
 
     // Shallow change the url of the page. This changes the query parameter and trigger a new page rendering
     const changeUrl = (newType: string, newSource: string, immediate?: boolean) => {
@@ -202,10 +143,9 @@ function ItemPage(props: ItemPageProps) {
                 shallow: true
             });
         } else {
-            // Schedule the url change to the next url, just after the displayed data are removed.
+            // Schedule the url change to the next render, just after the displayed data are removed.
             // This avoids an useless re-render of the old items when the items type or source change
-            setDisplayedDataLength(0);
-            setDisplayingProgressively(false);
+            setShowItems(false);
             setNeedNewUrl({
                 type: newType,
                 source: newSource
@@ -243,17 +183,6 @@ function ItemPage(props: ItemPageProps) {
         return <Error statusCode={apiResults ? apiResults.data : INTERNAL_SERVER_ERROR}/>;
     }
 
-    const renderCategoryComponent = (categoryProps: ItemCategory, index: number) => {
-        if (index >= displayedDataLength || categoryProps.items.length == 0) {
-            return null;
-        }
-
-        return (
-            <CategoryListItem key={index} categoryProps={categoryProps}
-                              progress={progressResults && !progressResults.error ? progressResults.data : undefined}/>
-        );
-    };
-
     return (
         <PageContent pageTitle="Items" className={classes.root} showProgress={isLoading}>
             <TypeSelector onTypeChange={handleTypeChangeCallback} value={itemType}/>
@@ -263,13 +192,10 @@ function ItemPage(props: ItemPageProps) {
                 <CircularProgress className={classes.fetching} disableShrink/>
             )}
 
-            <List className={classes.list} disablePadding dense key={apiLabel}>
-                {apiResults && apiResults.data && !apiResults.error && !apiResults.fetching && (
-                    apiResults.data.map((data: ItemCategory, index: number) => {
-                        return renderCategoryComponent(data, index)
-                    })
-                )}
-            </List>
+            <CategoryList
+                categories={showItems && apiResults && !apiResults.error && !apiResults.fetching ? apiResults.data : undefined}
+                progress={progressResults && !progressResults.error && !progressResults.fetching ? progressResults.data : undefined}
+                initialDataLength={props.initialDataLength}/>
         </PageContent>
     );
 }

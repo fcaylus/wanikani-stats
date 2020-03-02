@@ -3,18 +3,7 @@ import PageContent from "../../../src/app/components/PageContent";
 import {useRouter} from "next/router";
 import {INTERNAL_SERVER_ERROR, NOT_FOUND} from "http-status-codes";
 import Error from 'next/error'
-import {
-    List,
-    ListItem,
-    Paper,
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableRow,
-    Theme,
-    Typography
-} from '@material-ui/core';
+import {Paper, Table, TableBody, TableCell, TableHead, TableRow, Theme, Typography} from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchApi} from "../../../src/app/redux/api/actions";
@@ -26,10 +15,9 @@ import {IncomingMessage, ServerResponse} from "http";
 import {Stats} from "../../../src/data/interfaces/stats";
 import {ReduxNextPageContext} from "../../../src/app/redux/interfaces";
 import redirect from "../../../src/redirect";
-import {ItemCategory} from "../../../src/data/interfaces/item";
-import ItemList from "../../../src/app/components/ItemList";
 import {User} from "../../../src/data/interfaces/user";
 import SourceSelector from "../../../src/app/components/SourceSelector";
+import CategoryList from "../../../src/app/components/CategoryList";
 
 // Create a label based on the specified query
 const labelFromItemTypeAndSource = (itemType: string, source: string) => {
@@ -67,18 +55,8 @@ const useStyles = makeStyles((theme: Theme) => ({
             padding: "2px 2px 2px 2px"
         }
     },
-    list: {
-        display: "flex",
-        flexDirection: "column",
-    },
     listHeader: {
         marginTop: theme.spacing(2)
-    },
-    categoryItem: {
-        flexDirection: "column",
-        alignItems: "unset",
-        position: "unset",
-        padding: 0
     }
 }));
 
@@ -192,15 +170,9 @@ function StatsPage() {
                     <Typography variant="h5" component="h2" className={classes.listHeader}>
                         Items not available in Wanikani
                     </Typography>
-                    <List className={classes.list} disablePadding dense key={apiLabel}>
-                        {(apiResults.data as Stats).otherItems.map((category: ItemCategory, index: number) => {
-                            return (
-                                <ListItem key={index} dense disableGutters className={classes.categoryItem}>
-                                    <ItemList {...category} progress={undefined}/>
-                                </ListItem>
-                            );
-                        })}
-                    </List>
+                    <CategoryList
+                        categories={(apiResults.data as Stats).otherItems}
+                        progress={undefined}/>
                 </React.Fragment>
             )}
         </PageContent>
