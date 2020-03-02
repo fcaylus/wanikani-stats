@@ -9,8 +9,8 @@ export interface ApiResult {
 }
 
 const cacheStore = setupCache({
-    // 1h
-    maxAge: 60 * 60 * 1000,
+    // 3h
+    maxAge: 3 * 60 * 60 * 1000,
     clearOnStale: false,
     clearOnError: true,
     readOnError: true
@@ -28,12 +28,12 @@ const axiosInstance = axios.create({
  * Every request is cached in memory on the server-side to limit the number of requests to WaniKani servers.
  */
 export default (apiKey: string) => {
-    const api = {
+    return {
         instance: () => {
             return axiosInstance;
         },
         get: async (endpoint: string, params?: any, config?: AxiosRequestConfig): Promise<ApiResult> => {
-            const result: Promise<ApiResult> = axiosInstance.get(endpoint, {
+            return axiosInstance.get(endpoint, {
                 params: params,
                 headers: {"Authorization": "Bearer " + apiKey},
                 ...config
@@ -72,8 +72,6 @@ export default (apiKey: string) => {
                     }
                 }
             });
-            return result;
         }
     };
-    return api;
 }
