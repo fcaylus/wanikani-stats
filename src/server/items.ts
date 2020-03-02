@@ -210,7 +210,7 @@ export const getItems = async (source: string, type: string, apiKey: string, mer
     const maxLevel: number = await maxLevelAllowed(apiKey);
 
     // If in cache, return it
-    const label = type + "/" + source + "/" + maxLevel.toString() + "/" + mergeWithWK ? "merge" : "nomerge";
+    const label = type + "/" + source + "/" + maxLevel.toString() + (source != "wanikani" ? "/" + (mergeWithWK ? "merge" : "nomerge") : "");
     if (itemsCache[label]) {
         return itemsCache[label]
     }
@@ -316,9 +316,8 @@ export const getStats = async (source: string, type: string, apiKey: string): Pr
 
         for (const otherCategory of Object.keys(initialCount)) {
             const newLength = newCount[otherCategory] ? newCount[otherCategory] : 0;
-            const percentage = (initialCount[otherCategory] - newLength) / initialCount[otherCategory];
 
-            levelStats.categories[otherCategory] = percentage;
+            levelStats.categories[otherCategory] = (initialCount[otherCategory] - newLength) / initialCount[otherCategory];
         }
 
         stats.levels.push(levelStats);
