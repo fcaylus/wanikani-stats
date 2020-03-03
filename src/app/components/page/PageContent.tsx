@@ -3,6 +3,17 @@ import Head from "next/head";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import {LinearProgress} from "@material-ui/core";
+import clsx from "clsx";
+import {makeStyles, Theme} from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme: Theme) => ({
+    root: {
+        padding: theme.spacing(3),
+        [theme.breakpoints.down("xs")]: {
+            padding: theme.spacing(1)
+        }
+    }
+}));
 
 interface PageContentProps {
     pageTitle?: string;
@@ -17,6 +28,8 @@ interface PageContentProps {
  * It handles the title and the main page layout.
  */
 export default function PageContent(props: PageContentProps) {
+    const classes = useStyles();
+
     return (
         <React.Fragment>
             <Head>
@@ -27,7 +40,7 @@ export default function PageContent(props: PageContentProps) {
             </Head>
             {props.showProgress && <LinearProgress color="secondary"/>}
             <Container component="main" role="main" disableGutters>
-                <Box m={3} className={props.className}>
+                <Box className={clsx(props.className, classes.root)}>
                     {props.children}
                 </Box>
             </Container>
