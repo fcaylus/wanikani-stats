@@ -123,6 +123,10 @@ function StatsPage() {
             }
         }
 
+        if (percentage < 0.05) {
+            return "0 %";
+        }
+
         return percentage.toFixed(1) + " %";
     };
 
