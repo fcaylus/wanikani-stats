@@ -2,7 +2,6 @@ import React from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
 import {Status} from "../../../data/interfaces/status";
 import {Card, CardContent, CardHeader, Divider, List, ListItem, Typography} from "@material-ui/core";
-import clsx from "clsx";
 import moment from "moment";
 import {ProgressItemsCount} from "../../../data/interfaces/progress";
 import {colorForType, displayNameForType} from "../../types";
@@ -11,12 +10,6 @@ import {averageLevelDuration, durationOfLevel} from "../../levels";
 import formatDuration from "../../../formatDuration";
 
 const useStyles = makeStyles((theme: Theme) => ({
-    root: {
-        minWidth: 300,
-        [theme.breakpoints.down(400)]: {
-            minWidth: "unset"
-        }
-    },
     list: {
         padding: 0,
         display: "flex",
@@ -41,7 +34,6 @@ interface StatusCardProps {
     status?: Status;
     itemsCount?: ProgressItemsCount;
     levelsProgression?: LevelsHashMap;
-    className?: any;
 }
 
 /**
@@ -57,7 +49,7 @@ export default function StatusCard(props: StatusCardProps) {
     };
 
     return (
-        <Card className={clsx(classes.root, props.className)}>
+        <Card>
             <CardHeader title={"Summary"}/>
             <Divider/>
             <CardContent>

@@ -11,14 +11,12 @@ import {
     TableHead,
     TableRow
 } from "@material-ui/core";
-import clsx from "clsx";
 import {Accuracy} from "../../../data/interfaces/accuracy";
 import capitalize from "../../../capitalize";
 import {itemTypes} from "../../../data/data";
 import {colorForType, displayNameForType} from "../../types";
 
 const useStyles = makeStyles((theme: Theme) => ({
-    root: {},
     table: {
         overflowX: "auto",
     },
@@ -44,7 +42,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 interface AccuracyCardProps {
     accuracy?: Accuracy;
-    className?: any;
 }
 
 const propertyLookup = ["correct", "incorrect", "total"];
@@ -96,7 +93,7 @@ export default function AccuracyCard(props: AccuracyCardProps) {
     }
 
     return (
-        <Card className={clsx(classes.root, props.className)}>
+        <Card>
             <CardHeader title={"Accuracy"}/>
             <Divider/>
             <CardContent className={classes.table}>

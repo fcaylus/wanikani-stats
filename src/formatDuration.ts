@@ -8,7 +8,7 @@ export default (duration: number) => {
         return " - ";
     }
     return humanizeDuration(duration, {
-        units: ["y", "mo", "d", "h"],
+        units: ["y", "d", "h"],
         round: true
     });
 };

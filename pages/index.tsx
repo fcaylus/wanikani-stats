@@ -13,6 +13,7 @@ import {IncomingMessage, ServerResponse} from "http";
 import ItemsCountGrid from "../src/app/components/progress/ItemsCountGrid";
 import AccuracyCard from "../src/app/components/progress/AccuracyCard";
 import {Grid} from "@material-ui/core";
+import LevelsDurationChart from "../src/app/components/progress/LevelsDurationChart";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -20,11 +21,21 @@ const useStyles = makeStyles((theme: Theme) => ({
         flexDirection: "column",
         alignItems: "center",
         "& > *": {
-            marginTop: theme.spacing(2),
             marginBottom: theme.spacing(2)
-        },
-        "& > *:first-child": {
-            marginTop: "unset"
+        }
+    },
+    grid: {
+        "& > *": {
+            minWidth: 400,
+            [theme.breakpoints.down(450)]: {
+                minWidth: 300
+            },
+            [theme.breakpoints.down(350)]: {
+                minWidth: 200
+            },
+            "& > *": {
+                height: "100%"
+            }
         }
     }
 }));
@@ -92,7 +103,7 @@ export default function IndexPage() {
             <ItemsCountGrid
                 itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}/>
 
-            <Grid container spacing={2}>
+            <Grid container spacing={2} className={classes.grid}>
                 <Grid item xs>
                     <StatusCard
                         status={statusResult && !statusResult.fetching && !statusResult.error ? statusResult.data : undefined}
@@ -103,6 +114,14 @@ export default function IndexPage() {
                     <Grid item xs>
                         <AccuracyCard
                             accuracy={accuracyResult && !accuracyResult.fetching && !accuracyResult.error ? accuracyResult.data : undefined}/>
+                    </Grid>
+                )}
+            </Grid>
+            <Grid container spacing={2} className={classes.grid}>
+                {levelsResult && !levelsResult.fetching && !levelsResult.error && (
+                    <Grid item xs>
+                        <LevelsDurationChart
+                            levels={levelsResult && !levelsResult.fetching && !levelsResult.error ? levelsResult.data : undefined}/>
                     </Grid>
                 )}
             </Grid>
