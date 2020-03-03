@@ -32,6 +32,11 @@ export default (values: number[]): { [value: number]: /* color */ string } => {
                 break;
             }
         }
+
+        // Default color
+        if (!result[value]) {
+            result[value] = colors.graph[nbColors - 1];
+        }
     }
 
     return result;
