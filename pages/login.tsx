@@ -38,6 +38,10 @@ const useStyles = makeStyles((theme: Theme) => ({
         maxWidth: 100,
         maxHeight: 100,
         objectFit: "contain"
+    },
+    showcase: {
+        objectFit: "contain",
+        maxWidth: 600
     }
 }));
 
@@ -112,6 +116,14 @@ function LoginPage() {
                         onClick={handleClick}>
                     Login
                 </Button>
+            </Paper>
+
+            <Paper elevation={5} className={classes.container}>
+                <Typography variant="h6">
+                    Demo
+                </Typography>
+                <img decoding="async" src="/showcase.gif" alt={process.env.appName + " showcase"}
+                     className={classes.showcase}/>
             </Paper>
         </PageContent>
     );
