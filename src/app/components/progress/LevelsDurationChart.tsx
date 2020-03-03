@@ -1,20 +1,23 @@
 import {LevelsHashMap} from "../../../data/interfaces/level";
 import {makeStyles, Theme} from "@material-ui/core/styles";
-import {Card, CardContent, CardHeader, Divider} from "@material-ui/core";
+import {Box, Card, CardContent, CardHeader, Divider} from "@material-ui/core";
 import React from "react";
 import {durationOfLevel} from "../../levels";
 import {Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Text, Tooltip, XAxis, YAxis} from "recharts";
 import formatDuration from "../../../formatDuration";
 import graphColorForValues from "../../graphColorForValues";
 import colors from "../../colors";
+import theme from "../../theme";
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
+        overflow: "auto"
+    },
+    box: {
+        width: "100%"
     },
     content: {
+        boxSizing: "border-box",
         marginBottom: theme.spacing(2),
         "& svg": {
             overflow: "visible"
@@ -95,44 +98,60 @@ export default function LevelsDurationChart(props: LevelsDurationChartProps) {
     const data = generateGraphData();
     const colors = graphColorForValues(data.map((item) => item.value));
 
+    // 60 is approximately the size of the left axis
+    // 20 is the min size of a bar
+    // 1.2 is for 10% empty space between each bar
+    const minWidth = 60 + (20 * 1.2) * data.length;
+
     return (
         <Card>
             <CardHeader title="Time on Levels"/>
             <Divider/>
             <CardContent className={classes.container}>
                 {props.levels && (
-                    <ResponsiveContainer height={GRAPH_HEIGHT} width="99%" className={classes.content}>
-                        <BarChart data={data}>
-                            <CartesianGrid vertical={false}/>
-                            <XAxis dataKey="level" label={{
-                                value: "Levels",
-                                position: "bottom",
-                            }}/>
-                            <YAxis label={{
-                                value: "Time on Level (days)",
-                                angle: -90,
-                                position: "insideLeft",
-                                style: {
-                                    textAnchor: "middle",
-                                }
-                            }}/>
-
-                            <Tooltip
-                                formatter={(value: any) => {
-                                    return [formatDuration(value * DAYS_MULTIPLIER), "Time on level"]
-                                }}
-                                labelFormatter={(value: any) => {
-                                    return "Level " + value;
+                    <Box className={classes.box} style={{
+                        minWidth: minWidth + theme.spacing(1) * 2
+                    }}>
+                        <ResponsiveContainer height={GRAPH_HEIGHT} width={"99%"} minWidth={minWidth}
+                                             className={classes.content}>
+                            <BarChart data={data} margin={{
+                                top: 0,
+                                bottom: 0,
+                                left: 0,
+                                right: 0
+                            }}>
+                                <CartesianGrid vertical={false}/>
+                                <XAxis dataKey="level" label={{
+                                    value: "Levels",
+                                    position: "bottom",
                                 }}/>
-                            <Bar dataKey="value" label={<BarLabel/>}>
-                                {
-                                    data.map((entry, index) => {
-                                        return <Cell key={index} fill={colors[entry.value]}/>;
-                                    })
-                                }
-                            </Bar>
-                        </BarChart>
-                    </ResponsiveContainer>
+                                <YAxis label={{
+                                    value: "Time on Level (days)",
+                                    angle: -90,
+                                    position: "insideLeft",
+                                    offset: 10,
+                                    style: {
+                                        textAnchor: "middle",
+                                    }
+                                }}/>
+
+                                <Tooltip
+                                    formatter={(value: any) => {
+                                        return [formatDuration(value * DAYS_MULTIPLIER), "Time on level"]
+                                    }}
+                                    labelFormatter={(value: any) => {
+                                        return "Level " + value;
+                                    }}/>
+                                <Bar dataKey="value" label={<BarLabel/>}>
+                                    {
+                                        data.map((entry, index) => {
+                                            return <Cell key={index} fill={colors[entry.value]}/>;
+                                        })
+                                    }
+                                </Bar>
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </Box>
                 )}
             </CardContent>
         </Card>
