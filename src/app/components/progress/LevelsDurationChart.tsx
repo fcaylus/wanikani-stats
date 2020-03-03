@@ -124,8 +124,8 @@ export default function LevelsDurationChart(props: LevelsDurationChartProps) {
                                 }}/>
                             <Bar dataKey="value" label={<BarLabel/>}>
                                 {
-                                    data.map((entry) => {
-                                        return <Cell fill={colors[entry.value]}/>;
+                                    data.map((entry, index) => {
+                                        return <Cell key={index} fill={colors[entry.value]}/>;
                                     })
                                 }
                             </Bar>

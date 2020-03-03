@@ -93,7 +93,7 @@ export default function StatusCard(props: StatusCardProps) {
                                     return null;
                                 }
                                 return (
-                                    <Typography variant="body1" component="span" style={{
+                                    <Typography key={itemType} variant="body1" component="span" style={{
                                         color: colorForType(itemType)
                                     }}>
                                         {props.itemsCount.type[itemType] + " " + displayNameForType(itemType)}

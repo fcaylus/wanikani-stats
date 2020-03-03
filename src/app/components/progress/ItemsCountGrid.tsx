@@ -31,12 +31,12 @@ export default function ItemsCountGrid(props: ItemsCountProps) {
 
     return (
         <Grid container spacing={2} className={clsx(classes.root, props.className)}>
-            {props.itemsCount && srsGroups().map((group) => {
+            {props.itemsCount && srsGroups().map((group, index) => {
                 // @ts-ignore
                 const sum = group.reduce((sum, srs) => sum + (props.itemsCount.srs[srs] ? props.itemsCount.srs[srs] : 0), 0);
 
                 return (
-                    <Grid item xs>
+                    <Grid key={index} item xs>
                         <Paper className={classes.paper} style={{
                             backgroundColor: colorForSRS(group[0])
                         }}>
