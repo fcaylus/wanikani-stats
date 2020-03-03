@@ -38,9 +38,13 @@ const fetchItemsCount = () => {
 const fetchAccuracy = () => {
     return fetchApi("progress/accuracy", "/api/progress/accuracy", "GET", getApiKey());
 };
+const fetchLevels = () => {
+    return fetchApi("progress/levels", "/api/progress/levels", "GET", getApiKey());
+};
 
 /**
- * Home page of the app
+ * Home page of the app.
+ * Simply dispatch all the API request and render a grid of sub components using these API data.
  */
 export default function IndexPage() {
     const classes = useStyles();
@@ -55,6 +59,9 @@ export default function IndexPage() {
     const accuracyResult: ApiResultState = useSelector((state: RootState) => {
         return state.api.results["progress/accuracy"];
     });
+    const levelsResult: ApiResultState = useSelector((state: RootState) => {
+        return state.api.results["progress/levels"];
+    });
 
     useEffect(() => {
         if (!statusResult || statusResult.error) {
@@ -66,6 +73,9 @@ export default function IndexPage() {
         if (!accuracyResult || accuracyResult.error) {
             dispatch(fetchAccuracy());
         }
+        if (!levelsResult || levelsResult.error) {
+            dispatch(fetchLevels());
+        }
     }, []);
 
     return (
@@ -76,7 +86,9 @@ export default function IndexPage() {
                          || !itemsCountResult
                          || itemsCountResult.fetching
                          || !accuracyResult
-                         || accuracyResult.fetching}>
+                         || accuracyResult.fetching
+                         || !levelsResult
+                         || levelsResult.fetching}>
             <ItemsCountGrid
                 itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}/>
 
@@ -84,7 +96,8 @@ export default function IndexPage() {
                 <Grid item xs>
                     <StatusCard
                         status={statusResult && !statusResult.fetching && !statusResult.error ? statusResult.data : undefined}
-                        itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}/>
+                        itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}
+                        levelsProgression={levelsResult && !levelsResult.fetching && !levelsResult.error ? levelsResult.data : undefined}/>
                 </Grid>
                 {accuracyResult && !accuracyResult.fetching && !accuracyResult.error && (
                     <Grid item xs>

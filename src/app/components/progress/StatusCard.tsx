@@ -6,6 +6,9 @@ import clsx from "clsx";
 import moment from "moment";
 import {ProgressItemsCount} from "../../../data/interfaces/progress";
 import {colorForType, displayNameForType} from "../../types";
+import {LevelsHashMap} from "../../../data/interfaces/level";
+import {averageLevelDuration, durationOfLevel} from "../../levels";
+import formatDuration from "../../../formatDuration";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -37,6 +40,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 interface StatusCardProps {
     status?: Status;
     itemsCount?: ProgressItemsCount;
+    levelsProgression?: LevelsHashMap;
     className?: any;
 }
 
@@ -59,10 +63,27 @@ export default function StatusCard(props: StatusCardProps) {
             <CardContent>
                 <List dense className={classes.list}>
                     {props.status && props.status.currentLevel && (
-                        <ListItem className={classes.line} disableGutters>
-                            <Typography variant="body1" component="span">Level:</Typography>
-                            <Typography variant="body1" component="span">{props.status.currentLevel}</Typography>
-                        </ListItem>
+                        <React.Fragment>
+                            <ListItem className={classes.line} disableGutters>
+                                <Typography variant="body1" component="span">Level:</Typography>
+                                <Typography variant="body1" component="span">{props.status.currentLevel}</Typography>
+                            </ListItem>
+                            {props.levelsProgression && (
+                                <React.Fragment>
+                                    <ListItem className={classes.line} disableGutters>
+                                        <Typography variant="body1" component="span">Time on level:</Typography>
+                                        <Typography variant="body1"
+                                                    component="span">{formatDuration(durationOfLevel(props.levelsProgression[props.status.currentLevel]))}</Typography>
+                                    </ListItem>
+                                    <ListItem className={classes.line} disableGutters>
+                                        <Typography variant="body1" component="span">Average time on
+                                            levels:</Typography>
+                                        <Typography variant="body1"
+                                                    component="span">{formatDuration(averageLevelDuration(Object.values(props.levelsProgression)))}</Typography>
+                                    </ListItem>
+                                </React.Fragment>
+                            )}
+                        </React.Fragment>
                     )}
                     {props.status && props.status.startDate && (
                         <ListItem className={classes.line} disableGutters>
