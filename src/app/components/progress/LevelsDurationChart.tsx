@@ -47,6 +47,7 @@ const BarLabel = (props: any) => {
                 dx={10}
                 fill={fill}
                 textAnchor="start"
+                verticalAnchor="middle"
                 transform={`rotate(-90, ${x}, ${y})`}>
                 {formatDuration(value * DAYS_MULTIPLIER)}
             </Text>
@@ -60,6 +61,7 @@ const BarLabel = (props: any) => {
                 dx={-10}
                 fill={colors.white}
                 textAnchor="end"
+                verticalAnchor="middle"
                 transform={`rotate(-90, ${x}, ${y})`}>
                 {formatDuration(value * DAYS_MULTIPLIER)}
             </Text>
