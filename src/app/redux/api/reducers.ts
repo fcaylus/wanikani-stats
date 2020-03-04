@@ -29,7 +29,8 @@ const apiCallsReducer = (state: ApiResultsState = {}, action: AnyAction): ApiRes
                 [label]: {
                     fetching: false,
                     error: false,
-                    data: newData
+                    data: newData,
+                    when: action.payload.when
                 }
             };
         }
@@ -40,7 +41,8 @@ const apiCallsReducer = (state: ApiResultsState = {}, action: AnyAction): ApiRes
             [label]: {
                 fetching: false,
                 error: false,
-                data: action.payload.data
+                data: action.payload.data,
+                when: action.payload.when
             }
         };
     }
@@ -67,7 +69,8 @@ const apiCallsReducer = (state: ApiResultsState = {}, action: AnyAction): ApiRes
             [label]: {
                 fetching: false,
                 error: true,
-                data: action.payload.errorCode
+                data: action.payload.errorCode,
+                when: action.payload.when
             }
         };
     }

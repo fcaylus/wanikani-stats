@@ -16,6 +16,8 @@ export interface ApiResult {
     data?: any;
     fetching: boolean;
     error: boolean;
+    // The date when the response was received
+    when?: Date;
 }
 
 /**
@@ -48,6 +50,7 @@ interface ApiErrorAction extends Action<typeof API_ERROR> {
     payload: {
         request: ApiRequest;
         errorCode: number;
+        when: Date;
         isNextPage: boolean;
     }
 }
@@ -59,6 +62,7 @@ interface ApiSuccessAction extends Action<typeof API_SUCCESS> {
     payload: {
         request: ApiRequest;
         data: any;
+        when: Date;
         isNextPage: boolean;
     }
 }

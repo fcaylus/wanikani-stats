@@ -12,12 +12,12 @@ import {apiResultSelector} from "./selectors";
 /**
  * Action sent when an API fetch starts
  */
-export const apiStart = (request: ApiRequest, isNextPage?: boolean): ApiActionTypes => {
+export const apiStart = (request: ApiRequest, isNextPage: boolean): ApiActionTypes => {
     return {
         type: API_START,
         payload: {
             request,
-            isNextPage: !!isNextPage
+            isNextPage: isNextPage
         }
     }
 };
@@ -25,13 +25,14 @@ export const apiStart = (request: ApiRequest, isNextPage?: boolean): ApiActionTy
 /**
  * Action sent when an API fetch end with error
  */
-export const apiError = (request: ApiRequest, errorCode: number, isNextPage?: boolean): ApiActionTypes => {
+export const apiError = (request: ApiRequest, errorCode: number, when: Date, isNextPage: boolean): ApiActionTypes => {
     return {
         type: API_ERROR,
         payload: {
             request,
             errorCode,
-            isNextPage: !!isNextPage
+            when,
+            isNextPage: isNextPage
         }
     }
 };
@@ -39,13 +40,14 @@ export const apiError = (request: ApiRequest, errorCode: number, isNextPage?: bo
 /**
  * Action sent when an API fetch end with success
  */
-export const apiSuccess = (request: ApiRequest, data: any, isNextPage?: boolean): ApiActionTypes => {
+export const apiSuccess = (request: ApiRequest, data: any, when: Date, isNextPage: boolean): ApiActionTypes => {
     return {
         type: API_SUCCESS,
         payload: {
             request,
             data,
-            isNextPage: !!isNextPage
+            when,
+            isNextPage: isNextPage
         }
     }
 };
@@ -64,8 +66,8 @@ export const apiSuccess = (request: ApiRequest, data: any, isNextPage?: boolean)
  */
 export const fetchApi = (apiRequest: ApiRequest,
                          apiKey: string | undefined,
-                         isNextPage?: boolean,
-                         noCache?: boolean,
+                         isNextPage: boolean,
+                         noCache: boolean,
                          req?: IncomingMessage,
                          res?: ServerResponse) => {
     return (dispatch: ThunkDispatch<any, any, AnyAction>, getState: () => RootState) => {
@@ -92,7 +94,7 @@ export const fetchApi = (apiRequest: ApiRequest,
 const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
                    apiRequest: ApiRequest,
                    accessToken: string | undefined,
-                   isNextPage?: boolean,
+                   isNextPage: boolean,
                    req?: IncomingMessage,
                    res?: ServerResponse) => {
     dispatch(apiStart(apiRequest, isNextPage));
@@ -119,6 +121,8 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
                 return;
             }
 
+            const when = response.headers["date"] ? new Date(response.headers["date"]) : new Date();
+
             // If it's a paginated result, also trigger a API_NEXT_PAGE action.
             // In this case, the next page url is parsed and a new fetch is performed.
             // Only the actual data is saved to the store
@@ -126,21 +130,21 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
                 // This is a paginated result
                 const paginatedResult: Page = response.data;
                 if (paginatedResult.hasNextPage && paginatedResult.nextPageUrl) {
-                    dispatch(apiSuccess(apiRequest, paginatedResult.data, isNextPage));
+                    dispatch(apiSuccess(apiRequest, paginatedResult.data, when, isNextPage));
 
                     const newRequest: ApiRequest = {
                         endpoint: paginatedResult.nextPageUrl,
                         method: apiRequest.method
                     };
-                    dispatch(fetchApi(newRequest, accessToken, true));
+                    dispatch(fetchApi(newRequest, accessToken, true, false));
 
                     // Resolve after each page
                     resolve();
                     return;
                 }
-                dispatch(apiSuccess(apiRequest, paginatedResult.data, isNextPage));
+                dispatch(apiSuccess(apiRequest, paginatedResult.data, when, isNextPage));
             } else {
-                dispatch(apiSuccess(apiRequest, response.data, isNextPage));
+                dispatch(apiSuccess(apiRequest, response.data, when, isNextPage));
             }
             resolve();
 
@@ -157,7 +161,8 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
             console.error("API error");
             console.error(error);
 
-            dispatch(apiError(apiRequest, errorCode, isNextPage));
+            const when = error.response.headers["date"] ? new Date(error.response.headers["date"]) : new Date();
+            dispatch(apiError(apiRequest, errorCode, when, isNextPage));
             reject();
         });
     });

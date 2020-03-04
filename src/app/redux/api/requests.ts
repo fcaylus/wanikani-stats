@@ -23,7 +23,7 @@ export const statusRequest = (): ApiRequest => {
 };
 
 export const fetchStatus = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(statusRequest(), getApiKey(req), undefined, undefined, req, res);
+    return fetchApi(statusRequest(), getApiKey(req), false, false, req, res);
 };
 
 /*
@@ -38,7 +38,7 @@ export const itemsCountRequest = (): ApiRequest => {
 };
 
 export const fetchItemsCount = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(itemsCountRequest(), getApiKey(req), undefined, undefined, req, res);
+    return fetchApi(itemsCountRequest(), getApiKey(req), false, false, req, res);
 };
 
 /*
@@ -53,7 +53,7 @@ export const accuracyRequest = (): ApiRequest => {
 };
 
 export const fetchAccuracy = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(accuracyRequest(), getApiKey(req), undefined, undefined, req, res);
+    return fetchApi(accuracyRequest(), getApiKey(req), false, false, req, res);
 };
 
 /*
@@ -68,7 +68,7 @@ export const levelsRequest = (): ApiRequest => {
 };
 
 export const fetchLevels = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(levelsRequest(), getApiKey(req), undefined, undefined, req, res);
+    return fetchApi(levelsRequest(), getApiKey(req), false, false, req, res);
 };
 
 /*
@@ -84,7 +84,7 @@ export const readyRequest = (): ApiRequest => {
 };
 
 export const fetchReady = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(readyRequest(), getApiKey(req), undefined, true, req, res);
+    return fetchApi(readyRequest(), getApiKey(req), false, true, req, res);
 };
 
 /*
@@ -100,7 +100,7 @@ export const loginRequest = (): ApiRequest => {
 };
 
 export const fetchLogin = (apiKey: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(loginRequest(), apiKey, undefined, true, req, res);
+    return fetchApi(loginRequest(), apiKey, false, true, req, res);
 };
 
 /*
@@ -116,7 +116,7 @@ export const logoutRequest = (): ApiRequest => {
 };
 
 export const fetchLogout = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(logoutRequest(), getApiKey(req), undefined, true, req, res);
+    return fetchApi(logoutRequest(), getApiKey(req), false, true, req, res);
 };
 
 /*
@@ -131,7 +131,7 @@ export const userRequest = (): ApiRequest => {
 };
 
 export const fetchUser = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(userRequest(), getApiKey(req), undefined, undefined, req, res);
+    return fetchApi(userRequest(), getApiKey(req), false, false, req, res);
 };
 
 /*
@@ -146,7 +146,7 @@ export const itemsRequest = (itemType: string, source: string): ApiRequest => {
 };
 
 export const fetchItems = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(itemsRequest(itemType, source), getApiKey(req), undefined, undefined, req, res);
+    return fetchApi(itemsRequest(itemType, source), getApiKey(req), false, false, req, res);
 };
 
 /*
@@ -161,7 +161,7 @@ export const statsRequest = (itemType: string, source: string): ApiRequest => {
 };
 
 export const fetchStats = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(statsRequest(itemType, source), getApiKey(req), undefined, undefined, req, res);
+    return fetchApi(statsRequest(itemType, source), getApiKey(req), false, false, req, res);
 };
 
 /*
@@ -179,5 +179,5 @@ export const progressRequest = (itemType: string): ApiRequest => {
 };
 
 export const fetchProgress = (itemType: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(progressRequest(itemType), getApiKey(req), undefined, undefined, req, res);
+    return fetchApi(progressRequest(itemType), getApiKey(req), false, false, req, res);
 };
