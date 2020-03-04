@@ -5,30 +5,16 @@ import {INTERNAL_SERVER_ERROR, NOT_FOUND} from "http-status-codes";
 import Error from 'next/error'
 import {CircularProgress, Theme} from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchApi} from "../../../src/app/redux/api/actions";
-import {RootState} from "../../../src/app/redux/store";
-import {ApiResultState} from "../../../src/app/redux/api/types";
+import {useDispatch} from "react-redux";
 import {ReduxNextPageContext} from "../../../src/app/redux/interfaces";
 import redirect from "../../../src/redirect";
 import {itemTypeExists, sourceExistsForItemType} from "../../../src/data/data";
-import {getApiKey, hasApiKey} from "../../../src/app/apiKey";
-import {IncomingMessage, ServerResponse} from "http";
+import {hasApiKey} from "../../../src/app/apiKey";
 import SourceSelector from "../../../src/app/components/SourceSelector";
 import TypeSelector from "../../../src/app/components/TypeSelector";
 import CategoryList from "../../../src/app/components/items/CategoryList";
-
-// Create a label based on the specified query
-const labelFromItemTypeAndSource = (itemType: string, source: string) => {
-    return "items/" + itemType + "/" + source;
-};
-
-// Wrapper around the fetchApi() redux action
-const fetchItems = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
-    const label = labelFromItemTypeAndSource(itemType, source);
-    const url = "/api/" + label;
-    return fetchApi(label, url, "GET", getApiKey(req), undefined, undefined, undefined, req, res);
-};
+import {itemsSelector, useItemsSelector, useProgressSelector} from "../../../src/app/redux/api/selectors";
+import {fetchItems, fetchProgress} from "../../../src/app/redux/api/requests";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -64,20 +50,14 @@ function ItemPage(props: ItemPageProps) {
      * API items results state and selector
      */
     const dispatch = useDispatch();
-    const apiLabel = labelFromItemTypeAndSource(itemType, itemSource);
-    const apiResults: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results[apiLabel];
-    });
+    const apiResult = useItemsSelector(itemType, itemSource);
     // Allow to avoid a full re-render of all items just before the url change
     const [showItems, setShowItems] = useState(true);
 
     /*
      * API user progress results state and selector
      */
-    const progressApiLabel = "progress/" + itemType;
-    const progressResults: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results[progressApiLabel];
-    });
+    const progressResult = useProgressSelector(itemType);
 
     // Controls the main progress bar
     const [isLoading, setLoading] = useState(true);
@@ -106,7 +86,7 @@ function ItemPage(props: ItemPageProps) {
 
     // On query change, trigger a API fetch if needed
     useEffect(() => {
-        if (!apiResults || apiResults.error) {
+        if (!apiResult || apiResult.error) {
             dispatch(fetchItems(itemType, itemSource));
         }
     }, [itemType, itemSource]);
@@ -114,27 +94,25 @@ function ItemPage(props: ItemPageProps) {
     // On item type change, fetch the new user progress
     useEffect(() => {
         // Retrieve the user progress through the API, only if necessary
-        if (!progressResults || progressResults.error) {
-            dispatch(fetchApi(progressApiLabel, "/api/progress", "GET", getApiKey(), {
-                type: itemType
-            }));
+        if (!progressResult || progressResult.error) {
+            dispatch(fetchProgress(itemType));
         }
     }, [itemType]);
 
     // When the user progress is retrieved, toggle off the main progress bar
     useEffect(() => {
         // Check if progress is successfully retrieved
-        if (progressResults && progressResults.data && !progressResults.error && isLoading) {
+        if (progressResult && progressResult.data && !progressResult.error && isLoading) {
             setLoading(false);
         }
-    }, [progressResults]);
+    }, [progressResult]);
 
     // On new data available, start to show the items
     useEffect(() => {
-        if (apiResults && !apiResults.error && !apiResults.fetching && !showItems) {
+        if (apiResult && !apiResult.error && !apiResult.fetching && !showItems) {
             setShowItems(true);
         }
-    }, [apiResults]);
+    }, [apiResult]);
 
     // Shallow change the url of the page. This changes the query parameter and trigger a new page rendering
     const changeUrl = (newType: string, newSource: string, immediate?: boolean) => {
@@ -179,8 +157,8 @@ function ItemPage(props: ItemPageProps) {
         changeUrl(itemType, "wanikani", true);
     }
 
-    if (apiResults && apiResults.error) {
-        return <Error statusCode={apiResults ? apiResults.data : INTERNAL_SERVER_ERROR}/>;
+    if (apiResult && apiResult.error) {
+        return <Error statusCode={apiResult ? apiResult.data : INTERNAL_SERVER_ERROR}/>;
     }
 
     return (
@@ -188,13 +166,13 @@ function ItemPage(props: ItemPageProps) {
             <TypeSelector onTypeChange={handleTypeChangeCallback} value={itemType}/>
             <SourceSelector itemType={itemType} onSourceChange={handleSourceChangeCallBack} value={itemSource}/>
 
-            {apiResults && apiResults.fetching && (
+            {apiResult && apiResult.fetching && (
                 <CircularProgress className={classes.fetching} disableShrink/>
             )}
 
             <CategoryList
-                categories={showItems && apiResults && !apiResults.error && !apiResults.fetching ? apiResults.data : undefined}
-                progress={progressResults && !progressResults.error && !progressResults.fetching ? progressResults.data : undefined}
+                categories={showItems && apiResult && !apiResult.error && !apiResult.fetching ? apiResult.data : undefined}
+                progress={progressResult && !progressResult.error && !progressResult.fetching ? progressResult.data : undefined}
                 initialDataLength={props.initialDataLength}/>
         </PageContent>
     );
@@ -224,7 +202,7 @@ ItemPage.getInitialProps = async (ctx: ReduxNextPageContext): Promise<ItemPagePr
     // Wait for the API call to finished.
     if (!process.browser) {
         await ctx.store.dispatch(fetchItems(item_type.toString(), source.toString(), ctx.req, ctx.res));
-        const res = ctx.store.getState().api.results[labelFromItemTypeAndSource(item_type.toString(), source.toString())];
+        const res = itemsSelector(ctx.store.getState(), item_type.toString(), source.toString());
         return {
             initialDataLength: res && !res.error && !res.fetching ? res.data.length : 0
         }

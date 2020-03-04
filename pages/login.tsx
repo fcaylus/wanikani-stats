@@ -3,13 +3,12 @@ import PageContent from "../src/app/components/page/PageContent";
 import {Button, Link, Paper, TextField, Theme, Typography} from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
 import isUUID from "../src/isUUID";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchApi} from "../src/app/redux/api/actions";
-import {ApiResultState} from "../src/app/redux/api/types";
-import {RootState} from "../src/app/redux/store";
+import {useDispatch} from "react-redux";
 import {useRouter} from "next/router";
 import {saveApiKey} from "../src/app/apiKey";
 import redirect, {DEFAULT_REDIRECT_URL} from "../src/redirect";
+import {useLoginSelector} from "../src/app/redux/api/selectors";
+import {fetchLogin} from "../src/app/redux/api/requests";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -56,9 +55,7 @@ function LoginPage() {
     const [inputError, setInputError] = useState(false);
     const [token, setToken] = useState("");
 
-    const loginResult: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results["login"];
-    });
+    const loginResult = useLoginSelector();
 
     if (loginResult && !loginResult.fetching && !loginResult.error) {
         // Successfully logged in
@@ -78,7 +75,7 @@ function LoginPage() {
             }
 
             // Login
-            dispatch(fetchApi("login", "/api/login", "GET", token, undefined, false, true));
+            dispatch(fetchLogin(token));
             return;
         }
 

@@ -1,4 +1,4 @@
-import {API_ERROR, API_START, API_SUCCESS, ApiActionTypes} from "./types";
+import {API_ERROR, API_START, API_SUCCESS, ApiActionTypes, ApiRequest} from "./types";
 import {AnyAction} from "redux";
 import axios from "axios";
 import {ACCEPTED, INTERNAL_SERVER_ERROR, UNAUTHORIZED} from "http-status-codes";
@@ -7,15 +7,16 @@ import {ThunkDispatch} from "redux-thunk";
 import redirect from "../../../redirect";
 import {IncomingMessage, ServerResponse} from "http";
 import {Page} from "../../../server/interfaces/page";
+import {apiResultSelector} from "./selectors";
 
 /**
- * Action sent when an API fetch is started
+ * Action sent when an API fetch starts
  */
-export const apiStart = (label: string, isNextPage?: boolean): ApiActionTypes => {
+export const apiStart = (request: ApiRequest, isNextPage?: boolean): ApiActionTypes => {
     return {
         type: API_START,
         payload: {
-            label,
+            request,
             isNextPage: !!isNextPage
         }
     }
@@ -24,12 +25,11 @@ export const apiStart = (label: string, isNextPage?: boolean): ApiActionTypes =>
 /**
  * Action sent when an API fetch end with error
  */
-export const apiError = (url: string, label: string, errorCode: number, isNextPage?: boolean): ApiActionTypes => {
+export const apiError = (request: ApiRequest, errorCode: number, isNextPage?: boolean): ApiActionTypes => {
     return {
         type: API_ERROR,
         payload: {
-            url,
-            label,
+            request,
             errorCode,
             isNextPage: !!isNextPage
         }
@@ -39,11 +39,11 @@ export const apiError = (url: string, label: string, errorCode: number, isNextPa
 /**
  * Action sent when an API fetch end with success
  */
-export const apiSuccess = (label: string, data: any, isNextPage?: boolean): ApiActionTypes => {
+export const apiSuccess = (request: ApiRequest, data: any, isNextPage?: boolean): ApiActionTypes => {
     return {
         type: API_SUCCESS,
         payload: {
-            label,
+            request,
             data,
             isNextPage: !!isNextPage
         }
@@ -54,74 +54,65 @@ export const apiSuccess = (label: string, data: any, isNextPage?: boolean): ApiA
  * Fetch the corresponding local API endpoint based on the desired item type and source.
  * Returns a Thunk.
  *
- * @param label Label used to store the data in the global redux state
- * @param url Url of the targeted endpoint
- * @param method HTTP method
+ * @param apiRequest Request object containing the endpoint, the method and optionally some data to send
  * @param apiKey The user token
- * @param data Optional data to send to the API
  * @param isNextPage Optional param that tells if the page is not the first one (and thus that the retrieved data need
  * to be append to the store).
- * @param apiKey Optional apiKey. Useful for the login page when the token is not stored yet in cookies.
  * @param noCache If specified, fetch the data even if it's stored in the store
  * @param req Optional request object. Used to redirect on the server side in case the WK data are not ready
  * @param res Optional response object. Used to redirect on the server side in case the WK data are not ready
  */
-export const fetchApi = (label: string,
-                         url: string,
-                         method: string,
+export const fetchApi = (apiRequest: ApiRequest,
                          apiKey: string | undefined,
-                         data?: any,
                          isNextPage?: boolean,
                          noCache?: boolean,
                          req?: IncomingMessage,
                          res?: ServerResponse) => {
-    const baseUrl = process.browser ? "" : "http://localhost:" + process.env.defaultPort;
-
     return (dispatch: ThunkDispatch<any, any, AnyAction>, getState: () => RootState) => {
-        if (!isNextPage) {
-            // Check if the label is already retrieved, only if it's the first page
-            // If noCache is specified, ignore this
-            const results = getState().api.results[label];
-            if (!noCache && results && !results.error) {
+        if (!isNextPage && !noCache) {
+            // Check if the request is already retrieved and only if it's the first page and cache is enable
+            const results = apiResultSelector(getState(), apiRequest);
+            if (results && !results.error) {
                 // Data is already in store
-                // The API_SUCCESS action will be triggered by another action
+                // The API_SUCCESS action will be (or was) triggered by a previous action
                 return Promise.resolve();
             }
         }
 
         // Otherwise, get the data from the API
-        return fetchData(dispatch, url, method, apiKey, label, baseUrl, data, isNextPage, req, res);
+        return fetchData(dispatch, apiRequest, apiKey, isNextPage, req, res);
     }
 };
 
+/**
+ * Return a promise that resolves when the request ends. This allows two usages of fetchApi() using dispatch:
+ * - The caller wait for the promise to resolve (useful on server side)
+ * - The caller use a selector and wait for the redux store to change (either by apiError() or apiStart())
+ */
 const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
-                   url: string,
-                   method: string,
+                   apiRequest: ApiRequest,
                    accessToken: string | undefined,
-                   label: string,
-                   baseUrl: string,
-                   data?: any,
                    isNextPage?: boolean,
                    req?: IncomingMessage,
                    res?: ServerResponse) => {
-    dispatch(apiStart(label, isNextPage));
-
+    dispatch(apiStart(apiRequest, isNextPage));
     return new Promise((resolve, reject) => {
-        // The name of axios field changes depending on the method
-        const dataOrParams = ["GET", "DELETE"].includes(method) ? "params" : "data";
+        // The name of axios field changes depending on the request's method
+        const dataOrParams = ["GET", "DELETE"].includes(apiRequest.method.toUpperCase()) ? "params" : "data";
+        const baseUrl = process.browser ? "" : "http://localhost:" + process.env.defaultPort;
 
         axios.request({
             baseURL: baseUrl,
-            url,
-            method,
+            url: apiRequest.endpoint,
+            method: apiRequest.method,
             headers: {
                 "content-type": "application/json",
                 "authorization": accessToken ? "Bearer " + accessToken : undefined
             },
-            [dataOrParams]: data
+            [dataOrParams]: apiRequest.data
         }).then(response => {
-            // If the response code is ACCEPTED, this means the server is downloading WK subjects. Redirect the user to a
-            // waiting page
+            // If the response code is ACCEPTED, this means the server is downloading WK subjects. Redirect the user to
+            // the waiting page
             if (response.status === ACCEPTED) {
                 redirect("/wait", req, res, false, true);
                 resolve();
@@ -135,16 +126,21 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
                 // This is a paginated result
                 const paginatedResult: Page = response.data;
                 if (paginatedResult.hasNextPage && paginatedResult.nextPageUrl) {
-                    dispatch(apiSuccess(label, paginatedResult.data, isNextPage));
-                    dispatch(fetchApi(label, paginatedResult.nextPageUrl, method, accessToken, undefined, true));
+                    dispatch(apiSuccess(apiRequest, paginatedResult.data, isNextPage));
+
+                    const newRequest: ApiRequest = {
+                        endpoint: paginatedResult.nextPageUrl,
+                        method: apiRequest.method
+                    };
+                    dispatch(fetchApi(newRequest, accessToken, true));
 
                     // Resolve after each page
                     resolve();
                     return;
                 }
-                dispatch(apiSuccess(label, paginatedResult.data, isNextPage));
+                dispatch(apiSuccess(apiRequest, paginatedResult.data, isNextPage));
             } else {
-                dispatch(apiSuccess(label, response.data, isNextPage));
+                dispatch(apiSuccess(apiRequest, response.data, isNextPage));
             }
             resolve();
 
@@ -161,7 +157,7 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
             console.error("API error");
             console.error(error);
 
-            dispatch(apiError(url, label, errorCode, isNextPage));
+            dispatch(apiError(apiRequest, errorCode, isNextPage));
             reject();
         });
     });

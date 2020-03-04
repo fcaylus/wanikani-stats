@@ -1,72 +1,93 @@
 import {API_ERROR, API_START, API_SUCCESS, ApiResultsState} from './types'
 import {AnyAction, combineReducers} from "redux";
+import {labelForApiRequest} from "./util";
 
 /**
- * Reducer handling the data storage in the state of the API calls
- * isNextPage parameter allows to know if the data must be appended to the previous state or not
+ * Reducer handling the storage of API calls results into the main store.
  */
 const apiCallsReducer = (state: ApiResultsState = {}, action: AnyAction): ApiResultsState => {
-    switch (action.type) {
-        case API_SUCCESS:
-            if (action.payload.isNextPage) {
-                // Append to previous data
-                let newData = state[action.payload.label].data;
-                if (Array.isArray(newData)) {
-                    newData.push(...action.payload.data);
-                } else {
-                    // If it's not an array, and all properties from the second object to the first
-                    newData = {...newData, ...action.payload.data};
-                }
+    /*
+     * API_SUCCESS
+     */
+    if (action.type === API_SUCCESS) {
+        const label = labelForApiRequest(action.payload.request);
+        // If its a multi page request and not the first page
+        if (action.payload.isNextPage) {
+            // Append to previous data
+            let newData = state[label].data;
 
-                return {
-                    ...state,
-                    [action.payload.label]: {
-                        fetching: false,
-                        error: false,
-                        data: newData
-                    }
-                };
+            // Append data to the original state, depending if it's an array or an object
+            if (Array.isArray(newData)) {
+                newData.push(...action.payload.data);
+            } else {
+                // If it's not an array, and all properties from the second object to the first
+                newData = {...newData, ...action.payload.data};
             }
 
             return {
                 ...state,
-                [action.payload.label]: {
+                [label]: {
                     fetching: false,
                     error: false,
-                    data: action.payload.data
+                    data: newData
                 }
             };
-        case API_ERROR:
-            if (action.payload.isNextPage) {
-                // Do not remove previous data, just change the fetching parameter
-                return {
-                    ...state,
-                    [action.payload.label]: {
-                        ...state[action.payload.label],
-                        fetching: false
-                    }
-                };
-            }
+        }
 
+        // Save new data to the store
+        return {
+            ...state,
+            [label]: {
+                fetching: false,
+                error: false,
+                data: action.payload.data
+            }
+        };
+    }
+    /*
+     * API_ERROR
+     */
+    else if (action.type === API_ERROR) {
+        const label = labelForApiRequest(action.payload.request);
+
+        if (action.payload.isNextPage) {
+            // Do not remove previous data, just change the fetching parameter
             return {
                 ...state,
-                [action.payload.label]: {
-                    fetching: false,
-                    error: true,
-                    data: action.payload.errorCode
+                [label]: {
+                    ...state[label],
+                    fetching: false
                 }
             };
-        case API_START:
-            return {
-                ...state,
-                [action.payload.label]: {
-                    ...state[action.payload.label],
-                    fetching: true,
-                    error: false
-                }
-            };
-        default:
-            return state;
+        }
+
+        // Remove previous data in case of error
+        return {
+            ...state,
+            [label]: {
+                fetching: false,
+                error: true,
+                data: action.payload.errorCode
+            }
+        };
+    }
+    /*
+     * API_START
+     */
+    else if (action.type === API_START) {
+        const label = labelForApiRequest(action.payload.request);
+
+        // Change only fetching and error properties.
+        return {
+            ...state,
+            [label]: {
+                ...state[label],
+                fetching: true,
+                error: false
+            }
+        };
+    } else {
+        return state;
     }
 };
 

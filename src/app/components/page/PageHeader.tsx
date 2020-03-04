@@ -2,15 +2,14 @@ import React, {useEffect, useState} from 'react';
 import {makeStyles, Theme} from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import LaunchIcon from '@material-ui/icons/Launch';
-import {useDispatch, useSelector} from "react-redux";
-import {fetchApi} from "../../redux/api/actions";
-import {getApiKey, removeApiKey} from "../../apiKey";
-import {ApiResultState} from "../../redux/api/types";
-import {RootState} from "../../redux/store";
+import {useDispatch} from "react-redux";
+import {removeApiKey} from "../../apiKey";
 import {AppBar, Button, IconButton, Menu, MenuItem, Toolbar, Typography} from "@material-ui/core";
 import colors from "../../colors";
 import redirect from "../../../redirect";
 import {User} from "../../../data/interfaces/user";
+import {useUserSelector} from "../../redux/api/selectors";
+import {fetchLogout, fetchUser} from "../../redux/api/requests";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -54,9 +53,7 @@ export default function PageHeader(props: PageHeaderProps) {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    const userResult: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results["user"];
-    });
+    const userResult = useUserSelector();
     const [userMenuAnchor, setUserMenuAnchor] = useState<HTMLElement | undefined>(undefined);
 
     const handleUserMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -66,10 +63,16 @@ export default function PageHeader(props: PageHeaderProps) {
         setUserMenuAnchor(undefined);
     };
 
+    const logout = () => {
+        dispatch(fetchLogout());
+        removeApiKey();
+        redirect("/login");
+    };
+
     useEffect(() => {
         // Only retrieve user when we are not on a "minimal" page
         if (!props.minimal) {
-            dispatch(fetchApi("user", "/api/user", "GET", getApiKey()));
+            dispatch(fetchUser());
         }
     }, []);
 
@@ -114,11 +117,7 @@ export default function PageHeader(props: PageHeaderProps) {
                                     WaniKani Profile
                                     <LaunchIcon className={classes.icon} fontSize="small"/>
                                 </MenuItem>
-                                <MenuItem onClick={() => {
-                                    dispatch(fetchApi("logout", "/api/logout", "GET", getApiKey(), undefined, undefined, true));
-                                    removeApiKey();
-                                    redirect("/login");
-                                }}>Logout</MenuItem>
+                                <MenuItem onClick={logout}>Logout</MenuItem>
                             </Menu>
                         </React.Fragment>
                     )}

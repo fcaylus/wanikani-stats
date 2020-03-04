@@ -1,19 +1,22 @@
 import React, {useEffect} from 'react';
 import PageContent from "../src/app/components/page/PageContent";
 import {makeStyles, Theme} from "@material-ui/core/styles";
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../src/app/redux/store";
-import {ApiResultState} from "../src/app/redux/api/types";
-import {fetchApi} from "../src/app/redux/api/actions";
-import {getApiKey, hasApiKey} from "../src/app/apiKey";
+import {useDispatch} from "react-redux";
+import {hasApiKey} from "../src/app/apiKey";
 import StatusCard from "../src/app/components/progress/StatusCard";
 import {ReduxNextPageContext} from "../src/app/redux/interfaces";
 import redirect from "../src/redirect";
-import {IncomingMessage, ServerResponse} from "http";
 import ItemsCountGrid from "../src/app/components/progress/ItemsCountGrid";
 import AccuracyCard from "../src/app/components/progress/AccuracyCard";
 import {Grid} from "@material-ui/core";
 import LevelsDurationChart from "../src/app/components/progress/LevelsDurationChart";
+import {
+    useAccuracySelector,
+    useItemsCountSelector,
+    useLevelsSelector,
+    useStatusSelector
+} from "../src/app/redux/api/selectors";
+import {fetchAccuracy, fetchItemsCount, fetchLevels, fetchStatus} from "../src/app/redux/api/requests";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -40,18 +43,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-const fetchStatus = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi("status", "/api/user/status", "GET", getApiKey(req), undefined, undefined, undefined, req, res);
-};
-const fetchItemsCount = () => {
-    return fetchApi("progress/count", "/api/progress/count", "GET", getApiKey());
-};
-const fetchAccuracy = () => {
-    return fetchApi("progress/accuracy", "/api/progress/accuracy", "GET", getApiKey());
-};
-const fetchLevels = () => {
-    return fetchApi("progress/levels", "/api/progress/levels", "GET", getApiKey());
-};
 
 /**
  * Home page of the app.
@@ -61,18 +52,10 @@ export default function IndexPage() {
     const classes = useStyles();
 
     const dispatch = useDispatch();
-    const statusResult: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results["status"];
-    });
-    const itemsCountResult: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results["progress/count"];
-    });
-    const accuracyResult: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results["progress/accuracy"];
-    });
-    const levelsResult: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results["progress/levels"];
-    });
+    const statusResult = useStatusSelector();
+    const itemsCountResult = useItemsCountSelector();
+    const accuracyResult = useAccuracySelector();
+    const levelsResult = useLevelsSelector();
 
     useEffect(() => {
         if (!statusResult || statusResult.error) {

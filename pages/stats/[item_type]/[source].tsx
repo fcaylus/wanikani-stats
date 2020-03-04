@@ -5,31 +5,17 @@ import {INTERNAL_SERVER_ERROR, NOT_FOUND} from "http-status-codes";
 import Error from 'next/error'
 import {Paper, Table, TableBody, TableCell, TableHead, TableRow, Theme, Typography} from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchApi} from "../../../src/app/redux/api/actions";
-import {RootState} from "../../../src/app/redux/store";
-import {ApiResultState} from "../../../src/app/redux/api/types";
+import {useDispatch} from "react-redux";
 import {itemTypeExists, sourceExistsForItemType} from "../../../src/data/data";
-import {getApiKey, hasApiKey} from "../../../src/app/apiKey";
-import {IncomingMessage, ServerResponse} from "http";
+import {hasApiKey} from "../../../src/app/apiKey";
 import {Stats} from "../../../src/data/interfaces/stats";
 import {ReduxNextPageContext} from "../../../src/app/redux/interfaces";
 import redirect from "../../../src/redirect";
 import {User} from "../../../src/data/interfaces/user";
 import SourceSelector from "../../../src/app/components/SourceSelector";
 import CategoryList from "../../../src/app/components/items/CategoryList";
-
-// Create a label based on the specified query
-const labelFromItemTypeAndSource = (itemType: string, source: string) => {
-    return "stats/" + itemType + "/" + source;
-};
-
-// Wrapper around the fetchApi() redux action
-const fetchStats = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
-    const label = labelFromItemTypeAndSource(itemType, source);
-    const url = "/api/" + label;
-    return fetchApi(label, url, "GET", getApiKey(req), undefined, undefined, undefined, req, res);
-};
+import {useStatsSelector, useUserSelector} from "../../../src/app/redux/api/selectors";
+import {fetchStats} from "../../../src/app/redux/api/requests";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -70,16 +56,12 @@ function StatsPage() {
      * API stats results selector
      */
     const dispatch = useDispatch();
-    const apiLabel = labelFromItemTypeAndSource(item_type.toString(), source.toString());
-    const apiResults: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results[apiLabel];
-    });
-    const userResults: ApiResultState = useSelector((state: RootState) => {
-        return state.api.results["user"];
-    });
+    const apiResult = useStatsSelector(item_type.toString(), source.toString());
+    // The user endpoint dispatch is already called by PageHeader
+    const userResult = useUserSelector();
 
     useEffect(() => {
-        if (!apiResults || apiResults.error) {
+        if (!apiResult || apiResult.error) {
             dispatch(fetchStats(item_type.toString(), source.toString()));
         }
     }, [item_type, source]);
@@ -108,12 +90,12 @@ function StatsPage() {
         changeUrl("jlpt");
     }
 
-    if (apiResults && apiResults.error) {
-        return <Error statusCode={apiResults ? apiResults.data : INTERNAL_SERVER_ERROR}/>;
+    if (apiResult && apiResult.error) {
+        return <Error statusCode={apiResult ? apiResult.data : INTERNAL_SERVER_ERROR}/>;
     }
 
     const formatPercentage = (levelIndex: number, categoryIndex: number): string => {
-        const data = apiResults.data as Stats;
+        const data = apiResult.data as Stats;
         const percentage = data.levels[levelIndex].categories[data.categories[categoryIndex]] * 100;
 
         if (levelIndex != 0) {
@@ -131,32 +113,32 @@ function StatsPage() {
     };
 
     return (
-        <PageContent pageTitle="Stats" className={classes.root} showProgress={!apiResults || apiResults.fetching}>
+        <PageContent pageTitle="Stats" className={classes.root} showProgress={!apiResult || apiResult.fetching}>
             <SourceSelector itemType={item_type.toString()} onSourceChange={handleSourceChange}
                             value={source.toString()} excludeList={["wanikani"]}/>
 
-            {apiResults && !apiResults.error && !apiResults.fetching && (
+            {apiResult && !apiResult.error && !apiResult.fetching && (
                 <Paper elevation={5} className={classes.table}>
                     <Table size="small" aria-label="stats table">
                         <TableHead>
                             <TableRow>
                                 <TableCell className={classes.cell} align="center">Level</TableCell>
-                                {(apiResults.data as Stats).displayedCategories.map((category) => (
+                                {(apiResult.data as Stats).displayedCategories.map((category) => (
                                     <TableCell key={category} className={classes.cell}
                                                align="center">{category}</TableCell>
                                 ))}
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {(apiResults.data as Stats).levels.map((level, levelIndex) => {
-                                const isSelected = userResults && !userResults.error && !userResults.fetching && (userResults.data as User).currentLevel == parseInt(level.level);
+                            {(apiResult.data as Stats).levels.map((level, levelIndex) => {
+                                const isSelected = userResult && !userResult.error && !userResult.fetching && (userResult.data as User).currentLevel == parseInt(level.level);
                                 return (
                                     <TableRow key={level.level}
                                               selected={isSelected}
                                               hover={!isSelected}>
                                         <TableCell className={classes.cell} align="center"
                                                    variant="head" component="th">{level.level}</TableCell>
-                                        {(apiResults.data as Stats).categories.map((category, categoryIndex) => (
+                                        {(apiResult.data as Stats).categories.map((category, categoryIndex) => (
                                             <TableCell
                                                 key={category} className={classes.cell}
                                                 align="center">{formatPercentage(levelIndex, categoryIndex)}</TableCell>
@@ -169,13 +151,13 @@ function StatsPage() {
                 </Paper>
             )}
 
-            {apiResults && !apiResults.error && !apiResults.fetching && (
+            {apiResult && !apiResult.error && !apiResult.fetching && (
                 <React.Fragment>
                     <Typography variant="h5" component="h2" className={classes.listHeader}>
                         Items not available in Wanikani
                     </Typography>
                     <CategoryList
-                        categories={(apiResults.data as Stats).otherItems}
+                        categories={(apiResult.data as Stats).otherItems}
                         progress={undefined}/>
                 </React.Fragment>
             )}

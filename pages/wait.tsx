@@ -1,13 +1,12 @@
 import React, {useEffect} from 'react';
 import PageContent from "../src/app/components/page/PageContent";
-import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../src/app/redux/store";
-import {fetchApi} from "../src/app/redux/api/actions";
-import {getApiKey} from "../src/app/apiKey";
+import {useDispatch} from "react-redux";
 import redirect, {DEFAULT_REDIRECT_URL} from "../src/redirect";
 import {makeStyles, Theme} from "@material-ui/core/styles";
 import {Box, CircularProgress, Link, Paper, Typography} from "@material-ui/core";
 import {useRouter} from "next/router";
+import {fetchReady} from "../src/app/redux/api/requests";
+import {useReadySelector} from "../src/app/redux/api/selectors";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -31,13 +30,11 @@ export default function WaitPage() {
     const dispatch = useDispatch();
     const router = useRouter();
 
-    const apiResult = useSelector((state: RootState) => {
-        return state.api.results["ready"];
-    });
+    const readyResult = useReadySelector();
 
     const checkIfReady = () => {
         setTimeout(() => {
-            dispatch(fetchApi("ready", "/api/ready", "GET", getApiKey(), undefined, undefined, true));
+            dispatch(fetchReady());
         }, 3000);
     };
 
@@ -46,14 +43,14 @@ export default function WaitPage() {
     }, []);
 
     useEffect(() => {
-        if (apiResult && !apiResult.error && !apiResult.fetching && apiResult.data) {
-            if (apiResult.data.status == "ready") {
+        if (readyResult && !readyResult.error && !readyResult.fetching && readyResult.data) {
+            if (readyResult.data.status == "ready") {
                 redirect(router.query.redirect ? decodeURI(router.query.redirect.toString()) : DEFAULT_REDIRECT_URL);
             } else {
                 checkIfReady();
             }
         }
-    }, [apiResult]);
+    }, [readyResult]);
 
     return (
         <PageContent pageTitle="Waiting for download ..." showProgress>
