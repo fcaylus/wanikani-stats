@@ -1,9 +1,14 @@
 import colors from "./colors";
+import quantile from "../quantile";
+
+export interface GraphColorsHashMap {
+    [value: number]: /* color */ string
+}
 
 /**
  * Return a hash map of colors for each specified value.
  */
-export default (values: number[]): { [value: number]: /* color */ string } => {
+export default (values: number[]): GraphColorsHashMap => {
     if (values.length == 0) {
         return {}
     }
@@ -11,19 +16,15 @@ export default (values: number[]): { [value: number]: /* color */ string } => {
     // First, sort the array
     const sorted = values.sort();
 
-    const min = sorted[0];
-    const max = sorted[sorted.length - 1];
-    const dist = max - min;
-
-    // Divide dist in sub distances
+    // Divide dist in sub distances with the same number of elements each (ie. quantiles)
     const sections = [];
     const nbColors = colors.graph.length;
     for (let i = 0; i < nbColors; i++) {
-        sections.push(min + (i + 1) * (dist / nbColors));
+        sections.push(quantile(sorted, (i + 1) / nbColors))
     }
 
     // For each item, find in which section it's in
-    const result: { [value: number]: string } = {};
+    const result: GraphColorsHashMap = {};
     for (const value of sorted) {
         for (const index in sections) {
             if (value <= sections[index]) {
