@@ -9,11 +9,14 @@ import colors from "../../colors";
 const useStyles = makeStyles((theme: Theme) => ({
     root: {},
     paper: {
-        padding: theme.spacing(3),
         textAlign: "center",
         color: colors.white,
         "& > *:first-child": {
             fontWeight: "bold"
+        },
+        padding: theme.spacing(3),
+        [theme.breakpoints.down("xs")]: {
+            padding: theme.spacing(2)
         }
     }
 }));
