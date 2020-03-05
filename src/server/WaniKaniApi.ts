@@ -90,7 +90,7 @@ export default (apiKey: string) => {
         },
         /**
          * Fetch the specified endpoint with a GET request and parse it as a paginate response from WaniKani. The data
-         * field of the result is either a Page or Page[] (depending on allPage).
+         * field of the result is a Page.
          * @param endpoint The endpoint to get. It has to return a paginate response
          * @param params Params of the request
          * @param pageAfterId If specified, allows to retrieve a specified page. Otherwise, the first page is fetched
@@ -130,7 +130,8 @@ export default (apiKey: string) => {
             const page: Page = {
                 nextPageUrl: nextPageUrl,
                 hasNextPage: hasNextPage,
-                data: result.data.data
+                numberOfPages: Math.ceil(result.data.total_count / result.data.pages.per_page),
+                data: result.data.data,
             };
 
             return {
