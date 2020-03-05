@@ -48,6 +48,10 @@ export default function StatusCard(props: StatusCardProps) {
             + ")";
     };
 
+    if (!props.status) {
+        return null;
+    }
+
     return (
         <Card>
             <CardHeader title={"Summary"}/>

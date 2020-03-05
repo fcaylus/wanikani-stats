@@ -32,6 +32,10 @@ interface ItemsCountProps {
 export default function ItemsCountGrid(props: ItemsCountProps) {
     const classes = useStyles();
 
+    if (!props.itemsCount) {
+        return null;
+    }
+
     return (
         <Grid container spacing={2} className={clsx(classes.root, props.className)}>
             {props.itemsCount && srsGroups().map((group, index) => {

@@ -114,8 +114,7 @@ export default function IndexPage() {
                          || isResultFetching(progressVocabularyResult)
                          || isResultFetching(reviewsStatsResult)
                          || isResultFetching(levelsResult)}>
-            <ItemsCountGrid
-                itemsCount={itemsCount}/>
+            <ItemsCountGrid itemsCount={itemsCount}/>
 
             <Grid container spacing={2} className={classes.grid}>
                 <Grid item xs>
@@ -131,12 +130,9 @@ export default function IndexPage() {
                 )}
             </Grid>
             <Grid container spacing={2} className={classes.grid}>
-                {isResultSuccessful(levelsResult) && (
-                    <Grid item xs>
-                        <LevelsDurationChart
-                            levels={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}/>
-                    </Grid>
-                )}
+                <Grid item xs>
+                    <LevelsDurationChart levels={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}/>
+                </Grid>
             </Grid>
         </PageContent>
     );
