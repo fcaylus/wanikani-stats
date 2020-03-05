@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export const GRAPH_HEIGHT = 300;
+export const GRAPH_HEIGHT_SMALL = 200;
 
 /**
  * Props for ResponsiveChart
@@ -27,6 +28,8 @@ export interface ResponsiveChartProps {
     footer?: ReactElement;
     // minWidth prevents from having too small bars on small screens. The chart becomes then scrollable.
     minWidth: number;
+    // If specified, a lower height is set
+    small?: boolean;
 }
 
 /**
@@ -38,7 +41,8 @@ const ResponsiveChart: FunctionComponent<ResponsiveChartProps> = (props) => {
     return (
         <Box className={classes.box} style={{minWidth: props.minWidth + theme.spacing(1) * 2}}>
             {props.header}
-            <ResponsiveContainer height={GRAPH_HEIGHT} width={"99%"} minWidth={props.minWidth}
+            <ResponsiveContainer height={props.small ? GRAPH_HEIGHT_SMALL : GRAPH_HEIGHT} width={"99%"}
+                                 minWidth={props.minWidth}
                                  className={classes.content}>
                 {props.children}
             </ResponsiveContainer>

@@ -5,7 +5,7 @@ import React, {useEffect, useState} from "react";
 import {durationOfLevel} from "../../levels";
 import {Tooltip} from "recharts";
 import formatDuration from "../../../formatDuration";
-import ClickableBarChart, {BarChartData} from "../charts/ClickableBarChart";
+import AdvancedResponsiveChart, {ChartData} from "../charts/AdvancedResponsiveChart";
 
 const useStyles = makeStyles(() => ({
     container: {
@@ -20,12 +20,12 @@ export interface LevelsDurationChartProps {
 const DAYS_MULTIPLIER = 1000 * 60 * 60 * 24;
 
 // Convert to data types usable by recharts.js
-const generateGraphData = (levels: Level[]): BarChartData[] => {
+const generateGraphData = (levels: Level[]): ChartData[] => {
     let data = [];
 
     for (const level of levels) {
         data.push({
-            bar: level.level,
+            label: level.level,
             value: durationOfLevel(level) / DAYS_MULTIPLIER,
         });
     }
@@ -37,7 +37,7 @@ const generateGraphData = (levels: Level[]): BarChartData[] => {
  */
 export default function LevelsDurationChart(props: LevelsDurationChartProps) {
     const classes = useStyles();
-    const [data, setData] = useState<BarChartData[]>([]);
+    const [data, setData] = useState<ChartData[]>([]);
 
     // When levels data are available, update the state
     useEffect(() => {
@@ -56,8 +56,10 @@ export default function LevelsDurationChart(props: LevelsDurationChartProps) {
             <CardHeader title="Time on Levels"/>
             <Divider/>
             <CardContent className={classes.container}>
-                <ClickableBarChart
+                <AdvancedResponsiveChart
                     data={data}
+                    type="bar"
+                    autoColoring
                     showAverageLine
                     excludeLastFromAverage
                     averageLineLabel="Average time:"
@@ -70,7 +72,7 @@ export default function LevelsDurationChart(props: LevelsDurationChartProps) {
                             return [formatDuration(value * DAYS_MULTIPLIER), "Time on level"]
                         }}
                         labelFormatter={(value: any) => "Level " + value}/>
-                </ClickableBarChart>
+                </AdvancedResponsiveChart>
             </CardContent>
         </Card>
     )

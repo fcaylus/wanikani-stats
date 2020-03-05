@@ -3,6 +3,7 @@ import {makeStyles, Theme} from "@material-ui/core/styles";
 import {Box, Divider, Drawer, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ListIcon from "@material-ui/icons/List";
+import ShowChartIcon from "@material-ui/icons/ShowChart";
 import HomeIcon from "@material-ui/icons/Home";
 import TranslateIcon from "@material-ui/icons/Translate";
 import {useRouter} from "next/router";
@@ -58,7 +59,16 @@ const routes = [
         url: "/stats/[item_type]/[source]",
         as: "/stats/kanji/jlpt",
         isSame: (url: string) => {
-            return url.startsWith("/stats");
+            return url.startsWith("/stats") && !url.startsWith("/stats/general");
+        }
+    },
+    {
+        name: "General stats",
+        icon: <ShowChartIcon/>,
+        url: "/stats/general",
+        as: "/stats/general",
+        isSame: (url: string) => {
+            return url.startsWith("/stats/general");
         }
     }
 ];
