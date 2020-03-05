@@ -11,9 +11,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (requestParsedResult.error) {
         return res.status(requestParsedResult.errorCode).send(requestParsedResult.errorCode.toString());
     }
-    const apiKey = requestParsedResult.apiKey;
 
-    const status = await getStatus(apiKey);
+    const status = await getStatus(requestParsedResult.apiKey);
     if (!status) {
         return res.status(INTERNAL_SERVER_ERROR).send("ERROR");
     }

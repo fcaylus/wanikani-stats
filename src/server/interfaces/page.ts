@@ -6,3 +6,10 @@ export interface Page {
     nextPageUrl?: string;
     data: any;
 }
+
+/**
+ * Check if data is a page result
+ */
+export const isPage = (data: any) => {
+    return data && data.hasNextPage !== undefined;
+};

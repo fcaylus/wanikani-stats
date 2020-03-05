@@ -1,6 +1,6 @@
 import {API_ERROR, API_START, API_SUCCESS, ApiResultsState} from './types'
 import {AnyAction, combineReducers} from "redux";
-import {labelForApiRequest} from "./util";
+import {labelForApiRequest, mergePaginatedResultWithStore} from "./util";
 
 /**
  * Reducer handling the storage of API calls results into the main store.
@@ -11,28 +11,12 @@ const apiCallsReducer = (state: ApiResultsState = {}, action: AnyAction): ApiRes
      */
     if (action.type === API_SUCCESS) {
         const label = labelForApiRequest(action.payload.request);
-        // If its a multi page request and not the first page
+        // If its a multi page request and not the first page, merge the data
         if (action.payload.isNextPage) {
-            // Append to previous data
-            let newData = state[label].data;
-
-            // Append data to the original state, depending if it's an array or an object
-            if (Array.isArray(newData)) {
-                newData.push(...action.payload.data);
-            } else {
-                // If it's not an array, and all properties from the second object to the first
-                newData = {...newData, ...action.payload.data};
-            }
-
             return {
                 ...state,
-                [label]: {
-                    fetching: false,
-                    error: false,
-                    data: newData,
-                    when: action.payload.when
-                }
-            };
+                [label]: mergePaginatedResultWithStore(state[label], action.payload.data, action.payload.when)
+            }
         }
 
         // Save new data to the store

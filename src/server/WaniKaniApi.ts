@@ -35,11 +35,8 @@ const axiosInstance = axios.create({
  */
 export default (apiKey: string) => {
     const api = {
-        instance: () => {
-            return axiosInstance;
-        },
         /**
-         * Get request
+         * GET request
          * @param endpoint The endpoint to get
          * @param params Params of the GET request
          * @param config Additional params for axios
@@ -97,11 +94,10 @@ export default (apiKey: string) => {
          * @param endpoint The endpoint to get. It has to return a paginate response
          * @param params Params of the request
          * @param pageAfterId If specified, allows to retrieve a specified page. Otherwise, the first page is fetched
-         * @param req Request object of the user's connection to the API. Used to find the current url
-         * @param allPage If true, fetch all pages at once and return a list of Pages
+         * @param req Request object of the user's connection to the API. Used to find the current url.
          * @param config Optional axios config
          */
-        getPaginated: async (endpoint: string, params?: any, pageAfterId?: string, req?: IncomingMessage, allPage?: boolean, config?: AxiosRequestConfig): Promise<ApiResult> => {
+        getPaginated: async (endpoint: string, params?: any, pageAfterId?: string, req?: IncomingMessage, config?: AxiosRequestConfig): Promise<ApiResult> => {
             // Get the data
             const result = await api.get(endpoint, {
                 ...params,
@@ -137,30 +133,11 @@ export default (apiKey: string) => {
                 data: result.data.data
             };
 
-            let apiResult: ApiResult = {
+            return {
                 error: false,
                 errorCode: OK,
                 data: page
             };
-
-            // Retrieve all available pages
-            // In this case, the function will return a list of page
-            if (allPage) {
-                // Call recursively this function and merge element
-                if (hasNextPage) {
-                    const nextApiResult = await api.getPaginated(endpoint, params, nextPageAfterId, req, true, config);
-                    if (nextApiResult) {
-                        apiResult.data = [
-                            page,
-                            ...nextApiResult.data
-                        ]
-                    }
-                } else {
-                    apiResult.data = [page];
-                }
-            }
-
-            return apiResult;
         }
     };
     return api;

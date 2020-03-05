@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import PageContent from "../src/app/components/page/PageContent";
 import {makeStyles, Theme} from "@material-ui/core/styles";
-import {useDispatch} from "react-redux";
+import {useDispatch, useStore} from "react-redux";
 import {hasApiKey} from "../src/app/apiKey";
 import StatusCard from "../src/app/components/progress/StatusCard";
 import {ReduxNextPageContext} from "../src/app/redux/interfaces";
@@ -11,12 +11,19 @@ import AccuracyCard from "../src/app/components/progress/AccuracyCard";
 import {Grid} from "@material-ui/core";
 import LevelsDurationChart from "../src/app/components/progress/LevelsDurationChart";
 import {
-    useAccuracySelector,
-    useItemsCountSelector,
+    isResultFetching,
+    isResultSuccessful,
+    needResultFetching,
     useLevelsSelector,
+    useProgressSelector,
+    useReviewsStatsSelector,
     useStatusSelector
 } from "../src/app/redux/api/selectors";
-import {fetchAccuracy, fetchItemsCount, fetchLevels, fetchStatus} from "../src/app/redux/api/requests";
+import {fetchLevels, fetchProgress, fetchReviewsStats, fetchStatus} from "../src/app/redux/api/requests";
+import {ProgressItemsCount} from "../src/data/interfaces/progress";
+import {getItemsCount} from "../src/app/progress";
+import {Accuracy} from "../src/data/interfaces/accuracy";
+import {getAccuracy} from "../src/app/accuracy";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -52,59 +59,82 @@ export default function IndexPage() {
     const classes = useStyles();
 
     const dispatch = useDispatch();
+    const store = useStore();
     const statusResult = useStatusSelector();
-    const itemsCountResult = useItemsCountSelector();
-    const accuracyResult = useAccuracySelector();
+    const progressRadicalResult = useProgressSelector("radical");
+    const progressKanjiResult = useProgressSelector("kanji");
+    const progressVocabularyResult = useProgressSelector("vocabulary");
+    const reviewsStatsResult = useReviewsStatsSelector();
     const levelsResult = useLevelsSelector();
 
+    const [itemsCount, setItemsCount] = useState<ProgressItemsCount | undefined>(undefined);
+    const [accuracy, setAccuracy] = useState<Accuracy | undefined>(undefined);
+
     useEffect(() => {
-        if (!statusResult || statusResult.error) {
+        if (needResultFetching(statusResult)) {
             dispatch(fetchStatus());
         }
-        if (!itemsCountResult || itemsCountResult.error) {
-            dispatch(fetchItemsCount());
+        if (needResultFetching(progressRadicalResult)) {
+            dispatch(fetchProgress("radical"))
         }
-        if (!accuracyResult || accuracyResult.error) {
-            dispatch(fetchAccuracy());
+        if (needResultFetching(progressKanjiResult)) {
+            dispatch(fetchProgress("kanji"))
         }
-        if (!levelsResult || levelsResult.error) {
+        if (needResultFetching(progressVocabularyResult)) {
+            dispatch(fetchProgress("vocabulary"))
+        }
+        if (needResultFetching(reviewsStatsResult)) {
+            dispatch(fetchReviewsStats());
+        }
+        if (needResultFetching(levelsResult)) {
             dispatch(fetchLevels());
         }
     }, []);
 
+    useEffect(() => {
+        if (isResultSuccessful(progressRadicalResult)
+            && isResultSuccessful(progressKanjiResult)
+            && isResultSuccessful(progressVocabularyResult)) {
+            setItemsCount(getItemsCount(store.getState()));
+        }
+    }, [progressKanjiResult, progressVocabularyResult, progressRadicalResult]);
+
+    useEffect(() => {
+        if (isResultSuccessful(reviewsStatsResult)) {
+            setAccuracy(getAccuracy(store.getState()));
+        }
+    }, [reviewsStatsResult]);
+
     return (
         <PageContent className={classes.root}
                      showProgress={
-                         !statusResult
-                         || statusResult.fetching
-                         || !itemsCountResult
-                         || itemsCountResult.fetching
-                         || !accuracyResult
-                         || accuracyResult.fetching
-                         || !levelsResult
-                         || levelsResult.fetching}>
+                         isResultFetching(statusResult)
+                         || isResultFetching(progressRadicalResult)
+                         || isResultFetching(progressKanjiResult)
+                         || isResultFetching(progressVocabularyResult)
+                         || isResultFetching(reviewsStatsResult)
+                         || isResultFetching(levelsResult)}>
             <ItemsCountGrid
-                itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}/>
+                itemsCount={itemsCount}/>
 
             <Grid container spacing={2} className={classes.grid}>
                 <Grid item xs>
                     <StatusCard
-                        status={statusResult && !statusResult.fetching && !statusResult.error ? statusResult.data : undefined}
-                        itemsCount={itemsCountResult && !itemsCountResult.fetching && !itemsCountResult.error ? itemsCountResult.data : undefined}
-                        levelsProgression={levelsResult && !levelsResult.fetching && !levelsResult.error ? levelsResult.data : undefined}/>
+                        status={isResultSuccessful(statusResult) ? statusResult.data : undefined}
+                        itemsCount={itemsCount}
+                        levelsProgression={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}/>
                 </Grid>
-                {accuracyResult && !accuracyResult.fetching && !accuracyResult.error && (
+                {isResultSuccessful(reviewsStatsResult) && (
                     <Grid item xs>
-                        <AccuracyCard
-                            accuracy={accuracyResult && !accuracyResult.fetching && !accuracyResult.error ? accuracyResult.data : undefined}/>
+                        <AccuracyCard accuracy={accuracy}/>
                     </Grid>
                 )}
             </Grid>
             <Grid container spacing={2} className={classes.grid}>
-                {levelsResult && !levelsResult.fetching && !levelsResult.error && (
+                {isResultSuccessful(levelsResult) && (
                     <Grid item xs>
                         <LevelsDurationChart
-                            levels={levelsResult && !levelsResult.fetching && !levelsResult.error ? levelsResult.data : undefined}/>
+                            levels={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}/>
                     </Grid>
                 )}
             </Grid>

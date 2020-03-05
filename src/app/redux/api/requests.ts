@@ -2,6 +2,7 @@ import {ApiRequest} from "./types";
 import {IncomingMessage, ServerResponse} from "http";
 import {fetchApi} from "./actions";
 import {getApiKey} from "../../apiKey";
+import {hashMapObjectMerger, listMerger} from "./mergers";
 
 const API_BASE_URL = "/api/";
 
@@ -12,7 +13,7 @@ const API_BASE_URL = "/api/";
  */
 
 /*
- * /api/status
+ * /api/user/status
  */
 
 export const statusRequest = (): ApiRequest => {
@@ -23,37 +24,7 @@ export const statusRequest = (): ApiRequest => {
 };
 
 export const fetchStatus = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(statusRequest(), getApiKey(req), false, false, req, res);
-};
-
-/*
- * /api/progress/count
- */
-
-export const itemsCountRequest = (): ApiRequest => {
-    return {
-        endpoint: API_BASE_URL + "progress/count",
-        method: "GET"
-    };
-};
-
-export const fetchItemsCount = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(itemsCountRequest(), getApiKey(req), false, false, req, res);
-};
-
-/*
- * /api/progress/accuracy
- */
-
-export const accuracyRequest = (): ApiRequest => {
-    return {
-        endpoint: API_BASE_URL + "progress/accuracy",
-        method: "GET"
-    };
-};
-
-export const fetchAccuracy = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(accuracyRequest(), getApiKey(req), false, false, req, res);
+    return fetchApi(statusRequest(), getApiKey(req), true, false, undefined, req, res);
 };
 
 /*
@@ -68,12 +39,12 @@ export const levelsRequest = (): ApiRequest => {
 };
 
 export const fetchLevels = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(levelsRequest(), getApiKey(req), false, false, req, res);
+    return fetchApi(levelsRequest(), getApiKey(req), true, true, hashMapObjectMerger, req, res);
 };
 
 /*
  * /api/ready
- * NOTE: noCache is true for this endpoint
+ * NOTE: cache is disabled for this endpoint
  */
 
 export const readyRequest = (): ApiRequest => {
@@ -84,12 +55,12 @@ export const readyRequest = (): ApiRequest => {
 };
 
 export const fetchReady = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(readyRequest(), getApiKey(req), false, true, req, res);
+    return fetchApi(readyRequest(), getApiKey(req), false, false, undefined, req, res);
 };
 
 /*
  * /api/login
- * NOTE: noCache is true for this endpoint
+ * NOTE: cache is disabled for this endpoint
  */
 
 export const loginRequest = (): ApiRequest => {
@@ -100,12 +71,12 @@ export const loginRequest = (): ApiRequest => {
 };
 
 export const fetchLogin = (apiKey: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(loginRequest(), apiKey, false, true, req, res);
+    return fetchApi(loginRequest(), apiKey, false, false, undefined, req, res);
 };
 
 /*
  * /api/logout
- * NOTE: noCache is true for this endpoint
+ * NOTE: cache is disabled for this endpoint
  */
 
 export const logoutRequest = (): ApiRequest => {
@@ -116,7 +87,7 @@ export const logoutRequest = (): ApiRequest => {
 };
 
 export const fetchLogout = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(logoutRequest(), getApiKey(req), false, true, req, res);
+    return fetchApi(logoutRequest(), getApiKey(req), false, false, undefined, req, res);
 };
 
 /*
@@ -131,7 +102,7 @@ export const userRequest = (): ApiRequest => {
 };
 
 export const fetchUser = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(userRequest(), getApiKey(req), false, false, req, res);
+    return fetchApi(userRequest(), getApiKey(req), true, false, undefined, req, res);
 };
 
 /*
@@ -146,7 +117,7 @@ export const itemsRequest = (itemType: string, source: string): ApiRequest => {
 };
 
 export const fetchItems = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(itemsRequest(itemType, source), getApiKey(req), false, false, req, res);
+    return fetchApi(itemsRequest(itemType, source), getApiKey(req), true, false, undefined, req, res);
 };
 
 /*
@@ -161,7 +132,7 @@ export const statsRequest = (itemType: string, source: string): ApiRequest => {
 };
 
 export const fetchStats = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(statsRequest(itemType, source), getApiKey(req), false, false, req, res);
+    return fetchApi(statsRequest(itemType, source), getApiKey(req), true, false, undefined, req, res);
 };
 
 /*
@@ -179,5 +150,20 @@ export const progressRequest = (itemType: string): ApiRequest => {
 };
 
 export const fetchProgress = (itemType: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(progressRequest(itemType), getApiKey(req), false, false, req, res);
+    return fetchApi(progressRequest(itemType), getApiKey(req), true, true, hashMapObjectMerger, req, res);
+};
+
+/*
+ * /api/reviews/stats
+ */
+
+export const reviewsStatsRequest = (): ApiRequest => {
+    return {
+        endpoint: API_BASE_URL + "reviews/stats",
+        method: "GET"
+    };
+};
+
+export const fetchReviewsStats = (req?: IncomingMessage, res?: ServerResponse) => {
+    return fetchApi(reviewsStatsRequest(), getApiKey(req), true, true, listMerger, req, res);
 };

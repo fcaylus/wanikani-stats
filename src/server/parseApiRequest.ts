@@ -28,7 +28,7 @@ export default async (req: NextApiRequest, method: string, skipWKCheck?: boolean
         apiKey = req.headers["authorization"].toString().replace("Bearer ", "").trim();
     }
     // ... and then in params
-    else if (req.query && req.query.apiKey && typeof req.query.apiKey === "string") {
+    else if (req.query.apiKey && typeof req.query.apiKey === "string") {
         apiKey = req.query.apiKey;
     }
     // ... and then in the "Cookie" header
