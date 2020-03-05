@@ -43,6 +43,7 @@ export default React.memo((props: Item & { className?: string }) => {
             component="a"
             href={props.url}
             target="_blank"
+            rel="noopener"
             className={clsx(classes.item, props.className)}
             style={{
                 color: (props.srs && props.srs > 0) ? "#fff" : undefined,

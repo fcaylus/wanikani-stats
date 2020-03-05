@@ -69,7 +69,7 @@ export default function WaitPage() {
                         Don't worry, you will be redirected when the process is finished. <br/>
                         Meanwhile, you can take a coffee
                         or watch this&nbsp;
-                        <Link href="https://www.youtube.com/watch?v=VFMvNpmOisE" target="_blank">
+                        <Link href="https://www.youtube.com/watch?v=VFMvNpmOisE" target="_blank" rel="noopener">
                             amazing video
                         </Link>
                         &nbsp;of a cat riding on a turtle.

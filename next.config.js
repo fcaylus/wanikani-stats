@@ -4,6 +4,7 @@ module.exports = {
     poweredByHeader: true,
     env: {
         appName: "WaniKani Stats Reloaded",
+        description: process.env.npm_package_description,
         author: process.env.npm_package_author_name,
         authorLink: process.env.npm_package_author_url,
         githubLink: process.env.npm_package_homepage,

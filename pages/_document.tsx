@@ -36,6 +36,8 @@ export default class MyDocument extends Document {
 
                 <meta name="robots" content="index,follow"/>
                 <meta name="subject" content="wanikani statistics"/>
+
+                <meta name="description" content={process.env.description}/>
             </Head>
             <body>
             <Main/>

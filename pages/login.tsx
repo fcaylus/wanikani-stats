@@ -102,7 +102,8 @@ function LoginPage() {
                 </Typography>
                 <Typography variant="body2">
                     You don't know what it is ? Click&nbsp;
-                    <Link target="_blank" href="https://www.wanikani.com/settings/personal_access_tokens">
+                    <Link target="_blank" rel="noopener"
+                          href="https://www.wanikani.com/settings/personal_access_tokens">
                         here
                     </Link>
                     .
