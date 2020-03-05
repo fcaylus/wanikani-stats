@@ -39,7 +39,7 @@ const sanitizeStorage = (): Promise<void> => {
             if (isOlderOrInvalid) {
                 // Current version is invalid, remove everything
                 console.warn("Invalid data in storage. Clear everything !");
-                localforage.clear().finally(() => {
+                purgeStorage().finally(() => {
                     // Create the correct version value
                     localforage.setItem(STORAGE_VERSION_KEY, currentVersion).finally(() => resolve());
                 });
@@ -87,4 +87,15 @@ export const saveApiResultToStorage = (request: ApiRequest, result: ApiResult): 
     }
 
     return localforage.setItem<ApiResult | null>(labelForApiRequest(request), result);
+};
+
+/**
+ * Clear everything in storage.
+ * On server-side, do nothing and return a success
+ */
+export const purgeStorage = (): Promise<void> => {
+    if (!process.browser) {
+        return Promise.resolve();
+    }
+    return localforage.clear();
 };

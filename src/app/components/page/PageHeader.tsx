@@ -4,12 +4,13 @@ import MenuIcon from '@material-ui/icons/Menu';
 import LaunchIcon from '@material-ui/icons/Launch';
 import {useDispatch} from "react-redux";
 import {removeApiKey} from "../../apiKey";
-import {AppBar, Button, IconButton, Menu, MenuItem, Toolbar, Typography} from "@material-ui/core";
+import {AppBar, Button, Divider, IconButton, Menu, MenuItem, Toolbar, Typography} from "@material-ui/core";
 import colors from "../../colors";
 import redirect from "../../../redirect";
 import {User} from "../../../data/interfaces/user";
 import {useUserSelector} from "../../redux/api/selectors";
 import {fetchLogout, fetchUser} from "../../redux/api/requests";
+import {purgeStorage} from "../../redux/api/storage";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -69,6 +70,10 @@ export default function PageHeader(props: PageHeaderProps) {
         redirect("/login");
     };
 
+    const purge = () => {
+        purgeStorage().then(() => redirect("/"));
+    };
+
     useEffect(() => {
         // Only retrieve user when we are not on a "minimal" page
         if (!props.minimal) {
@@ -118,6 +123,8 @@ export default function PageHeader(props: PageHeaderProps) {
                                     <LaunchIcon className={classes.icon} fontSize="small"/>
                                 </MenuItem>
                                 <MenuItem onClick={logout}>Logout</MenuItem>
+                                <Divider/>
+                                <MenuItem onClick={purge}>Purge local cache</MenuItem>
                             </Menu>
                         </React.Fragment>
                     )}
