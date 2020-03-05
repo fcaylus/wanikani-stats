@@ -1,5 +1,9 @@
 import {IncomingMessage} from "http"
 
+/**
+ * Compute the current absolute url. On server-side, use the Next request object to guess it.
+ * Taken and modified from: https://github.com/jekrb/next-absolute-url
+ */
 const absoluteUrl = (req?: IncomingMessage, localhostAddress?: string) => {
     if (!localhostAddress) {
         localhostAddress = "localhost:" + process.env.defaultPort;

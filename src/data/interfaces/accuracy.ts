@@ -1,3 +1,6 @@
+/**
+ * Accuracy interface containing counts of correct/incorrect answers.
+ */
 export interface Accuracy {
     // "radical", "kanji" or "vocabulary"
     [itemType: string]: {

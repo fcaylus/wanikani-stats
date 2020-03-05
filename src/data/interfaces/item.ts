@@ -1,5 +1,5 @@
 /**
- * Define a basic item (for radicals, kanjis, vocabulary) interface
+ * Basic item (for radicals, kanjis, vocabulary) interface
  */
 export interface Item {
     // Name of the item (used as a unique identifier)

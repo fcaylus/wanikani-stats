@@ -6,7 +6,7 @@ import {makeStyles, Theme} from "@material-ui/core/styles";
 import {Box, CircularProgress, Link, Paper, Typography} from "@material-ui/core";
 import {useRouter} from "next/router";
 import {fetchReady} from "../src/app/redux/api/requests";
-import {useReadySelector} from "../src/app/redux/api/selectors";
+import {isResultSuccessful, useReadySelector} from "../src/app/redux/api/selectors";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -43,7 +43,7 @@ export default function WaitPage() {
     }, []);
 
     useEffect(() => {
-        if (readyResult && !readyResult.error && !readyResult.fetching && readyResult.data) {
+        if (isResultSuccessful(readyResult)) {
             if (readyResult.data.status == "ready") {
                 redirect(router.query.redirect ? decodeURI(router.query.redirect.toString()) : DEFAULT_REDIRECT_URL);
             } else {

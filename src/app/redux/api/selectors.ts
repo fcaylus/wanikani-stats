@@ -43,6 +43,13 @@ export const isResultSuccessful = (result?: ApiResult) => {
 };
 
 /**
+ * Checks if the specified result is an error
+ */
+export const isResultError = (result?: ApiResult) => {
+    return result && result.error && !result.fetching;
+};
+
+/**
  * Checks if a result is fetching
  */
 export const isResultFetching = (result?: ApiResult) => {

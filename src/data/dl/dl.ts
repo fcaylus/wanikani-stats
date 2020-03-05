@@ -10,14 +10,23 @@ const DOWNLOAD_INDICATOR_FILE = TEMP_WK_DIRECTORY + "/downloading";
 
 export const ALLOWED_DOWNLOAD_TYPES = ["radical", "kanji", "vocabulary", "subjects_id_name"];
 
+/**
+ * Generate JSON file name for the specified type
+ */
 export const fileNameForType = (type: string): string => {
     return TEMP_WK_DIRECTORY + "/" + type + "_list.json";
 };
 
+/**
+ * True if the specified WK subject is already downloaded
+ */
 export const isDownloaded = (type: string): boolean => {
     return fs.existsSync(fileNameForType(type));
 };
 
+/**
+ * True if WaniKani subjects are downloading
+ */
 export const isDownloading = () => {
     return fs.existsSync(DOWNLOAD_INDICATOR_FILE);
 };
@@ -107,6 +116,9 @@ export const downloadAllSubjectsIfNecessary = async (apiKey: string) => {
     }
 };
 
+/**
+ * Check if WaniKani subjects need to be downloaded
+ */
 export const needToDownloadWKSubjects = () => {
     for (const type of ALLOWED_DOWNLOAD_TYPES) {
         if (!isDownloaded(type)) {

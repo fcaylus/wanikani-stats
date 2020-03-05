@@ -3,7 +3,7 @@ import WaniKaniApi from "./WaniKaniApi";
 import subjectNameForId from "../data/sources/wanikani/subjectNameForId";
 import {IncomingMessage} from "http";
 import {Page} from "./interfaces/page";
-import {itemTypes} from "../data/data";
+import {itemTypeExists} from "../data/data";
 import {QueryParameter} from "./interfaces/query";
 
 /**
@@ -19,7 +19,7 @@ export const getProgress = async (token: string,
                                   pageAfterId?: QueryParameter,
                                   updatedAfter?: QueryParameter,
                                   req?: IncomingMessage): Promise<ProgressHashMapPage | null> => {
-    const typeParam = type && itemTypes().includes(type.toString().toLowerCase()) ? type.toString().toLowerCase() : undefined;
+    const typeParam = type && itemTypeExists(type.toString().toLowerCase()) ? type.toString().toLowerCase() : undefined;
     const pageAfterIdParam = pageAfterId ? pageAfterId.toString() : undefined;
     const updatedAfterParam = updatedAfter ? updatedAfter.toString() : undefined;
 

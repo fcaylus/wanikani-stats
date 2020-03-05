@@ -13,7 +13,15 @@ import {hasApiKey} from "../../../src/app/apiKey";
 import SourceSelector from "../../../src/app/components/SourceSelector";
 import TypeSelector from "../../../src/app/components/TypeSelector";
 import CategoryList from "../../../src/app/components/items/CategoryList";
-import {itemsSelector, useItemsSelector, useProgressSelector} from "../../../src/app/redux/api/selectors";
+import {
+    isResultError,
+    isResultFetching,
+    isResultSuccessful,
+    itemsSelector,
+    needResultFetching,
+    useItemsSelector,
+    useProgressSelector
+} from "../../../src/app/redux/api/selectors";
 import {fetchItems, fetchProgress} from "../../../src/app/redux/api/requests";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -86,7 +94,7 @@ function ItemPage(props: ItemPageProps) {
 
     // On query change, trigger a API fetch if needed
     useEffect(() => {
-        if (!apiResult || apiResult.error) {
+        if (needResultFetching(apiResult)) {
             dispatch(fetchItems(itemType, itemSource));
         }
     }, [itemType, itemSource]);
@@ -94,7 +102,7 @@ function ItemPage(props: ItemPageProps) {
     // On item type change, fetch the new user progress
     useEffect(() => {
         // Retrieve the user progress through the API, only if necessary
-        if (!progressResult || progressResult.error) {
+        if (needResultFetching(progressResult)) {
             dispatch(fetchProgress(itemType));
         }
     }, [itemType]);
@@ -109,7 +117,7 @@ function ItemPage(props: ItemPageProps) {
 
     // On new data available, start to show the items
     useEffect(() => {
-        if (apiResult && !apiResult.error && !apiResult.fetching && !showItems) {
+        if (isResultSuccessful(apiResult) && !showItems) {
             setShowItems(true);
         }
     }, [apiResult]);
@@ -157,7 +165,7 @@ function ItemPage(props: ItemPageProps) {
         changeUrl(itemType, "wanikani", true);
     }
 
-    if (apiResult && apiResult.error) {
+    if (isResultError(apiResult)) {
         return <Error statusCode={apiResult ? apiResult.data : INTERNAL_SERVER_ERROR}/>;
     }
 
@@ -166,13 +174,13 @@ function ItemPage(props: ItemPageProps) {
             <TypeSelector onTypeChange={handleTypeChangeCallback} value={itemType}/>
             <SourceSelector itemType={itemType} onSourceChange={handleSourceChangeCallBack} value={itemSource}/>
 
-            {apiResult && apiResult.fetching && (
+            {isResultFetching(apiResult) && (
                 <CircularProgress className={classes.fetching} disableShrink/>
             )}
 
             <CategoryList
-                categories={showItems && apiResult && !apiResult.error && !apiResult.fetching ? apiResult.data : undefined}
-                progress={progressResult && !progressResult.error && !progressResult.fetching ? progressResult.data : undefined}
+                categories={showItems && isResultSuccessful(apiResult) ? apiResult.data : undefined}
+                progress={isResultSuccessful(progressResult) ? progressResult.data : undefined}
                 initialDataLength={props.initialDataLength}/>
         </PageContent>
     );
@@ -204,7 +212,7 @@ ItemPage.getInitialProps = async (ctx: ReduxNextPageContext): Promise<ItemPagePr
         await ctx.store.dispatch(fetchItems(item_type.toString(), source.toString(), ctx.req, ctx.res));
         const res = itemsSelector(ctx.store.getState(), item_type.toString(), source.toString());
         return {
-            initialDataLength: res && !res.error && !res.fetching ? res.data.length : 0
+            initialDataLength: isResultSuccessful(res) ? res.data.length : 0
         }
     } else {
         ctx.store.dispatch(fetchItems(item_type.toString(), source.toString()));

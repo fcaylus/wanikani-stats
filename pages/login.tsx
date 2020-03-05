@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import PageContent from "../src/app/components/page/PageContent";
 import {Button, Link, Paper, TextField, Theme, Typography} from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
@@ -7,7 +7,7 @@ import {useDispatch} from "react-redux";
 import {useRouter} from "next/router";
 import {saveApiKey} from "../src/app/apiKey";
 import redirect, {DEFAULT_REDIRECT_URL} from "../src/redirect";
-import {useLoginSelector} from "../src/app/redux/api/selectors";
+import {isResultError, isResultSuccessful, useLoginSelector} from "../src/app/redux/api/selectors";
 import {fetchLogin} from "../src/app/redux/api/requests";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -57,15 +57,18 @@ function LoginPage() {
 
     const loginResult = useLoginSelector();
 
-    if (loginResult && !loginResult.fetching && !loginResult.error) {
-        // Successfully logged in
-        saveApiKey(token);
-        redirect(router.query.redirect ? decodeURI(router.query.redirect.toString()) : DEFAULT_REDIRECT_URL)
-    }
+    useEffect(() => {
+        if (isResultSuccessful(loginResult)) {
+            // Successfully logged in
+            saveApiKey(token);
+            redirect(router.query.redirect ? decodeURI(router.query.redirect.toString()) : DEFAULT_REDIRECT_URL);
+        }
 
-    if (loginResult && !loginResult.fetching && loginResult.error) {
-        setInputError(true);
-    }
+        if (isResultError(loginResult)) {
+            setInputError(true);
+
+        }
+    }, [loginResult]);
 
     const handleClick = () => {
         if (token) {

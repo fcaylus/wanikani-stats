@@ -14,7 +14,14 @@ import redirect from "../../../src/redirect";
 import {User} from "../../../src/data/interfaces/user";
 import SourceSelector from "../../../src/app/components/SourceSelector";
 import CategoryList from "../../../src/app/components/items/CategoryList";
-import {useStatsSelector, useUserSelector} from "../../../src/app/redux/api/selectors";
+import {
+    isResultError,
+    isResultFetching,
+    isResultSuccessful,
+    needResultFetching,
+    useStatsSelector,
+    useUserSelector
+} from "../../../src/app/redux/api/selectors";
 import {fetchStats} from "../../../src/app/redux/api/requests";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -61,7 +68,7 @@ function StatsPage() {
     const userResult = useUserSelector();
 
     useEffect(() => {
-        if (!apiResult || apiResult.error) {
+        if (needResultFetching(apiResult)) {
             dispatch(fetchStats(item_type.toString(), source.toString()));
         }
     }, [item_type, source]);
@@ -90,7 +97,7 @@ function StatsPage() {
         changeUrl("jlpt");
     }
 
-    if (apiResult && apiResult.error) {
+    if (isResultError(apiResult)) {
         return <Error statusCode={apiResult ? apiResult.data : INTERNAL_SERVER_ERROR}/>;
     }
 
@@ -113,11 +120,11 @@ function StatsPage() {
     };
 
     return (
-        <PageContent pageTitle="Stats" className={classes.root} showProgress={!apiResult || apiResult.fetching}>
+        <PageContent pageTitle="Stats" className={classes.root} showProgress={isResultFetching(apiResult)}>
             <SourceSelector itemType={item_type.toString()} onSourceChange={handleSourceChange}
                             value={source.toString()} excludeList={["wanikani"]}/>
 
-            {apiResult && !apiResult.error && !apiResult.fetching && (
+            {isResultSuccessful(apiResult) && (
                 <Paper elevation={5} className={classes.table}>
                     <Table size="small" aria-label="stats table">
                         <TableHead>
@@ -131,7 +138,7 @@ function StatsPage() {
                         </TableHead>
                         <TableBody>
                             {(apiResult.data as Stats).levels.map((level, levelIndex) => {
-                                const isSelected = userResult && !userResult.error && !userResult.fetching && (userResult.data as User).currentLevel == parseInt(level.level);
+                                const isSelected = isResultSuccessful(userResult) && (userResult.data as User).currentLevel == parseInt(level.level);
                                 return (
                                     <TableRow key={level.level}
                                               selected={isSelected}
@@ -151,7 +158,7 @@ function StatsPage() {
                 </Paper>
             )}
 
-            {apiResult && !apiResult.error && !apiResult.fetching && (
+            {isResultSuccessful(apiResult) && (
                 <React.Fragment>
                     <Typography variant="h5" component="h2" className={classes.listHeader}>
                         Items not available in Wanikani

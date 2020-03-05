@@ -20,6 +20,9 @@ export const colorForSRS = (srs?: number): string => {
     }
 };
 
+/**
+ * Return the display name corresponding to the specified srs level.
+ */
 export const nameForSRS = (srs?: number): string => {
     if (!srs || srs <= 0 || srs > 9) {
         return "";
@@ -36,8 +39,9 @@ export const nameForSRS = (srs?: number): string => {
     }
 };
 
-Array;
-
+/**
+ * Return the srs levels merged by groups (ie. Apprentice, Guru, Master, Enlightened, Burned)
+ */
 export const srsGroups = (): number[][] => {
     return [[1, 2, 3, 4], [5, 6], [7], [8], [9]];
 };
