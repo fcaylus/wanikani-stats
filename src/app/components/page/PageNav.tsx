@@ -38,6 +38,7 @@ const routes = [
         name: "Home",
         icon: <HomeIcon/>,
         url: DEFAULT_REDIRECT_URL,
+        as: DEFAULT_REDIRECT_URL,
         isSame: (url: string) => {
             return url == "/" || url == "";
         }
@@ -45,7 +46,8 @@ const routes = [
     {
         name: "Items",
         icon: <TranslateIcon/>,
-        url: "/items/kanji/wanikani",
+        url: "/items/[item_type]/[source]",
+        as: "/items/kanji/wanikani",
         isSame: (url: string) => {
             return url.startsWith("/items");
         }
@@ -53,7 +55,8 @@ const routes = [
     {
         name: "Stats",
         icon: <ShowChartIcon/>,
-        url: "/stats/kanji/jlpt",
+        url: "/stats/[item_type]/[source]",
+        as: "/stats/kanji/jlpt",
         isSame: (url: string) => {
             return url.startsWith("/stats");
         }
@@ -70,9 +73,10 @@ export default function PageNav(props: PageNavProps) {
     // Handle drawer item click
     const navClick = (route: any) => {
         if (!route.isSame(router.pathname)) {
-            router.push(route.url, undefined, {
-                shallow: false
+            router.push(route.url, route.as, {
+                shallow: true
             });
+            props.toggleDrawer();
         }
     };
 
