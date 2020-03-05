@@ -1,10 +1,14 @@
+const nextBuildId = require('next-build-id');
+
 module.exports = {
     poweredByHeader: true,
     env: {
         appName: "WaniKani Stats Reloaded",
-        author: "Fabien Caylus",
-        authorLink: "https://github.com/fcaylus",
-        githubLink: "https://github.com/fcaylus/wanikani-stats",
-        defaultPort: "3170"
+        author: process.env.npm_package_author_name,
+        authorLink: process.env.npm_package_author_url,
+        githubLink: process.env.npm_package_homepage,
+        defaultPort: "3170",
+        commitVersion: nextBuildId.sync({dir: __dirname}),
+        version: process.env.npm_package_version
     }
 };

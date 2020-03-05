@@ -1,5 +1,16 @@
 {
   "name": "wanikani-stats-reloaded",
+  "description": "Statistics website for WaniKani !",
+  "homepage": "https://github.com/fcaylus/wanikani-stats",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fcaylus/wanikani-stats.git"
+  },
+  "author": {
+    "name": "Fabien Caylus",
+    "email": "fabien.caylus@gmail.com",
+    "url": "https://github.com/fcaylus"
+  },
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
@@ -26,6 +37,7 @@
     "localforage": "^1.7.3",
     "moment": "^2.24.0",
     "next": "^9.2.1",
+    "next-build-id": "^3.0.0",
     "next-redux-wrapper": "^5.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
