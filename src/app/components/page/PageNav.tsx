@@ -1,10 +1,10 @@
-import React from 'react';
-import {makeStyles, Theme} from '@material-ui/core/styles';
+import React from "react";
+import {makeStyles, Theme} from "@material-ui/core/styles";
 import {Box, Divider, Drawer, Hidden, IconButton, List, ListItem, ListItemIcon, ListItemText} from "@material-ui/core";
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ShowChartIcon from "@material-ui/icons/ShowChart";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ListIcon from "@material-ui/icons/List";
 import HomeIcon from "@material-ui/icons/Home";
-import TranslateIcon from '@material-ui/icons/Translate';
+import TranslateIcon from "@material-ui/icons/Translate";
 import {useRouter} from "next/router";
 import {DEFAULT_REDIRECT_URL} from "../../../redirect";
 
@@ -35,7 +35,7 @@ interface PageNavProps {
 
 const routes = [
     {
-        name: "Home",
+        name: "Dashboard",
         icon: <HomeIcon/>,
         url: DEFAULT_REDIRECT_URL,
         as: DEFAULT_REDIRECT_URL,
@@ -53,8 +53,8 @@ const routes = [
         }
     },
     {
-        name: "Stats",
-        icon: <ShowChartIcon/>,
+        name: "Items stats",
+        icon: <ListIcon/>,
         url: "/stats/[item_type]/[source]",
         as: "/stats/kanji/jlpt",
         isSame: (url: string) => {
