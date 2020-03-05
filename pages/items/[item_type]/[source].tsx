@@ -67,9 +67,6 @@ function ItemPage(props: ItemPageProps) {
      */
     const progressResult = useProgressSelector(itemType);
 
-    // Controls the main progress bar
-    const [isLoading, setLoading] = useState(true);
-
     // Use to schedule the change of url AFTER the last renders that removes every items from the list
     const [needNewUrl, setNeedNewUrl] = useState<any>(undefined);
 
@@ -106,14 +103,6 @@ function ItemPage(props: ItemPageProps) {
             dispatch(fetchProgress(itemType));
         }
     }, [itemType]);
-
-    // When the user progress is retrieved, toggle off the main progress bar
-    useEffect(() => {
-        // Check if progress is successfully retrieved
-        if (progressResult && progressResult.data && !progressResult.error && isLoading) {
-            setLoading(false);
-        }
-    }, [progressResult]);
 
     // On new data available, start to show the items
     useEffect(() => {
@@ -170,7 +159,8 @@ function ItemPage(props: ItemPageProps) {
     }
 
     return (
-        <PageContent pageTitle="Items" className={classes.root} showProgress={isLoading}>
+        <PageContent pageTitle="Items" className={classes.root}
+                     showProgress={isResultFetching(progressResult) || isResultFetching(apiResult)}>
             <TypeSelector onTypeChange={handleTypeChangeCallback} value={itemType}/>
             <SourceSelector itemType={itemType} onSourceChange={handleSourceChangeCallBack} value={itemSource}/>
 
@@ -180,7 +170,7 @@ function ItemPage(props: ItemPageProps) {
 
             <CategoryList
                 categories={showItems && isResultSuccessful(apiResult) ? apiResult.data : undefined}
-                progress={isResultSuccessful(progressResult) ? progressResult.data : undefined}
+                progress={progressResult && !progressResult.error ? progressResult.data : undefined}
                 initialDataLength={props.initialDataLength}/>
         </PageContent>
     );
