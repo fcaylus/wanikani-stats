@@ -1,9 +1,8 @@
 import WaniKaniApi from "./WaniKaniApi";
 import subjectNameForId from "../data/sources/wanikani/subjectNameForId";
 import {IncomingMessage} from "http";
-import {Page} from "./interfaces/page";
 import {QueryParameter} from "./interfaces/query";
-import {ReviewStat, ReviewStatsPage} from "../data/interfaces/reviews";
+import {ReviewStatsHashMap, ReviewStatsPage} from "../data/interfaces/reviews";
 
 /**
  * Return the review statistics of the user
@@ -28,15 +27,16 @@ export const getReviewsStats = async (token: string,
         return null;
     }
 
-    // Convert WK API result to progress hash map
-    const parseData = (data: any): ReviewStat[] => {
+    // Convert WK API result to reviews hash map
+    const parseData = (data: any): ReviewStatsHashMap => {
         // See https://docs.api.wanikani.com/#review-statistic-data-structure for data structure
-        let reviews: ReviewStat[] = [];
+        let reviews: ReviewStatsHashMap = {};
 
         for (const review of data) {
-            reviews.push({
+            const name = subjectNameForId(review.data.subject_id);
+            reviews[name] = {
                 type: review.data.subject_type,
-                name: subjectNameForId(review.data.subject_id),
+                name: name,
                 correct: {
                     reading: review.data.reading_correct ? review.data.reading_correct : 0,
                     meaning: review.data.meaning_correct ? review.data.meaning_correct : 0
@@ -45,12 +45,12 @@ export const getReviewsStats = async (token: string,
                     reading: review.data.reading_incorrect ? review.data.reading_incorrect : 0,
                     meaning: review.data.meaning_incorrect ? review.data.meaning_incorrect : 0
                 }
-            })
+            };
         }
         return reviews;
     };
 
-    let page: Page = wkResult.data;
+    let page: ReviewStatsPage = wkResult.data;
     page.data = parseData(page.data);
 
     return page;

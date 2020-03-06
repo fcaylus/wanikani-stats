@@ -18,9 +18,13 @@ export interface ReviewStat {
     }
 }
 
+export interface ReviewStatsHashMap {
+    [name: string]: ReviewStat;
+}
+
 /**
  * Page returned by /api/review/stats endpoint
  */
 export interface ReviewStatsPage extends Page {
-    data: ReviewStat[]
+    data: ReviewStatsHashMap
 }

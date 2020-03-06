@@ -1,7 +1,7 @@
 import {Accuracy} from "../data/interfaces/accuracy";
 import {itemTypes} from "../data/data";
 import {isResultSuccessful, reviewsStatsSelector} from "./redux/api/selectors";
-import {ReviewStat} from "../data/interfaces/reviews";
+import {ReviewStatsHashMap} from "../data/interfaces/reviews";
 import {RootState} from "./redux/reducer";
 
 /**
@@ -30,7 +30,7 @@ export const getAccuracy = (state: RootState): Accuracy => {
 
     const reviewsStats = reviewsStatsSelector(state);
     if (isResultSuccessful(reviewsStats)) {
-        for (const stat of (reviewsStats.data as ReviewStat[])) {
+        for (const stat of (Object.values(reviewsStats.data as ReviewStatsHashMap))) {
             accuracy[stat.type].correct.meaning += stat.correct.meaning;
             accuracy[stat.type].correct.reading += stat.correct.reading;
             accuracy[stat.type].incorrect.meaning += stat.incorrect.meaning;

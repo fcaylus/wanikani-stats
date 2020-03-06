@@ -2,7 +2,7 @@ import {ApiRequest} from "./types";
 import {IncomingMessage, ServerResponse} from "http";
 import {fetchApi} from "./actions";
 import {getApiKey} from "../../apiKey";
-import {hashMapObjectMerger, listMerger, listReplaceMerger, objectReplaceMerger} from "./mergers";
+import {hashMapObjectMerger, listReplaceMerger, objectReplaceMerger} from "./mergers";
 
 const API_BASE_URL = "/api/";
 
@@ -165,5 +165,5 @@ export const reviewsStatsRequest = (): ApiRequest => {
 };
 
 export const fetchReviewsStats = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(reviewsStatsRequest(), getApiKey(req), true, true, listMerger, req, res);
+    return fetchApi(reviewsStatsRequest(), getApiKey(req), true, true, hashMapObjectMerger, req, res);
 };
