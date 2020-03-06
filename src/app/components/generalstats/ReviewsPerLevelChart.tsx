@@ -5,6 +5,7 @@ import {Tooltip} from "recharts";
 import AdvancedResponsiveChart, {ChartData} from "../charts/AdvancedResponsiveChart";
 import {ItemCategory} from "../../../data/interfaces/item";
 import colors from "../../colors";
+import {fastestTimeToLevel, NORMAL_LEVEL_DURATION, SRS_STAGES_DURATIONS} from "../../../data/common";
 
 const useStyles = makeStyles(() => ({
     container: {
@@ -17,9 +18,6 @@ interface TimePoint {
     count: number;
 }
 
-const levelDuration = 7 * 24;
-const srsStagesDurations = [4, 8, 23, 47, 167, 335, 719, 2879];
-
 /**
  * Generate "time points" of when reviews are needed to change the srs level as soon as possible
  */
@@ -28,7 +26,7 @@ const generateTimePoints = (categories: ItemCategory[]) => {
     for (const category of categories) {
         if (parseInt(category.category) <= 60) {
             // Add initial time point (for the initial lesson)
-            const initialTime = (parseInt(category.category) - 1) * levelDuration;
+            const initialTime = fastestTimeToLevel(parseInt(category.category));
             timePoints.push({
                 time: initialTime,
                 count: category.items.length
@@ -36,7 +34,7 @@ const generateTimePoints = (categories: ItemCategory[]) => {
 
             // Add all the others SRS durations for all the reviews
             let time = initialTime;
-            for (const duration of srsStagesDurations) {
+            for (const duration of SRS_STAGES_DURATIONS) {
                 time += duration;
                 timePoints.push({
                     time: time,
@@ -60,7 +58,7 @@ const mergeTimePointsIntoLevels = (timePoints: TimePoint[]): number[] => {
     let index = 0;
     for (const timePoint of sorted) {
         // If levelDuration has spend, change the current index
-        if (timePoint.time >= levelDuration * (index + 1)) {
+        if (timePoint.time >= NORMAL_LEVEL_DURATION * (index + 1)) {
             index += 1;
             reviewsCount.push(0);
         }

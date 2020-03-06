@@ -10,7 +10,7 @@ export const durationOfLevel = (level: Level): number => {
         return 0;
     }
 
-    return moment(level.passDate ? level.passDate : moment()).diff(level.unlockDate);
+    return moment(level.passDate ? level.passDate : moment()).diff(level.startDate);
 };
 
 /**

@@ -24,6 +24,7 @@ import {ProgressItemsCount} from "../src/data/interfaces/progress";
 import {getItemsCount} from "../src/app/progress";
 import {Accuracy} from "../src/data/interfaces/accuracy";
 import {getAccuracy} from "../src/app/accuracy";
+import ProjectionCard from "../src/app/components/progress/ProjectionCard";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -128,6 +129,13 @@ export default function IndexPage() {
                         <AccuracyCard accuracy={accuracy}/>
                     </Grid>
                 )}
+            </Grid>
+            <Grid container spacing={2} className={classes.grid}>
+                <Grid item xs>
+                    <ProjectionCard
+                        status={isResultSuccessful(statusResult) ? statusResult.data : undefined}
+                        levels={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}/>
+                </Grid>
             </Grid>
             <Grid container spacing={2} className={classes.grid}>
                 <Grid item xs>
