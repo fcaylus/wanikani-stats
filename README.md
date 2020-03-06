@@ -8,14 +8,14 @@ A React/Next.js/Typescript based statistics web app for the amazing [WaniKani](h
 
 Hosted here if you want to try: [wkstats.tranqyll.fr](https://wkstats.tranqyll.fr).
 
-NOTE: It is still a Work In Progress.
-
 ![App demo](https://github.com/fcaylus/wanikani-stats/raw/master/public/showcase.gif)
 
 ## About
 
-There are actually two main statistics website for WaniKani: [wkstats.com](https://wkstats.com) and [wkstats.com:10001](https://wkstats.com:10001).
-I wanted to create a new app with more modern technology, [WaniKani API V2](https://docs.api.wanikani.com/) and share its source code so everyone can contribute.
+There are actually two main statistics website for WaniKani: [wkstats.com](https://wkstats.com)and [wkstats.com:10001](https://wkstats.com:10001).
+I wanted to create a new app with more modern technology, [WaniKani API V2](https://docs.api.wanikani.com/) support, and share its source code so everyone can contribute.
+
+That how this project was born !
 
 It uses the following technologies:
 
@@ -55,7 +55,16 @@ I'll be more than happy !
 
 ## Roadmap
 
-See the issues page !
+- Fix every single bug !
+- Implement "resets" support (I never made a reset, I have no idea how the app handle this)
+- Improve the level-up projections with more accurate computation
+- Fix UI glitches
+- Add a heatmap of the user's activity
+- Add a timeline (like the Ultimate Timeline script)
+- Add more stats to the "General stats" section
+- Add more stats everywhere actually !
+- PWA support
+- Improve speed
 
 ## Icon
 Favicon generated using [favicon.io](https://favicon.io).
