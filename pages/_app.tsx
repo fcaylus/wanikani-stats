@@ -8,6 +8,7 @@ import {Provider} from "react-redux";
 import configureStore from "../src/app/redux/configureStore";
 import withRedux from "next-redux-wrapper";
 import {AppWithStore} from "../src/app/redux/interfaces";
+import {SnackbarProvider} from "notistack";
 
 /**
  * Main App component
@@ -29,7 +30,9 @@ class WebApp extends App<AppWithStore> {
             <Provider store={store}>
                 <ThemeProvider theme={theme}>
                     <CssBaseline/>
-                    <Page {...this.props} />
+                    <SnackbarProvider maxSnack={3}>
+                        <Page {...this.props} />
+                    </SnackbarProvider>
                 </ThemeProvider>
             </Provider>
         );

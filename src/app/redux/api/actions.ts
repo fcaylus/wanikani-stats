@@ -9,8 +9,9 @@ import {IncomingMessage, ServerResponse} from "http";
 import {isPage, Page} from "../../../server/interfaces/page";
 import {apiResultSelector} from "./selectors";
 import {getApiResultFromStorage, removeApiResultFromStorage, saveApiResultToStorage} from "./storage";
-import {mergePaginatedResultWithStore} from "./util";
+import {labelForApiRequest, mergePaginatedResultWithStore} from "./util";
 import {Merger} from "./mergers";
+import {hideSnackbar, showSnackbar} from "../snackbar/actions";
 
 /**
  * Action sent when an API fetch starts
@@ -68,6 +69,7 @@ export const apiSuccess = (request: ApiRequest, result: ApiResult, isNextPage: b
  * no merge is done and the storage is read (no "updated_after" request is send) which is not recommended.
  * @param req Optional request object. Used to redirect on the server side in case the WK data are not ready
  * @param res Optional response object. Used to redirect on the server side in case the WK data are not ready
+ * @param snackbar If true, a snackbar will be shown until the data is fetched
  */
 export const fetchApi = (apiRequest: ApiRequest,
                          apiKey: string | undefined,
@@ -75,8 +77,9 @@ export const fetchApi = (apiRequest: ApiRequest,
                          cacheInStorage: boolean,
                          mergeFunction?: Merger,
                          req?: IncomingMessage,
-                         res?: ServerResponse) => {
-    return fetchApiImpl(apiRequest, apiKey, false, cacheInStore, cacheInStorage, undefined, mergeFunction, req, res);
+                         res?: ServerResponse,
+                         snackbar?: boolean) => {
+    return fetchApiImpl(apiRequest, apiKey, false, 1, 1, cacheInStore, cacheInStorage, undefined, mergeFunction, req, res, snackbar);
 };
 
 /**
@@ -89,12 +92,15 @@ export const fetchApi = (apiRequest: ApiRequest,
 const fetchApiImpl = (apiRequest: ApiRequest,
                       apiKey: string | undefined,
                       isNextPage: boolean,
+                      pageNumber: number,
+                      pageCount: number,
                       cacheInStore: boolean,
                       cacheInStorage: boolean,
                       updatedAfter?: Date,
                       mergeFunction?: Merger,
                       req?: IncomingMessage,
-                      res?: ServerResponse) => {
+                      res?: ServerResponse,
+                      snackbar?: boolean) => {
     return (dispatch: ThunkDispatch<any, any, AnyAction>, getState: () => RootState) => {
         // Check if the request is cached in the store
         if (!isNextPage && cacheInStore) {
@@ -116,7 +122,8 @@ const fetchApiImpl = (apiRequest: ApiRequest,
                         // Otherwise, this means this endpoints doesn't support merging, so the data can be retrieved directly.
                         if (storedValue.when) {
                             if (mergeFunction) {
-                                fetchData(dispatch, getState, apiRequest, apiKey, false, cacheInStore, cacheInStorage, storedValue.when, mergeFunction, req, res)
+                                fetchData(dispatch, getState, apiRequest, apiKey, false, 1, 1,
+                                    cacheInStore, cacheInStorage, storedValue.when, mergeFunction, req, res, snackbar)
                                     .then(() => resolve()).catch(() => reject());
                             } else {
                                 dispatch(apiSuccess(apiRequest, storedValue, false));
@@ -131,20 +138,22 @@ const fetchApiImpl = (apiRequest: ApiRequest,
                     }
 
                     // Here, either the value is not stored, either it was malformed. So we need to fetch the complete data
-                    fetchData(dispatch, getState, apiRequest, apiKey, isNextPage, cacheInStore, cacheInStorage, undefined, undefined, req, res)
+                    fetchData(dispatch, getState, apiRequest, apiKey, false, 1, 1,
+                        cacheInStore, cacheInStorage, undefined, undefined, req, res, snackbar)
                         .then(() => resolve()).catch(() => reject());
                 }).catch((error) => {
                     // On localforage error, simply try to download the data
                     console.error("Could not access to localforage to retrieve a previous request");
                     console.error(error);
-                    fetchData(dispatch, getState, apiRequest, apiKey, isNextPage, cacheInStore, cacheInStorage, undefined, undefined, req, res)
+                    fetchData(dispatch, getState, apiRequest, apiKey, false, 1, 1,
+                        cacheInStore, cacheInStorage, undefined, undefined, req, res, snackbar)
                         .then(() => resolve()).catch(() => reject());
                 })
             })
         }
 
         // Request was neither in store, neither in the storage, or cache was disable or this is the next page of a paginated result.
-        return fetchData(dispatch, getState, apiRequest, apiKey, isNextPage, cacheInStore, cacheInStorage, updatedAfter, mergeFunction, req, res);
+        return fetchData(dispatch, getState, apiRequest, apiKey, isNextPage, pageNumber, pageCount, cacheInStore, cacheInStorage, updatedAfter, mergeFunction, req, res, snackbar);
     }
 };
 
@@ -158,13 +167,31 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
                    apiRequest: ApiRequest,
                    accessToken: string | undefined,
                    isNextPage: boolean,
+                   pageNumber: number,
+                   pageCount: number,
                    cacheInStore: boolean,
                    cacheInStorage: boolean,
                    updatedAfter?: Date,
                    mergeFunction?: Merger,
                    req?: IncomingMessage,
-                   res?: ServerResponse) => {
+                   res?: ServerResponse,
+                   snackbar?: boolean) => {
     dispatch(apiStart(apiRequest, isNextPage));
+
+    const createSnackbarKey = () => {
+        return JSON.stringify(apiRequest);
+    };
+
+    // Show the snackbar only if it's not an update
+    if (snackbar && !updatedAfter) {
+        const label = "Fetching "
+            + JSON.parse(labelForApiRequest(apiRequest)).endpoint
+            + (apiRequest.data ? "/" + Object.values(apiRequest.data).join("/") : "")
+            + (isNextPage ? ` (${pageNumber}/${pageCount})` : "")
+            + " ...";
+        dispatch(showSnackbar(createSnackbarKey(), label));
+    }
+
     return new Promise((resolve, reject) => {
         // The name of axios field changes depending on the request's method
         const dataOrParams = ["GET", "DELETE"].includes(apiRequest.method.toUpperCase()) ? "params" : "data";
@@ -194,6 +221,10 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
             },
             [dataOrParams]: axiosData
         }).then(async (response) => {
+            if (snackbar && !updatedAfter) {
+                dispatch(hideSnackbar(createSnackbarKey()));
+            }
+
             // If the response code is ACCEPTED, this means the server is downloading WK subjects. Redirect the user to
             // the waiting page
             if (response.status === ACCEPTED) {
@@ -236,7 +267,8 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
                         // but it is used to generate the exact same label for the next page (and merge the results)
                         data: apiRequest.data
                     };
-                    dispatch(fetchApiImpl(newRequest, accessToken, true, cacheInStore, cacheInStorage, updatedAfter, mergeFunction));
+                    dispatch(fetchApiImpl(newRequest, accessToken, true, pageNumber + 1, paginatedResult.numberOfPages,
+                        cacheInStore, cacheInStorage, updatedAfter, mergeFunction, undefined, undefined, snackbar));
                 } else {
                     // Results of paginated responses are only stored to localforage only when there is no new page
                     // Before saving the result to the storage, merge them with the current store since it's a paginated result
@@ -261,6 +293,10 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
 
             resolve();
         }).catch(error => {
+            if (snackbar && !updatedAfter) {
+                dispatch(hideSnackbar(createSnackbarKey()));
+            }
+
             const errorCode = error.response && error.response.status ? error.response.status : INTERNAL_SERVER_ERROR;
 
             // If the authentication failed, redirect the user

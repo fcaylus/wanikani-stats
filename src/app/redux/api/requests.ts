@@ -24,7 +24,7 @@ export const levelsRequest = (): ApiRequest => {
 };
 
 export const fetchLevels = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(levelsRequest(), getApiKey(req), true, true, hashMapObjectMerger, req, res);
+    return fetchApi(levelsRequest(), getApiKey(req), true, true, hashMapObjectMerger, req, res, true);
 };
 
 /*
@@ -102,7 +102,7 @@ export const itemsRequest = (itemType: string, source: string): ApiRequest => {
 };
 
 export const fetchItems = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(itemsRequest(itemType, source), getApiKey(req), true, true, listReplaceMerger, req, res);
+    return fetchApi(itemsRequest(itemType, source), getApiKey(req), true, true, listReplaceMerger, req, res, true);
 };
 
 /*
@@ -117,7 +117,7 @@ export const statsRequest = (itemType: string, source: string): ApiRequest => {
 };
 
 export const fetchStats = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(statsRequest(itemType, source), getApiKey(req), true, true, objectReplaceMerger, req, res);
+    return fetchApi(statsRequest(itemType, source), getApiKey(req), true, true, objectReplaceMerger, req, res, true);
 };
 
 /*
@@ -135,7 +135,7 @@ export const progressRequest = (itemType: string): ApiRequest => {
 };
 
 export const fetchProgress = (itemType: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(progressRequest(itemType), getApiKey(req), true, true, hashMapObjectMerger, req, res);
+    return fetchApi(progressRequest(itemType), getApiKey(req), true, true, hashMapObjectMerger, req, res, true);
 };
 
 /*
@@ -150,5 +150,5 @@ export const reviewsStatsRequest = (): ApiRequest => {
 };
 
 export const fetchReviewsStats = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(reviewsStatsRequest(), getApiKey(req), true, true, hashMapObjectMerger, req, res);
+    return fetchApi(reviewsStatsRequest(), getApiKey(req), true, true, hashMapObjectMerger, req, res, true);
 };
