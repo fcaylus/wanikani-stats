@@ -1,5 +1,5 @@
-import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import React from "react";
+import {makeStyles} from "@material-ui/core/styles";
 import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@material-ui/core";
 import sourceTypesJson from "../../data/source_types.json";
 import itemTypesJson from "../../data/item_types.json";

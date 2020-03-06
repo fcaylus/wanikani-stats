@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from "react";
 import PageContent from "../../../src/app/components/page/PageContent";
 import {useRouter} from "next/router";
 import {INTERNAL_SERVER_ERROR, NOT_FOUND} from "http-status-codes";
-import Error from 'next/error'
-import {Theme, Typography} from '@material-ui/core';
+import Error from "next/error";
+import {Theme, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {useDispatch} from "react-redux";
 import {itemTypeExists, sourceExistsForItemType} from "../../../src/data/data";

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Head from "next/head";
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";

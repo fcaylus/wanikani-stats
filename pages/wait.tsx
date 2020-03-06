@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from "react";
 import PageContent from "../src/app/components/page/PageContent";
 import {useDispatch} from "react-redux";
 import redirect, {DEFAULT_REDIRECT_URL} from "../src/redirect";

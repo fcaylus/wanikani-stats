@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {makeStyles, Theme} from '@material-ui/core/styles';
+import React, {useState} from "react";
+import {makeStyles, Theme} from "@material-ui/core/styles";
 import {AppProps} from "next/app";
 import PageHeader from "./PageHeader";
 import PageFooter from "./PageFooter";

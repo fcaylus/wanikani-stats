@@ -30,6 +30,16 @@ export const listMerger: Merger = (previousResult, newResult) => {
 };
 
 /**
+ * Merger that replace the previous list with the new one (only if not empty)
+ */
+export const listReplaceMerger: Merger = (previousResult, newResult) => {
+    if (!isResultSuccessful(previousResult) || !isResultSuccessful(newResult) || newResult.data.length <= 0) {
+        return previousResult;
+    }
+    return newResult;
+};
+
+/**
  * Merger for hash map objects. Append new properties to the stored object.
  */
 export const hashMapObjectMerger: Merger = (previousResult, newResult) => {
@@ -46,4 +56,14 @@ export const hashMapObjectMerger: Merger = (previousResult, newResult) => {
             ...newResult.data
         }
     }
+};
+
+/**
+ * Merger that replace the previous hash map with the new one (only if not empty, ie. if newResult.data has keys)
+ */
+export const hashMapObjectReplaceMerger: Merger = (previousResult, newResult) => {
+    if (!isResultSuccessful(previousResult) || !isResultSuccessful(newResult) || Object.keys(newResult.data).length <= 0) {
+        return previousResult;
+    }
+    return newResult;
 };

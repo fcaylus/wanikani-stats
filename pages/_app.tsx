@@ -1,8 +1,8 @@
-import React from 'react';
-import App from 'next/app';
-import {ThemeProvider} from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from '../src/app/theme';
+import React from "react";
+import App from "next/app";
+import {ThemeProvider} from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import theme from "../src/app/theme";
 import Page from "../src/app/components/page/Page";
 import {Provider} from "react-redux";
 import configureStore from "../src/app/redux/configureStore";
@@ -15,7 +15,7 @@ import {AppWithStore} from "../src/app/redux/interfaces";
 class WebApp extends App<AppWithStore> {
     componentDidMount() {
         // Remove the server-side injected CSS.
-        const jssStyles = document.querySelector('#jss-server-side');
+        const jssStyles = document.querySelector("#jss-server-side");
         if (jssStyles && jssStyles.parentElement) {
             jssStyles.parentElement.removeChild(jssStyles);
         }

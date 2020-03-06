@@ -1,5 +1,5 @@
-import React from 'react';
-import {Paper, Table, TableBody, TableCell, TableHead, TableRow, Theme} from '@material-ui/core';
+import React from "react";
+import {Paper, Table, TableBody, TableCell, TableHead, TableRow, Theme} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {Stats} from "../../../data/interfaces/stats";
 

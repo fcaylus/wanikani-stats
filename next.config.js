@@ -1,4 +1,4 @@
-const nextBuildId = require('next-build-id');
+const nextBuildId = require("next-build-id");
 
 module.exports = {
     poweredByHeader: true,

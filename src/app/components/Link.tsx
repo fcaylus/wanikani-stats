@@ -1,9 +1,9 @@
-import React from 'react';
-import clsx from 'clsx';
-import {useRouter} from 'next/router';
-import NextLink from 'next/link';
-import MuiLink from '@material-ui/core/Link';
-import {UrlObject} from 'url';
+import React from "react";
+import clsx from "clsx";
+import {useRouter} from "next/router";
+import NextLink from "next/link";
+import MuiLink from "@material-ui/core/Link";
+import {UrlObject} from "url";
 
 interface NextComposedProps {
     as?: string | UrlObject;
@@ -45,7 +45,7 @@ interface LinkProps {
  */
 function Link(props: LinkProps) {
     const {
-        activeClassName = 'active',
+        activeClassName = "active",
         className: classNameProps,
         innerRef,
         naked = false,

@@ -1,4 +1,4 @@
-import {API_ERROR, API_START, API_SUCCESS, ApiResultsState} from './types'
+import {API_ERROR, API_START, API_SUCCESS, ApiResultsState} from "./types";
 import {AnyAction, combineReducers} from "redux";
 import {labelForApiRequest, mergePaginatedResultWithStore} from "./util";
 

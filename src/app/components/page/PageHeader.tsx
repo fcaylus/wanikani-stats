@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {makeStyles, Theme} from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import LaunchIcon from '@material-ui/icons/Launch';
+import React, {useEffect, useState} from "react";
+import {makeStyles, Theme} from "@material-ui/core/styles";
+import MenuIcon from "@material-ui/icons/Menu";
+import LaunchIcon from "@material-ui/icons/Launch";
 import {useDispatch} from "react-redux";
 import {removeApiKey} from "../../apiKey";
 import {AppBar, Button, Divider, IconButton, Menu, MenuItem, Toolbar, Typography} from "@material-ui/core";

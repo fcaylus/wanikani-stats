@@ -1,5 +1,5 @@
-import React from 'react';
-import {makeStyles, Theme} from '@material-ui/core/styles';
+import React from "react";
+import {makeStyles, Theme} from "@material-ui/core/styles";
 import {Grid, Paper, Typography} from "@material-ui/core";
 import colors from "../../colors";
 import {ItemCategory} from "../../../data/interfaces/item";

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from "react";
 import PageContent from "../../src/app/components/page/PageContent";
 import {makeStyles, Theme} from "@material-ui/core/styles";
 import {useDispatch} from "react-redux";

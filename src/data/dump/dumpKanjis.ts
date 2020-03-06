@@ -83,7 +83,7 @@ export default async () => {
                 currentPosition = 0;
             } else {
                 // Remove all spaces from the line
-                line = line.replace(/\s+/g, '');
+                line = line.replace(/\s+/g, "");
                 const characters = line.split("");
                 for (const character of characters) {
                     currentPosition += 1;

@@ -1,7 +1,7 @@
-import React from 'react';
-import Document, {Head, Main, NextScript} from 'next/document';
-import {ServerStyleSheets} from '@material-ui/core/styles';
-import theme from '../src/app/theme';
+import React from "react";
+import Document, {Head, Main, NextScript} from "next/document";
+import {ServerStyleSheets} from "@material-ui/core/styles";
+import theme from "../src/app/theme";
 
 /**
  * Document structure
@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
                     name="viewport"
                     content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
                     key="viewport"/>
-                <meta httpEquiv='X-UA-Compatible' content='IE=edge'/>
+                <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 
                 {/* Roboto Font*/}
                 <link

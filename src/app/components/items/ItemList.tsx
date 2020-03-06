@@ -1,5 +1,5 @@
-import React from 'react';
-import {makeStyles, Theme} from '@material-ui/core/styles';
+import React from "react";
+import {makeStyles, Theme} from "@material-ui/core/styles";
 import {Box, Typography} from "@material-ui/core";
 import ItemCard from "./ItemCard";
 import {ProgressHashMap} from "../../../data/interfaces/progress";

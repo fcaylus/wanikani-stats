@@ -1,5 +1,5 @@
-import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
+import React from "react";
+import {makeStyles} from "@material-ui/core/styles";
 import {Paper, Tab, Tabs} from "@material-ui/core";
 import itemTypesJson from "../../data/item_types.json";
 

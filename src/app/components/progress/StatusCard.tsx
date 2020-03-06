@@ -1,5 +1,5 @@
-import React from 'react';
-import {makeStyles, Theme} from '@material-ui/core/styles';
+import React from "react";
+import {makeStyles, Theme} from "@material-ui/core/styles";
 import {Status} from "../../../data/interfaces/status";
 import {Card, CardContent, CardHeader, Divider, List, ListItem, Typography} from "@material-ui/core";
 import moment from "moment";

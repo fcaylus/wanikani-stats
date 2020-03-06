@@ -1,4 +1,4 @@
-import {createMuiTheme, responsiveFontSizes} from '@material-ui/core/styles';
+import {createMuiTheme, responsiveFontSizes} from "@material-ui/core/styles";
 
 /**
  * Theme for the main app.
