@@ -10,7 +10,6 @@ import {
     readyRequest,
     reviewsStatsRequest,
     statsRequest,
-    statusRequest,
     userRequest
 } from "./requests";
 
@@ -22,7 +21,6 @@ export const apiResultSelector = (state: RootState, request: ApiRequest): ApiRes
     return state.api.results[labelForApiRequest(request)];
 };
 
-export const useStatusSelector = () => useSelector((state: RootState) => apiResultSelector(state, statusRequest()));
 export const useLevelsSelector = () => useSelector((state: RootState) => apiResultSelector(state, levelsRequest()));
 export const useReadySelector = () => useSelector((state: RootState) => apiResultSelector(state, readyRequest()));
 export const useLoginSelector = () => useSelector((state: RootState) => apiResultSelector(state, loginRequest()));

@@ -15,12 +15,12 @@ import {
     useMediaQuery
 } from "@material-ui/core";
 import {LevelsHashMap} from "../../../../data/interfaces/level";
-import {Status} from "../../../../data/interfaces/status";
 import ReversedVerticalSlider from "../../ReversedVerticalSlider";
 import ProjectionTable from "./ProjectonTable";
 import LevelCategories from "./LevelCategories";
 import SpeedSelector from "./SpeedSelector";
 import CloseIcon from '@material-ui/icons/Close';
+import {User} from "../../../../data/interfaces/user";
 
 const dialogThreshold = 500;
 
@@ -107,7 +107,7 @@ const sliderMarks = [
 
 export interface ProjectionCardProps {
     levels?: LevelsHashMap;
-    status?: Status;
+    user?: User;
 }
 
 /**
@@ -125,10 +125,10 @@ export default function ProjectionCard(props: ProjectionCardProps) {
     const [dialogOpen, setDialogOpen] = useState(false);
 
     useEffect(() => {
-        if (props.status) {
-            setSelectedLevel(props.status.currentLevel);
+        if (props.user) {
+            setSelectedLevel(props.user.currentLevel);
         }
-    }, [props.status]);
+    }, [props.user]);
 
     const handleSliderChange = (_event: any, value: any) => {
         if (value != selectedLevel) {
@@ -148,7 +148,7 @@ export default function ProjectionCard(props: ProjectionCardProps) {
         setDialogOpen(false);
     };
 
-    if (!props.levels || !props.status) {
+    if (!props.levels || !props.user) {
         return null;
     }
 
@@ -185,7 +185,7 @@ export default function ProjectionCard(props: ProjectionCardProps) {
                                        onChangeDays={setCustomSpeedDays}
                                        onChangeHours={setCustomSpeedHours}/>
                         <ProjectionTable levels={props.levels}
-                                         status={props.status}
+                                         user={props.user}
                                          additionalLevel={selectedLevel}
                                          targetSpeed={customSpeedDays * 24 + customSpeedHours}
                                          onRowClick={handleTableClick}/>

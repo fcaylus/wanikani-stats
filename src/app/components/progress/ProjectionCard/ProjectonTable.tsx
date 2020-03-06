@@ -59,12 +59,12 @@ export default function ProjectionTable(props: ProjectionTableProps) {
     useEffect(() => {
         const average = averageLevelDuration(Object.values(props.levels)) / HOURS_TO_MS;
         setAverageTime(average);
-        setCurrentLevelTime(Math.max(0, average - durationOfLevel(props.levels[props.status.currentLevel]) / HOURS_TO_MS));
-        setFastestCurrentLevelTime(Math.max(0, fastestLevelDuration(props.status.currentLevel) - durationOfLevel(props.levels[props.status.currentLevel]) / HOURS_TO_MS));
+        setCurrentLevelTime(Math.max(0, average - durationOfLevel(props.levels[props.user.currentLevel]) / HOURS_TO_MS));
+        setFastestCurrentLevelTime(Math.max(0, fastestLevelDuration(props.user.currentLevel) - durationOfLevel(props.levels[props.user.currentLevel]) / HOURS_TO_MS));
     }, [props.levels]);
 
     useEffect(() => {
-        setTargetCurrentLevelTime(Math.max(0, props.targetSpeed - durationOfLevel(props.levels[props.status.currentLevel]) / HOURS_TO_MS));
+        setTargetCurrentLevelTime(Math.max(0, props.targetSpeed - durationOfLevel(props.levels[props.user.currentLevel]) / HOURS_TO_MS));
     }, [props.levels, props.targetSpeed]);
 
     /**
@@ -74,12 +74,12 @@ export default function ProjectionTable(props: ProjectionTableProps) {
         // Append the current level to the list
         let levels = LEVELS_OF_INTEREST.slice();
         levels.push({
-            level: props.status.currentLevel,
+            level: props.user.currentLevel,
             label: "Current level"
         });
 
         // Append the additional level (if not already inside)
-        if (!isLevelOfInterest(props.additionalLevel) && props.additionalLevel != props.status.currentLevel) {
+        if (!isLevelOfInterest(props.additionalLevel) && props.additionalLevel != props.user.currentLevel) {
 
         }
         levels.push({
@@ -91,7 +91,7 @@ export default function ProjectionTable(props: ProjectionTableProps) {
             return compareNumbers(a.level, b.level);
         });
         setDisplayedLevelsList(levels);
-    }, [props.status, props.additionalLevel]);
+    }, [props.user, props.additionalLevel]);
 
     /**
      * Format a duration in hours by adding it to the start date
@@ -104,35 +104,35 @@ export default function ProjectionTable(props: ProjectionTableProps) {
     };
 
     const renderEstimatedTime = (level: number) => {
-        if (level < props.status.currentLevel) {
+        if (level < props.user.currentLevel) {
             return formatDate(props.levels[level].passDate, 0);
-        } else if (level == props.status.currentLevel) {
+        } else if (level == props.user.currentLevel) {
             return formatDate(new Date(), currentLevelTime);
         } else {
-            return formatDate(new Date(), currentLevelTime + (averageTime * (level - props.status.currentLevel)))
+            return formatDate(new Date(), currentLevelTime + (averageTime * (level - props.user.currentLevel)))
         }
     };
 
     const renderFastestTime = (level: number) => {
-        if (level < props.status.currentLevel) {
+        if (level < props.user.currentLevel) {
             return "-";
-        } else if (level == props.status.currentLevel) {
+        } else if (level == props.user.currentLevel) {
             return formatDate(new Date(), fastestCurrentLevelTime);
         } else {
             return formatDate(new Date(), fastestCurrentLevelTime
                 + fastestTimeToLevel(level)
-                - fastestTimeToLevel(props.status.currentLevel)
+                - fastestTimeToLevel(props.user.currentLevel)
                 + fastestLevelDuration(level))
         }
     };
 
     const renderTargetTime = (level: number) => {
-        if (level < props.status.currentLevel) {
+        if (level < props.user.currentLevel) {
             return "-";
-        } else if (level == props.status.currentLevel) {
+        } else if (level == props.user.currentLevel) {
             return formatDate(new Date(), targetCurrentLevelTime);
         } else {
-            return formatDate(new Date(), targetCurrentLevelTime + (props.targetSpeed * (level - props.status.currentLevel)));
+            return formatDate(new Date(), targetCurrentLevelTime + (props.targetSpeed * (level - props.user.currentLevel)));
         }
     };
 
@@ -155,23 +155,23 @@ export default function ProjectionTable(props: ProjectionTableProps) {
                                   onClick={() => props.onRowClick(level.level)}
                                   className={classes.row}>
                             <TableCell className={classes.cell}
-                                       variant={level.level == props.status.currentLevel ? "head" : "body"}>
+                                       variant={level.level == props.user.currentLevel ? "head" : "body"}>
                                 <b>{level.level.toString() + " - "}</b>
                                 {level.label}
                             </TableCell>
                             <TableCell className={classes.cell}
                                        align="center"
-                                       variant={level.level == props.status.currentLevel ? "head" : "body"}>
+                                       variant={level.level == props.user.currentLevel ? "head" : "body"}>
                                 {renderEstimatedTime(level.level)}
                             </TableCell>
                             <TableCell className={classes.cell}
                                        align="center"
-                                       variant={level.level == props.status.currentLevel ? "head" : "body"}>
+                                       variant={level.level == props.user.currentLevel ? "head" : "body"}>
                                 {renderFastestTime(level.level)}
                             </TableCell>
                             <TableCell className={classes.cell}
                                        align="center"
-                                       variant={level.level == props.status.currentLevel ? "head" : "body"}>
+                                       variant={level.level == props.user.currentLevel ? "head" : "body"}>
                                 {renderTargetTime(level.level)}
                             </TableCell>
                         </TableRow>

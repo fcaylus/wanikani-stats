@@ -1,7 +1,7 @@
 import {NextApiRequest, NextApiResponse} from "next";
-import parseApiRequest from "../../../src/server/parseApiRequest";
+import parseApiRequest from "../../src/server/parseApiRequest";
 import {INTERNAL_SERVER_ERROR, OK} from "http-status-codes";
-import {getUser} from "../../../src/server/users";
+import {getUser} from "../../src/server/users";
 
 /**
  * Fetch user data, and return a User object

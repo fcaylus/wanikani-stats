@@ -1,6 +1,5 @@
 import React from "react";
 import {makeStyles, Theme} from "@material-ui/core/styles";
-import {Status} from "../../../data/interfaces/status";
 import {Card, CardContent, CardHeader, Divider, List, ListItem, Typography} from "@material-ui/core";
 import moment from "moment";
 import {ProgressItemsCount} from "../../../data/interfaces/progress";
@@ -8,6 +7,7 @@ import {colorForType, displayNameForType} from "../../types";
 import {LevelsHashMap} from "../../../data/interfaces/level";
 import {averageLevelDuration, durationOfLevel} from "../../levels";
 import formatDuration from "../../../formatDuration";
+import {User} from "../../../data/interfaces/user";
 
 const useStyles = makeStyles((theme: Theme) => ({
     list: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 interface StatusCardProps {
-    status?: Status;
+    user?: User;
     itemsCount?: ProgressItemsCount;
     levelsProgression?: LevelsHashMap;
 }
@@ -48,7 +48,7 @@ export default function StatusCard(props: StatusCardProps) {
             + ")";
     };
 
-    if (!props.status) {
+    if (!props.user) {
         return null;
     }
 
@@ -58,18 +58,18 @@ export default function StatusCard(props: StatusCardProps) {
             <Divider/>
             <CardContent>
                 <List dense className={classes.list}>
-                    {props.status && props.status.currentLevel && (
+                    {props.user && props.user.currentLevel && (
                         <React.Fragment>
                             <ListItem className={classes.line} disableGutters>
                                 <Typography variant="body1" component="span">Level:</Typography>
-                                <Typography variant="body1" component="span">{props.status.currentLevel}</Typography>
+                                <Typography variant="body1" component="span">{props.user.currentLevel}</Typography>
                             </ListItem>
                             {props.levelsProgression && (
                                 <React.Fragment>
                                     <ListItem className={classes.line} disableGutters>
                                         <Typography variant="body1" component="span">Time on level:</Typography>
                                         <Typography variant="body1" component="span">
-                                            {formatDuration(durationOfLevel(props.levelsProgression[props.status.currentLevel]))}
+                                            {formatDuration(durationOfLevel(props.levelsProgression[props.user.currentLevel]))}
                                         </Typography>
                                     </ListItem>
                                     <ListItem className={classes.line} disableGutters>
@@ -77,7 +77,7 @@ export default function StatusCard(props: StatusCardProps) {
                                         <Typography variant="body1" component="span">
                                             {formatDuration(Math.max(0,
                                                 averageLevelDuration(Object.values(props.levelsProgression))
-                                                - durationOfLevel(props.levelsProgression[props.status.currentLevel])))}
+                                                - durationOfLevel(props.levelsProgression[props.user.currentLevel])))}
                                         </Typography>
                                     </ListItem>
                                     <ListItem className={classes.line} disableGutters>
@@ -92,11 +92,11 @@ export default function StatusCard(props: StatusCardProps) {
                             )}
                         </React.Fragment>
                     )}
-                    {props.status && props.status.startDate && (
+                    {props.user && props.user.startDate && (
                         <ListItem className={classes.line} disableGutters>
                             <Typography variant="body1" component="span">Start date:</Typography>
                             <Typography variant="body1" component="span">
-                                {formatDate(props.status.startDate)}
+                                {formatDate(props.user.startDate)}
                             </Typography>
                         </ListItem>
                     )}

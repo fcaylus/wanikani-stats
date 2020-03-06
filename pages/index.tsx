@@ -17,9 +17,9 @@ import {
     useLevelsSelector,
     useProgressSelector,
     useReviewsStatsSelector,
-    useStatusSelector
+    useUserSelector,
 } from "../src/app/redux/api/selectors";
-import {fetchLevels, fetchProgress, fetchReviewsStats, fetchStatus} from "../src/app/redux/api/requests";
+import {fetchLevels, fetchProgress, fetchReviewsStats} from "../src/app/redux/api/requests";
 import {ProgressItemsCount} from "../src/data/interfaces/progress";
 import {getItemsCount} from "../src/app/progress";
 import {Accuracy} from "../src/data/interfaces/accuracy";
@@ -61,7 +61,7 @@ export default function IndexPage() {
 
     const dispatch = useDispatch();
     const store = useStore();
-    const statusResult = useStatusSelector();
+    const userResult = useUserSelector();
     const progressRadicalResult = useProgressSelector("radical");
     const progressKanjiResult = useProgressSelector("kanji");
     const progressVocabularyResult = useProgressSelector("vocabulary");
@@ -72,9 +72,6 @@ export default function IndexPage() {
     const [accuracy, setAccuracy] = useState<Accuracy | undefined>(undefined);
 
     useEffect(() => {
-        if (needResultFetching(statusResult)) {
-            dispatch(fetchStatus());
-        }
         if (needResultFetching(progressRadicalResult)) {
             dispatch(fetchProgress("radical"))
         }
@@ -109,7 +106,7 @@ export default function IndexPage() {
     return (
         <PageContent className={classes.root}
                      showProgress={
-                         isResultFetching(statusResult)
+                         isResultFetching(userResult)
                          || isResultFetching(progressRadicalResult)
                          || isResultFetching(progressKanjiResult)
                          || isResultFetching(progressVocabularyResult)
@@ -120,7 +117,7 @@ export default function IndexPage() {
             <Grid container spacing={2} className={classes.grid}>
                 <Grid item xs>
                     <StatusCard
-                        status={isResultSuccessful(statusResult) ? statusResult.data : undefined}
+                        user={isResultSuccessful(userResult) ? userResult.data : undefined}
                         itemsCount={itemsCount}
                         levelsProgression={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}/>
                 </Grid>
@@ -133,7 +130,7 @@ export default function IndexPage() {
             <Grid container spacing={2} className={classes.grid}>
                 <Grid item xs>
                     <ProjectionCard
-                        status={isResultSuccessful(statusResult) ? statusResult.data : undefined}
+                        user={isResultSuccessful(userResult) ? userResult.data : undefined}
                         levels={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}/>
                 </Grid>
             </Grid>
@@ -152,11 +149,6 @@ IndexPage.getInitialProps = async (ctx: ReduxNextPageContext) => {
     if (!hasApiKey(ctx.req)) {
         redirect("/login", ctx.req, ctx.res, false, true);
         return {};
-    }
-
-    // Wait for the API call to finished.
-    if (!process.browser) {
-        await ctx.store.dispatch(fetchStatus(ctx.req, ctx.res));
     }
 
     return {}

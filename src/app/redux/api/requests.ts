@@ -13,21 +13,6 @@ const API_BASE_URL = "/api/";
  */
 
 /*
- * /api/user/status
- */
-
-export const statusRequest = (): ApiRequest => {
-    return {
-        endpoint: API_BASE_URL + "user/status",
-        method: "GET"
-    };
-};
-
-export const fetchStatus = (req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(statusRequest(), getApiKey(req), true, false, undefined, req, res);
-};
-
-/*
  * /api/progress/levels
  */
 
