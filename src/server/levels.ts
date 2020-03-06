@@ -18,7 +18,13 @@ export const getLevels = async (token: string, updatedAfter?: QueryParameter): P
     let levels: LevelsHashMap = {};
 
     for (const wkLevel of wkResult.data.data) {
+        // Skip the level if it has a "abandoned_at" field, which means it was reset
+        if (wkLevel.data.abandoned_at) {
+            continue;
+        }
+
         const level = wkLevel.data.level;
+
         levels[level] = {
             level: level,
             unlockDate: wkLevel.data.unlocked_at,
