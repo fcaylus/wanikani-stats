@@ -15,7 +15,7 @@ COPY --chown=node:node ./package.json ./
 COPY --chown=node:node ./yarn.lock ./
 
 # Install dependencies
-RUN yarn install --production
+RUN yarn install
 
 # Copy all files
 COPY --chown=node:node ./ ./
@@ -31,4 +31,4 @@ EXPOSE 3170
 USER node
 
 # Run yarn start script when container starts
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "--verbose", "start" ]
