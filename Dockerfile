@@ -1,6 +1,9 @@
 # Base on offical Node.js Alpine image
 FROM node:alpine
 
+# Install git (used to retrieve the commit sha)
+RUN apk add --no-cache git
+
 # Set working directory
 WORKDIR /home/node
 
