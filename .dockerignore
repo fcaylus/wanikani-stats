@@ -1,5 +1,3 @@
-.git/
-.gitignore
 .next/
 .dockerignore
 Dockerfile
