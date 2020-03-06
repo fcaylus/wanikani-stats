@@ -135,8 +135,6 @@ StatsPage.getInitialProps = async (ctx: ReduxNextPageContext) => {
     // Wait for the API call to finished.
     if (!process.browser) {
         await ctx.store.dispatch(fetchStats(item_type.toString(), source.toString(), ctx.req, ctx.res));
-    } else {
-        ctx.store.dispatch(fetchStats(item_type.toString(), source.toString()));
     }
 
     return {}

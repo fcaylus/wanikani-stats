@@ -4,6 +4,22 @@ import {setupCache} from "axios-cache-adapter";
 import {IncomingMessage} from "http";
 import absoluteUrl from "../absoluteUrl";
 import {Page} from "./interfaces/page";
+import {QueryParameter} from "./interfaces/query";
+import moment from "moment";
+
+/**
+ * Timeout used for "static" endpoints like /items and /stats.
+ * When an updated_after field is specified for these endpoints, the duration is computed and if the resource
+ * timed out, a completely new result is returned. Otherwise, nothing is returned.
+ */
+export const STATIC_API_TIMEOUT = 3 * 24 * 60 * 60 * 1000; // 3 days
+
+/**
+ * Checks the time difference between "now" and the updated_after parameter
+ */
+export const isResourceTimedOut = (updatedAfter?: QueryParameter) => {
+    return !updatedAfter || moment().diff(moment(updatedAfter.toString())) > STATIC_API_TIMEOUT;
+};
 
 export interface ApiResult {
     error: boolean;

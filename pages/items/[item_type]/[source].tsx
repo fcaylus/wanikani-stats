@@ -204,8 +204,6 @@ ItemPage.getInitialProps = async (ctx: ReduxNextPageContext): Promise<ItemPagePr
         return {
             initialDataLength: isResultSuccessful(res) ? res.data.length : 0
         }
-    } else {
-        ctx.store.dispatch(fetchItems(item_type.toString(), source.toString()));
     }
 
     return {initialDataLength: 0}

@@ -59,10 +59,10 @@ export const hashMapObjectMerger: Merger = (previousResult, newResult) => {
 };
 
 /**
- * Merger that replace the previous hash map with the new one (only if not empty, ie. if newResult.data has keys)
+ * Merger that replace the previous data object with the new one (only if not null)
  */
-export const hashMapObjectReplaceMerger: Merger = (previousResult, newResult) => {
-    if (!isResultSuccessful(previousResult) || !isResultSuccessful(newResult) || Object.keys(newResult.data).length <= 0) {
+export const objectReplaceMerger: Merger = (previousResult, newResult) => {
+    if (!isResultSuccessful(previousResult) || !isResultSuccessful(newResult) || !newResult.data) {
         return previousResult;
     }
     return newResult;
