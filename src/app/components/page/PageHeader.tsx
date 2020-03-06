@@ -1,10 +1,20 @@
 import React, {useEffect, useState} from "react";
-import {makeStyles, Theme} from "@material-ui/core/styles";
+import {makeStyles, Theme, useTheme} from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import LaunchIcon from "@material-ui/icons/Launch";
 import {useDispatch} from "react-redux";
 import {removeApiKey} from "../../apiKey";
-import {AppBar, Button, Divider, IconButton, Menu, MenuItem, Toolbar, Typography} from "@material-ui/core";
+import {
+    AppBar,
+    Button,
+    Divider,
+    IconButton,
+    Menu,
+    MenuItem,
+    Toolbar,
+    Typography,
+    useMediaQuery
+} from "@material-ui/core";
 import colors from "../../colors";
 import redirect from "../../../redirect";
 import {User} from "../../../data/interfaces/user";
@@ -22,7 +32,9 @@ const useStyles = makeStyles((theme: Theme) => ({
             display: "none"
         }
     },
-    title: {},
+    title: {
+        paddingRight: theme.spacing(1)
+    },
     logo: {
         maxHeight: 32,
         marginRight: theme.spacing(2),
@@ -53,6 +65,8 @@ interface PageHeaderProps {
 export default function PageHeader(props: PageHeaderProps) {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const theme = useTheme();
+    const mobile = useMediaQuery(theme.breakpoints.down("xs"));
 
     const userResult = useUserSelector();
     const [userMenuAnchor, setUserMenuAnchor] = useState<HTMLElement | undefined>(undefined);
@@ -101,7 +115,11 @@ export default function PageHeader(props: PageHeaderProps) {
                     <Typography className={classes.title} variant="h6" noWrap>
                         {process.env.appName}
                     </Typography>
-
+                    {!mobile && (
+                        <Typography variant="body1" noWrap>
+                            v{process.env.version}
+                        </Typography>
+                    )}
                     {!props.minimal && userResult && !userResult.error && !userResult.fetching && (
                         <React.Fragment>
                             <Button aria-controls="user-menu" aria-haspopup={true} onClick={handleUserMenuClick}
