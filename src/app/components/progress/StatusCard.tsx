@@ -68,14 +68,25 @@ export default function StatusCard(props: StatusCardProps) {
                                 <React.Fragment>
                                     <ListItem className={classes.line} disableGutters>
                                         <Typography variant="body1" component="span">Time on level:</Typography>
-                                        <Typography variant="body1"
-                                                    component="span">{formatDuration(durationOfLevel(props.levelsProgression[props.status.currentLevel]))}</Typography>
+                                        <Typography variant="body1" component="span">
+                                            {formatDuration(durationOfLevel(props.levelsProgression[props.status.currentLevel]))}
+                                        </Typography>
                                     </ListItem>
                                     <ListItem className={classes.line} disableGutters>
-                                        <Typography variant="body1" component="span">Average time on
-                                            levels:</Typography>
-                                        <Typography variant="body1"
-                                                    component="span">{formatDuration(averageLevelDuration(Object.values(props.levelsProgression)))}</Typography>
+                                        <Typography variant="body1" component="span">Expected level-up in:</Typography>
+                                        <Typography variant="body1" component="span">
+                                            {formatDuration(Math.max(0,
+                                                averageLevelDuration(Object.values(props.levelsProgression))
+                                                - durationOfLevel(props.levelsProgression[props.status.currentLevel])))}
+                                        </Typography>
+                                    </ListItem>
+                                    <ListItem className={classes.line} disableGutters>
+                                        <Typography variant="body1" component="span">
+                                            Average time on levels:
+                                        </Typography>
+                                        <Typography variant="body1" component="span">
+                                            {formatDuration(averageLevelDuration(Object.values(props.levelsProgression)))}
+                                        </Typography>
                                     </ListItem>
                                 </React.Fragment>
                             )}
