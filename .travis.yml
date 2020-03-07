@@ -25,4 +25,4 @@ after_success:
   - docker save "wanikani-stats/server:latest" > wanikani-stats_docker.tar
   - tar -czvf wanikani-stats_docker.tar.gz wanikani-stats_docker.tar
   - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa
-  - sshpass -p ${SFTP_PASSWORD} scp -o StrictHostKeyChecking=no -i /tmp/sftp_rsa -r ./wanikani-stats_docker.tar.gz ./launch.sh ${SFTP_USER}@tranqyll.fr:wanikani-stats/
+  - sshpass -p ${SFTP_PASSWORD} scp -o StrictHostKeyChecking=no -i /tmp/sftp_rsa -r ./wanikani-stats_docker.tar.gz ./launch.sh ${SFTP_USER}@vps798256.ovh.net:wanikani-stats/
