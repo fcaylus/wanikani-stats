@@ -12,7 +12,7 @@ export default async (apiKey: string): Promise<Item[] | null> => {
         const findRadicalImageUrl = (radical: any) => {
             if (radical.data && radical.data.character_images) {
                 for (let image of radical.data.character_images) {
-                    if (image.metadata && image.metadata.dimensions === "64x64") {
+                    if (image.metadata && image.metadata.dimensions === "32x32") {
                         return image.url;
                     }
                 }
