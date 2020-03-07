@@ -1,9 +1,8 @@
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {Paper, Tab, Tabs} from "@material-ui/core";
-import itemTypesJson from "../../data/item_types.json";
-
-const itemTypesList = Object(itemTypesJson);
+import {itemTypes} from "../../data/data";
+import {displayNameForType} from "../types";
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -35,8 +34,8 @@ const TypeSelector = React.memo((props: SourceSelectorProps) => {
                 textColor="primary"
                 centered
             >
-                {Object.keys(itemTypesJson).map((type: string) => {
-                    return <Tab key={type} label={itemTypesList[type].display_name} value={type}
+                {itemTypes().map((type) => {
+                    return <Tab key={type} label={displayNameForType(type)} value={type}
                                 disableRipple disableTouchRipple/>
                 })}
             </Tabs>

@@ -68,8 +68,7 @@ export default function ItemsPerLevelChart(props: ItemsPerLevelChart) {
                     yLabel="Number of items"
                     minimalItemSize={5}
                     disableClick
-                    hideLabels
-                >
+                    hideLabels>
                     <Tooltip
                         formatter={(value: any, name: string) => {
                             return [value, "Number of " + name]

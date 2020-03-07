@@ -1,16 +1,16 @@
 import {Level} from "../data/interfaces/level";
-import moment from "moment";
 
 /**
  * Compute the duration (in ms) of the specified level. If not yet passed, compute the duration until now.
  * @param level
  */
 export const durationOfLevel = (level: Level): number => {
-    if (!level.unlockDate) {
+    if (!level.startDate) {
         return 0;
     }
 
-    return moment(level.passDate ? level.passDate : moment()).diff(level.startDate);
+    const end = level.passDate ? Date.parse(level.passDate.toString()) : Date.now();
+    return end - Date.parse(level.startDate.toString());
 };
 
 /**

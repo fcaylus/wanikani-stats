@@ -29,11 +29,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-interface PageNavProps {
-    toggleDrawer: () => any
-    mobileOpen: boolean
-}
-
 const routes = [
     {
         name: "Dashboard",
@@ -73,6 +68,11 @@ const routes = [
     }
 ];
 
+interface PageNavProps {
+    toggleDrawer: () => any
+    mobileOpen: boolean
+}
+
 /**
  * Navigation drawer displayed on every page
  */
@@ -91,7 +91,7 @@ export default function PageNav(props: PageNavProps) {
     };
 
     // Main content of the drawer
-    const drawer = (permanent: boolean) => {
+    const renderDrawer = (permanent: boolean) => {
         return (
             <Box>
                 {permanent && <div className={classes.offset}/>}
@@ -131,22 +131,20 @@ export default function PageNav(props: PageNavProps) {
                         paper: classes.drawerPaper,
                     }}
                     ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
-                >
-                    {drawer(false)}
+                        keepMounted: true,
+                    }}>
+                    {renderDrawer(false)}
                 </Drawer>
             </Hidden>
-            <Hidden smDown implementation="js">
-                {/* Drawer displayed on desktop */}
+            {/* Drawer displayed on desktop */}
+            <Hidden smDown implementation="css">
                 <Drawer
                     classes={{
-                        paper: classes.drawerPaper,
+                        paper: classes.drawerPaper
                     }}
                     variant="permanent"
-                    open
-                >
-                    {drawer(true)}
+                    open>
+                    {renderDrawer(true)}
                 </Drawer>
             </Hidden>
         </nav>

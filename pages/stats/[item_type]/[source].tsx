@@ -88,17 +88,16 @@ function StatsPage() {
 
     return (
         <PageContent pageTitle="Stats" className={classes.root} showProgress={isResultFetching(apiResult)}>
-            <SourceSelector itemType={item_type.toString()} onSourceChange={handleSourceChange}
-                            value={source.toString()} excludeList={["wanikani"]}/>
+            <SourceSelector itemType={item_type.toString()}
+                            onSourceChange={handleSourceChange}
+                            value={source.toString()}
+                            excludeList={["wanikani"]}/>
 
-            {isResultSuccessful(apiResult) && (
-                <StatsTable
-                    stats={apiResult.data}
-                    currentUserLevel={isResultSuccessful(userResult) ? (userResult.data as User).currentLevel : undefined}/>
-            )}
-
-            {isResultSuccessful(apiResult) && (
+            {isResultSuccessful(apiResult) && apiResult.data && (
                 <React.Fragment>
+                    <StatsTable
+                        stats={apiResult.data}
+                        currentUserLevel={isResultSuccessful(userResult) ? (userResult.data as User).currentLevel : undefined}/>
                     <Typography variant="h5" component="h2" className={classes.listHeader}>
                         Items not available in Wanikani
                     </Typography>

@@ -159,14 +159,13 @@ function ItemPage(props: ItemPageProps) {
     }
 
     return (
-        <PageContent pageTitle="Items" className={classes.root}
+        <PageContent pageTitle="Items"
+                     className={classes.root}
                      showProgress={isResultFetching(progressResult) || isResultFetching(apiResult)}>
             <TypeSelector onTypeChange={handleTypeChangeCallback} value={itemType}/>
             <SourceSelector itemType={itemType} onSourceChange={handleSourceChangeCallBack} value={itemSource}/>
 
-            {isResultFetching(apiResult) && (
-                <CircularProgress className={classes.fetching} disableShrink/>
-            )}
+            {isResultFetching(apiResult) && <CircularProgress className={classes.fetching} disableShrink/>}
 
             <CategoryList
                 categories={showItems && isResultSuccessful(apiResult) ? apiResult.data : undefined}

@@ -5,7 +5,7 @@ import {fastestLevelDuration, fastestTimeToLevel, isLevelOfInterest, LEVELS_OF_I
 import {ProjectionCardProps} from "./index";
 import moment from "moment";
 import compareNumbers from "../../../../compareNumbers";
-import {averageLevelDuration, durationOfLevel} from "../../../levels";
+import {durationOfLevel} from "../../../levels";
 
 const HOURS_TO_MS = 60 * 60 * 1000;
 
@@ -34,6 +34,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
+/**
+ * Format a duration in hours by adding it to the start date
+ */
+const formatDate = (start: Date | undefined, duration: number) => {
+    if (!start) {
+        return "???";
+    }
+    return moment(start).add(duration, "hours").format("L H:m");
+};
+
 interface ProjectionTableProps extends Required<ProjectionCardProps> {
     className?: string;
     additionalLevel: number;
@@ -47,7 +57,6 @@ interface ProjectionTableProps extends Required<ProjectionCardProps> {
 export default function ProjectionTable(props: ProjectionTableProps) {
     const classes = useStyles();
 
-    const [averageTime, setAverageTime] = useState<number>(0);
     const [currentLevelTime, setCurrentLevelTime] = useState<number>(0);
     const [fastestCurrentLevelTime, setFastestCurrentLevelTime] = useState<number>(0);
     const [targetCurrentLevelTime, setTargetCurrentLevelTime] = useState<number>(0);
@@ -57,9 +66,7 @@ export default function ProjectionTable(props: ProjectionTableProps) {
      * Update the average time and the time needed to finish the current level
      */
     useEffect(() => {
-        const average = averageLevelDuration(Object.values(props.levels)) / HOURS_TO_MS;
-        setAverageTime(average);
-        setCurrentLevelTime(Math.max(0, average - durationOfLevel(props.levels[props.user.currentLevel]) / HOURS_TO_MS));
+        setCurrentLevelTime(Math.max(0, (props.averageTime - durationOfLevel(props.levels[props.user.currentLevel]))) / HOURS_TO_MS);
         setFastestCurrentLevelTime(Math.max(0, fastestLevelDuration(props.user.currentLevel) - durationOfLevel(props.levels[props.user.currentLevel]) / HOURS_TO_MS));
     }, [props.levels]);
 
@@ -93,23 +100,13 @@ export default function ProjectionTable(props: ProjectionTableProps) {
         setDisplayedLevelsList(levels);
     }, [props.user, props.additionalLevel]);
 
-    /**
-     * Format a duration in hours by adding it to the start date
-     */
-    const formatDate = (start: Date | undefined, duration: number) => {
-        if (!start) {
-            return "???";
-        }
-        return moment(start).add(duration, "hours").format("L H:m");
-    };
-
     const renderEstimatedTime = (level: number) => {
         if (level < props.user.currentLevel) {
             return formatDate(props.levels[level].passDate, 0);
         } else if (level == props.user.currentLevel) {
             return formatDate(new Date(), currentLevelTime);
         } else {
-            return formatDate(new Date(), currentLevelTime + (averageTime * (level - props.user.currentLevel)))
+            return formatDate(new Date(), currentLevelTime + (props.averageTime / HOURS_TO_MS * (level - props.user.currentLevel)))
         }
     };
 

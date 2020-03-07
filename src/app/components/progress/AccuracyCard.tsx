@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 interface AccuracyCardProps {
-    accuracy?: Accuracy;
+    accuracy: Accuracy;
 }
 
 const propertyLookup = ["correct", "incorrect", "total"];
@@ -55,15 +55,9 @@ export default function AccuracyCard(props: AccuracyCardProps) {
 
     // Get the accuracy count for all type of items
     const getAccuracyData = (itemType: string, countCategory: string, type: string): number => {
-        if (type == "total") {
+        if (type === "total") {
             return getAccuracyData(itemType, countCategory, "meaning") + getAccuracyData(itemType, countCategory, "reading")
-        }
-
-        if (!props.accuracy) {
-            return 0;
-        }
-
-        if (itemType == "sum") {
+        } else if (itemType === "sum") {
             let sum = 0;
             for (const itemType of itemTypes()) {
                 sum += props.accuracy[itemType][countCategory][type];
@@ -76,72 +70,66 @@ export default function AccuracyCard(props: AccuracyCardProps) {
 
     // Format percentages
     const getPercentage = (itemType: string, accuracyType: string) => {
-        if (!props.accuracy) {
-            return "-";
-        }
-
-        if (itemType == "radical" && accuracyType == "reading") {
+        if (itemType === "radical" && accuracyType === "reading") {
             return "-";
         }
 
         return (getAccuracyData(itemType, "correct", accuracyType) / getAccuracyData(itemType, "total", accuracyType) * 100).toFixed(2) + " %";
     };
 
-    // Do not show if there is no data
-    if (!props.accuracy) {
-        return null;
-    }
-
     return (
         <Card>
-            <CardHeader title={"Accuracy"}/>
+            <CardHeader title="Accuracy"/>
             <Divider/>
             <CardContent className={classes.table}>
-                {props.accuracy && (
-                    <Table size="small" aria-label="Accuracy table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell className={classes.cell}/>
+                <Table size="small" aria-label="Accuracy table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell className={classes.cell}/>
+                            {accuracyTypeLookup.map((accuracyType) => (
+                                <TableCell key={accuracyType} className={classes.cell} align="center">
+                                    {capitalize(accuracyType)}
+                                </TableCell>
+                            ))}
+                        </TableRow>
+                    </TableHead>
+                    <TableBody className={classes.tableBody}>
+                        {propertyLookup.map((propertyType) => (
+                            <TableRow key={propertyType} hover>
+                                <TableCell className={classes.cell} align="right" variant="head">
+                                    {capitalize(propertyType)}
+                                </TableCell>
                                 {accuracyTypeLookup.map((accuracyType) => (
-                                    <TableCell key={accuracyType} className={classes.cell}
-                                               align="center">{capitalize(accuracyType)}</TableCell>
+                                    <TableCell key={accuracyType} className={classes.cell} align="center">
+                                        {getAccuracyData("sum", propertyType, accuracyType)}
+                                    </TableCell>
                                 ))}
                             </TableRow>
-                        </TableHead>
-                        <TableBody className={classes.tableBody}>
-                            {propertyLookup.map((propertyType) => (
-                                <TableRow key={propertyType} hover>
-                                    <TableCell className={classes.cell} align="right"
-                                               variant="head">{capitalize(propertyType)}</TableCell>
-                                    {accuracyTypeLookup.map((accuracyType) => (
-                                        <TableCell key={accuracyType} className={classes.cell}
-                                                   align="center">{getAccuracyData("sum", propertyType, accuracyType)}</TableCell>
-                                    ))}
-                                </TableRow>
+                        ))}
+                        <TableRow hover>
+                            <TableCell className={classes.cell} variant="head" align="right">Accuracy</TableCell>
+                            {accuracyTypeLookup.map((accuracyType) => (
+                                <TableCell key={accuracyType} className={classes.cell} align="center" variant="head">
+                                    {getPercentage("sum", accuracyType)}
+                                </TableCell>
                             ))}
-                            <TableRow hover>
-                                <TableCell className={classes.cell} variant="head" align="right">Accuracy</TableCell>
+                        </TableRow>
+                        {itemTypes().map((itemType) => (
+                            <TableRow key={itemType} hover>
+                                <TableCell className={classes.cell} align="right" variant="head">
+                                    {displayNameForType(itemType)}
+                                </TableCell>
                                 {accuracyTypeLookup.map((accuracyType) => (
                                     <TableCell key={accuracyType} className={classes.cell}
-                                               align="center"
-                                               variant="head">{getPercentage("sum", accuracyType)}</TableCell>
+                                               align="center" variant="head"
+                                               style={{color: colorForType(itemType)}}>
+                                        {getPercentage(itemType, accuracyType)}
+                                    </TableCell>
                                 ))}
                             </TableRow>
-                            {itemTypes().map((itemType) => (
-                                <TableRow key={itemType} hover>
-                                    <TableCell className={classes.cell} align="right"
-                                               variant="head">{displayNameForType(itemType)}</TableCell>
-                                    {accuracyTypeLookup.map((accuracyType) => (
-                                        <TableCell key={accuracyType} className={classes.cell}
-                                                   align="center" variant="head"
-                                                   style={{color: colorForType(itemType)}}>{getPercentage(itemType, accuracyType)}</TableCell>
-                                    ))}
-                                </TableRow>
-                            ))}
-
-                        </TableBody>
-                    </Table>
-                )}
+                        ))}
+                    </TableBody>
+                </Table>
             </CardContent>
         </Card>
     );

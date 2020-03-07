@@ -54,7 +54,6 @@ export default function StatsGeneralPage() {
     const itemsVocabularyResult = useItemsSelector("vocabulary", "wanikani");
 
     useEffect(() => {
-
         if (needResultFetching(itemsRadicalResult)) {
             dispatch(fetchItems("radical", "wanikani"));
         }
@@ -73,29 +72,27 @@ export default function StatsGeneralPage() {
                          || isResultFetching(itemsKanjiResult)
                          || isResultFetching(itemsVocabularyResult)}>
             {isResultSuccessful(itemsRadicalResult) && isResultSuccessful(itemsKanjiResult) && isResultSuccessful(itemsVocabularyResult) && (
-                <ItemsCategoryGrid radicals={itemsRadicalResult.data}
-                                   kanjis={itemsKanjiResult.data}
-                                   vocabularies={itemsVocabularyResult.data}/>
-            )}
+                <React.Fragment>
+                    <ItemsCategoryGrid radicals={itemsRadicalResult.data}
+                                       kanjis={itemsKanjiResult.data}
+                                       vocabularies={itemsVocabularyResult.data}/>
 
-            <Grid container spacing={2} className={classes.grid}>
-                {isResultSuccessful(itemsRadicalResult) && isResultSuccessful(itemsKanjiResult) && isResultSuccessful(itemsVocabularyResult) && (
-                    <Grid item xs>
-                        <ItemsPerLevelChart radicals={itemsRadicalResult.data}
-                                            kanjis={itemsKanjiResult.data}
-                                            vocabularies={itemsVocabularyResult.data}/>
+                    <Grid container spacing={2} className={classes.grid}>
+                        <Grid item xs>
+                            <ItemsPerLevelChart radicals={itemsRadicalResult.data}
+                                                kanjis={itemsKanjiResult.data}
+                                                vocabularies={itemsVocabularyResult.data}/>
+                        </Grid>
                     </Grid>
-                )}
-            </Grid>
-            <Grid container spacing={2} className={classes.grid}>
-                {isResultSuccessful(itemsRadicalResult) && isResultSuccessful(itemsKanjiResult) && isResultSuccessful(itemsVocabularyResult) && (
-                    <Grid item xs>
-                        <ReviewsPerLevelChart radicals={itemsRadicalResult.data}
-                                              kanjis={itemsKanjiResult.data}
-                                              vocabularies={itemsVocabularyResult.data}/>
+                    <Grid container spacing={2} className={classes.grid}>
+                        <Grid item xs>
+                            <ReviewsPerLevelChart radicals={itemsRadicalResult.data}
+                                                  kanjis={itemsKanjiResult.data}
+                                                  vocabularies={itemsVocabularyResult.data}/>
+                        </Grid>
                     </Grid>
-                )}
-            </Grid>
+                </React.Fragment>
+            )}
         </PageContent>
     );
 }

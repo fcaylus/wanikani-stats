@@ -46,7 +46,8 @@ const SourceSelector = React.memo((props: SourceSelectorProps) => {
                         return null;
                     }
 
-                    return <FormControlLabel key={availableSource} value={availableSource}
+                    return <FormControlLabel key={availableSource}
+                                             value={availableSource}
                                              control={<Radio disableRipple disableTouchRipple/>}
                                              label={sourceTypesList[availableSource].display_name}/>
                 })}

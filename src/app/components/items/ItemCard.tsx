@@ -8,13 +8,12 @@ import {colorForSRS} from "../../srs";
 
 const useStyles = makeStyles(() => ({
     item: {
-        //fontWeight: "bold",
         padding: 4,
         minWidth: "unset",
         height: 32,
         transition: "none",
         backgroundColor: colors.unknown,
-        color: "#000000",
+        color: colors.black,
         textTransform: "capitalize"
     },
     image: {
@@ -34,8 +33,6 @@ export default React.memo((props: Item & { className?: string }) => {
     const imageComponent = !props.characters && props.image ?
         <img className={classes.image} alt={displayedText} src={props.image}/> : null;
 
-    const title = displayedText + (props.readings ? (" (" + props.readings.join(" / ") + ")") : "");
-
     return (
         <Button
             size="medium"
@@ -52,7 +49,7 @@ export default React.memo((props: Item & { className?: string }) => {
             disableRipple
             disableFocusRipple
             disableTouchRipple
-            title={title}
+            title={displayedText + (props.readings ? (" (" + props.readings.join(" / ") + ")") : "")}
             lang="jp">
             {imageComponent ? imageComponent : displayedText}
         </Button>

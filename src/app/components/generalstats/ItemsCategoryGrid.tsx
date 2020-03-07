@@ -44,22 +44,25 @@ export default function ItemsCategoryGrid(props: ItemsCategoryGridProps) {
             <Grid item xs>
                 <Paper className={classes.paper} style={{backgroundColor: colors.radical}}>
                     <Typography variant="h6" component="p">Radicals</Typography>
-                    <Typography variant="body1"
-                                component="p">{countItems(props.radicals)}</Typography>
+                    <Typography variant="body1" component="p">
+                        {countItems(props.radicals)}
+                    </Typography>
                 </Paper>
             </Grid>
             <Grid item xs>
                 <Paper className={classes.paper} style={{backgroundColor: colors.kanji}}>
                     <Typography variant="h6" component="p">Kanjis</Typography>
-                    <Typography variant="body1"
-                                component="p">{countItems(props.kanjis)}</Typography>
+                    <Typography variant="body1" component="p">
+                        {countItems(props.kanjis)}
+                    </Typography>
                 </Paper>
             </Grid>
             <Grid item xs>
                 <Paper className={classes.paper} style={{backgroundColor: colors.vocabulary}}>
                     <Typography variant="h6" component="p">Vocabularies</Typography>
-                    <Typography variant="body1"
-                                component="p">{countItems(props.vocabularies)}</Typography>
+                    <Typography variant="body1" component="p">
+                        {countItems(props.vocabularies)}
+                    </Typography>
                 </Paper>
             </Grid>
         </Grid>

@@ -13,10 +13,6 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-export interface LevelsDurationChartProps {
-    levels?: LevelsHashMap;
-}
-
 const DAYS_MULTIPLIER = 1000 * 60 * 60 * 24;
 
 // Convert to data types usable by recharts.js
@@ -31,6 +27,10 @@ const generateGraphData = (levels: Level[]): ChartData[] => {
     }
     return data;
 };
+
+export interface LevelsDurationChartProps {
+    levels?: LevelsHashMap;
+}
 
 /**
  * Display a "bar chart" of levels duration

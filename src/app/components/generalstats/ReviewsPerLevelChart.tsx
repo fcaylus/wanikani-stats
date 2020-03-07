@@ -131,8 +131,7 @@ export default function ReviewsPerLevelChart(props: ReviewsPerLevelChartProps) {
                     minimalItemSize={5}
                     disableClick
                     hideLabels
-                    footerText={"The graph assumes the maximum speed (6d20h/level) and sum the reviews to do per \"level duration\"."}
-                >
+                    footerText={"The graph assumes the maximum speed (6d20h/level) and sum the reviews to do per \"level duration\"."}>
                     <Tooltip
                         formatter={(value: any, name: string) => {
                             return [value, "Number of " + name + " reviews"]

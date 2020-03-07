@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export interface StatsTableProps {
-    stats?: Stats;
+    stats: Stats;
     currentUserLevel?: number;
 }
 
@@ -37,10 +37,6 @@ const StatsTable = (props: StatsTableProps) => {
     const classes = useStyles();
 
     const formatPercentage = (levelIndex: number, categoryIndex: number): string => {
-        if (!props.stats) {
-            return "";
-        }
-
         const percentage = props.stats.levels[levelIndex].categories[props.stats.categories[categoryIndex]] * 100;
 
         if (levelIndex != 0) {
@@ -56,10 +52,6 @@ const StatsTable = (props: StatsTableProps) => {
         }
         return percentage.toFixed(1) + " %";
     };
-
-    if (!props.stats) {
-        return null;
-    }
 
     return (
         <Paper elevation={5} className={classes.table}>

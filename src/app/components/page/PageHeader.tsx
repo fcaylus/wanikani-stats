@@ -18,7 +18,7 @@ import {
 import colors from "../../colors";
 import redirect from "../../../redirect";
 import {User} from "../../../data/interfaces/user";
-import {useUserSelector} from "../../redux/api/selectors";
+import {isResultSuccessful, useUserSelector} from "../../redux/api/selectors";
 import {fetchLogout, fetchUser} from "../../redux/api/requests";
 import {purgeStorage} from "../../redux/api/storage";
 
@@ -120,7 +120,7 @@ export default function PageHeader(props: PageHeaderProps) {
                             v{process.env.version}
                         </Typography>
                     )}
-                    {!props.minimal && userResult && !userResult.error && !userResult.fetching && (
+                    {!props.minimal && isResultSuccessful(userResult) && (
                         <React.Fragment>
                             <Button aria-controls="user-menu" aria-haspopup={true} onClick={handleUserMenuClick}
                                     className={classes.user}>

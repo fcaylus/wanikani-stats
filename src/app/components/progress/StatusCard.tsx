@@ -5,7 +5,7 @@ import moment from "moment";
 import {ProgressItemsCount} from "../../../data/interfaces/progress";
 import {colorForType, displayNameForType} from "../../types";
 import {LevelsHashMap} from "../../../data/interfaces/level";
-import {averageLevelDuration, durationOfLevel} from "../../levels";
+import {durationOfLevel} from "../../levels";
 import formatDuration from "../../../formatDuration";
 import {User} from "../../../data/interfaces/user";
 
@@ -30,10 +30,18 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
+const formatDate = (date: any) => {
+    return moment(date).format("LL")
+        + " (" + moment.duration(moment(date).diff(moment(), "days"), "days").humanize(true)
+        + ")";
+};
+
+
 interface StatusCardProps {
     user?: User;
     itemsCount?: ProgressItemsCount;
-    levelsProgression?: LevelsHashMap;
+    levels?: LevelsHashMap;
+    averageTime?: number;
 }
 
 /**
@@ -42,64 +50,54 @@ interface StatusCardProps {
 export default function StatusCard(props: StatusCardProps) {
     const classes = useStyles();
 
-    const formatDate = (date: any) => {
-        return moment(date).format("LL")
-            + " (" + moment.duration(moment(date).diff(moment(), "days"), "days").humanize(true)
-            + ")";
-    };
-
     if (!props.user) {
         return null;
     }
 
     return (
         <Card>
-            <CardHeader title={"Summary"}/>
+            <CardHeader title="Summary"/>
             <Divider/>
             <CardContent>
                 <List dense className={classes.list}>
-                    {props.user && props.user.currentLevel && (
-                        <React.Fragment>
-                            <ListItem className={classes.line} disableGutters>
-                                <Typography variant="body1" component="span">Level:</Typography>
-                                <Typography variant="body1" component="span">{props.user.currentLevel}</Typography>
-                            </ListItem>
-                            {props.levelsProgression && (
-                                <React.Fragment>
-                                    <ListItem className={classes.line} disableGutters>
-                                        <Typography variant="body1" component="span">Time on level:</Typography>
-                                        <Typography variant="body1" component="span">
-                                            {formatDuration(durationOfLevel(props.levelsProgression[props.user.currentLevel]))}
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem className={classes.line} disableGutters>
-                                        <Typography variant="body1" component="span">Expected level-up in:</Typography>
-                                        <Typography variant="body1" component="span">
-                                            {formatDuration(Math.max(0,
-                                                averageLevelDuration(Object.values(props.levelsProgression))
-                                                - durationOfLevel(props.levelsProgression[props.user.currentLevel])))}
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem className={classes.line} disableGutters>
-                                        <Typography variant="body1" component="span">
-                                            Average time on levels:
-                                        </Typography>
-                                        <Typography variant="body1" component="span">
-                                            {formatDuration(averageLevelDuration(Object.values(props.levelsProgression)))}
-                                        </Typography>
-                                    </ListItem>
-                                </React.Fragment>
-                            )}
-                        </React.Fragment>
-                    )}
-                    {props.user && props.user.startDate && (
+                    <React.Fragment>
                         <ListItem className={classes.line} disableGutters>
-                            <Typography variant="body1" component="span">Start date:</Typography>
-                            <Typography variant="body1" component="span">
-                                {formatDate(props.user.startDate)}
-                            </Typography>
+                            <Typography variant="body1" component="span">Level:</Typography>
+                            <Typography variant="body1" component="span">{props.user.currentLevel}</Typography>
                         </ListItem>
-                    )}
+                        {props.levels && props.averageTime && (
+                            <React.Fragment>
+                                <ListItem className={classes.line} disableGutters>
+                                    <Typography variant="body1" component="span">Time on level:</Typography>
+                                    <Typography variant="body1" component="span">
+                                        {formatDuration(durationOfLevel(props.levels[props.user.currentLevel]))}
+                                    </Typography>
+                                </ListItem>
+                                <ListItem className={classes.line} disableGutters>
+                                    <Typography variant="body1" component="span">Expected level-up in:</Typography>
+                                    <Typography variant="body1" component="span">
+                                        {formatDuration(Math.max(0,
+                                            props.averageTime
+                                            - durationOfLevel(props.levels[props.user.currentLevel])))}
+                                    </Typography>
+                                </ListItem>
+                                <ListItem className={classes.line} disableGutters>
+                                    <Typography variant="body1" component="span">
+                                        Average time on levels:
+                                    </Typography>
+                                    <Typography variant="body1" component="span">
+                                        {formatDuration(props.averageTime)}
+                                    </Typography>
+                                </ListItem>
+                            </React.Fragment>
+                        )}
+                    </React.Fragment>
+                    <ListItem className={classes.line} disableGutters>
+                        <Typography variant="body1" component="span">Start date:</Typography>
+                        <Typography variant="body1" component="span">
+                            {formatDate(props.user.startDate)}
+                        </Typography>
+                    </ListItem>
                     {props.itemsCount && props.itemsCount.type && (
                         <ListItem className={classes.line} disableGutters>
                             <Typography variant="body1" component="span">Items learned:</Typography>

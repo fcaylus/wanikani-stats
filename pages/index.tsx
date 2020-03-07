@@ -25,6 +25,7 @@ import {getItemsCount} from "../src/app/progress";
 import {Accuracy} from "../src/data/interfaces/accuracy";
 import {getAccuracy} from "../src/app/accuracy";
 import ProjectionCard from "../src/app/components/progress/ProjectionCard";
+import {averageLevelDuration} from "../src/app/levels";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -59,6 +60,9 @@ const useStyles = makeStyles((theme: Theme) => ({
 export default function IndexPage() {
     const classes = useStyles();
 
+    /**
+     * Data directly fetched from the API
+     */
     const dispatch = useDispatch();
     const store = useStore();
     const userResult = useUserSelector();
@@ -68,9 +72,16 @@ export default function IndexPage() {
     const reviewsStatsResult = useReviewsStatsSelector();
     const levelsResult = useLevelsSelector();
 
+    /**
+     * Computed values. They are stored at the page level to avoid recalculation at component level
+     */
     const [itemsCount, setItemsCount] = useState<ProgressItemsCount | undefined>(undefined);
     const [accuracy, setAccuracy] = useState<Accuracy | undefined>(undefined);
+    const [averageLevelTime, setAverageLevelTime] = useState<number | undefined>(undefined);
 
+    /**
+     * Fetch data from the API if needed
+     */
     useEffect(() => {
         if (needResultFetching(progressRadicalResult)) {
             dispatch(fetchProgress("radical"))
@@ -89,6 +100,9 @@ export default function IndexPage() {
         }
     }, []);
 
+    /**
+     * Compute the rest of the data when fetching is done
+     */
     useEffect(() => {
         if (isResultSuccessful(progressRadicalResult)
             && isResultSuccessful(progressKanjiResult)
@@ -102,6 +116,12 @@ export default function IndexPage() {
             setAccuracy(getAccuracy(store.getState()));
         }
     }, [reviewsStatsResult]);
+
+    useEffect(() => {
+        if (isResultSuccessful(levelsResult)) {
+            setAverageLevelTime(averageLevelDuration(Object.values(levelsResult.data)));
+        }
+    }, [levelsResult]);
 
     return (
         <PageContent className={classes.root}
@@ -119,9 +139,10 @@ export default function IndexPage() {
                     <StatusCard
                         user={isResultSuccessful(userResult) ? userResult.data : undefined}
                         itemsCount={itemsCount}
-                        levelsProgression={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}/>
+                        levels={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}
+                        averageTime={averageLevelTime}/>
                 </Grid>
-                {isResultSuccessful(reviewsStatsResult) && (
+                {accuracy && (
                     <Grid item xs>
                         <AccuracyCard accuracy={accuracy}/>
                     </Grid>

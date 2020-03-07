@@ -49,7 +49,6 @@ const CategoryList = (props: CategoryListProps) => {
     const [displayedDataLength, setDisplayedDataLength] = useState(props.initialDataLength ? props.initialDataLength : 0);
     // Allow to properly stop the progressive rendering when changing page
     const [displayingProgressively, setDisplayingProgressively] = useState(false);
-    // Controls the main progress bar
 
     /**
      * Display item list one category at a time. This avoid one big refresh of the page, and allow a better

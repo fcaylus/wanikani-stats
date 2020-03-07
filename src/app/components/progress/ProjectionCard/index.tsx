@@ -44,14 +44,6 @@ const useStyles = makeStyles((theme: Theme) => ({
             marginRight: `${theme.spacing(7)}px !important`,
         },
     },
-    sliderThumb: {
-        transform: "rotate(90deg)"
-    },
-    sliderValueLabel: {
-        "& > span > span": {
-            transform: "rotate(-45deg)"
-        }
-    },
     tableContainer: {
         flexGrow: 1,
         display: "flex",
@@ -108,6 +100,7 @@ const sliderMarks = [
 export interface ProjectionCardProps {
     levels?: LevelsHashMap;
     user?: User;
+    averageTime?: number;
 }
 
 /**
@@ -148,13 +141,13 @@ export default function ProjectionCard(props: ProjectionCardProps) {
         setDialogOpen(false);
     };
 
-    if (!props.levels || !props.user) {
+    if (!props.levels || !props.user || !props.averageTime) {
         return null;
     }
 
     return (
         <Card className={classes.root}>
-            <CardHeader title={"Level-up projections"}/>
+            <CardHeader title="Level-up projections"/>
             <Divider/>
             <CardContent className={classes.cardContent}>
                 <Box className={classes.content}>
@@ -186,6 +179,7 @@ export default function ProjectionCard(props: ProjectionCardProps) {
                                        onChangeHours={setCustomSpeedHours}/>
                         <ProjectionTable levels={props.levels}
                                          user={props.user}
+                                         averageTime={props.averageTime}
                                          additionalLevel={selectedLevel}
                                          targetSpeed={customSpeedDays * 24 + customSpeedHours}
                                          onRowClick={handleTableClick}/>
