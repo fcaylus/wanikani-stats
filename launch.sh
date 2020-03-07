@@ -10,7 +10,7 @@ tar -xzf ./wanikani-stats_docker.tar.gz
 echo "Stopping and removing previous container/image ..."
 sudo docker stop wanikani-stats
 sudo docker rm wanikani-stats
-sudo docker rmi wanikani-stats/server:latest
+sudo docker rmi --force wanikani-stats/server:latest
 
 # Launch the docker image
 echo "Loading and starting new image/container ..."
