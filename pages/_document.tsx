@@ -40,6 +40,7 @@ export default class MyDocument extends Document {
                 <meta name="subject" content="wanikani statistics"/>
 
                 <meta name="description" content={process.env.description}/>
+                <style>{"#__next { display: flex; }"}</style>
             </Head>
             <body>
             <Main/>

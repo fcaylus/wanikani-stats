@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import {LinearProgress} from "@material-ui/core";
 import clsx from "clsx";
@@ -39,10 +38,8 @@ export default function PageContent(props: PageContentProps) {
                 </title>
             </Head>
             {props.showProgress && <LinearProgress color="secondary"/>}
-            <Container component="main" role="main" disableGutters>
-                <Box className={clsx(props.className, classes.root)}>
-                    {props.children}
-                </Box>
+            <Container component="main" role="main" disableGutters className={clsx(props.className, classes.root)}>
+                {props.children}
             </Container>
         </React.Fragment>
     );

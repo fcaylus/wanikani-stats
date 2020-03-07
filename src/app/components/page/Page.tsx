@@ -13,10 +13,6 @@ import {RootState} from "../../redux/reducer";
 import {removeSnackbar} from "../../redux/snackbar/actions";
 
 const useStyles = makeStyles((theme: Theme) => ({
-    root: {
-        display: "flex",
-        flexDirection: "row"
-    },
     offset: theme.mixins.toolbar,
     mainContainer: {
         width: "100%"
@@ -79,7 +75,7 @@ export default function Page(props: AppProps) {
     };
 
     return (
-        <Box className={classes.root}>
+        <React.Fragment>
             <PageHeader toggleDrawer={toggleDrawer} minimal={minimal}/>
             {!minimal && <PageNav toggleDrawer={toggleDrawer} mobileOpen={mobileOpen}/>}
             <Box className={classes.mainContainer}>
@@ -87,6 +83,6 @@ export default function Page(props: AppProps) {
                 <Component {...pageProps} />
                 <PageFooter/>
             </Box>
-        </Box>
+        </React.Fragment>
     );
 }
