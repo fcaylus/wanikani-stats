@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import PageContent from "../src/app/components/page/PageContent";
-import {Button, Link, Paper, TextField, Theme, Typography} from "@material-ui/core";
+import {Button, Link, Paper, TextField, Theme, Typography, useMediaQuery} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import isUUID from "../src/isUUID";
 import {useDispatch} from "react-redux";
@@ -9,6 +9,7 @@ import {saveApiKey} from "../src/app/apiKey";
 import redirect, {DEFAULT_REDIRECT_URL} from "../src/redirect";
 import {isResultError, isResultSuccessful, useLoginSelector} from "../src/app/redux/api/selectors";
 import {fetchLogin} from "../src/app/redux/api/requests";
+import useTheme from "@material-ui/core/styles/useTheme";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     container: {
         width: "fit-content",
+        maxWidth: "100%",
         padding: theme.spacing(2),
         paddingBottom: 0,
         display: "flex",
@@ -49,6 +51,8 @@ const useStyles = makeStyles((theme: Theme) => ({
  */
 function LoginPage() {
     const classes = useStyles();
+    const theme = useTheme();
+    const mobile = useMediaQuery(theme.breakpoints.down("xs"));
 
     const dispatch = useDispatch();
     const router = useRouter();
@@ -119,13 +123,15 @@ function LoginPage() {
                 </Button>
             </Paper>
 
-            <Paper elevation={5} className={classes.container}>
-                <Typography variant="h6">
-                    Demo
-                </Typography>
-                <img decoding="async" src="/showcase.gif" alt={process.env.appName + " showcase"}
-                     className={classes.showcase}/>
-            </Paper>
+            {!mobile && (
+                <Paper elevation={5} className={classes.container}>
+                    <Typography variant="h6">
+                        Demo
+                    </Typography>
+                    <img decoding="async" src="/showcase.gif" alt={process.env.appName + " showcase"}
+                         className={classes.showcase}/>
+                </Paper>
+            )}
         </PageContent>
     );
 }
