@@ -18,7 +18,8 @@ const useStyles = makeStyles(() => ({
     },
     image: {
         width: 16,
-        height: 16
+        height: 16,
+        filter: "invert(1)"
     }
 }));
 
