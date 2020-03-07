@@ -152,7 +152,8 @@ export default function IndexPage() {
                 <Grid item xs>
                     <ProjectionCard
                         user={isResultSuccessful(userResult) ? userResult.data : undefined}
-                        levels={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}/>
+                        levels={isResultSuccessful(levelsResult) ? levelsResult.data : undefined}
+                        averageTime={averageLevelTime}/>
                 </Grid>
             </Grid>
             <Grid container spacing={2} className={classes.grid}>

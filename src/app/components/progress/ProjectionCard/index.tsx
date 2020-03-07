@@ -157,7 +157,6 @@ export default function ProjectionCard(props: ProjectionCardProps) {
                             <ReversedVerticalSlider
                                 className={classes.slider}
                                 getAriaValueText={value => `Level ${value}`}
-                                aria-labelledby="levels-slider"
                                 step={1}
                                 min={1}
                                 max={60}
@@ -205,7 +204,6 @@ export default function ProjectionCard(props: ProjectionCardProps) {
                             <ReversedVerticalSlider
                                 className={classes.slider}
                                 getAriaValueText={value => `Level ${value}`}
-                                aria-labelledby="levels-slider"
                                 step={1}
                                 min={1}
                                 max={60}

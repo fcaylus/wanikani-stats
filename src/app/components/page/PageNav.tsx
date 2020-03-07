@@ -106,7 +106,8 @@ export default function PageNav(props: PageNavProps) {
                 <List>
                     {routes.map((route) => {
                         return (
-                            <ListItem button key={route.name} onClick={() => navClick(route)}
+                            <ListItem component="li" button
+                                      key={route.name} onClick={() => navClick(route)}
                                       selected={route.isSame(router.pathname)}>
                                 <ListItemIcon>{route.icon}</ListItemIcon>
                                 <ListItemText primary={route.name}/>

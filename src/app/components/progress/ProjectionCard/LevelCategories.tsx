@@ -34,7 +34,7 @@ export default function LevelCategories(props: { className?: string }) {
             {LEVEL_CATEGORIES.map((category, index) => (
                 <React.Fragment key={index}>
                     <Paper className={classes.paper} style={{backgroundColor: category.color}}>
-                        <Typography variant="body2" component="p">{category.kanji}</Typography>
+                        <Typography variant="body2" component="p" lang="ja">{category.kanji}</Typography>
                         <Typography variant="caption" component="p">{capitalize(category.name)}</Typography>
                     </Paper>
                 </React.Fragment>

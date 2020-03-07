@@ -50,7 +50,7 @@ export default React.memo((props: Item & { className?: string }) => {
             disableFocusRipple
             disableTouchRipple
             title={displayedText + (props.readings ? (" (" + props.readings.join(" / ") + ")") : "")}
-            lang="jp">
+            lang="ja">
             {imageComponent ? imageComponent : displayedText}
         </Button>
     );

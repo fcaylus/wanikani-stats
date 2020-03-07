@@ -21,10 +21,9 @@ export default class MyDocument extends Document {
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 
                 {/* Roboto Font*/}
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-                />
+                <link rel="preconnect" href="https://fonts.googleapis.com/" crossOrigin=""/>
+                <link rel="dns-prefetch" href="https://fonts.googleapis.com/"/>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"/>
 
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
