@@ -34,11 +34,7 @@ export default function Page(props: AppProps) {
     const {Component, pageProps} = props;
 
     // For /login and /wait, only display a minimal page
-    const [minimal, setMinimal] = useState(false);
-    useEffect(() => {
-        setMinimal(router.pathname == "/login" || router.pathname == "/wait");
-    }, [router.pathname]);
-
+    const minimal = router.pathname == "/login" || router.pathname == "/wait";
 
     /**
      * Manage the list of snackbars
