@@ -1,6 +1,6 @@
 {
   "name": "wanikani-stats-reloaded",
-  "description": "Statistics website for WaniKani !",
+  "description": "Monitor all your WaniKani statistics, estimate your progress and much more.",
   "homepage": "https://github.com/fcaylus/wanikani-stats",
   "repository": {
     "type": "git",
