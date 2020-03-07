@@ -35,6 +35,9 @@ const cacheStore = setupCache({
     readOnError: true,
     exclude: {
         query: false
+    },
+    key: (req) => {
+        return req.url + JSON.stringify(req.params) + req.headers["Authorization"];
     }
 });
 
