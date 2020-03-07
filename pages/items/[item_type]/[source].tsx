@@ -23,6 +23,8 @@ import {
     useProgressSelector
 } from "../../../src/app/redux/api/selectors";
 import {fetchItems, fetchProgress} from "../../../src/app/redux/api/requests";
+import {Items} from "../../../src/data/interfaces/item";
+import SourceInfoLabel from "../../../src/app/components/SourceInfoLabel";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -166,9 +168,11 @@ function ItemPage(props: ItemPageProps) {
             <SourceSelector itemType={itemType} onSourceChange={handleSourceChangeCallBack} value={itemSource}/>
 
             {isResultFetching(apiResult) && <CircularProgress className={classes.fetching} disableShrink/>}
-
+            {isResultSuccessful(apiResult) && (apiResult.data as Items).sourceInfo && (
+                <SourceInfoLabel info={apiResult.data.sourceInfo}/>
+            )}
             <CategoryList
-                categories={showItems && isResultSuccessful(apiResult) ? apiResult.data : undefined}
+                categories={showItems && isResultSuccessful(apiResult) ? (apiResult.data as Items).categories : undefined}
                 progress={progressResult && !progressResult.error ? progressResult.data : undefined}
                 initialDataLength={props.initialDataLength}/>
         </PageContent>
@@ -201,7 +205,7 @@ ItemPage.getInitialProps = async (ctx: ReduxNextPageContext): Promise<ItemPagePr
         await ctx.store.dispatch(fetchItems(item_type.toString(), source.toString(), ctx.req, ctx.res));
         const res = itemsSelector(ctx.store.getState(), item_type.toString(), source.toString());
         return {
-            initialDataLength: isResultSuccessful(res) ? res.data.length : 0
+            initialDataLength: isResultSuccessful(res) ? (res.data as Items).categories.length : 0
         }
     }
 

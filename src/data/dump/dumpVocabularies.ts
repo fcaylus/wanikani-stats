@@ -2,6 +2,7 @@ import downloadFile from "./downloadFile";
 import {ItemsHashMap} from "../interfaces/item";
 import * as fs from "fs";
 import cheerio from "cheerio";
+import {SourceInfo} from "../interfaces/sourceinfo";
 
 const categoryDumpSources = [
     {
@@ -161,8 +162,18 @@ export default async () => {
         console.log("---> dumped !")
     }
 
+    // Write list file
     const destFile = "src/data/sources/jlpt/vocabulary_list.json";
     fs.writeFileSync(destFile, JSON.stringify(items, null, 2));
+
+    // Write info file
+    const info: SourceInfo = {
+        url: "https://en.wiktionary.org/wiki/Appendix:JLPT",
+        websiteName: "Wiktionary",
+        info: "There are no official list for JLPT vocabulary. This list may be (is ?) highly inaccurate."
+    };
+    const infoDestFile = "src/data/sources/jlpt/vocabulary_info.json";
+    fs.writeFileSync(infoDestFile, JSON.stringify(info, null, 2));
 
     console.log("--> JLPT dumped !")
 }

@@ -76,22 +76,22 @@ export default function StatsGeneralPage() {
                          || isResultFetching(itemsVocabularyResult)}>
             {isResultSuccessful(itemsRadicalResult) && isResultSuccessful(itemsKanjiResult) && isResultSuccessful(itemsVocabularyResult) && (
                 <React.Fragment>
-                    <ItemsCategoryGrid radicals={itemsRadicalResult.data}
-                                       kanjis={itemsKanjiResult.data}
-                                       vocabularies={itemsVocabularyResult.data}/>
+                    <ItemsCategoryGrid radicals={itemsRadicalResult.data.categories}
+                                       kanjis={itemsKanjiResult.data.categories}
+                                       vocabularies={itemsVocabularyResult.data.categories}/>
 
                     <Grid container spacing={2} className={classes.grid}>
                         <Grid item xs>
-                            <ItemsPerLevelChart radicals={itemsRadicalResult.data}
-                                                kanjis={itemsKanjiResult.data}
-                                                vocabularies={itemsVocabularyResult.data}/>
+                            <ItemsPerLevelChart radicals={itemsRadicalResult.data.categories}
+                                                kanjis={itemsKanjiResult.data.categories}
+                                                vocabularies={itemsVocabularyResult.data.categories}/>
                         </Grid>
                     </Grid>
                     <Grid container spacing={2} className={classes.grid}>
                         <Grid item xs>
-                            <ReviewsPerLevelChart radicals={itemsRadicalResult.data}
-                                                  kanjis={itemsKanjiResult.data}
-                                                  vocabularies={itemsVocabularyResult.data}/>
+                            <ReviewsPerLevelChart radicals={itemsRadicalResult.data.categories}
+                                                  kanjis={itemsKanjiResult.data.categories}
+                                                  vocabularies={itemsVocabularyResult.data.categories}/>
                         </Grid>
                     </Grid>
                 </React.Fragment>

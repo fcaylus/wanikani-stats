@@ -3,10 +3,10 @@ import parseApiRequest from "../../../../src/server/parseApiRequest";
 import {NOT_FOUND, OK} from "http-status-codes";
 import {getItems} from "../../../../src/server/items";
 import {isResourceTimedOut} from "../../../../src/server/WaniKaniApi";
-import {ItemCategory} from "../../../../src/data/interfaces/item";
+import {Items} from "../../../../src/data/interfaces/item";
 
 /**
- * Return the list of items depending on the query parameters.
+ * Return the list of items depending on the query parameters (Items object)
  * Most of the logic is inside the getItems() function.
  */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -20,14 +20,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     // Get items
-    let items: ItemCategory[] | null;
+    let items: Items | null;
     if (isResourceTimedOut(req.query["updated_after"])) {
-        items = await getItems(source, item_type, requestParsedResult.apiKey);
+        items = await getItems(item_type, source, requestParsedResult.apiKey);
         if (!items) {
             return res.status(NOT_FOUND).send("NOT FOUND");
         }
     } else {
-        items = [];
+        items = null;
     }
 
     res.setHeader("Content-Type", "application/json");

@@ -2,7 +2,7 @@ import {ApiRequest} from "./types";
 import {IncomingMessage, ServerResponse} from "http";
 import {fetchApi} from "./actions";
 import {getApiKey} from "../../apiKey";
-import {hashMapObjectMerger, listReplaceMerger, objectReplaceMerger} from "./mergers";
+import {hashMapObjectMerger, objectReplaceMerger} from "./mergers";
 
 const API_BASE_URL = "/api/";
 
@@ -102,7 +102,7 @@ export const itemsRequest = (itemType: string, source: string): ApiRequest => {
 };
 
 export const fetchItems = (itemType: string, source: string, req?: IncomingMessage, res?: ServerResponse) => {
-    return fetchApi(itemsRequest(itemType, source), getApiKey(req), true, true, listReplaceMerger, req, res, true);
+    return fetchApi(itemsRequest(itemType, source), getApiKey(req), true, true, objectReplaceMerger, req, res, true);
 };
 
 /*

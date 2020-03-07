@@ -24,6 +24,7 @@ import {
 } from "../../../src/app/redux/api/selectors";
 import {fetchStats} from "../../../src/app/redux/api/requests";
 import StatsTable from "../../../src/app/components/stats/StatsTable";
+import SourceInfoLabel from "../../../src/app/components/SourceInfoLabel";
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -92,9 +93,9 @@ function StatsPage() {
                             onSourceChange={handleSourceChange}
                             value={source.toString()}
                             excludeList={["wanikani"]}/>
-
             {isResultSuccessful(apiResult) && apiResult.data && (
                 <React.Fragment>
+                    <SourceInfoLabel info={(apiResult.data as Stats).sourceInfo}/>
                     <StatsTable
                         stats={apiResult.data}
                         currentUserLevel={isResultSuccessful(userResult) ? (userResult.data as User).currentLevel : undefined}/>

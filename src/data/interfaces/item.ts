@@ -1,6 +1,8 @@
 /**
  * Basic item (for radicals, kanjis, vocabulary) interface
  */
+import {SourceInfo} from "./sourceinfo";
+
 export interface Item {
     // Name of the item (used as a unique identifier)
     name: string;
@@ -36,5 +38,13 @@ export interface ItemCategory {
  * Hash map of items. Used by sources other than WaniKani to easily merged them
  */
 export interface ItemsHashMap {
-    [name: string]: Item
+    [name: string]: Item;
+}
+
+/**
+ * Object returned by /items endpoints. Contains the list of items ordered by category, and an optional source info
+ */
+export interface Items {
+    categories: ItemCategory[];
+    sourceInfo?: SourceInfo;
 }

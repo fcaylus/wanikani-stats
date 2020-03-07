@@ -1,4 +1,5 @@
 import {ItemCategory} from "./item";
+import {SourceInfo} from "./sourceinfo";
 
 /**
  * Statistics for a specified level. This is basically a list of percentages for each category.
@@ -15,6 +16,7 @@ export interface LevelStats {
  */
 export interface Stats {
     source: string;
+    sourceInfo: SourceInfo;
     categories: string[];
     displayedCategories: string[];
     levels: LevelStats[],

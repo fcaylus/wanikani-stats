@@ -21,7 +21,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     // Get stats
     let stats: Stats | null;
     if (isResourceTimedOut(req.query["updated_after"])) {
-        stats = await getStats(source, item_type, requestParsedResult.apiKey);
+        stats = await getStats(item_type, source, requestParsedResult.apiKey);
         if (!stats) {
             return res.status(NOT_FOUND).send("NOT FOUND");
         }

@@ -39,13 +39,3 @@ export const objectReplaceMerger: Merger = (previousResult, newResult) => {
     }
     return newResult;
 };
-
-/**
- * Merger that replace the previous list with the new one (only if not empty)
- */
-export const listReplaceMerger: Merger = (previousResult, newResult) => {
-    if (!isResultSuccessful(previousResult) || !isResultSuccessful(newResult) || newResult.data.length <= 0) {
-        return previousResult;
-    }
-    return newResult;
-};
