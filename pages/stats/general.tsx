@@ -14,8 +14,11 @@ import {
 import {fetchItems} from "../../src/app/redux/api/requests";
 import ItemsCategoryGrid from "../../src/app/components/generalstats/ItemsCategoryGrid";
 import {Grid} from "@material-ui/core";
-import ItemsPerLevelChart from "../../src/app/components/generalstats/ItemsPerLevelChart";
-import ReviewsPerLevelChart from "../../src/app/components/generalstats/ReviewsPerLevelChart";
+import dynamic from "next/dynamic";
+
+// Lazy-load complex components
+const ItemsPerLevelChart = dynamic(() => import("../../src/app/components/generalstats/ItemsPerLevelChart"));
+const ReviewsPerLevelChart = dynamic(() => import("../../src/app/components/generalstats/ReviewsPerLevelChart"));
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {

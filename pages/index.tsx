@@ -9,7 +9,6 @@ import redirect from "../src/redirect";
 import ItemsCountGrid from "../src/app/components/progress/ItemsCountGrid";
 import AccuracyCard from "../src/app/components/progress/AccuracyCard";
 import {Grid} from "@material-ui/core";
-import LevelsDurationChart from "../src/app/components/progress/LevelsDurationChart";
 import {
     isResultFetching,
     isResultSuccessful,
@@ -24,8 +23,12 @@ import {ProgressItemsCount} from "../src/data/interfaces/progress";
 import {getItemsCount} from "../src/app/progress";
 import {Accuracy} from "../src/data/interfaces/accuracy";
 import {getAccuracy} from "../src/app/accuracy";
-import ProjectionCard from "../src/app/components/progress/ProjectionCard";
 import {averageLevelDuration} from "../src/app/levels";
+import dynamic from "next/dynamic";
+
+// Lazy load complex components
+const LevelsDurationChart = dynamic(() => import("../src/app/components/progress/LevelsDurationChart"));
+const ProjectionCard = dynamic(() => import("../src/app/components/progress/ProjectionCard"));
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -51,7 +54,6 @@ const useStyles = makeStyles((theme: Theme) => ({
         }
     }
 }));
-
 
 /**
  * Home page of the app.
