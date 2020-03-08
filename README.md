@@ -59,12 +59,10 @@ I'll be more than happy !
 - Implement "resets" support (I never made a reset, I have no idea how the app handle this)
 - Improve the level-up projections with more accurate computation
 - Fix UI glitches
-- Add a link to the source for items/ and stats/ pages
 - Add a heatmap of the user's activity
 - Add a timeline (like the Ultimate Timeline script)
 - Add more stats to the "General stats" section
 - Add more stats everywhere actually !
-- PWA support
 - Improve speed
 
 ## Icon

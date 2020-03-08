@@ -31,4 +31,8 @@ yarn-error.log*
 # WebStorm configuration
 .idea
 
+# next-pwa generated files
+public/sw.js
+public/workbox*.js
+
 test.json

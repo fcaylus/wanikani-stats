@@ -25,20 +25,39 @@ export default class MyDocument extends Document {
                 <link rel="dns-prefetch" href="https://fonts.googleapis.com/"/>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"/>
 
+                {/* Common */}
+                <meta name="robots" content="index,follow"/>
+                <meta name="subject" content={process.env.appName}/>
+                <meta name="description" content={process.env.description}/>
+                <meta name="keywords" content={process.env.keywords}/>
+                <meta name="copyright" content={process.env.author}/>
+                <meta name="author" content={`${process.env.author}, ${process.env.authorLink}`}/>
+
+                {/* Icons */}
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-                <link rel="manifest" href="/site.webmanifest"/>
+                <link rel="manifest" href="/manifest.json"/>
 
+                {/* iOS */}
                 <meta name="apple-mobile-web-app-title" content={process.env.appName}/>
-                <meta name="application-name" content={process.env.appName}/>
-                <meta name="msapplication-TileColor" content={theme.palette.primary.main}/>
+                <meta name="apple-mobile-web-app-capable" content="yes"/>
+                <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+
+                {/* Android */}
                 <meta name="theme-color" content={theme.palette.primary.main} key="theme-color"/>
+                <meta name="mobile-web-app-capable" content="yes"/>
 
-                <meta name="robots" content="index,follow"/>
-                <meta name="subject" content="wanikani statistics"/>
+                {/* Windows */}
+                <meta name="msapplication-navbutton-color" content={theme.palette.primary.main}/>
+                <meta name="msapplication-TileColor" content={theme.palette.primary.main}/>
+                <meta name="msapplication-TileImage" content="/android-chrome-192x192.png"/>
 
-                <meta name="description" content={process.env.description}/>
+                {/* Pinned Sites */}
+                <meta name="application-name" content={process.env.appName}/>
+                <meta name="msapplication-tooltip" content={process.env.description}/>
+                <meta name="msapplication-starturl" content="/"/>
+
                 <style>{"#__next { display: flex; }"}</style>
             </Head>
             <body>
