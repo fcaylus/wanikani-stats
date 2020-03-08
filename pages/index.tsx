@@ -85,6 +85,12 @@ export default function IndexPage() {
      * Fetch data from the API if needed
      */
     useEffect(() => {
+        if (needResultFetching(levelsResult)) {
+            dispatch(fetchLevels());
+        }
+        if (needResultFetching(reviewsStatsResult)) {
+            dispatch(fetchReviewsStats());
+        }
         if (needResultFetching(progressRadicalResult)) {
             dispatch(fetchProgress("radical"))
         }
@@ -93,12 +99,6 @@ export default function IndexPage() {
         }
         if (needResultFetching(progressVocabularyResult)) {
             dispatch(fetchProgress("vocabulary"))
-        }
-        if (needResultFetching(reviewsStatsResult)) {
-            dispatch(fetchReviewsStats());
-        }
-        if (needResultFetching(levelsResult)) {
-            dispatch(fetchLevels());
         }
     }, []);
 

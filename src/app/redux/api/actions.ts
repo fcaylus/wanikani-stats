@@ -178,21 +178,26 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
                    req?: IncomingMessage,
                    res?: ServerResponse,
                    snackbar?: boolean) => {
-    dispatch(apiStart(apiRequest, isNextPage));
 
     const createSnackbarKey = () => {
         return JSON.stringify(apiRequest);
     };
 
-    // Show the snackbar only if it's not an update
-    if (snackbar && !updatedAfter) {
-        const label = "Fetching "
-            + JSON.parse(labelForApiRequest(apiRequest)).endpoint
-            + (apiRequest.data ? "/" + Object.values(apiRequest.data).join("/") : "")
-            + (isNextPage ? ` (${pageNumber}/${pageCount})` : "")
-            + " ...";
-        dispatch(showSnackbar(createSnackbarKey(), label));
-    }
+    // Putting these 2 dispatch in a timer allows to execute the axios fetch as soon as possible, and notify the user
+    // a little bit after
+    setTimeout(() => {
+        dispatch(apiStart(apiRequest, isNextPage));
+
+        // Show the snackbar only if it's not an update
+        if (snackbar && !updatedAfter) {
+            const label = "Fetching "
+                + JSON.parse(labelForApiRequest(apiRequest)).endpoint
+                + (apiRequest.data ? "/" + Object.values(apiRequest.data).join("/") : "")
+                + (isNextPage ? ` (${pageNumber}/${pageCount})` : "")
+                + " ...";
+            dispatch(showSnackbar(createSnackbarKey(), label));
+        }
+    }, 0);
 
     return new Promise((resolve, reject) => {
         // The name of axios field changes depending on the request's method
@@ -224,7 +229,9 @@ const fetchData = (dispatch: ThunkDispatch<any, any, AnyAction>,
             [dataOrParams]: axiosData
         }).then(async (response) => {
             if (snackbar && !updatedAfter) {
-                dispatch(hideSnackbar(createSnackbarKey()));
+                setTimeout(() => {
+                    dispatch(hideSnackbar(createSnackbarKey()));
+                }, 0);
             }
 
             // If the response code is ACCEPTED, this means the server is downloading WK subjects. Redirect the user to
