@@ -122,6 +122,8 @@ const fetchApiImpl = (apiRequest: ApiRequest,
                         // Otherwise, this means this endpoints doesn't support merging, so the data can be retrieved directly.
                         if (storedValue.when) {
                             if (mergeFunction) {
+                                // Before fetching new data, call apiSuccess() so the old data can be rendered first
+                                dispatch(apiSuccess(apiRequest, storedValue, false));
                                 fetchData(dispatch, getState, apiRequest, apiKey, false, 1, 1,
                                     cacheInStore, cacheInStorage, storedValue.when, mergeFunction, req, res, snackbar)
                                     .then(() => resolve()).catch(() => reject());

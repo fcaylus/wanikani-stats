@@ -1,6 +1,7 @@
 import {API_ERROR, API_START, API_SUCCESS, ApiResultsState} from "./types";
 import {AnyAction, combineReducers} from "redux";
 import {labelForApiRequest, mergePaginatedResultWithStore} from "./util";
+import {isResultSuccessful} from "./selectors";
 
 /**
  * Reducer handling the storage of API calls results into the main store.
@@ -65,11 +66,12 @@ const apiCallsReducer = (state: ApiResultsState = {}, action: AnyAction): ApiRes
         const label = labelForApiRequest(action.payload.request);
 
         // Change only fetching and error properties.
+        // If there is already a result stored, do not modify fetching
         return {
             ...state,
             [label]: {
                 ...state[label],
-                fetching: true,
+                fetching: isResultSuccessful(state[label]) ? state[label].fetching : true,
                 error: false
             }
         };
