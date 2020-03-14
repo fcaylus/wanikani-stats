@@ -58,9 +58,9 @@
     "@types/cheerio": "^0.22.16",
     "babel-plugin-import": "^1.13.0",
     "cheerio": "^1.0.0-rc.3",
-    "ts-node": "^8.6.2",
     "next-build-id": "^3.0.0",
-    "next-pwa": "^2.2.0"
+    "next-pwa": "^2.2.0",
+    "ts-node": "^8.6.2"
   },
   "scripts": {
     "watch": "yarn run removeServiceWorker && next -p 3170",
