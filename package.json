@@ -63,9 +63,10 @@
     "next-pwa": "^2.2.0"
   },
   "scripts": {
-    "watch": "next -p 3170",
+    "watch": "yarn run removeServiceWorker && next -p 3170",
     "build": "next build",
     "start": "next start -p 3170",
-    "dumpData": "ts-node -O '{\"module\": \"commonjs\"}' src/data/dump/dump.ts"
+    "dumpData": "ts-node -O '{\"module\": \"commonjs\"}' src/data/dump/dump.ts",
+    "removeServiceWorker": "rm ./public/sw.js && rm ./public/workbox-*.js"
   }
 }
