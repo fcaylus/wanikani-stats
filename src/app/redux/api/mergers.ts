@@ -19,6 +19,12 @@ export const hashMapObjectMerger: Merger = (previousResult, newResult) => {
         return previousResult;
     }
 
+    // If new result is "empty", just return the old one
+    // This avoid updating the "when" parameter when nothing new is available.
+    if (Object.keys(newResult.data).length === 0) {
+        return previousResult;
+    }
+
     return {
         error: false,
         fetching: false,
