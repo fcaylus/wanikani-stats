@@ -59,14 +59,14 @@
     "babel-plugin-import": "^1.13.0",
     "cheerio": "^1.0.0-rc.3",
     "next-build-id": "^3.0.0",
-    "next-pwa": "^2.2.0",
+    "next-pwa": "2.2.1",
     "ts-node": "^8.6.2"
   },
   "scripts": {
-    "watch": "yarn run removeServiceWorker && next -p 3170",
+    "watch": "yarn run removeServiceWorker; next -p 3170",
     "build": "next build",
     "start": "next start -p 3170",
     "dumpData": "ts-node -O '{\"module\": \"commonjs\"}' src/data/dump/dump.ts",
-    "removeServiceWorker": "rm ./public/sw.js && rm ./public/workbox-*.js"
+    "removeServiceWorker": "rm ./public/sw.js*; rm ./public/workbox-*.js*"
   }
 }

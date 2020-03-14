@@ -32,7 +32,7 @@ yarn-error.log*
 .idea
 
 # next-pwa generated files
-public/sw.js
-public/workbox*.js
+public/sw.js*
+public/workbox*.js*
 
 test.json
