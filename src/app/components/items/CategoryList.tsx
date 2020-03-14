@@ -23,7 +23,7 @@ interface CategoryListItemProps {
     progress?: ProgressHashMap
 }
 
-const CategoryListItem = React.memo((props: CategoryListItemProps) => {
+const CategoryListItem = ((props: CategoryListItemProps) => {
     const classes = useStyles();
     return (
         <ListItem dense disableGutters className={classes.categoryItem}>
