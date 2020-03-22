@@ -11,7 +11,7 @@
     "email": "fabien.caylus@gmail.com",
     "url": "https://github.com/fcaylus"
   },
-  "version": "2.0.1",
+  "version": "3.0.0",
   "private": true,
   "license": "MIT",
   "dependencies": {
