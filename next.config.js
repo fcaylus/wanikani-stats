@@ -1,11 +1,7 @@
 const nextBuildId = require("next-build-id");
-const withPWA = require("next-pwa");
 
-module.exports = withPWA({
+module.exports = {
     poweredByHeader: false,
-    pwa: {
-        dest: "public"
-    },
     env: {
         appName: "WaniKani Stats Reloaded",
         keywords: "wanikani, statistics, kanji, jlpt, stats",
@@ -18,4 +14,4 @@ module.exports = withPWA({
         commitVersion: nextBuildId.sync({dir: __dirname}),
         version: process.env.npm_package_version
     }
-});
+};
