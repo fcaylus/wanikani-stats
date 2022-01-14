@@ -29,7 +29,7 @@
     "@types/recharts": "^1.8.6",
     "@types/rimraf": "^2.0.3",
     "@types/semver": "^7.1.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "axios-cache-adapter": "^2.5.0",
     "clsx": "^1.0.4",
     "cookie": "^0.4.0",
